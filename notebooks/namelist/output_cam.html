@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Running on ‘Cheyenne’ (Example!) &#8212; CESM Tutorial</title>
+    <title>Overview of Namelist Modifications &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Terminals" href="cheyenne/terminals.html" />
-    <link rel="prev" title="Using Jupyter Notebooks" href="using_jupyter_notebooks.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -118,29 +116,29 @@ const thebe_selector_output = ".output, .cell_output"
   Introduction
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="using_jupyter_notebooks.html">
+  <a class="reference internal" href="../introduction/using_jupyter_notebooks.html">
    Using Jupyter Notebooks
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../introduction/running_on_cheyenne.html">
    Running on ‘Cheyenne’ (Example!)
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="cheyenne/terminals.html">
+    <a class="reference internal" href="../introduction/cheyenne/terminals.html">
      Terminals
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="cheyenne/jupyterhub.html">
+    <a class="reference internal" href="../introduction/cheyenne/jupyterhub.html">
      JupyterHub
     </a>
    </li>
@@ -333,17 +331,17 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../namelist/overview.html">
+  <a class="reference internal" href="overview.html">
    Overview of Namelist Modifications
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../namelist/documentation.html">
+  <a class="reference internal" href="documentation.html">
    Using Documentation about Namelist Variables
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../namelist/output.html">
+  <a class="reference internal" href="output.html">
    Customizing Output in CESM
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -556,7 +554,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/introduction/running_on_cheyenne.ipynb"
+        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/namelist/output_cam.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -616,7 +614,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/introduction/running_on_cheyenne.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/namelist/output_cam.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -644,7 +642,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/notebooks/introduction/running_on_cheyenne.ipynb"
+        <a href="../../_sources/notebooks/namelist/output_cam.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -704,69 +702,9 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-a-cesm-case">
-   1. Creating a CESM case
+  <a class="reference internal nav-link" href="#customizing-cam-output-frequency-nhtfrq">
+   Customizing CAM output frequency: nhtfrq
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#compiling-the-case">
-   3. Compiling the case
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#customizing-a-cesm-case">
-   4. Customizing a CESM case
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4">
-     Exercise 4
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-the-length-of-the-run">
-   5. Set the length of the run
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5">
-     Exercise 5
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-your-case">
-   6. Running your case
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6">
-     Exercise 6
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -777,7 +715,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Running on ‘Cheyenne’ (Example!)</h1>
+                <h1>Overview of Namelist Modifications</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -788,69 +726,9 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-a-cesm-case">
-   1. Creating a CESM case
+  <a class="reference internal nav-link" href="#customizing-cam-output-frequency-nhtfrq">
+   Customizing CAM output frequency: nhtfrq
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#compiling-the-case">
-   3. Compiling the case
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#customizing-a-cesm-case">
-   4. Customizing a CESM case
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4">
-     Exercise 4
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-the-length-of-the-run">
-   5. Set the length of the run
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5">
-     Exercise 5
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-your-case">
-   6. Running your case
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6">
-     Exercise 6
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -862,178 +740,49 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="running-on-cheyenne-example">
-<h1>Running on ‘Cheyenne’ (Example!)<a class="headerlink" href="#running-on-cheyenne-example" title="Permalink to this headline">#</a></h1>
-<p>This is a very quick introduction to running the climate model CESM. It will guide you through the basics of running CESM. <br>
-Today, we will run a simulation. Later, we will look at the data you produced.</p>
-<hr class="docutils" />
-<section id="creating-a-cesm-case">
-<h2>1. Creating a CESM case<a class="headerlink" href="#creating-a-cesm-case" title="Permalink to this headline">#</a></h2>
-<p>CESM experiments start with creating a <strong>case</strong> with a specific configuration of CESM (<strong>compset</strong>) and at a particular <strong>resolution</strong>.</p>
-<p>For instance, here is the command to create a CESM case called <strong>case0</strong> with <br></p>
-<ul>
-    <li>compset:    B1850</li>
-    <li>resolution: f09_g17</li>
-</ul><p><img alt="Running on Cheyenne Image" src="../../_images/running_on_cheyenne_image1.png" /></p>
-<section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
-<p>Customize your casename (try picking a <strong>different</strong> case number than ‘case0’) and run the cell to issue the command.</p>
-<div class="alert alert-warning">
-<details>   
-   <summary>
-        <img src="https://freesvg.org/img/bulb_on.png" width="20px">
-       <font face="Times New Roman" color='blue' size="4">Hint!</font>
-    </summary>
-<p>A full command is given in the example above - but you can change the case to ‘case03’, for example, by using the option “–case case03”</details></p>
-</div><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter your command here</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="alert alert-success">
-<details>   
-   <summary>
-        <img src="https://freesvg.org/img/help-browser.png" width="20px">
-       <font face="Times New Roman" color='blue' size="4">Click here for a solution to Exercise #1</font>
-    </summary>
-You can try the following command to create a case with the name 'case0':  
-<br><br>
-`create_newcase --case case0 --compset B1850 --res f19_g17 `
-</details>
-</div><p>Great!  You’ve created the default version of your case. Let’s wait for everyone before going to step 2.
-<br><br></p>
-<hr class="docutils" />
-<h2> 2. Setting up the case</h2>
-<p>The next step in running CESM is to <strong>setup</strong> the case. This is done by going into the case you just created and running <code class="docutils literal notranslate"><span class="pre">./case.setup</span></code>.</p>
-<p>The command <code class="docutils literal notranslate"><span class="pre">./case.setup</span></code> sets up files that control the model’s behavior.</p>
-</section>
-<section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
-<p>Customize the cell below with your own case name. Then run the cell. This sets up the case.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>case0
-./case.setup
-</pre></div>
-</div>
-</div>
-</div>
-<p><br>Great!  You’ve now used the <code class="docutils literal notranslate"><span class="pre">case.setup</span></code> command to set up your case.  Let’s wait for everyone before going to step 3.<br><br></p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="compiling-the-case">
-<h2>3. Compiling the case<a class="headerlink" href="#compiling-the-case" title="Permalink to this headline">#</a></h2>
-<p>CESM is written in a language called <strong>Fortran</strong>. Similar to English, Fortran is human readable. The computer doesn’t understand Fortran. It needs to be translated in a computer-readable code (strings of 0s and 1s).</p>
-<p>Here is an example of fortran code</p>
-<section id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
-<p>Run the cell below. This compiles the case. Be aware that this can take a few minutes.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qcmd<span class="w"> </span>--<span class="w"> </span>./case.build<span class="w"> </span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><br><br>
-Again, this will take a few minutes.  You’ll know this is complete when you see the line:</p>
-<blockquote>
-<div><p> MODEL BUILD HAS FINISHED SUCCESSFULLY</p>
-</div></blockquote>
-<p>If you see that, fantastic!  You’ve built your first CESM case!  Let’s wait for everyone before going to step 4.<br><br></p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="customizing-a-cesm-case">
-<h2>4. Customizing a CESM case<a class="headerlink" href="#customizing-a-cesm-case" title="Permalink to this headline">#</a></h2>
-<p><strong>Adding some butterfly effect</strong> <img alt="butterfly" src="../../_images/running_on_cheyenne_image2.png" /></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="overview-of-namelist-modifications">
+<h1>Overview of Namelist Modifications<a class="headerlink" href="#overview-of-namelist-modifications" title="Permalink to this headline">#</a></h1>
+<p>In this section, we will cover:</p>
 <ul class="simple">
-<li><p>If we submitted the simulation now, we would all get the same results.</p></li>
-<li><p>Let’s add a small perturbation to the temperature (butterfly effect)
-<br></p></li>
+<li><p>how to change the <strong>output frequency</strong></p></li>
+<li><p>how to output <strong>extra variables</strong></p></li>
+<li><p>how to output <strong>extra history files</strong></p></li>
+<li><p>how to control the <strong>number of time samples</strong> written to a history file</p></li>
 </ul>
-<p><strong>Example of a small perturbation</strong></p>
-<section id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
-<p>Run the cell below. This adds some butterfly effect (a small T temperature). <br>
-Each student adds a different butterfly effect.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;pertlim = 0e-13&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>user_nl_cam
-</pre></div>
+<p>This can be achieved with 3 namelist variables:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">nhtfrq</span></code></strong>: sets the output frequency</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">fincl</span></code></strong>: add variables to the history file</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">mfilt</span></code></strong>: maximum number of time samples written to a history file</p></li>
+</ul>
+<section id="customizing-cam-output-frequency-nhtfrq">
+<h2>Customizing CAM output frequency: nhtfrq<a class="headerlink" href="#customizing-cam-output-frequency-nhtfrq" title="Permalink to this headline">#</a></h2>
+<p>The default history file from CAM is a monthly average.
+We can change the output frequency with the namelist variable nhtfrq</p>
+<ul class="simple">
+<li><p>If <strong><code class="docutils literal notranslate"><span class="pre">nhtfrq=0</span></code></strong>, the file will be a <strong>monthly</strong> average</p></li>
+<li><p>If <strong><code class="docutils literal notranslate"><span class="pre">nhtfrq&gt;0</span></code></strong>, frequency is input as number of <strong>timesteps</strong>.</p></li>
+<li><p>If <strong><code class="docutils literal notranslate"><span class="pre">nhtfrq&lt;0</span></code></strong>, frequency is input as number of <strong>hours</strong>.</p></li>
+</ul>
+<p>For instance to change the history file from monthly average to daily average, we set the namelist variable:</p>
+<ul class="simple">
+<li><p>nhtfrq = -24</p></li>
+</ul>
+<p>The <strong>steps</strong> to modify the <strong>namelists</strong> are:</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">$CASEROOT</span></code></p>
+<ul class="simple">
+<li><p>edit the <strong><code class="docutils literal notranslate"><span class="pre">user_nl_xxx</span></code></strong> files.</p></li>
+<li><p>generate the namelists by running <strong><code class="docutils literal notranslate"><span class="pre">./preview_namelists</span></code></strong>.</p></li>
+</ul>
+<p>This results in the creation of component namelists, the <code class="docutils literal notranslate"><span class="pre">*_in</span></code> files (i.e. atm_in, lnd_in, and so on) in <code class="docutils literal notranslate"><span class="pre">$CASEROOT/CaseDocs/</span></code> and in <code class="docutils literal notranslate"><span class="pre">$RUNDIR</span></code>.</p>
 </div>
-</div>
-</div>
-<br>
-Let's wait for everyone before going to step 5.<br><br>
-</section>
-</section>
-<hr class="docutils" />
-<section id="set-the-length-of-the-run">
-<h2>5. Set the length of the run<a class="headerlink" href="#set-the-length-of-the-run" title="Permalink to this headline">#</a></h2>
-<p>By default, cesm is set to produce 5-day simulations. Here, we modify the case to do a one-month simulation.
-<br></p>
-<section id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
-<p>Run the following cell to change the length of the simulation to one month.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./xmlchange<span class="w"> </span><span class="nv">STOP_OPTION</span><span class="o">=</span>nmonths,STOP_N<span class="o">=</span><span class="m">1</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Run the following cell to check the length of the simulation was properly set</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./xmlquery<span class="w"> </span>STOP_OPTION,STOP_N
-</pre></div>
-</div>
-</div>
-</div>
-<p><br><br> If you see:</p>
-<blockquote>
-<div><p>STOP_OPTION: nmonths <br>
-STOP_N: 1 <br></p>
-</div></blockquote>
-<p>Great!  You have set the case to run the model for one month.  Let’s wait for everyone before going to step 6.
-<br><br></p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="running-your-case">
-<h2>6. Running your case<a class="headerlink" href="#running-your-case" title="Permalink to this headline">#</a></h2>
-<p>Running a case is also simple - we just issue the <code class="docutils literal notranslate"><span class="pre">case.submit</span></code> command.  This will start by checking that we have all of the necessary input data for our run, and downloading whatever is missing, and then it will perform the actual simulation - which we’ve configured to run for one month.</p>
-<section id="exercise-6">
-<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">#</a></h3>
-<p>Submit your simulation. Run the cell below.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./case.submit
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Check the simulation is running</strong></p>
-<p>When you submit a simulation, it will be waiting in the computer until there is enough computer resources. <br> The command <code class="docutils literal notranslate"><span class="pre">squeue</span></code> allows you to make sure your simulation is in the queue or running.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><br><br> If your simulation is running, you should see something like:</p>
-<p><img alt="job stats" src="../../_images/running_on_cheyenne_image3.png" /></p>
-<hr class="docutils" />
-<p>Well done. You are now running your first CESM simulation. We will look at the results of your simulation tomorrow.</p>
-</section>
-</section>
-<div class="toctree-wrapper compound">
-</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">*_in</span></code> files <strong>should not be edited</strong>. Any manual changes of the <code class="docutils literal notranslate"><span class="pre">*_in</span></code> files will be overwritten when you compile or submit the run.</p>
+<p>Note that step <code class="docutils literal notranslate"><span class="pre">./preview_namelists</span></code> is <strong>optional</strong> as the script <em>preview_namelists</em> is also called when you build the model.</p>
+<p><img alt="CESM directories and namelists" src="../../_images/CESM_directories_and_namelists.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Overview of the CESM directories and the namelist files. </p></em></p>
+<div class="alert alert-info" style="text-align: center;">
+<p>Complete documentation about the namelist variables can be found on the <a class="reference external" href="https://www2.cesm.ucar.edu/models/cesm2/settings/current/">CESM webpage.</a></p>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1045,16 +794,16 @@ STOP_N: 1 <br></p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "bash"
+            mode: "python"
         },
         kernelOptions: {
-            name: "bash",
-            path: "./notebooks/introduction"
+            name: "python3",
+            path: "./notebooks/namelist"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'bash'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -1063,20 +812,6 @@ STOP_N: 1 <br></p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="using_jupyter_notebooks.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Using Jupyter Notebooks</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="cheyenne/terminals.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Terminals</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

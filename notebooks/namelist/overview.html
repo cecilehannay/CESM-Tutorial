@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="./preview_namelists" href="basics/preview_namelists.html" />
+    <link rel="next" title="Using Documentation about Namelist Variables" href="documentation.html" />
     <link rel="prev" title="Physics Timestep" href="../modifications/xml/physics_timestep.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -332,48 +332,26 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Overview of Namelist Modifications
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="documentation.html">
+   Using Documentation about Namelist Variables
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="output.html">
+   Customizing Output in CESM
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="basics/preview_namelists.html">
-     ./preview_namelists
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="basics/cam.html">
-     CAM
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="basics/other_components.html">
-     Other Components
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="output.html">
-   Customizing Output in CAM
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="output/frequency.html">
-     Changing Output Frequency
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
 </ul>
@@ -392,8 +370,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../sourcemods/add_fields.html">
    Adding New History Fields
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -731,20 +709,22 @@ title="Print to PDF"
 <h1>Overview of Namelist Modifications<a class="headerlink" href="#overview-of-namelist-modifications" title="Permalink to this headline">#</a></h1>
 <p>There are a number of ways that the model can be modified via namelist settings. These values control the way the code is run and <strong>do not require a recompile</strong> of the code after they are changed.</p>
 <p>The <strong>namelist variables</strong> include settings to tune the model for various quantities, control over output and many other options. For instance, the output frequency in the different components can be controled via the namelists.</p>
+<div class="alert alert-info" style="text-align: left;">
 <p>The <strong>steps</strong> to modify the <strong>namelists</strong> are:</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">$CASEROOT</span></code></p>
 <ul class="simple">
-<li><p>In <code class="docutils literal notranslate"><span class="pre">$CASEROOT</span></code> edit the <strong><code class="docutils literal notranslate"><span class="pre">user_nl_xxx</span></code></strong> files.</p></li>
-<li><p>From <code class="docutils literal notranslate"><span class="pre">$CASEROOT</span></code> generate the namelists by running <strong><code class="docutils literal notranslate"><span class="pre">./preview_namelists</span></code></strong>. Note that this step is <em>optional</em> as the script <em>preview_namelists</em> is also called when you build the model.</p></li>
-<li><p>This results in the creation of component namelists, the <code class="docutils literal notranslate"><span class="pre">*_in</span></code> files (<code class="docutils literal notranslate"><span class="pre">atm_in</span></code>, <code class="docutils literal notranslate"><span class="pre">lnd_in</span></code>, and so on) in <code class="docutils literal notranslate"><span class="pre">$CASEROOT/CaseDocs/</span></code> and in <code class="docutils literal notranslate"><span class="pre">$RUNDIR</span></code>.</p></li>
+<li><p>edit the <strong><code class="docutils literal notranslate"><span class="pre">user_nl_xxx</span></code></strong> files.</p></li>
+<li><p>generate the namelists by running <strong><code class="docutils literal notranslate"><span class="pre">./preview_namelists</span></code></strong>.</p></li>
 </ul>
+<p>This results in the creation of component namelists, the <code class="docutils literal notranslate"><span class="pre">*_in</span></code> files (i.e. atm_in, lnd_in, and so on) in <code class="docutils literal notranslate"><span class="pre">$CASEROOT/CaseDocs/</span></code> and in <code class="docutils literal notranslate"><span class="pre">$RUNDIR</span></code>.</p>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">*_in</span></code> files <strong>should not be edited</strong>. Any manual changes of the <code class="docutils literal notranslate"><span class="pre">*_in</span></code> files will be overwritten when you compile or submit the run.</p>
-<p><img alt="CESM directories and namelists" src="../images/modifications/CESM_directories_and_namelists.png" /></p>
-<p><em>Figure: Overview of the CESM directories and the namelist files.</em></p>
+<p>Note that step <code class="docutils literal notranslate"><span class="pre">./preview_namelists</span></code> is <strong>optional</strong> as the script <em>preview_namelists</em> is also called when you build the model.</p>
+<p><img alt="CESM directories and namelists" src="../../_images/CESM_directories_and_namelists.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Overview of the CESM directories and the namelist files. </p></em></p>
 <div class="alert alert-info" style="text-align: center;">
 <p>Complete documentation about the namelist variables can be found on the <a class="reference external" href="https://www2.cesm.ucar.edu/models/cesm2/settings/current/">CESM webpage.</a></p>
-</div><div class="toctree-wrapper compound">
-</div>
-</section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -780,10 +760,10 @@ title="Print to PDF"
             <p class="prev-next-title">Physics Timestep</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="basics/preview_namelists.html" title="next page">
+    <a class='right-next' id="next-link" href="documentation.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">./preview_namelists</p>
+        <p class="prev-next-title">Using Documentation about Namelist Variables</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
