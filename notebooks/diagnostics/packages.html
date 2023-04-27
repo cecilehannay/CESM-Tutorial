@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>CESM Diagnostics Packages &#8212; CESM Tutorial</title>
+    <title>Diagnostic Packages &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="The Atmosphere Diagnostics Framework (ADF)" href="packages/adf.html" />
-    <link rel="prev" title="Regridding output" href="regridding.html" />
+    <link rel="next" title="GeoCAT" href="geocat.html" />
+    <link rel="prev" title="Regridding" href="regridding.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -109,7 +109,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../README.html">
-                    Welcome to the CESM Tutorial!
+                    Welcome to the CESM Tutorial
                 </a>
             </li>
         </ul>
@@ -120,9 +120,31 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction.html">
+  <a class="reference internal" href="../introduction/using_jupyter_notebooks.html">
    Using Jupyter Notebooks
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../introduction/running_on_cheyenne.html">
+   Running on ‘Cheyenne’ (Example!)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/cheyenne/terminals.html">
+     Terminals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/cheyenne/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -132,45 +154,175 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../basics/downloading.html">
-   Downloading CESM
+  <a class="reference internal" href="../basics/overview.html">
+   Overview
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../basics/running.html">
-   Your first CESM run
+  <a class="reference internal" href="../basics/setting_up_the_workspace.html">
+   Setting Up the Workspace
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../basics/downloading_cesm.html">
+   Downloading CESM
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/downloading_cesm/git_clone.html">
+     Git Clone
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/downloading_cesm/git_checkout.html">
+     Git Checkout
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/downloading_cesm/manage_externals.html">
+     Manage Externals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../basics/the_cesm_code.html">
+   The CESM Code
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/the_cesm_code/cesm_components.html">
+     CESM Components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/the_cesm_code/inputdata.html">
+     Input Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../basics/your_first_cesm_run.html">
+   Your First CESM Run
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/your_first_cesm_run/basic_workflow.html">
+     Basic Workflow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/your_first_cesm_run/checking_queues_and_jobs.html">
+     Checking Queues and Jobs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/your_first_cesm_run/case_directory_and_documentation.html">
+     Case Directory and Documentation
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Simple Modifications
+  Simple XML Modifications
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../modifications/simple/start_stop.html">
-   Starting &amp; stopping a run
+  <a class="reference internal" href="../modifications/xml/overview.html">
+   Overview of Simple XML Modifications
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../modifications/simple/restart.html">
-   Restarting a run
+  <a class="reference internal" href="../modifications/xml/model_control_files.html">
+   Model Control Files (*.xml)
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modifications/xml/run_length.html">
+   Controlling Run Length
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modifications/xml/run_length/starting_and_stopping.html">
+     Starting and Stopping
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modifications/xml/run_length/restarting.html">
+     Restarting a Run
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modifications/xml/run_length/changing_run_length.html">
+     Changing Run Length
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modifications/xml/run_length/number_of_submissions.html">
+     Controlling the Number of Submissions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modifications/xml/run_length/timing_files.html">
+     Using Timing Files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modifications/xml/modify_run_type.html">
+   Modify the Type of Run
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modifications/xml/modify_run_type/hybrid_branch_restart.html">
+     Hybrid, Branch and Restart runs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modifications/xml/modify_run_type/run_variables.html">
+     Run Variables (RUN_*)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modifications/xml/copying_cases.html">
+   Copying Cases
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../modifications/simple/run_length.html">
-   Changing the run length
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modifications/simple/run_type.html">
-   Run types: hybrid, branch, restart
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modifications/simple/changing_timestep.html">
-   Changing the time-step
+  <a class="reference internal" href="../modifications/xml/physics_timestep.html">
+   Physics Timestep
   </a>
  </li>
 </ul>
@@ -180,34 +332,46 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../modifications/namelist/basic.html">
-   Basics of namelist modification
-  </a>
- </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../modifications/namelist/output.html">
-   How to customize output
+  <a class="reference internal" href="../namelist/overview.html">
+   Overview of Namelist Modifications
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../modifications/namelist/output/frequency.html">
-     Changing output frequency
+    <a class="reference internal" href="../namelist/basics/preview_namelists.html">
+     ./preview_namelists
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../modifications/namelist/output/files.html">
-     Adding extra history files
+    <a class="reference internal" href="../namelist/basics/cam.html">
+     CAM
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../modifications/namelist/output/variables.html">
-     Adding new variables
+    <a class="reference internal" href="../namelist/basics/other_components.html">
+     Other Components
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../namelist/output.html">
+   Customizing Output in CAM
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../namelist/output/frequency.html">
+     Changing Output Frequency
     </a>
    </li>
   </ul>
@@ -220,18 +384,40 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../modifications/source/basic.html">
-   The basics of source code modifications
+  <a class="reference internal" href="../sourcemods/basics.html">
+   Basics of Source Modificatons
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modifications/source/addfld.html">
-   How to add a new field to history files
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../sourcemods/add_fields.html">
+   Adding New History Fields
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sourcemods/add_fields/cam.html">
+     Adding CAM fields
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sourcemods/add_fields/clm.html">
+     Adding CLM fields
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sourcemods/add_fields/pop.html">
+     Adding POP fields
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../modifications/source/physics.html">
-   How to modify some physics routine (need to pick one!)
+  <a class="reference internal" href="../sourcemods/modifying_physics.html">
+   Example of Modifying Model Physicsn
   </a>
  </li>
 </ul>
@@ -242,8 +428,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../troubleshooting.html">
+  <a class="reference internal" href="../troubleshooting/troubleshooting.html">
    Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../troubleshooting/log_files.html">
+   Log Files
   </a>
  </li>
 </ul>
@@ -254,36 +445,41 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="plot_fields.html">
-   Plotting fields (matplotlib?)
+  <a class="reference internal" href="plotting_fields.html">
+   Plotting Fields
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regridding.html">
-   Regridding output
+   Regridding
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   CESM Diagnostics Packages
+   Diagnostic Packages
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="packages/adf.html">
-     The Atmosphere Diagnostics Framework (ADF)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="packages/other.html">
-     Some other diagnostics code..
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="geocat.html">
+   GeoCAT
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="esds.html">
+   ESDS
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Challenge Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../challenge/breakout1.html">
+   Breakout Exercise 1
+  </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -293,23 +489,38 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../tools/jupyter.html">
-   Jupyter Notebooks
+  <a class="reference internal" href="../tools/jupyter_notebooks.html">
+   Jupyter Resources
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../tools/python.html">
-   Python
+   Python Resources
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tools/netcdf.html">
+  <a class="reference internal" href="../tools/netcdf_tools.html">
    NetCDF Tools
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../tools/github.html">
-   Github
+   Github Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/unix_basics.html">
+   Unix Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/fortran.html">
+   Fortran Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/text_editors.html">
+   Text Editors
   </a>
  </li>
 </ul>
@@ -504,7 +715,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>CESM Diagnostics Packages</h1>
+                <h1>Diagnostic Packages</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -516,11 +727,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="cesm-diagnostics-packages">
-<h1>CESM Diagnostics Packages<a class="headerlink" href="#cesm-diagnostics-packages" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="diagnostic-packages">
+<h1>Diagnostic Packages<a class="headerlink" href="#diagnostic-packages" title="Permalink to this headline">#</a></h1>
 <p>This is a placeholder for this lesson.</p>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -535,7 +744,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks/diagnostics"
         },
         predefinedOutput: true
@@ -554,13 +763,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Regridding output</p>
+            <p class="prev-next-title">Regridding</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="packages/adf.html" title="next page">
+    <a class='right-next' id="next-link" href="geocat.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">The Atmosphere Diagnostics Framework (ADF)</p>
+        <p class="prev-next-title">GeoCAT</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
