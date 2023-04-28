@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Customizing CAM output &#8212; CESM Tutorial</title>
+    <title>Customize CAM output &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -354,7 +354,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Customizing CAM output
+     Customize CAM output
     </a>
    </li>
    <li class="toctree-l2">
@@ -720,12 +720,22 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#customizing-cam-output-frequency-nhtfrq">
-   Customizing CAM output frequency: nhtfrq
+   Customizing CAM output frequency:
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     nhtfrq
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#customizing-cam-history-files-mfilt">
-   Customizing CAM history files: mfilt
+   Customizing CAM history files:
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mfilt
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -738,6 +748,19 @@ title="Print to PDF"
      </span>
     </code>
    </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#averaging-flag-for-the-fincl-variables">
+   Averaging flag for the
+   <strong>
+    <code class="docutils literal notranslate">
+     <span class="pre">
+      fincl
+     </span>
+    </code>
+   </strong>
+   variables
   </a>
  </li>
 </ul>
@@ -749,7 +772,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Customizing CAM output</h1>
+                <h1>Customize CAM output</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -761,12 +784,22 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#customizing-cam-output-frequency-nhtfrq">
-   Customizing CAM output frequency: nhtfrq
+   Customizing CAM output frequency:
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     nhtfrq
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#customizing-cam-history-files-mfilt">
-   Customizing CAM history files: mfilt
+   Customizing CAM history files:
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mfilt
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -779,6 +812,19 @@ title="Print to PDF"
      </span>
     </code>
    </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#averaging-flag-for-the-fincl-variables">
+   Averaging flag for the
+   <strong>
+    <code class="docutils literal notranslate">
+     <span class="pre">
+      fincl
+     </span>
+    </code>
+   </strong>
+   variables
   </a>
  </li>
 </ul>
@@ -791,8 +837,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="customizing-cam-output">
-<h1>Customizing CAM output<a class="headerlink" href="#customizing-cam-output" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="customize-cam-output">
+<h1>Customize CAM output<a class="headerlink" href="#customize-cam-output" title="Permalink to this headline">#</a></h1>
 <p>In this section, we will cover:</p>
 <ul class="simple">
 <li><p>how to change the <strong>output frequency</strong></p></li>
@@ -807,7 +853,7 @@ title="Print to PDF"
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">fincl</span></code></strong>: add variables to the history file</p></li>
 </ul>
 <section id="customizing-cam-output-frequency-nhtfrq">
-<h2>Customizing CAM output frequency: nhtfrq<a class="headerlink" href="#customizing-cam-output-frequency-nhtfrq" title="Permalink to this headline">#</a></h2>
+<h2>Customizing CAM output frequency: <code class="docutils literal notranslate"><span class="pre">nhtfrq</span></code><a class="headerlink" href="#customizing-cam-output-frequency-nhtfrq" title="Permalink to this headline">#</a></h2>
 <p>The default history file from CAM is a monthly average.
 We can change the output frequency with the namelist variable <strong><code class="docutils literal notranslate"><span class="pre">nhtfrq</span></code></strong></p>
 <ul class="simple">
@@ -831,9 +877,21 @@ Add the following line to <font face="Courier"><strong>user_nl_cam</strong></fon
 nhtfrq = -3<br>
 </font>
 </details>
+</div><div class="alert alert-info">
+<strong>Exercise</strong>
+<p>The default history file in CAM is a monthly average. How do you modify the output to output 3-hourly data ?</p>
+</div>
+<div class="alert alert-success">
+<details>   
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+Add the following line to <font face="Courier"><strong>user_nl_cam</strong></font>:<br>
+<font face="Courier" color='black'>    
+nhtfrq = -3<br>
+</font>
+</details>
 </div></section>
 <section id="customizing-cam-history-files-mfilt">
-<h2>Customizing CAM history files: mfilt<a class="headerlink" href="#customizing-cam-history-files-mfilt" title="Permalink to this headline">#</a></h2>
+<h2>Customizing CAM history files: <code class="docutils literal notranslate"><span class="pre">mfilt</span></code><a class="headerlink" href="#customizing-cam-history-files-mfilt" title="Permalink to this headline">#</a></h2>
 <p>To control the number of time samples in the history file, we use the variable <strong><code class="docutils literal notranslate"><span class="pre">mfilt</span></code></strong>. <br>
 This variable specifies is the maximum number of time samples written to a history file.</p>
 <p>For example, if we want to have 10 time samples on each history file, we can set the namelist variable as follows:</p>
@@ -900,13 +958,47 @@ What is the namelist setting to add a monthly history h1 with the variables U, V
 <font face="Courier" color='black'><br />
 ./xmlchange STOP_N=nmonths, STOP_OPTION=1<br>
 </font></p>
-<p>Add the following line to <font face="Courier"><strong>user_nl_cam</strong></font>:
+<p>Add the following lines to <font face="Courier"><strong>user_nl_cam</strong></font>:
 <font face="Courier" color='black'><br />
 nhtfrq = 0, 0, -24 <br>
 mfilt = 1, 10, 10 <br>
 fincl2 = ‘U, V’, ‘T’ <br>
 fincl3 = ‘PRECT’ <br>
 </font></p>
+</details>
+</div>
+</section>
+<section id="averaging-flag-for-the-fincl-variables">
+<h2>Averaging flag for the <strong><code class="docutils literal notranslate"><span class="pre">fincl</span></code></strong> variables<a class="headerlink" href="#averaging-flag-for-the-fincl-variables" title="Permalink to this headline">#</a></h2>
+<p>Using a “:” following a field gives the averaging flag for the output field.</p>
+<p>Valid flags are:</p>
+<ul class="simple">
+<li><p>A ==&gt; Average</p></li>
+<li><p>B ==&gt; GMT 00:00:00 average</p></li>
+<li><p>I ==&gt; Instantaneous</p></li>
+<li><p>M ==&gt; Minimum</p></li>
+<li><p>X ==&gt; Maximum</p></li>
+<li><p>L ==&gt; Local-time</p></li>
+<li><p>S ==&gt; Standard deviation</p></li>
+</ul>
+<p>For instance, the line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">fincl1</span> <span class="o">=</span> <span class="s1">&#39;PRECT:M&#39;</span> 
+</pre></div>
+</div>
+<p>is used to add the minimum of <code class="docutils literal notranslate"><span class="pre">PRECT</span></code> to the file <code class="docutils literal notranslate"><span class="pre">h0</span></code></p>
+<div class="alert alert-info">
+<strong>Exercise</strong>
+<p>What happens if we set in <font face="Courier"><strong>user_nl_cam</strong></font>:
+<font face="Courier" color='black'><br />
+fincl2   = ‘T:I’,’Q:I’,’U:I’,’V:I’ <br>
+nhtfrq   = 0, -3 <br>
+mfilt   = 1, 8 <br>
+</font></p>
+</div>
+<div class="alert alert-success">  
+<details>  
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p>In addition to the monthly history file <strong>h0</strong>, we will also output the file <strong>h1</strong> with instantaneous values of <strong>T, Q, U, and V</strong>. These variables will be output every <strong>3 hours</strong>, resulting in <strong>8 time samples</strong> in each <strong>h1</strong> file. A new file will be created <strong>every day</strong>.</p>
 </details>
 </div>
 </section>
