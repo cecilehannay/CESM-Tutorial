@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Customize CAM output &#8212; CESM Tutorial</title>
+    <title>Customize CICE output &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -364,7 +364,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Customize CAM output
+     Customize CICE output
     </a>
    </li>
   </ul>
@@ -696,148 +696,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#customizing-cam-output-frequency-nhtfrq">
-   Customizing CAM output frequency:
-   <strong>
-    <code class="docutils literal notranslate">
-     <span class="pre">
-      nhtfrq
-     </span>
-    </code>
-   </strong>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#customizing-cam-history-files-mfilt">
-   Customizing CAM history files:
-   <strong>
-    <code class="docutils literal notranslate">
-     <span class="pre">
-      mfilt
-     </span>
-    </code>
-   </strong>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#add-extra-variables-and-history-files-fincl">
-   Add extra variables and history files:
-   <strong>
-    <code class="docutils literal notranslate">
-     <span class="pre">
-      fincl
-     </span>
-    </code>
-   </strong>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#averaging-flag-for-the-fincl-variables">
-   Averaging flag for the
-   <strong>
-    <code class="docutils literal notranslate">
-     <span class="pre">
-      fincl
-     </span>
-    </code>
-   </strong>
-   variables
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Customize CAM output</h1>
+                <h1>Customize CICE output</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#customizing-cam-output-frequency-nhtfrq">
-   Customizing CAM output frequency:
-   <strong>
-    <code class="docutils literal notranslate">
-     <span class="pre">
-      nhtfrq
-     </span>
-    </code>
-   </strong>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#customizing-cam-history-files-mfilt">
-   Customizing CAM history files:
-   <strong>
-    <code class="docutils literal notranslate">
-     <span class="pre">
-      mfilt
-     </span>
-    </code>
-   </strong>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#add-extra-variables-and-history-files-fincl">
-   Add extra variables and history files:
-   <strong>
-    <code class="docutils literal notranslate">
-     <span class="pre">
-      fincl
-     </span>
-    </code>
-   </strong>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#averaging-flag-for-the-fincl-variables">
-   Averaging flag for the
-   <strong>
-    <code class="docutils literal notranslate">
-     <span class="pre">
-      fincl
-     </span>
-    </code>
-   </strong>
-   variables
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -845,159 +720,21 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="customize-cam-output">
-<h1>Customize CAM output<a class="headerlink" href="#customize-cam-output" title="Permalink to this headline">#</a></h1>
-<p>In this section, we will cover:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="customize-cice-output">
+<h1>Customize CICE output<a class="headerlink" href="#customize-cice-output" title="Permalink to this headline">#</a></h1>
+<p>The CICE output can changed with the namelist variables</p>
 <ul class="simple">
-<li><p>how to change the <strong>output frequency</strong></p></li>
-<li><p>how to control the <strong>number of time samples</strong> written to a history file</p></li>
-<li><p>how to output <strong>extra variables</strong></p></li>
-<li><p>how to output <strong>extra history files</strong></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">histfreq</span></code></strong>: Frequency of output written to history files (‘1’, ‘m’, ‘d’, ‘y’, …)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">histfreq_n</span></code></strong>: Frequency history data is written to history files</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">hist_avg</span></code></strong>: if false =&gt; instantaneous values
+if true =&gt; time-averages</p></li>
 </ul>
-<p>This can be achieved with 3 namelist variables:</p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">nhtfrq</span></code></strong>: sets the output frequency</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">mfilt</span></code></strong>: maximum number of time samples written to a history file</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">fincl</span></code></strong>: add variables to the history file</p></li>
-</ul>
-<section id="customizing-cam-output-frequency-nhtfrq">
-<h2>Customizing CAM output frequency: <strong><code class="docutils literal notranslate"><span class="pre">nhtfrq</span></code></strong><a class="headerlink" href="#customizing-cam-output-frequency-nhtfrq" title="Permalink to this headline">#</a></h2>
-<p>The default history file from CAM is a monthly average.
-We can change the output frequency with the namelist variable <strong><code class="docutils literal notranslate"><span class="pre">nhtfrq</span></code></strong></p>
-<ul class="simple">
-<li><p>If <strong><code class="docutils literal notranslate"><span class="pre">nhtfrq=0</span></code></strong>, the file will be a <strong>monthly</strong> average</p></li>
-<li><p>If <strong><code class="docutils literal notranslate"><span class="pre">nhtfrq&gt;0</span></code></strong>, frequency is input as number of <strong>timesteps</strong>.</p></li>
-<li><p>If <strong><code class="docutils literal notranslate"><span class="pre">nhtfrq&lt;0</span></code></strong>, frequency is input as number of <strong>hours</strong>.</p></li>
-</ul>
-<p>For instance to change the history file from monthly average to daily average, we set the namelist variable:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">nhtfrq</span> <span class="o">=</span> <span class="o">-</span><span class="mi">24</span>
+<p>user_nl_cice to output an extra history file with daily values (leaving the primary history file as monthly):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">histfreq</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span>
+     <span class="n">histfreq_n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span> 
 </pre></div>
 </div>
-<div class="alert alert-info">
-<strong>Exercise</strong>
-<p>The default history file in CAM is a monthly average. How do you modify the output to output 3-hourly data ?</p>
-</div>
-<div class="alert alert-success">
-<details>   
-<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-Add the following line to <font face="Courier"><strong>user_nl_cam</strong></font>:<br>
-<font face="Courier" color='black'>    
-nhtfrq = -3<br>
-</font>
-</details>
-</div></section>
-<section id="customizing-cam-history-files-mfilt">
-<h2>Customizing CAM history files: <strong><code class="docutils literal notranslate"><span class="pre">mfilt</span></code></strong><a class="headerlink" href="#customizing-cam-history-files-mfilt" title="Permalink to this headline">#</a></h2>
-<p>To control the number of time samples in the history file, we use the variable <strong><code class="docutils literal notranslate"><span class="pre">mfilt</span></code></strong>. <br>
-This variable specifies is the maximum number of time samples written to a history file.</p>
-<p>For example, if we want to have 10 time samples on each history file, we can set the namelist variable as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">10</span>
-</pre></div>
-</div>
-<p>To output daily data for a 1-year run, we can use the following values:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">nhtfrq</span> <span class="o">=</span> <span class="o">-</span><span class="mi">24</span>   
-    <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">365</span>
-</pre></div>
-</div>
-<p>If we want to output daily data with only 1 time sample per file, we can set the variables as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">nhtfrq</span> <span class="o">=</span> <span class="o">-</span><span class="mi">24</span>
-    <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<p>NB: we cannot change mfilt for monthly frequency. 	For monthly frequency, we always have:
-<code class="docutils literal notranslate"><span class="pre">mfilt</span> <span class="pre">=</span> <span class="pre">1</span></code></p>
-<div class="alert alert-info">
-<strong>Exercise</strong>
-What is the setting to generate daily data for a month-long simulation that will create a file every day? 
-</div>
-<div class="alert alert-success">  
-<details>  
-<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>Modify <font face="Courier"><strong>env_run.xml</strong></font> with the command:
-<font face="Courier" color='black'><br />
-./xmlchange STOP_N=nmonths, STOP_OPTION=1<br>
-</font></p>
-<p>Add the following line to <font face="Courier"><strong>user_nl_cam</strong></font>:
-<font face="Courier" color='black'><br />
-nhtfrq = -3<br>
-mfilt = 8
-</font></p>
-</details>
-</div>
-</section>
-<section id="add-extra-variables-and-history-files-fincl">
-<h2>Add extra variables and history files: <strong><code class="docutils literal notranslate"><span class="pre">fincl</span></code></strong><a class="headerlink" href="#add-extra-variables-and-history-files-fincl" title="Permalink to this headline">#</a></h2>
-<p>You can output up to 10 history files:<strong><code class="docutils literal notranslate"><span class="pre">h0</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">h1</span></code></strong>, …, <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong>.</p>
-<ul class="simple">
-<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">h0</span></code></strong> file contains the default variables (added in the code with <code class="docutils literal notranslate"><span class="pre">call</span> <span class="pre">add_default</span></code>. See SourceMods section).</p></li>
-<li><p>For the files <strong><code class="docutils literal notranslate"><span class="pre">h1</span></code></strong> to <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong>, the user must specify the variables to output.</p></li>
-</ul>
-<p>To control the list of fields in the history files, use the namelist variable <strong><code class="docutils literal notranslate"><span class="pre">fincl</span></code></strong></p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">fincl1</span></code></strong> controls the fields in <strong><code class="docutils literal notranslate"><span class="pre">h0</span></code></strong></p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">fincl2</span></code></strong> controls the fields in <strong><code class="docutils literal notranslate"><span class="pre">h1</span></code></strong></p></li>
-<li><p>…</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">fincl10</span></code></strong> controls the fields in <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong></p></li>
-</ul>
-<p>For example, to add the field PRECT to the h0 file, use the line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">fincl1</span> <span class="o">=</span> <span class="s1">&#39;PRECT&#39;</span> 
-</pre></div>
-</div>
-<div class="alert alert-info">
-<strong>Exercise</strong>
-What is the namelist setting to add a monthly history h1 with the variables U, V, T and a daily history h2 with the variables 'PRECT' output 10 time samples in h1 and h2 ? 
-</div>
-<div class="alert alert-success">  
-<details>  
-<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>Modify <font face="Courier"><strong>env_run.xml</strong></font> with the command:
-<font face="Courier" color='black'><br />
-./xmlchange STOP_N=nmonths, STOP_OPTION=1<br>
-</font></p>
-<p>Add the following lines to <font face="Courier"><strong>user_nl_cam</strong></font>:
-<font face="Courier" color='black'><br />
-nhtfrq = 0, 0, -24 <br>
-mfilt = 1, 10, 10 <br>
-fincl2 = ‘U, V’, ‘T’ <br>
-fincl3 = ‘PRECT’ <br>
-</font></p>
-</details>
-</div>
-</section>
-<section id="averaging-flag-for-the-fincl-variables">
-<h2>Averaging flag for the <strong><code class="docutils literal notranslate"><span class="pre">fincl</span></code></strong> variables<a class="headerlink" href="#averaging-flag-for-the-fincl-variables" title="Permalink to this headline">#</a></h2>
-<p>Using a “:” following a field gives the averaging flag for the output field.</p>
-<p>Valid flags are:</p>
-<ul class="simple">
-<li><p>A ==&gt; Average</p></li>
-<li><p>B ==&gt; GMT 00:00:00 average</p></li>
-<li><p>I ==&gt; Instantaneous</p></li>
-<li><p>M ==&gt; Minimum</p></li>
-<li><p>X ==&gt; Maximum</p></li>
-<li><p>L ==&gt; Local-time</p></li>
-<li><p>S ==&gt; Standard deviation</p></li>
-</ul>
-<p>For instance, the line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">fincl1</span> <span class="o">=</span> <span class="s1">&#39;PRECT:M&#39;</span> 
-</pre></div>
-</div>
-<p>is used to add the minimum of <code class="docutils literal notranslate"><span class="pre">PRECT</span></code> to the file <code class="docutils literal notranslate"><span class="pre">h0</span></code></p>
-<div class="alert alert-info">
-<strong>Exercise</strong>
-<p>What happens if we set in <font face="Courier"><strong>user_nl_cam</strong></font>:
-<font face="Courier" color='black'><br />
-fincl2   = ‘T:I’,’Q:I’,’U:I’,’V:I’ <br>
-nhtfrq   = 0, -3 <br>
-mfilt   = 1, 8 <br>
-</font></p>
-</div>
-<div class="alert alert-success">  
-<details>  
-<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>In addition to the monthly history file <strong>h0</strong>, we will also output the file <strong>h1</strong> with instantaneous values of <strong>T, Q, U, and V</strong>. These variables will be output every <strong>3 hours</strong>, resulting in <strong>8 time samples</strong> in each <strong>h1</strong> file. A new file will be created <strong>every day</strong>.</p>
-</details>
-</div>
-</section>
+<p>See: <a class="reference external" href="http://www.cesm.ucar.edu/models/cesm2/settings/current/cice_nml.html">http://www.cesm.ucar.edu/models/cesm2/settings/current/cice_nml.html</a></p>
 </section>
 
     <script type="text/x-thebe-config">
