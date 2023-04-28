@@ -886,8 +886,28 @@ mfilt = 8
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">fincl10</span></code></strong> controls the fields in <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong></p></li>
 </ul>
 <p>For example, to add the field PRECT to the h0 file, use the line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fincl1</span> <span class="o">=</span> <span class="s1">&#39;PRECT&#39;</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">fincl1</span> <span class="o">=</span> <span class="s1">&#39;PRECT&#39;</span> 
 </pre></div>
+</div>
+<div class="alert alert-info">
+<strong>Exercise</strong>
+What is the namelist setting to add a monthly history h1 with the variables U, V, T and a daily history h2 with the variables 'PRECT' output 10 time samples in h1 and h2 ? 
+</div>
+<div class="alert alert-success">  
+<details>  
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p>Modify <font face="Courier"><strong>env_run.xml</strong></font> with the command:
+<font face="Courier" color='black'><br />
+./xmlchange STOP_N=nmonths, STOP_OPTION=1<br>
+</font></p>
+<p>Add the following line to <font face="Courier"><strong>user_nl_cam</strong></font>:
+<font face="Courier" color='black'><br />
+nhtfrq = 0, 0, -24 <br>
+mfilt = 1, 10, 10 <br>
+fincl2 = ‘U, V’, ‘T’ <br>
+fincl3 = ‘PRECT’ <br>
+</font></p>
+</details>
 </div>
 </section>
 </section>
