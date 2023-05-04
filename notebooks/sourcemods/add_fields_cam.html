@@ -805,144 +805,6 @@ surface’)
 </ul>
 </div>
 <div class="alert alert-warning">  
-   <summary>
-      <font face="Times New Roman" color='blue'>Click here for hints</font>
-    </summary>
-<p><strong>Tip to add <font face="Courier"><strong>T750</strong></font></strong>  <br></p>
-<ul class="simple">
-<li><p>Use <font face="Courier"><strong>T500</strong></font> as a template for your changes.</p></li>
-<li><p>Find the subroutine containing <font face="Courier"><strong>T750</strong></font>.
-For instance, in the CESMROOT, use the command:</p></li>
-</ul>
-<font face="Courier" color='black'>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>grep –r T500 *    
-</pre></div>
-</div>
-</font>
-<p><strong>Tip to check your solution <font face="Courier"><strong>T750</strong></font></strong> <br></p>
-<ul class="simple">
-<li><p>When the run is completed, go to your archive directory:</p></li>
-<li><p>check the fields <font face="Courier"><strong>T750</strong></font> and <font face="Courier"><strong>T500</strong></font> are in the file <font face="Courier"><strong>h1</strong></font></p></li>
-<li><p>create a file with the difference between <font face="Courier"><strong>T750-T500 </strong></font></p></li>
-<li><p>For instance, you can use ncap2
-<code class="docutils literal notranslate"><span class="pre">ncap2</span> <span class="pre">-s</span> <span class="pre">’T750_minus_T500=T750-T500'</span> <span class="pre">b1850_T750.cam.h1.0001-01-01-00000.nc</span>&#160; <span class="pre">T750-T500.nc</span></code></p></li>
-<li><p>Look at the difference with ncview.</p></li>
-</ul>
-</details>
-</div>
-<div class="alert alert-success">   
-<details>
-<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>#Create a new case <font face="Courier"><strong>b1850_T750</strong></font> with the command:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./create_newcase --case ~/cases/b1850_T750 --compset B1850 --res f19_g17
-</pre></div>
-</div>
-</font>
-<p>#Case <font face="Courier"><strong>setup</strong></font>:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd ~/cases/b1850_T750
-./case.setup 
-</pre></div>
-</div>
-</font>
-<p>#Locate the file where <font face="Courier"><strong>T500</strong> is computed and copy it into <strong>SourceMods/src.atm</strong></font>:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cp /glade/p/cesm/tutorial/cesm2.1_tutorial2022/components/cam/src/physics/cam/cam_diagnostics.F90 SourceMods/src.cam&lt;br&gt;
-</pre></div>
-</div>
-</font>
-<p>#Edit the file <font face="Courier"><strong>SourceMods/src.cam/cam_diagnostics.F90</strong></font> and add the lines:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  !++ add a variable for T750 
-  call addfld (&#39;T750&#39;,       horiz_only,  &#39;A&#39;, &#39;K&#39;,&#39;Temperature at 750 mbar pressure surface&#39;)  
-  !++ add a variable for T750 
-  if (hist_fld_active(&#39;T750&#39;)) then 
-     call vertinterp(ncol, pcols, pver, state%pmid, 75000._r8, state%t, p_surf, &amp; 
-         extrapolate=&#39;T&#39;, ps=state%ps, phis=state%phis)
-     call outfld(&#39;T750    &#39;, p_surf, pcols, lchnk )
-  end if
-</pre></div>
-</div>
-</font>
-<p>#Edit the file <font face="Courier"><strong>user_nl_cam</strong>  and add the lines:</font>
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nhtfrq = 0, -24&lt;br&gt;
-mfilt = 1, 31&lt;br&gt;
-fincl2 = &#39;T750&#39;, &#39;T500&#39;&lt;br&gt;&lt;br&gt;
-</pre></div>
-</div>
-</font>
-<p>#Change the <font face="Courier"><strong>run length </strong>:</font>
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./xmlchange STOP_N=1,STOP_OPTION=nmonths&lt;br&gt;&lt;br&gt;
-</pre></div>
-</div>
-</font>
-<p>#Change <font face="Courier"><strong>job queue</strong></font> and <font face="Courier"><strong>account number</strong> (if needed). For instance:</font>
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./xmlchange JOB_QUEUE=regular,PROJECT=UESM0011&lt;br&gt;&lt;br&gt;
-</pre></div>
-</div>
-</font>
-<p>#Build and submit:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qcmd -- ./case.build&lt;br&gt;
-./case.submit&lt;br&gt;
-</pre></div>
-</div>
-</font>
-<p>#When the run is completed, check the fields <font face="Courier"><strong>T750</strong></font> and <font face="Courier"><strong>T500</strong></font> are in the file <font face="Courier"><strong>h1</strong></font>:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ &lt;br&gt;
-ncdump -h b1850_T750.cam.h1.0001-01-01-00000.nc&lt;br&gt;&lt;br&gt;
-</pre></div>
-</div>
-</font>
-<p>The file should contain:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   float T500(time, lat, lon) ; &lt;br&gt;
-           T500:units = &quot;K&quot; ;&lt;br&gt;
-            T500:long_name = &quot;Temperature at 500 mbar pressure surface&quot; ;&lt;br&gt;
-            T500:cell_methods = &quot;time: mean&quot; ;&lt;br&gt;
-    float T750(time, lat, lon) ;&lt;br&gt;
-            T750:units = &quot;K&quot; ;&lt;br&gt;
-            T750:long_name = &quot;Temperature at 750 mbar pressure surface&quot; ;&lt;br&gt;
-            T750:cell_methods = &quot;time: mean&quot; ;&lt;br&gt;
-</pre></div>
-</div>
-</font>
-<p>#Create a file with the difference between <font face="Courier"><strong>T750-T500 </strong>:</font>
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ &lt;br&gt;
-ncap2 -s ‘T750_minus_T500=T750-T500&#39; b1850_T750.cam.h1.0001-01-01-00000.nc  T750-T500.nc &lt;br&gt;
-</pre></div>
-</div>
-</font>
-<p>#Look at the difference between <font face="Courier"><strong>T750-T500</strong></font> with <font face="Courier"><strong>ncview</strong></font>:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
-ncview T750-T500.nc
-</pre></div>
-</div>
-</font>
-<p>The field <font face="Courier"><strong>T750-T500</strong></font> looks like:</p>
-<p><em><p style="text-align: center;">
-<img alt="ncview T750-T500" src="../../_images/ncview_T750-T500.png" /><br />
-Figure: Overview of the CESM directories and the SourceMods directories. </p></em></p>
-</details>
-</div>
-<div class="alert alert-info">
-<strong>Exercise: Add an additional output variable</strong><br><br>
-<p>Create a case called “b1850_T750” using the compset  B1850  at f19_g17 resolution.</p>
-<ul class="simple">
-<li><p>Add an output field for the temperature at 750 mbar.</p></li>
-<li><p>Output daily values of T750 and T500 in the “h1” history file.</p></li>
-<li><p>Set the namelist to output a single h1 for the run.</p></li>
-<li><p>Make a 1-month run.</p></li>
-</ul>
-</div>
-<div class="alert alert-warning">  
 <details> 
    <summary>
       <font face="Times New Roman" color='blue'>Click here for hints</font>
@@ -953,11 +815,9 @@ Figure: Overview of the CESM directories and the SourceMods directories. </p></e
 <li><p>Find the subroutine containing <font face="Courier"><strong>T750</strong></font>.
 For instance, in the CESMROOT, use the command:</p></li>
 </ul>
-<font face="Courier" color='black'>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>grep –r T500 *    
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    grep –r T500 *    
 </pre></div>
 </div>
-</font>
 <p><strong>Tip to check your solution <font face="Courier"><strong>T750</strong></font></strong> <br></p>
 <ul class="simple">
 <li><p>When the run is completed, go to your archive directory:</p></li>
