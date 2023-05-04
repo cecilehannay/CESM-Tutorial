@@ -138,7 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../basics/overview.html">
-   Overview
+   1. Overview of CESM Basics
   </a>
  </li>
  <li class="toctree-l1">
@@ -197,7 +197,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../basics/your_first_cesm_run.html">
-   Your First CESM Run
+   Running on ‘Cheyenne’ (Example!)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -369,32 +369,10 @@ const thebe_selector_output = ".output, .cell_output"
    Overview of SourceMods Modifications
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../sourcemods/add_fields.html">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sourcemods/add_fields_cam.html">
    Adding New History Fields
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../sourcemods/add_fields/cam.html">
-     Adding CAM fields
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../sourcemods/add_fields/clm.html">
-     Adding CLM fields
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../sourcemods/add_fields/pop.html">
-     Adding POP fields
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../sourcemods/modifying_physics.html">
@@ -473,8 +451,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../tools/community_experiments.html">
    CESM Community Experiments
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -495,8 +473,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../tools/unix_basics.html">
    UNIX Basics
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -744,8 +722,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="customizing-output-in-cesm">
 <h1>Customizing Output in CESM<a class="headerlink" href="#customizing-output-in-cesm" title="Permalink to this headline">#</a></h1>
-<p>If you don’t add anything to the namelist, CESM will generate its default output, as was done in previous chapters of this tutorial. Typically, the model outputs monthly means (and in some cases, higher frequency outputs) of a default set of variables.</p>
-<p>In this chapter, “How to Customize the CESM Output,” we will cover how to output at a different frequency, add history files, or add variables to the history files, depending on your needs.</p>
+<p>If you don’t add anything to the namelist, CESM will generate its <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">output</span></code>, as was done in previous chapters of this tutorial. Typically, the model outputs monthly means (and in some cases, higher frequency outputs) of a default set of variables.</p>
+<p>In this chapter <strong><code class="docutils literal notranslate"><span class="pre">Customizing</span> <span class="pre">output</span> <span class="pre">in</span> <span class="pre">CESM</span></code></strong>, we will cover how to output at a different frequency, add history files, or add variables to the history files, depending on your needs.</p>
 <p>In the sections below, we provide the basics of customizing the output for the different components (atm, lnd, ice, and pop). The <strong>section on the atm component</strong> is the most <strong>comprehensive</strong>, so we recommend at least <strong>reviewing that section</strong>.</p>
 <div class="toctree-wrapper compound">
 </div>
