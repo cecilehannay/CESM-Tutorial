@@ -138,7 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../basics/overview.html">
-   Overview
+   1. Overview of CESM Basics
   </a>
  </li>
  <li class="toctree-l1">
@@ -197,7 +197,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../basics/your_first_cesm_run.html">
-   Your First CESM Run
+   Running on ‘Cheyenne’ (Example!)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -369,32 +369,10 @@ const thebe_selector_output = ".output, .cell_output"
    Overview of SourceMods Modifications
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../sourcemods/add_fields.html">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../sourcemods/add_fields_cam.html">
    Adding New History Fields
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../sourcemods/add_fields/cam.html">
-     Adding CAM fields
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../sourcemods/add_fields/clm.html">
-     Adding CLM fields
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../sourcemods/add_fields/pop.html">
-     Adding POP fields
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../sourcemods/modifying_physics.html">
@@ -473,8 +451,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../tools/community_experiments.html">
    CESM Community Experiments
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -495,8 +473,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../tools/unix_basics.html">
    UNIX Basics
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -741,8 +719,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#customizing-cam-output-frequency-hist-nhtfrq">
-   Customizing CAM output frequency:
+  <a class="reference internal nav-link" href="#customizing-clm-output-frequency-hist-nhtfrq">
+   Customizing CLM output frequency:
    <strong>
     <code class="docutils literal notranslate">
      <span class="pre">
@@ -753,8 +731,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#customizing-cam-history-files-hist-mfilt">
-   Customizing CAM history files:
+  <a class="reference internal nav-link" href="#customizing-clm-history-files-hist-mfilt">
+   Customizing CLM history files:
    <strong>
     <code class="docutils literal notranslate">
      <span class="pre">
@@ -814,8 +792,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#customizing-cam-output-frequency-hist-nhtfrq">
-   Customizing CAM output frequency:
+  <a class="reference internal nav-link" href="#customizing-clm-output-frequency-hist-nhtfrq">
+   Customizing CLM output frequency:
    <strong>
     <code class="docutils literal notranslate">
      <span class="pre">
@@ -826,8 +804,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#customizing-cam-history-files-hist-mfilt">
-   Customizing CAM history files:
+  <a class="reference internal nav-link" href="#customizing-clm-history-files-hist-mfilt">
+   Customizing CLM history files:
    <strong>
     <code class="docutils literal notranslate">
      <span class="pre">
@@ -892,8 +870,8 @@ title="Print to PDF"
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">hist_mfilt</span></code></strong>: number of samples on each history file</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">hist_fincl</span></code></strong>: adding variables and auxiliary history files</p></li>
 </ul>
-<section id="customizing-cam-output-frequency-hist-nhtfrq">
-<h2>Customizing CAM output frequency: <strong><code class="docutils literal notranslate"><span class="pre">hist_nhtfrq</span></code></strong><a class="headerlink" href="#customizing-cam-output-frequency-hist-nhtfrq" title="Permalink to this headline">#</a></h2>
+<section id="customizing-clm-output-frequency-hist-nhtfrq">
+<h2>Customizing CLM output frequency: <strong><code class="docutils literal notranslate"><span class="pre">hist_nhtfrq</span></code></strong><a class="headerlink" href="#customizing-clm-output-frequency-hist-nhtfrq" title="Permalink to this headline">#</a></h2>
 <p>We can change the output frequency with the namelist variable <strong><code class="docutils literal notranslate"><span class="pre">hist_nhtfrq</span></code></strong></p>
 <ul class="simple">
 <li><p>If <strong><code class="docutils literal notranslate"><span class="pre">hist_nhtfrq=0</span></code></strong>, the file will be a <strong>monthly</strong> average</p></li>
@@ -922,8 +900,8 @@ hist_nhtfrq = -3<br>
 </font>
 </details>
 </div></section>
-<section id="customizing-cam-history-files-hist-mfilt">
-<h2>Customizing CAM history files: <strong><code class="docutils literal notranslate"><span class="pre">hist_mfilt</span></code></strong><a class="headerlink" href="#customizing-cam-history-files-hist-mfilt" title="Permalink to this headline">#</a></h2>
+<section id="customizing-clm-history-files-hist-mfilt">
+<h2>Customizing CLM history files: <strong><code class="docutils literal notranslate"><span class="pre">hist_mfilt</span></code></strong><a class="headerlink" href="#customizing-clm-history-files-hist-mfilt" title="Permalink to this headline">#</a></h2>
 <p>To control the number of time samples in the history file, we use the variable <strong><code class="docutils literal notranslate"><span class="pre">hist_mfilt</span></code></strong>. <br>
 This variable specifies is the maximum number of time samples written to a history file.</p>
 <p>For example, if we want to have <strong>10 time samples</strong> on each history file, we can set the namelist variable as follows:</p>
