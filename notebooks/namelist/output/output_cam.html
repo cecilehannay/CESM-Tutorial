@@ -914,11 +914,11 @@ This variable specifies is the maximum number of time samples written to a histo
 <details>  
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
 <p>Modify <font face="Courier"><strong>env_run.xml</strong></font> with the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="n">nmonths</span><span class="p">,</span> <span class="n">STOP_OPTION</span><span class="o">=</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="n">nmonths</span><span class="p">,</span> <span class="n">STOP_OPTION</span><span class="o">=</span><span class="mi">1</span>
 </pre></div>
 </div>
 <p>Add the following line to <font face="Courier"><strong>user_nl_cam</strong></font>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">nhtfrq</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">nhtfrq</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
     <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">8</span>
 </pre></div>
 </div>
@@ -985,9 +985,9 @@ This variable specifies is the maximum number of time samples written to a histo
 <div class="alert alert-info">
 <strong>Evaluate your understanding</strong>
 <p>What happens if we set in <font face="Courier"><strong>user_nl_cam</strong></font>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fincl2</span>   <span class="o">=</span> <span class="s1">&#39;T:I&#39;</span><span class="p">,</span><span class="s1">&#39;Q:I&#39;</span><span class="p">,</span><span class="s1">&#39;U:I&#39;</span><span class="p">,</span><span class="s1">&#39;V:I&#39;</span>
-<span class="n">nhtfrq</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span> 
-<span class="n">mfilt</span>   <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">fincl2</span>   <span class="o">=</span> <span class="s1">&#39;T:I&#39;</span><span class="p">,</span><span class="s1">&#39;Q:I&#39;</span><span class="p">,</span><span class="s1">&#39;U:I&#39;</span><span class="p">,</span><span class="s1">&#39;V:I&#39;</span>
+    <span class="n">nhtfrq</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span> 
+    <span class="n">mfilt</span>   <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span>
 </pre></div>
 </div>
 </div>

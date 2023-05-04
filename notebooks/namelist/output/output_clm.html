@@ -885,9 +885,9 @@ title="Print to PDF"
 <details>   
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
 Add the following line to <font face="Courier"><strong>user_nl_clm</strong></font>:<br>
-<font face="Courier" color='black'>    
-hist_nhtfrq = -3<br>
-</font>
+```
+    hist_nhtfrq = -3
+```
 </details>
 </div></section>
 <section id="add-extra-variables-and-history-files-hist-fincl">
@@ -911,17 +911,17 @@ hist_nhtfrq = -3<br>
 <div class="alert alert-success">  
 <details>  
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>Modify <font face="Courier"><strong>env_run.xml</strong></font> with the command:
-<font face="Courier" color='black'><br />
-./xmlchange STOP_N=nmonths, STOP_OPTION=1<br>
-</font></p>
-<p>Add the following lines to <font face="Courier"><strong>user_nl_cam</strong></font>:
-<font face="Courier" color='black'><br />
-hist_nhtfrq = 0, 0, -24 <br>
-hist_mfilt = 1, 10, 10 <br>
-hist_fincl2 = ‘TG’, ‘TV’ <br>
-hist_fincl3 = ‘TG’, ‘TV’ <br>
-</font></p>
+<p>Modify <font face="Courier"><strong>env_run.xml</strong></font> with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="n">nmonths</span><span class="p">,</span> <span class="n">STOP_OPTION</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Add the following lines to <font face="Courier"><strong>user_nl_cam</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">hist_nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span> 
+    <span class="n">hist_mfilt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span> 
+    <span class="n">hist_fincl2</span> <span class="o">=</span> <span class="s1">&#39;TG&#39;</span><span class="p">,</span> <span class="s1">&#39;TV&#39;</span> 
+    <span class="n">hist_fincl3</span> <span class="o">=</span> <span class="s1">&#39;TG&#39;</span><span class="p">,</span> <span class="s1">&#39;TV&#39;</span> 
+</pre></div>
+</div>
 </details>
 </div>
 </section>
@@ -952,10 +952,10 @@ This variable specifies is the maximum number of time samples written to a histo
 <div class="alert alert-success">  
 <details>  
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>Modify <font face="Courier"><strong>env_run.xml</strong></font> with the command:
-<font face="Courier" color='black'><br />
-./xmlchange STOP_N=nmonths, STOP_OPTION=1<br>
-</font></p>
+<p>Modify <font face="Courier"><strong>env_run.xml</strong></font> with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="n">nmonths</span><span class="p">,</span> <span class="n">STOP_OPTION</span><span class="o">=</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <p>Add the following line to <font face="Courier"><strong>user_nl_cam</strong></font>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">hist_nhtfrq</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
     <span class="n">hist_mfilt</span> <span class="o">=</span> <span class="mi">8</span>
