@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercise 1: add output variable &#8212; CESM Tutorial</title>
+    <title>Exercise: change a tuning parameter &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Troubleshooting" href="../troubleshooting/troubleshooting.html" />
-    <link rel="prev" title="Adding New History Fields" href="add_fields_cam.html" />
+    <link rel="next" title="Overview of SourceMods Modifications" href="../sourcemods/overview.html" />
+    <link rel="prev" title="Customize POP output" href="output/output_pop.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -314,19 +314,19 @@ const thebe_selector_output = ".output, .cell_output"
   Namelist Modifications
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../namelist/overview.html">
+  <a class="reference internal" href="overview.html">
    Overview of Namelist Modifications
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../namelist/documentation.html">
+  <a class="reference internal" href="documentation.html">
    Using Documentation about Namelist Variables
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../namelist/output.html">
+  <a class="reference internal" href="output.html">
    Customizing Output in CESM
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -336,29 +336,29 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../namelist/output/output_cam.html">
+    <a class="reference internal" href="output/output_cam.html">
      Customize CAM output
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../namelist/output/output_clm.html">
+    <a class="reference internal" href="output/output_clm.html">
      Customize CLM output
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../namelist/output/output_cice.html">
+    <a class="reference internal" href="output/output_cice.html">
      Customize CICE output
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../namelist/output/output_pop.html">
+    <a class="reference internal" href="output/output_pop.html">
      Customize POP output
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../namelist/exercise_tuning_parameter.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Exercise: change a tuning parameter
   </a>
  </li>
@@ -368,19 +368,19 @@ const thebe_selector_output = ".output, .cell_output"
   Source Modifications
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="overview.html">
+  <a class="reference internal" href="../sourcemods/overview.html">
    Overview of SourceMods Modifications
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="add_fields_cam.html">
+  <a class="reference internal" href="../sourcemods/add_fields_cam.html">
    Adding New History Fields
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sourcemods/exercise_add_field.html">
    Exercise 1: add output variable
   </a>
  </li>
@@ -576,7 +576,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/sourcemods/exercise_add_field.ipynb"
+        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/namelist/exercise_tuning_parameter.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -636,7 +636,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/sourcemods/exercise_add_field.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/namelist/exercise_tuning_parameter.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -664,7 +664,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/notebooks/sourcemods/exercise_add_field.ipynb"
+        <a href="../../_sources/notebooks/namelist/exercise_tuning_parameter.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -713,7 +713,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Exercise 1: add output variable</h1>
+                <h1>Exercise: change a tuning parameter</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -725,44 +725,36 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-1-add-output-variable">
-<h1>Exercise 1: add output variable<a class="headerlink" href="#exercise-1-add-output-variable" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-change-a-tuning-parameter">
+<h1>Exercise: change a tuning parameter<a class="headerlink" href="#exercise-change-a-tuning-parameter" title="Permalink to this headline">#</a></h1>
 <div class="alert alert-info">
-<strong>Exercise: Add an additional output variable</strong><br><br>
-<p>Create a case called “b1850_T750” using the compset  B1850  at f19_g17 resolution.</p>
-<ul class="simple">
-<li><p>Add an output field for the temperature at 750 mbar.</p></li>
-<li><p>Output daily values of T750 and T500 in the “h1” history file.</p></li>
-<li><p>Set the namelist to output a single h1 for the run.</p></li>
-<li><p>Make a 1-month run.</p></li>
-</ul>
+<strong>Exercise: Modify a parameter, dcs</strong><br><br>
+<p>In the tuning lecture, we talked about the parameter dcs:
+<a class="reference external" href="http://www.cesm.ucar.edu/events/tutorials/2019/files/Specialized-hannay.pdf">http://www.cesm.ucar.edu/events/tutorials/2019/files/Specialized-hannay.pdf</a></p>
+<p>Create a case called “b1850_dcs” using the compset  B1850  at f19_g17 resolution.</p>
+<p>Locate where to change the parameter Dcs and change from the default value:
+dcs = 200.D-6
+to
+dcs = 500.D-6</p>
+<p>Make a 1-month run.</p>
 </div>
 <div class="alert alert-warning">  
-<details> 
+<details>
    <summary>
       <font face="Times New Roman" color='blue'>Click here for hints</font>
     </summary>
-<p><strong>Tip to add <font face="Courier"><strong>T750</strong></font></strong>  <br></p>
 <ul class="simple">
-<li><p>Use <font face="Courier"><strong>T500</strong></font> as a template for your changes.</p></li>
-<li><p>Find the subroutine containing <font face="Courier"><strong>T750</strong></font>.
-For instance, in the CESMROOT, use the command:</p></li>
+<li><p>The trick is going to locate where to change dcs</p></li>
+<li><p>Compare to this run to the first run you did today: b1850_high_freq.</p></li>
+<li><p>You can use ncdiff and ncview to look at the difference between the 2 runs.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    grep –r T500 *    
-</pre></div>
-</div>
-<p><strong>Tip to check your solution <font face="Courier"><strong>T750</strong></font></strong> <br></p>
-<ul class="simple">
-<li><p>When the run is completed, go to your archive directory:</p></li>
-<li><p>check the fields <font face="Courier"><strong>T750</strong></font> and <font face="Courier"><strong>T500</strong></font> are in the file <font face="Courier"><strong>h1</strong></font></p></li>
-<li><p>create a file with the difference between <font face="Courier"><strong>T750-T500 </strong></font></p></li>
-<li><p>For instance, you can use <code class="docutils literal notranslate"><span class="pre">ncap2</span></code></p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    ncap2 -s ’T750_minus_T500=T750-T500&#39; b1850_T750.cam.h1.0001-01-01-00000.nc  T750-T500.nc
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ncdiff /glade/scratch/$user/archive/b1850_dcs/atm/hist/b1850_dcs.cam.h0.0001-01.nc /glade/scratch/$user/archive/b1850_high_freq/atm/hist/b1850_high_freq.cam.h0.0001-01.nc diff.nc
+
+ncview diff.nc
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Look at the difference with <code class="docutils literal notranslate"><span class="pre">ncview</span></code>.</p></li>
+<li><p>Analyze how this does this affect the LWCF ?</p></li>
 </ul>
 </details>
 </div>
@@ -883,7 +875,7 @@ Figure: Overview of the CESM directories and the SourceMods directories. </p></e
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks/sourcemods"
+            path: "./notebooks/namelist"
         },
         predefinedOutput: true
     }
@@ -897,17 +889,17 @@ Figure: Overview of the CESM directories and the SourceMods directories. </p></e
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="add_fields_cam.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="output/output_pop.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Adding New History Fields</p>
+            <p class="prev-next-title">Customize POP output</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../troubleshooting/troubleshooting.html" title="next page">
+    <a class='right-next' id="next-link" href="../sourcemods/overview.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Troubleshooting</p>
+        <p class="prev-next-title">Overview of SourceMods Modifications</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
