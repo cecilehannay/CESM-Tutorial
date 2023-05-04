@@ -944,7 +944,7 @@ hist_mfilt = 8
 <p>You can output up to 10 history files:<strong><code class="docutils literal notranslate"><span class="pre">h0</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">h1</span></code></strong>, …, <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong>.</p>
 <p>To control the list of fields in the history files, use the namelist variable <strong><code class="docutils literal notranslate"><span class="pre">hist_fincl</span></code></strong></p>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">hist_incl1</span></code></strong> controls the fields in <strong><code class="docutils literal notranslate"><span class="pre">h0</span></code></strong></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">hist_fincl1</span></code></strong> controls the fields in <strong><code class="docutils literal notranslate"><span class="pre">h0</span></code></strong></p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">hist_fincl2</span></code></strong> controls the fields in <strong><code class="docutils literal notranslate"><span class="pre">h1</span></code></strong></p></li>
 <li><p>…</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">hist_fincl10</span></code></strong> controls the fields in <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong></p></li>
@@ -979,16 +979,16 @@ hist_fincl3 = ‘TG’, ‘TV’ <br>
 <p>Using a “:” following a field gives the averaging flag for the output field.</p>
 <p>Valid flags are:</p>
 <ul class="simple">
-<li><p>A ==&gt; Average</p></li>
-<li><p>B ==&gt; GMT 00:00:00 average</p></li>
-<li><p>I ==&gt; Instantaneous</p></li>
-<li><p>M ==&gt; Minimum</p></li>
-<li><p>X ==&gt; Maximum</p></li>
-<li><p>L ==&gt; Local-time</p></li>
-<li><p>S ==&gt; Standard deviation</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">A</span></code></strong> ==&gt; Average</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">B</span></code></strong> ==&gt; GMT 00:00:00 average</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">I</span></code></strong> ==&gt; Instantaneous</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">M</span></code></strong> ==&gt; Minimum</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">X</span></code></strong> ==&gt; Maximum</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">L</span></code></strong> ==&gt; Local-time</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">S</span></code></strong> ==&gt; Standard deviation</p></li>
 </ul>
 <p>For instance, the line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">fincl1</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="n">TLAI</span><span class="p">:</span><span class="n">M</span><span class="s1">&#39; </span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">hist_fincl1</span>  <span class="o">=</span> <span class="s1">&#39;TLAI:M&#39;</span> 
 </pre></div>
 </div>
 <p>is used to add the minimum of <code class="docutils literal notranslate"><span class="pre">TLAI</span></code> to the file <code class="docutils literal notranslate"><span class="pre">h0</span></code></p>
