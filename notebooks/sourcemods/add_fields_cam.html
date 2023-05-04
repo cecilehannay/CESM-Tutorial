@@ -728,6 +728,11 @@ title="Print to PDF"
    outfld
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-default">
+   add_default
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -755,6 +760,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#outfld">
    outfld
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-default">
+   add_default
   </a>
  </li>
 </ul>
@@ -808,7 +818,7 @@ surface’)
 <section id="outfld">
 <h2>outfld<a class="headerlink" href="#outfld" title="Permalink to this headline">#</a></h2>
 <p>The subroutine outfld accumulates (or takes the minimum or, maximum of etc as appropriate) the field into the history buffer for the appropriate history tape with the following syntax</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">addfld</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span><span class="nb">type</span><span class="p">,</span><span class="n">avgflag</span><span class="p">,</span><span class="n">units</span><span class="p">,</span><span class="n">long</span> <span class="n">name</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">addfld</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span><span class="nb">type</span><span class="p">,</span><span class="n">avgflag</span><span class="p">,</span><span class="n">units</span><span class="p">,</span><span class="n">long</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>where</p>
@@ -819,7 +829,24 @@ surface’)
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">c</span> </code></strong>= chunk (physics) or latitude (dynamics) index.</p></li>
 </ul>
 <p>For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>call outfld(’T750’,t750, pcols, lchnk)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    call outfld(’T750’,t750, pcols, lchnk)
+</pre></div>
+</div>
+</section>
+<section id="add-default">
+<h2>add_default<a class="headerlink" href="#add-default" title="Permalink to this headline">#</a></h2>
+<p>Another useful subroutine is the subroutine <code class="docutils literal notranslate"><span class="pre">add_default</span></code>. The subroutine <code class="docutils literal notranslate"><span class="pre">add_default</span></code> Add a field to the list of default fields on history file with the following syntax</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">subroutine</span> <span class="n">add_default</span> <span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">tindex</span><span class="p">,</span> <span class="n">flag</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">fname</span></code></strong> = Field name</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">tindex</span></code></strong> = history tape index</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">flag</span></code></strong> = Averaging flag: A = average (default). I = instantaneous</p></li>
+</ul>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">call</span> <span class="n">add_default</span> <span class="p">(</span><span class="s1">&#39;T500&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="alert alert-info">
