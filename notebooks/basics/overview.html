@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Overview &#8212; CESM Tutorial</title>
+    <title>1. Overview of CESM Basics &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Setting Up the Workspace" href="setting_up_the_workspace.html" />
-    <link rel="prev" title="JupyterHub" href="../introduction/cheyenne/jupyterhub.html" />
+    <link rel="prev" title="Running on ‘Cheyenne’ (Example!)" href="../introduction/running_on_cheyenne.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -124,27 +124,10 @@ const thebe_selector_output = ".output, .cell_output"
    Using Jupyter Notebooks
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1">
   <a class="reference internal" href="../introduction/running_on_cheyenne.html">
    Running on ‘Cheyenne’ (Example!)
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../introduction/cheyenne/terminals.html">
-     Terminals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../introduction/cheyenne/jupyterhub.html">
-     JupyterHub
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -155,7 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Overview
+   1. Overview of CESM Basics
   </a>
  </li>
  <li class="toctree-l1">
@@ -167,8 +150,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="downloading_cesm.html">
    Downloading CESM
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -194,8 +177,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="the_cesm_code.html">
    The CESM Code
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -214,10 +197,10 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="your_first_cesm_run.html">
-   Your First CESM Run
+   Running on ‘Cheyenne’ (Example!)
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -253,15 +236,15 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../modifications/xml/model_control_files.html">
-   Model Control Files (*.xml)
+   How to Modify Model Control Files (*.xml)
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../modifications/xml/run_length.html">
    Controlling Run Length
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -297,15 +280,15 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../modifications/xml/modify_run_type.html">
    Modify the Type of Run
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../modifications/xml/modify_run_type/hybrid_branch_restart.html">
-     Hybrid, Branch and Restart runs
+     Hybrid, Branch and Startup runs
     </a>
    </li>
    <li class="toctree-l2">
@@ -332,46 +315,44 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1">
   <a class="reference internal" href="../namelist/overview.html">
    Overview of Namelist Modifications
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../namelist/basics/preview_namelists.html">
-     ./preview_namelists
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../namelist/basics/cam.html">
-     CAM
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../namelist/basics/other_components.html">
-     Other Components
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../namelist/documentation.html">
+   Using Documentation about Namelist Variables
+  </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../namelist/output.html">
-   Customizing Output in CAM
+   Customizing Output in CESM
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../namelist/output/frequency.html">
-     Changing Output Frequency
+    <a class="reference internal" href="../namelist/output/output_cam.html">
+     Customize CAM output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../namelist/output/output_clm.html">
+     Customize CLM output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../namelist/output/output_cice.html">
+     Customize CICE output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../namelist/output/output_pop.html">
+     Customize POP output
     </a>
    </li>
   </ul>
@@ -384,36 +365,14 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../sourcemods/basics.html">
-   Basics of Source Modificatons
+  <a class="reference internal" href="../sourcemods/overview.html">
+   Overview of SourceMods Modifications
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../sourcemods/add_fields.html">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sourcemods/add_fields_cam.html">
    Adding New History Fields
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../sourcemods/add_fields/cam.html">
-     Adding CAM fields
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../sourcemods/add_fields/clm.html">
-     Adding CLM fields
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../sourcemods/add_fields/pop.html">
-     Adding POP fields
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../sourcemods/modifying_physics.html">
@@ -488,19 +447,58 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../tools/jupyter_notebooks.html">
-   Jupyter Resources
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tools/community_experiments.html">
+   CESM Community Experiments
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/cesm_expts/clim_data_gateway.html">
+     Climate Data Gateway
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/cesm_expts/clim_data_guide.html">
+     Climate Data Guide
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tools/unix_basics.html">
+   UNIX Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/unix/terminals.html">
+     Terminal Windows
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/unix/modules.html">
+     Loading Modules on NCAR HPC
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/unix/text_editors.html">
+     Text Editors
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tools/python.html">
-   Python Resources
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tools/netcdf_tools.html">
-   NetCDF Tools
+  <a class="reference internal" href="../tools/fortran.html">
+   Fortran Resources
   </a>
  </li>
  <li class="toctree-l1">
@@ -509,18 +507,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tools/unix_basics.html">
-   Unix Basics
+  <a class="reference internal" href="../tools/netcdf_tools.html">
+   NetCDF files and how to use them
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tools/fortran.html">
-   Fortran Resources
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tools/text_editors.html">
-   Text Editors
+  <a class="reference internal" href="../tools/analysis_tools.html">
+   Jupyter Resources
   </a>
  </li>
 </ul>
@@ -703,23 +696,130 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   1. Overview of CESM Basics
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cesm-project-web-page">
+   2. CESM Project Web Page
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cesm2-web-page">
+   3. CESM2 Web Page
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cesm2-components">
+   4. CESM2 Components
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cesm2-common-infrastructure-for-modeling-the-earth-cime">
+   5. CESM2 Common Infrastructure for Modeling the Earth (CIME)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cesm2-coupling">
+   6. CESM2 Coupling
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#new-earth-system-modeling-framework-esmf-coupling-for-beyond-cesm2">
+   7. New Earth System Modeling Framework (ESMF) Coupling for beyond CESM2
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cesm2-quickstart-workflow">
+   8. CESM2 Quickstart Workflow
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Overview</h1>
+                <h1>1. Overview of CESM Basics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   1. Overview of CESM Basics
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cesm-project-web-page">
+   2. CESM Project Web Page
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cesm2-web-page">
+   3. CESM2 Web Page
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cesm2-components">
+   4. CESM2 Components
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cesm2-common-infrastructure-for-modeling-the-earth-cime">
+   5. CESM2 Common Infrastructure for Modeling the Earth (CIME)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cesm2-coupling">
+   6. CESM2 Coupling
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#new-earth-system-modeling-framework-esmf-coupling-for-beyond-cesm2">
+   7. New Earth System Modeling Framework (ESMF) Coupling for beyond CESM2
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cesm2-quickstart-workflow">
+   8. CESM2 Quickstart Workflow
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -727,10 +827,145 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
-<p>This is a placeholder for this lesson.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="overview-of-cesm-basics">
+<h1>1. Overview of CESM Basics<a class="headerlink" href="#overview-of-cesm-basics" title="Permalink to this headline">#</a></h1>
+<p>Welcome to the world of the <strong>Community Earth System Model (CESM)</strong>. CESM is a coupled climate model for simulating Earth’s climate system.
+The model is composed of separate models that simultaneously simulate the Earth’s atmosphere, ocean, land, river run-off, land-ice, and sea-ice.
+In this section you will be introduced to the Basics behind CESM workspaces, component models, coupling, code, running,
+and archiving the results of CESM model simulations. Specifically we will cover the steps of:</p>
+<div class="alert alert-info" style="text-align: left;">
+<h1> Outline: </h1>
+<ul class="simple">
+<li><p>The CESM <strong><code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">Webpage</span></code></strong></p></li>
+<li><p>The CESM2 <strong><code class="docutils literal notranslate"><span class="pre">Model</span> <span class="pre">Webpage</span></code></strong></p></li>
+<li><p>CESM2 <strong><code class="docutils literal notranslate"><span class="pre">Component</span> <span class="pre">Models</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">Coupling</span></code></strong></p></li>
+<li><p>The CESM2 <strong><code class="docutils literal notranslate"><span class="pre">Quickstart</span> <span class="pre">Guide</span></code></strong></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Downloading</span></code></strong> CESM2</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">CIME</span></code></strong> and the <strong><code class="docutils literal notranslate"><span class="pre">Case</span> <span class="pre">Control</span> <span class="pre">System</span></code></strong></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Creating</span> <span class="pre">&amp;</span> <span class="pre">Running</span></code></strong> a <strong><code class="docutils literal notranslate"><span class="pre">Case</span></code></strong></p></li>
+<li><p>Getting More <strong><code class="docutils literal notranslate"><span class="pre">Help</span></code></strong></p></li>
+</ul>
+</div></section>
+<section class="tex2jax_ignore mathjax_ignore" id="cesm-project-web-page">
+<h1>2. CESM Project Web Page<a class="headerlink" href="#cesm-project-web-page" title="Permalink to this headline">#</a></h1>
+<p>The <strong>CESM Web Page</strong> is the first point of reference for all things CESM. Here we can explore the larger CESM project, delve deeper into individual working groups, models, research activities, model releases, supporting model data, tools, events and much much more. <br>
+Click here to start your CESM exploration <br>
+<a href="http://www.cesm.ucar.edu"> http://www.cesm.ucar.edu </a></p>
+<div class="alert alert-info" style="text-align: left;">
+<h1> Take-away points: </h1>
+<ul class="simple">
+<li><p>CESM <strong><code class="docutils literal notranslate"><span class="pre">Project</span></code></strong> Information</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Working</span> <span class="pre">Groups</span></code></strong> Information</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Community</span> <span class="pre">Projects</span></code></strong> Information</p>
+<ul>
+<li><p>CESM2 Large Ensemble</p></li>
+<li><p>CESM2 Stratospheric Aerosol Injection (ARISE-SAI)</p></li>
+</ul>
+</li>
+<li><p>What <strong><code class="docutils literal notranslate"><span class="pre">Version</span></code></strong> of the model should you use?</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Individual</span> <span class="pre">Model</span></code></strong> Pages <a href="https://www.cesm.ucar.edu/models/"> https://www.cesm.ucar.edu/models/ </a></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Supported</span> <span class="pre">Model</span></code></strong> Releases – 2.1.X vs 2.2.X</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Experiments</span></code></strong>, expand a case for details, diagnostics plots for many experiments</p></li>
+</ul>
+</div>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="cesm2-web-page">
+<h1>3. CESM2 Web Page<a class="headerlink" href="#cesm2-web-page" title="Permalink to this headline">#</a></h1>
+<p>For information specific to the CESM version 2 Model there is a dedicated <strong>CESM2 Web Page</strong>. This page can be found under models on the CESM Project Web Page.
+The CESM Web Page details release information, downloading instructions, scientifically validated configuration, documentation and more. <br>
+Click here to start your CESM2 exploration: <br>
+<a href="http://www.cesm.ucar.edu/models/cesm2"> http://www.cesm.ucar.edu/models/cesm2 </a></p>
+<div class="alert alert-info" style="text-align: left;">
+<h1> Take-away points: </h1>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Release</span> <span class="pre">Series</span></code></strong> Information Notes and <strong><code class="docutils literal notranslate"><span class="pre">Supported</span> <span class="pre">Tags</span></code></strong></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Downloading</span></code></strong> Instructions - No User Registration Required</p></li>
+<li><p>CESM2.2 <strong><code class="docutils literal notranslate"><span class="pre">Scientifically</span> <span class="pre">Validated</span></code></strong> Component Set Configurations</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Online</span> <span class="pre">Documentation</span></code></strong> – Quickstart, CIME, drop-down version choice</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Prognostic</span> <span class="pre">Component</span></code></strong> Details and Documentation</p>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Namelist</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">Caseroot</span></code></strong> Definitions -
+<a href="https://www.cesm.ucar.edu/models/cesm2/settings/current/"> https://www.cesm.ucar.edu/models/cesm2/settings/current/ </a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="cesm2-components">
+<h1>4. CESM2 Components<a class="headerlink" href="#cesm2-components" title="Permalink to this headline">#</a></h1>
+<p>The CESM2 Model is comprised of 7 <strong>Prognostic</strong> or otherwise known as <strong>Active</strong> Components that are coupled through the Common Infrastructure for
+Modeling the Earth known as <strong>CIME</strong>. Each model component is detailed on the CESM2 Web Page.
+The models each have a page containing descriptions and documentation for active or prognostic models. You can explore each of the component models and CIME from
+the links below.</p>
+<div class="alert alert-info" style="text-align: left;">
+<h1> Component Links: </h1>
+<ul class="simple">
+<li><p><a href="https://www.cesm.ucar.edu/models/cesm2/atmosphere"> <strong><code class="docutils literal notranslate"><span class="pre">Atmosphere</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/models/cesm2/land"> <strong><code class="docutils literal notranslate"><span class="pre">Land</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/models/cesm2/land-ice"> <strong><code class="docutils literal notranslate"><span class="pre">Land</span> <span class="pre">Ice</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/models/cesm2/ocean" > <strong><code class="docutils literal notranslate"><span class="pre">Ocean</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/models/cesm2/river" > <strong><code class="docutils literal notranslate"><span class="pre">River</span> <span class="pre">Runoff</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/models/cesm2/sea-ice" > <strong><code class="docutils literal notranslate"><span class="pre">Sea</span> <span class="pre">Ice</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/models/cesm2/wave" > <strong><code class="docutils literal notranslate"><span class="pre">Wave</span></code></strong> </a></p></li>
+<li><p><a href="https://esmci.github.io/cime/versions/master/html/index.html" > <strong><code class="docutils literal notranslate"><span class="pre">CIME</span></code></strong> </a></p></li>
+</ul>
+</div></section>
+<section class="tex2jax_ignore mathjax_ignore" id="cesm2-common-infrastructure-for-modeling-the-earth-cime">
+<h1>5. CESM2 Common Infrastructure for Modeling the Earth (CIME)<a class="headerlink" href="#cesm2-common-infrastructure-for-modeling-the-earth-cime" title="Permalink to this headline">#</a></h1>
+<p>The Common Infrastructure for Modeling the Earth is a python-based framework that is shared between CESM2 and other modeling center efforts to ensure efficient
+coordination of model development. The schema below shows some of the science benefits and organizations that are using the CIME infrastructure.
+<br><br></p>
+<p><img alt="CESM directories and namelists" src="../../_images/CESM2_CIME_Infrastructure.png" />
+<em><p style="text-align: center;"> Figure: Overview of the CESM2 Common Infrastructure for Modeling the Earth (CIME) </p></em></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="cesm2-coupling">
+<h1>6. CESM2 Coupling<a class="headerlink" href="#cesm2-coupling" title="Permalink to this headline">#</a></h1>
+<p>The CESM2 coupling is performed through the Model Coupling Toolkit (MCT). Additionally, the MCT coupling framework allows data and stub components to
+replace active or prognostic components providing flexible activation/deactivation of feedbacks.
+The schematic below shows all of the components and their connections.
+<br><br></p>
+<p><img alt="CESM directories and namelists" src="../../_images/CESM2_MCT_Coupling.png" />
+<em><p style="text-align: center;"> Figure: Overview of the CESM2 Components and Model Coupling Toolkit (MCT) </p></em></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="new-earth-system-modeling-framework-esmf-coupling-for-beyond-cesm2">
+<h1>7. New Earth System Modeling Framework (ESMF) Coupling for beyond CESM2<a class="headerlink" href="#new-earth-system-modeling-framework-esmf-coupling-for-beyond-cesm2" title="Permalink to this headline">#</a></h1>
+<p>Development beyond the CESM2 MCT coupling framework is changing to the Earth System Modeling Framework (ESMF)
+National Unified Operational Prediction Capability (NUOPC) framework. More details on NUOPC can be found at
+<a href="https://earthsystemmodeling.org/nuopc/"> https://earthsystemmodeling.org/nuopc/ </a>. The schema below shows the new CESM
+configuration and coupling with NUOPC. This is included for information only as the CESM2 used in this tutorial does not use this new framework.
+<br><br></p>
+<p><img alt="CESM directories and namelists" src="../../_images/CESM_NUOPC_Coupling.png" />
+<em><p style="text-align: center;"> Figure: Overview of the new CESM Components and National Unified Operational Prediction Capability (NUOPC) framework </p></em></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="cesm2-quickstart-workflow">
+<h1>8. CESM2 Quickstart Workflow<a class="headerlink" href="#cesm2-quickstart-workflow" title="Permalink to this headline">#</a></h1>
+<p>The CESM2 Workflow is documented in the CESM2 Introduction
+<a href="https://escomp.github.io/CESM/release-cesm2/"> https://escomp.github.io/CESM/release-cesm2/ </a>
+and CIME <a href="https://esmci.github.io/cime/versions/master/html/index.html"> https://esmci.github.io/cime/versions/master/html/index.html </a>
+documentation pages. These pages are a guide for both novice and experienced users on the work flow steps for downloading, building and running CESM2.
+These steps will form the basis of the remaining elements of this practical session.
+Specifically we will be covering the Workflow below over the remaining workbooks.</p>
+<div class="alert alert-info" style="text-align: left;">
+<h1> Workflow Elements: </h1>
+<ul class="simple">
+<li><p>One-Time Setup Steps</p>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Download</span></code></strong> the CESM code</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Create</span></code></strong> an <strong><code class="docutils literal notranslate"><span class="pre">Input</span> <span class="pre">Data</span></code></strong> Root Directory</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Porting</span></code></strong></p></li>
+</ul>
+</li>
+<li><p>Creating and Running a Case</p>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Create</span></code></strong> a New Case</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Invoke</span></code></strong> case.setup</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Build</span></code></strong> the Executable with case.build</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Run</span></code></strong> the Model with case.submit</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Review</span></code></strong> Output Data</p></li>
+</ul>
+</li>
+</ul>
+</div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -759,11 +994,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../introduction/cheyenne/jupyterhub.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../introduction/running_on_cheyenne.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">JupyterHub</p>
+            <p class="prev-next-title">Running on ‘Cheyenne’ (Example!)</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="setting_up_the_workspace.html" title="next page">
