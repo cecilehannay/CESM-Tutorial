@@ -723,6 +723,11 @@ title="Print to PDF"
    addfld
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outfld">
+   outfld
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -745,6 +750,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#addfld">
    addfld
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outfld">
+   outfld
   </a>
  </li>
 </ul>
@@ -794,6 +804,24 @@ surface’)
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">idim</span></code></strong> = longitude dimension of field array</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">c</span></code></strong> = chunk (physics) or latitude (dynamics) index.</p></li>
 </ul>
+</section>
+<section id="outfld">
+<h2>outfld<a class="headerlink" href="#outfld" title="Permalink to this headline">#</a></h2>
+<p>The subroutine outfld accumulates (or takes the minimum or, maximum of etc as appropriate) the field into the history buffer for the appropriate history tape with the following syntax</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">addfld</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span><span class="nb">type</span><span class="p">,</span><span class="n">avgflag</span><span class="p">,</span><span class="n">units</span><span class="p">,</span><span class="n">long</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">fname</span></code></strong> = Field name</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">field</span></code></strong> = array containing field values</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">idim</span></code></strong> = longitude dimension of field array</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">c</span> </code></strong>= chunk (physics) or latitude (dynamics) index.</p></li>
+</ul>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>call outfld(’T750’,t750, pcols, lchnk)
+</pre></div>
+</div>
 <div class="alert alert-info">
 <strong>Exercise: Add an additional output variable</strong><br><br>
 <p>Create a case called “b1850_T750” using the compset  B1850  at f19_g17 resolution.</p>
