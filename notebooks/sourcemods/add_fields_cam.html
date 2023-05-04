@@ -839,9 +839,11 @@ Find the subroutine containing T500 using the command grep –r T500 *</p></li>
 </div>
 </font>
 <p>#Locate the file where <font face="Courier"><strong>T500</strong> is computed and copy it into <strong>SourceMods/src.atm</strong></font>:
-<font face="Courier" color='black'><br />
-cp /glade/p/cesm/tutorial/cesm2.1_tutorial2022/components/cam/src/physics/cam/cam_diagnostics.F90 SourceMods/src.cam<br>
-</font></p>
+<font face="Courier" color='black'></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cp /glade/p/cesm/tutorial/cesm2.1_tutorial2022/components/cam/src/physics/cam/cam_diagnostics.F90 SourceMods/src.cam&lt;br&gt;
+</pre></div>
+</div>
+</font>
 <p>#Edit the file <font face="Courier"><strong>SourceMods/src.cam/cam_diagnostics.F90</strong></font> and add the lines:
 <font face="Courier" color='black'></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  !++ add a variable for T750 
@@ -856,28 +858,38 @@ cp /glade/p/cesm/tutorial/cesm2.1_tutorial2022/components/cam/src/physics/cam/ca
 </div>
 </font>
 <p>#Edit the file <font face="Courier"><strong>user_nl_cam</strong>  and add the lines:</font>
-<font face="Courier" color='black'><br />
-nhtfrq = 0, -24<br>
-mfilt = 1, 31<br>
-fincl2 = ‘T750’, ‘T500’<br><br>
-</font></p>
+<font face="Courier" color='black'></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nhtfrq = 0, -24&lt;br&gt;
+mfilt = 1, 31&lt;br&gt;
+fincl2 = &#39;T750&#39;, &#39;T500&#39;&lt;br&gt;&lt;br&gt;
+</pre></div>
+</div>
+</font>
 <p>#Change the <font face="Courier"><strong>run length </strong>:</font>
-<font face="Courier" color='black'><br />
-./xmlchange STOP_N=1,STOP_OPTION=nmonths<br><br>
-</font></p>
+<font face="Courier" color='black'></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./xmlchange STOP_N=1,STOP_OPTION=nmonths&lt;br&gt;&lt;br&gt;
+</pre></div>
+</div>
+</font>
 <p>#Change <font face="Courier"><strong>job queue</strong></font> and <font face="Courier"><strong>account number</strong> (if needed). For instance:</font>
-<font face="Courier" color='black'><br />
-./xmlchange JOB_QUEUE=regular,PROJECT=UESM0011<br><br>
-</font></p>
+<font face="Courier" color='black'></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./xmlchange JOB_QUEUE=regular,PROJECT=UESM0011&lt;br&gt;&lt;br&gt;
+</pre></div>
+</div>
+</font>
 <p>#Build and submit:
-<font face="Courier" color='black'><br />
-qcmd – ./case.build<br>
-./case.submit<br>
-</font></p>
+<font face="Courier" color='black'></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qcmd -- ./case.build&lt;br&gt;
+./case.submit&lt;br&gt;
+</pre></div>
+</div>
+</font>
 <p>#When the run is completed, check the fields <font face="Courier"><strong>T750</strong></font> and <font face="Courier"><strong>T500</strong></font> are in the file <font face="Courier"><strong>h1</strong></font>:
 <font face="Courier" color='black'></p>
-<p>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ <br>
-ncdump -h b1850_T750.cam.h1.0001-01-01-00000.nc<br><br></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ &lt;br&gt;
+ncdump -h b1850_T750.cam.h1.0001-01-01-00000.nc&lt;br&gt;&lt;br&gt;
+</pre></div>
+</div>
 </font>
 <p>The file should contain:
 <font face="Courier" color='black'></p>
@@ -893,15 +905,19 @@ ncdump -h b1850_T750.cam.h1.0001-01-01-00000.nc<br><br></p>
 </div>
 </font>
 <p>#Create a file with the difference between <font face="Courier"><strong>T750-T500 </strong>:</font>
-<font face="Courier" color='black'><br />
-cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ <br>
-ncap2 -s ‘T750_minus_T500=T750-T500’ b1850_T750.cam.h1.0001-01-01-00000.nc  <a class="reference external" href="http://T750-T500.nc">T750-T500.nc</a> <br>
-</font></p>
+<font face="Courier" color='black'></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ &lt;br&gt;
+ncap2 -s ‘T750_minus_T500=T750-T500&#39; b1850_T750.cam.h1.0001-01-01-00000.nc  T750-T500.nc &lt;br&gt;
+</pre></div>
+</div>
+</font>
 <p>#Look at the difference between <font face="Courier"><strong>T750-T500</strong></font> with <font face="Courier"><strong>ncview</strong></font>:
-<font face="Courier" color='black'><br />
-cd /glade/scratch/$user/archive/b1850_T750/atm/hist/
-ncview <a class="reference external" href="http://T750-T500.nc">T750-T500.nc</a>
-</font></p>
+<font face="Courier" color='black'></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
+ncview T750-T500.nc
+</pre></div>
+</div>
+</font>
 <p>The field <font face="Courier"><strong>T750-T500</strong></font> looks like:</p>
 <p><img alt="ncview T750-T500" src="../../_images/ncview_T750-T500.png" /></p>
 <p><em><p style="text-align: center;"> Figure: Overview of the CESM directories and the SourceMods directories. </p></em></p>
