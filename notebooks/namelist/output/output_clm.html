@@ -731,24 +731,24 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#customizing-clm-history-files-hist-mfilt">
-   Customizing CLM history files:
-   <strong>
-    <code class="docutils literal notranslate">
-     <span class="pre">
-      hist_mfilt
-     </span>
-    </code>
-   </strong>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#add-extra-variables-and-history-files-hist-fincl">
    Add extra variables and history files:
    <strong>
     <code class="docutils literal notranslate">
      <span class="pre">
       hist_fincl
+     </span>
+    </code>
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#customizing-clm-history-files-hist-mfilt">
+   Customizing CLM history files:
+   <strong>
+    <code class="docutils literal notranslate">
+     <span class="pre">
+      hist_mfilt
      </span>
     </code>
    </strong>
@@ -765,11 +765,6 @@ title="Print to PDF"
     </code>
    </strong>
    variables
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
   </a>
  </li>
 </ul>
@@ -804,24 +799,24 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#customizing-clm-history-files-hist-mfilt">
-   Customizing CLM history files:
-   <strong>
-    <code class="docutils literal notranslate">
-     <span class="pre">
-      hist_mfilt
-     </span>
-    </code>
-   </strong>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#add-extra-variables-and-history-files-hist-fincl">
    Add extra variables and history files:
    <strong>
     <code class="docutils literal notranslate">
      <span class="pre">
       hist_fincl
+     </span>
+    </code>
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#customizing-clm-history-files-hist-mfilt">
+   Customizing CLM history files:
+   <strong>
+    <code class="docutils literal notranslate">
+     <span class="pre">
+      hist_mfilt
      </span>
     </code>
    </strong>
@@ -838,11 +833,6 @@ title="Print to PDF"
     </code>
    </strong>
    variables
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
   </a>
  </li>
 </ul>
@@ -888,7 +878,7 @@ title="Print to PDF"
 </div>
 <p>means output every <strong>24 timesteps</strong></p>
 <div class="alert alert-info">
-<strong>Exercise</strong>
+<strong>Evaluate your understanding</strong>
 <p>How do you modify the CLM output to output 3-hourly data ?</p>
 </div>
 <div class="alert alert-success">
@@ -900,6 +890,41 @@ hist_nhtfrq = -3<br>
 </font>
 </details>
 </div></section>
+<section id="add-extra-variables-and-history-files-hist-fincl">
+<h2>Add extra variables and history files: <strong><code class="docutils literal notranslate"><span class="pre">hist_fincl</span></code></strong><a class="headerlink" href="#add-extra-variables-and-history-files-hist-fincl" title="Permalink to this headline">#</a></h2>
+<p>You can output up to 10 history files:<strong><code class="docutils literal notranslate"><span class="pre">h0</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">h1</span></code></strong>, …, <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong>.</p>
+<p>To control the list of fields in the history files, use the namelist variable <strong><code class="docutils literal notranslate"><span class="pre">hist_fincl</span></code></strong></p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">hist_fincl1</span></code></strong> controls the fields in <strong><code class="docutils literal notranslate"><span class="pre">h0</span></code></strong></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">hist_fincl2</span></code></strong> controls the fields in <strong><code class="docutils literal notranslate"><span class="pre">h1</span></code></strong></p></li>
+<li><p>…</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">hist_fincl10</span></code></strong> controls the fields in <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong></p></li>
+</ul>
+<p>For example, to add the field ‘TG’ to the h0 file, use the line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">hist_fincl1</span> <span class="o">=</span> <span class="s1">&#39;TG&#39;</span> 
+</pre></div>
+</div>
+<div class="alert alert-info">
+<strong>Evaluate your understanding</strong>
+<p>What is the namelist setting to add a monthly history h1 with the variables ‘TG’, ‘TV’ and a daily history h2 with the variables ‘TG’, ‘TV’. Output 10 time samples in h1 and h2 ?</p>
+</div>
+<div class="alert alert-success">  
+<details>  
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p>Modify <font face="Courier"><strong>env_run.xml</strong></font> with the command:
+<font face="Courier" color='black'><br />
+./xmlchange STOP_N=nmonths, STOP_OPTION=1<br>
+</font></p>
+<p>Add the following lines to <font face="Courier"><strong>user_nl_cam</strong></font>:
+<font face="Courier" color='black'><br />
+hist_nhtfrq = 0, 0, -24 <br>
+hist_mfilt = 1, 10, 10 <br>
+hist_fincl2 = ‘TG’, ‘TV’ <br>
+hist_fincl3 = ‘TG’, ‘TV’ <br>
+</font></p>
+</details>
+</div>
+</section>
 <section id="customizing-clm-history-files-hist-mfilt">
 <h2>Customizing CLM history files: <strong><code class="docutils literal notranslate"><span class="pre">hist_mfilt</span></code></strong><a class="headerlink" href="#customizing-clm-history-files-hist-mfilt" title="Permalink to this headline">#</a></h2>
 <p>To control the number of time samples in the history file, we use the variable <strong><code class="docutils literal notranslate"><span class="pre">hist_mfilt</span></code></strong>. <br>
@@ -921,8 +946,8 @@ This variable specifies is the maximum number of time samples written to a histo
 <p>NB: we cannot change mfilt for monthly frequency. 	For monthly frequency, we always have:
 <code class="docutils literal notranslate"><span class="pre">hist_mfilt</span> <span class="pre">=</span> <span class="pre">1</span></code></p>
 <div class="alert alert-info">
-<strong>Exercise</strong>
-What is the setting to generate CLM daily data for a month-long simulation that will create a file every day? 
+<strong>Evaluate your understanding</strong>
+<p>What is the setting to generate CLM daily data for a month-long simulation that will create a file every day?</p>
 </div>
 <div class="alert alert-success">  
 <details>  
@@ -931,46 +956,11 @@ What is the setting to generate CLM daily data for a month-long simulation that 
 <font face="Courier" color='black'><br />
 ./xmlchange STOP_N=nmonths, STOP_OPTION=1<br>
 </font></p>
-<p>Add the following line to <font face="Courier"><strong>user_nl_cam</strong></font>:
-<font face="Courier" color='black'><br />
-hist_nhtfrq = -3<br>
-hist_mfilt = 8
-</font></p>
-</details>
-</div>
-</section>
-<section id="add-extra-variables-and-history-files-hist-fincl">
-<h2>Add extra variables and history files: <strong><code class="docutils literal notranslate"><span class="pre">hist_fincl</span></code></strong><a class="headerlink" href="#add-extra-variables-and-history-files-hist-fincl" title="Permalink to this headline">#</a></h2>
-<p>You can output up to 10 history files:<strong><code class="docutils literal notranslate"><span class="pre">h0</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">h1</span></code></strong>, …, <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong>.</p>
-<p>To control the list of fields in the history files, use the namelist variable <strong><code class="docutils literal notranslate"><span class="pre">hist_fincl</span></code></strong></p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">hist_fincl1</span></code></strong> controls the fields in <strong><code class="docutils literal notranslate"><span class="pre">h0</span></code></strong></p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">hist_fincl2</span></code></strong> controls the fields in <strong><code class="docutils literal notranslate"><span class="pre">h1</span></code></strong></p></li>
-<li><p>…</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">hist_fincl10</span></code></strong> controls the fields in <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong></p></li>
-</ul>
-<p>For example, to add the field ‘TG’ to the h0 file, use the line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">hist_fincl1</span> <span class="o">=</span> <span class="s1">&#39;TG&#39;</span> 
+<p>Add the following line to <font face="Courier"><strong>user_nl_cam</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">hist_nhtfrq</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+    <span class="n">hist_mfilt</span> <span class="o">=</span> <span class="mi">8</span>
 </pre></div>
 </div>
-<div class="alert alert-info">
-<strong>Exercise</strong>
-What is the namelist setting to add a monthly history h1 with the variables 'TG', 'TV' and a daily history h2 with the variables 'TG', 'TV'. Output 10 time samples in h1 and h2 ? 
-</div>
-<div class="alert alert-success">  
-<details>  
-<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>Modify <font face="Courier"><strong>env_run.xml</strong></font> with the command:
-<font face="Courier" color='black'><br />
-./xmlchange STOP_N=nmonths, STOP_OPTION=1<br>
-</font></p>
-<p>Add the following lines to <font face="Courier"><strong>user_nl_cam</strong></font>:
-<font face="Courier" color='black'><br />
-hist_nhtfrq = 0, 0, -24 <br>
-hist_mfilt = 1, 10, 10 <br>
-hist_fincl2 = ‘TG’, ‘TV’ <br>
-hist_fincl3 = ‘TG’, ‘TV’ <br>
-</font></p>
 </details>
 </div>
 </section>
@@ -992,19 +982,16 @@ hist_fincl3 = ‘TG’, ‘TV’ <br>
 </pre></div>
 </div>
 <p>is used to add the minimum of <code class="docutils literal notranslate"><span class="pre">TLAI</span></code> to the file <code class="docutils literal notranslate"><span class="pre">h0</span></code></p>
-</section>
-<section id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
 <div class="alert alert-info">
-<strong>Exercise</strong>
-<p>What happens if we set in <font face="Courier"><strong>user_nl_clm</strong></font>:
-<font face="Courier" color='black'><br />
-hist_fincl2 = ‘TG’, ‘TV’ <br>
-hist_fincl3 = ‘TG’, ‘TV’ <br>
-hist_fincl4 = ‘TG’, ‘TV’ <br>
-hist_fincl5 = ‘TG’, ‘TV’ <br>
-hist_nhtfrq = 0, -24, -6, -1, 1 <br>
-</font></p>
+<strong>Evaluate your understanding</strong>
+<p>What happens if we set in <font face="Courier"><strong>user_nl_clm</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">hist_fincl2</span> <span class="o">=</span> <span class="s1">&#39;TG&#39;</span><span class="p">,</span> <span class="s1">&#39;TV&#39;</span> <span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+    <span class="n">hist_fincl3</span> <span class="o">=</span> <span class="s1">&#39;TG&#39;</span><span class="p">,</span> <span class="s1">&#39;TV&#39;</span> <span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+    <span class="n">hist_fincl4</span> <span class="o">=</span> <span class="s1">&#39;TG&#39;</span><span class="p">,</span> <span class="s1">&#39;TV&#39;</span> <span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+    <span class="n">hist_fincl5</span> <span class="o">=</span> <span class="s1">&#39;TG&#39;</span><span class="p">,</span> <span class="s1">&#39;TV&#39;</span> <span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+    <span class="n">hist_nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="alert alert-success">  
 <details>  
