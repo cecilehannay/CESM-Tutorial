@@ -863,7 +863,7 @@ title="Print to PDF"
 <section id="customizing-cam-output-frequency-nhtfrq">
 <h2>Customizing CAM output frequency: <strong><code class="docutils literal notranslate"><span class="pre">nhtfrq</span></code></strong><a class="headerlink" href="#customizing-cam-output-frequency-nhtfrq" title="Permalink to this headline">#</a></h2>
 <p>The default history file from CAM is a monthly average.
-We can change the output frequency with the namelist variable <strong><code class="docutils literal notranslate"><span class="pre">nhtfrq</span></code></strong></p>
+We can change the <strong>output frequency</strong> with the namelist variable <strong><code class="docutils literal notranslate"><span class="pre">nhtfrq</span></code></strong></p>
 <ul class="simple">
 <li><p>If <strong><code class="docutils literal notranslate"><span class="pre">nhtfrq=0</span></code></strong>, the file will be a <strong>monthly</strong> average</p></li>
 <li><p>If <strong><code class="docutils literal notranslate"><span class="pre">nhtfrq&gt;0</span></code></strong>, frequency is input as number of <strong>timesteps</strong>.</p></li>
@@ -881,14 +881,6 @@ We can change the output frequency with the namelist variable <strong><code clas
 <details>   
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
 Add the following line to <font face="Courier"><strong>user_nl_cam</strong></font>:<br>
-<font face="Courier" color='black'>    
-    nhtfrq = -3<br>
-</font>
-<font face="Courier" color='black'>    
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nhtfrq = -3
-</pre></div>
-</div>
-</font>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">nhtfrq</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
 </pre></div>
 </div>
@@ -896,7 +888,7 @@ Add the following line to <font face="Courier"><strong>user_nl_cam</strong></fon
 </div></section>
 <section id="customizing-cam-history-files-mfilt">
 <h2>Customizing CAM history files: <strong><code class="docutils literal notranslate"><span class="pre">mfilt</span></code></strong><a class="headerlink" href="#customizing-cam-history-files-mfilt" title="Permalink to this headline">#</a></h2>
-<p>To control the number of time samples in the history file, we use the variable <strong><code class="docutils literal notranslate"><span class="pre">mfilt</span></code></strong>. <br>
+<p>To control the <strong>number of time samples</strong> in the history file, we use the variable <strong><code class="docutils literal notranslate"><span class="pre">mfilt</span></code></strong>. <br>
 This variable specifies is the maximum number of time samples written to a history file.</p>
 <p>For example, if we want to have 10 time samples on each history file, we can set the namelist variable as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">10</span>
@@ -935,7 +927,7 @@ mfilt = 8
 </section>
 <section id="add-extra-variables-and-history-files-fincl">
 <h2>Add extra variables and history files: <strong><code class="docutils literal notranslate"><span class="pre">fincl</span></code></strong><a class="headerlink" href="#add-extra-variables-and-history-files-fincl" title="Permalink to this headline">#</a></h2>
-<p>You can output up to 10 history files:<strong><code class="docutils literal notranslate"><span class="pre">h0</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">h1</span></code></strong>, …, <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong>.</p>
+<p>You can output up to 10 history files: <strong><code class="docutils literal notranslate"><span class="pre">h0</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">h1</span></code></strong>, …, <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong>.</p>
 <ul class="simple">
 <li><p>The <strong><code class="docutils literal notranslate"><span class="pre">h0</span></code></strong> file contains the default variables (added in the code with <code class="docutils literal notranslate"><span class="pre">call</span> <span class="pre">add_default</span></code>. See SourceMods section).</p></li>
 <li><p>For the files <strong><code class="docutils literal notranslate"><span class="pre">h1</span></code></strong> to <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong>, the user must specify the variables to output.</p></li>
@@ -948,7 +940,7 @@ mfilt = 8
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">fincl10</span></code></strong> controls the fields in <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong></p></li>
 </ul>
 <p>For example, to add the field PRECT to the h0 file, use the line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">fincl1</span> <span class="o">=</span> <span class="s1">&#39;PRECT&#39;</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">fincl1</span> <span class="o">=</span> <span class="s1">&#39;PRECT&#39;</span> 
 </pre></div>
 </div>
 <div class="alert alert-info">
@@ -958,17 +950,17 @@ What is the namelist setting to add a monthly history h1 with the variables U, V
 <div class="alert alert-success">  
 <details>  
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>Modify <font face="Courier"><strong>env_run.xml</strong></font> with the command:
-<font face="Courier" color='black'><br />
-./xmlchange STOP_N=nmonths, STOP_OPTION=1<br>
-</font></p>
-<p>Add the following lines to <font face="Courier"><strong>user_nl_cam</strong></font>:
-<font face="Courier" color='black'><br />
-nhtfrq = 0, 0, -24 <br>
-mfilt = 1, 10, 10 <br>
-fincl2 = ‘U, V’, ‘T’ <br>
-fincl3 = ‘PRECT’ <br>
-</font></p>
+<p>Modify <font face="Courier"><strong>env_run.xml</strong></font> with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="n">nmonths</span><span class="p">,</span> <span class="n">STOP_OPTION</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Add the following lines to <font face="Courier"><strong>user_nl_cam</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span> 
+    <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span> 
+    <span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;U, V&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span> 
+    <span class="n">fincl3</span> <span class="o">=</span> <span class="s1">&#39;PRECT&#39;</span>
+</pre></div>
+</div>
 </details>
 </div>
 </section>
