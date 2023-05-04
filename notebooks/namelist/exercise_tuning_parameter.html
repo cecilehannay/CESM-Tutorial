@@ -759,18 +759,16 @@ ncview diff.nc
 </details>
 </div>
 <div class="alert alert-success">   
-<details>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>#Create a new case <font face="Courier"><strong>b1850_T750</strong></font> with the command:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./create_newcase --case ~/cases/b1850_T750 --compset B1850 --res f19_g17
-</pre></div>
-</div>
-</font>
+<p>#Create a new case <font face="Courier"><strong>b1850_dcs</strong></font> with the command:
+<font face="Courier" color='black'><br />
+cd /glade/p/cesm/tutorial/cesm2.1_tutorial2022/cime/scripts
+./create_newcase –case ~/cases/b1850_dcs –compset B1850 –res f19_g17
+</font></p>
 <p>#Case <font face="Courier"><strong>setup</strong></font>:
 <font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd ~/cases/b1850_T750
-./case.setup 
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd ~/cases/b1850_dcs
+./case.setup
 </pre></div>
 </div>
 </font>
@@ -822,8 +820,8 @@ fincl2 = &#39;T750&#39;, &#39;T500&#39;
 </font>
 <p>#When the run is completed, check the fields <font face="Courier"><strong>T750</strong></font> and <font face="Courier"><strong>T500</strong></font> are in the file <font face="Courier"><strong>h1</strong></font>:
 <font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
-ncdump -h b1850_T750.cam.h1.0001-01-01-00000.nc
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
+ncdump -h b1850_dcs.cam.h1.0001-01-01-00000.nc
 </pre></div>
 </div>
 </font>
@@ -842,14 +840,14 @@ ncdump -h b1850_T750.cam.h1.0001-01-01-00000.nc
 </font>
 <p>#Create a file with the difference between <font face="Courier"><strong>T750-T500 </strong>:</font>
 <font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
-ncap2 -s ‘T750_minus_T500=T750-T500&#39; b1850_T750.cam.h1.0001-01-01-00000.nc  T750-T500.nc 
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
+ncap2 -s ‘T750_minus_T500=T750-T500&#39; b1850_dcs.cam.h1.0001-01-01-00000.nc  T750-T500.nc 
 </pre></div>
 </div>
 </font>
 <p>#Look at the difference between <font face="Courier"><strong>T750-T500</strong></font> with <font face="Courier"><strong>ncview</strong></font>:
 <font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
 ncview T750-T500.nc
 </pre></div>
 </div>
