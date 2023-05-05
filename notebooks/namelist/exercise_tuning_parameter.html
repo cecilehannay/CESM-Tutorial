@@ -807,42 +807,27 @@ For instance:</p>
 between <font face="Courier" color='purple'><strong>b1850_dcs</strong></font>
 and <font face="Courier" color='purple'><strong>b1850_high_freq</strong></font>.</p>
 <p>You can use ncdiff and ncview to look at the difference between the 2 runs.</p>
-<p>When the run is completed, check the fields <font face="Courier" color='purple'><strong>T750</strong></font>
-and <font face="Courier" color='purple'><strong>T500</strong></font> are in the file
-<font face="Courier" color='purple'><strong>h1</strong></font>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
-ncdump -h b1850_dcs.cam.h1.0001-01-01-00000.nc
+<p>For instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs 
+ncdiff /glade/scratch/$user/archive/b1850_dcs/atm/hist/b1850_dcs.cam.h0.0001-01.nc /glade/scratch/$user/archive/b1850_high_freq/atm/hist/b1850_high_freq.cam.h0.0001-01.nc diff.nc
 </pre></div>
 </div>
-<p>The file should contain:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">T500</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
-    <span class="n">T500</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;K&quot;</span> <span class="p">;</span>
-    <span class="n">T500</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Temperature at 500 mbar pressure surface&quot;</span> <span class="p">;</span>
-    <span class="n">T500</span><span class="p">:</span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span> <span class="p">;</span>
-<span class="nb">float</span> <span class="n">T750</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
-    <span class="n">T750</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;K&quot;</span> <span class="p">;</span>
-    <span class="n">T750</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Temperature at 750 mbar pressure surface&quot;</span> <span class="p">;</span>
-    <span class="n">T750</span><span class="p">:</span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span> <span class="p">;</span>
+<p>Use ncview to look at the file you created.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncview</span> <span class="n">diff</span><span class="o">.</span><span class="n">nc</span>
 </pre></div>
 </div>
-<p>If you don’t see these variables, check you correctly set the
-<font face="Courier" color='purple'><strong>user_nl_cam</strong></font>.</p>
-<p>Create a file with the difference between
-<font face="Courier" color='purple'><strong>T750-T500 </strong>:</font></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
-ncap2 -s ‘T750_minus_T500=T750-T500&#39; b1850_dcs.cam.h1.0001-01-01-00000.nc  T750-T500.nc 
-</pre></div>
-</div>
-<p>Look at the difference between <font face="Courier" color='purple'><strong>T750-T500</strong></font>
-with <font face="Courier" color='purple'><strong>ncview</strong></font>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
-ncview T750-T500.nc
-</pre></div>
-</div>
-<p>The field <font face="Courier" color='purple'><strong>T750-T500</strong></font> looks like:</p>
+<p>How does this affect the LWCF ?</p>
+<p>Dcs = Threshold diameter to convert cloud ice particles to snow</p>
 <p><em><p style="text-align: center;">
-<img alt="ncview T750-T500" src="../../_images/ncview_T750-T500.png" /><br />
-Figure: Overview of the CESM directories and the SourceMods directories. </p></em></p>
+<img alt="dcs representation" src="images/namelist/dcs.png" /><br />
+Figure: Representation of Dcs. </p></em></p>
+<p>We increased Dcs from 200 microns to 500 microns. We should have more ice cloud and the LWCF should be larger.</p>
+<p>The field <font face="Courier" color='purple'><strong>LWCF</strong></font> difference looks like
+<em><p style="text-align: center;">
+<img alt="ncview T750-T500" src="images/namelis/ncview_diff_dcs.png" /><br />
+Figure: Overview of the CESM directories and the SourceMods directories. </p></em>
+We can see that the change in Dcs affects the tropics where LWCF is large</p>
+<p>However, 1-month run is too short to look at robust statistics.</p>
 </details>
 </div>
 </section>
