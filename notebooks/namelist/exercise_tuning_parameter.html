@@ -787,8 +787,8 @@ if (hist_fld_active(&#39;T750&#39;)) then
 end if
 </pre></div>
 </div>
-<p>Edit the file <font face="Courier" color='purple'><strong>user_nl_cam</strong><br />
-and add the lines:</font></p>
+<p>Edit the file <font face="Courier" color='purple'><strong>user_nl_cam</strong></font><br />
+and add the lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span>
 <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span>
 <span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;T750&#39;</span><span class="p">,</span> <span class="s1">&#39;T500&#39;</span>
@@ -798,39 +798,35 @@ and add the lines:</font></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">nmonths</span>
 </pre></div>
 </div>
-<p>Change <font face="Courier" color='purple'><strong>job queue</strong></font> and <font face="Courier" color='purple'><strong>account number</strong> (if needed). For instance:</font>
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./xmlchange JOB_QUEUE=regular,PROJECT=UESM0011
+<p>If needed, change <font face="Courier" color='purple'><strong>job queue</strong></font>
+and <font face="Courier" color='purple'><strong>account number</strong></font>.
+For instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">regular</span><span class="p">,</span><span class="n">PROJECT</span><span class="o">=</span><span class="n">UESM0011</span>
 </pre></div>
 </div>
-</font>
-<p>#Build and submit:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qcmd -- ./case.build
-./case.submit
+<p>Build and submit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
+<span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
 </pre></div>
 </div>
-</font>
-<p>#When the run is completed, check the fields <font face="Courier"><strong>T750</strong></font> and <font face="Courier"><strong>T500</strong></font> are in the file <font face="Courier"><strong>h1</strong></font>:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
+<p>When the run is completed, check the fields &lt;font face=”Courier”color=’purple’&gt;<strong>T750</strong></font>
+and &lt;font face=”Courier”color=’purple’&gt;<strong>T500</strong></font> are in the file
+&lt;font face=”Courier”color=’purple’&gt;<strong>h1</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
 ncdump -h b1850_dcs.cam.h1.0001-01-01-00000.nc
 </pre></div>
 </div>
-</font>
-<p>The file should contain:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   float T500(time, lat, lon) ;
-           T500:units = &quot;K&quot; ;
-            T500:long_name = &quot;Temperature at 500 mbar pressure surface&quot; ;
-            T500:cell_methods = &quot;time: mean&quot; ;
-    float T750(time, lat, lon) ;
-            T750:units = &quot;K&quot; ;
-            T750:long_name = &quot;Temperature at 750 mbar pressure surface&quot; ;
-            T750:cell_methods = &quot;time: mean&quot; ;
+<p>The file should contain:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">T500</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">T500</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;K&quot;</span> <span class="p">;</span>
+    <span class="n">T500</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Temperature at 500 mbar pressure surface&quot;</span> <span class="p">;</span>
+    <span class="n">T500</span><span class="p">:</span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span> <span class="p">;</span>
+<span class="nb">float</span> <span class="n">T750</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">T750</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;K&quot;</span> <span class="p">;</span>
+    <span class="n">T750</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Temperature at 750 mbar pressure surface&quot;</span> <span class="p">;</span>
+    <span class="n">T750</span><span class="p">:</span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span> <span class="p">;</span>
 </pre></div>
 </div>
-</font>
 <p>#Create a file with the difference between <font face="Courier"><strong>T750-T500 </strong>:</font>
 <font face="Courier" color='black'></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
