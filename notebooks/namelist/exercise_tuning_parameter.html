@@ -381,7 +381,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../sourcemods/exercise_add_field.html">
-   Exercise 1: add output variable
+   Exercise: add output variable
   </a>
  </li>
 </ul>
@@ -771,13 +771,18 @@ ncview diff.nc
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>
 </pre></div>
 </div>
-<p>Locate where to modfify dcs<font face="Courier" color='purple'><strong>T500</strong></font>
-is computed and copy it into <font face="Courier" color='purple'><strong>SourceMods/src.atm</strong></font>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">blabla</span>
+<p>Locate the variable to modify dcs.
+The variable is: <font face="Courier" color='purple'><strong>micro_mg_dcs</strong></font>.
+By default this variable is set to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micro_mg_dcs</span> <span class="o">=</span> <span class="mf">200.</span><span class="n">D</span><span class="o">-</span><span class="mi">6</span>
+</pre></div>
+</div>
+<p>You want to set it to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micro_mg_dcs</span> <span class="o">=</span> <span class="mf">500.</span><span class="n">D</span><span class="o">-</span><span class="mi">6</span> 
 </pre></div>
 </div>
 <p>Edit the file <font face="Courier" color='purple'><strong>user_nl_cam</strong></font> and add the lines:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">blabla</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micro_mg_dcs</span> <span class="o">=</span> <span class="mf">500.</span><span class="n">D</span><span class="o">-</span><span class="mi">6</span> 
 </pre></div>
 </div>
 <p>Change the <font face="Courier" color='purple'><strong>run length</strong></font>:</p>
