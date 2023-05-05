@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercise 1: add output variable &#8212; CESM Tutorial</title>
+    <title>Exercise: add output variable &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -381,7 +381,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Exercise 1: add output variable
+   Exercise: add output variable
   </a>
  </li>
 </ul>
@@ -713,7 +713,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Exercise 1: add output variable</h1>
+                <h1>Exercise: add output variable</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -725,8 +725,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-1-add-output-variable">
-<h1>Exercise 1: add output variable<a class="headerlink" href="#exercise-1-add-output-variable" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-add-output-variable">
+<h1>Exercise: add output variable<a class="headerlink" href="#exercise-add-output-variable" title="Permalink to this headline">#</a></h1>
 <div class="alert alert-info">
 <strong>Exercise: Add an additional output variable</strong><br><br>
 <p>Create a case called “b1850_T750” using the compset  B1850  at f19_g17 resolution.</p>
@@ -769,108 +769,6 @@ For instance, in the CESMROOT, use the command:</p></li>
 <div class="alert alert-success">   
 <details>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>#Create a new case <font face="Courier"><strong>b1850_T750</strong></font> with the command:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./create_newcase --case ~/cases/b1850_T750 --compset B1850 --res f19_g17
-</pre></div>
-</div>
-</font>
-<p>#Case <font face="Courier"><strong>setup</strong></font>:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd ~/cases/b1850_T750
-./case.setup 
-</pre></div>
-</div>
-</font>
-<p>#Locate the file where <font face="Courier"><strong>T500</strong> is computed and copy it into <strong>SourceMods/src.atm</strong></font>:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cp /glade/p/cesm/tutorial/cesm2.1_tutorial2022/components/cam/src/physics/cam/cam_diagnostics.F90 SourceMods/src.cam
-</pre></div>
-</div>
-</font>
-<p>#Edit the file <font face="Courier"><strong>SourceMods/src.cam/cam_diagnostics.F90</strong></font> and add the lines:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  !++ add a variable for T750 
-  call addfld (&#39;T750&#39;,       horiz_only,  &#39;A&#39;, &#39;K&#39;,&#39;Temperature at 750 mbar pressure surface&#39;)  
-  !++ add a variable for T750 
-  if (hist_fld_active(&#39;T750&#39;)) then 
-     call vertinterp(ncol, pcols, pver, state%pmid, 75000._r8, state%t, p_surf, &amp; 
-         extrapolate=&#39;T&#39;, ps=state%ps, phis=state%phis)
-     call outfld(&#39;T750    &#39;, p_surf, pcols, lchnk )
-  end if
-</pre></div>
-</div>
-</font>
-<p>#Edit the file <font face="Courier"><strong>user_nl_cam</strong>  and add the lines:</font>
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nhtfrq = 0, -24
-mfilt = 1, 31
-fincl2 = &#39;T750&#39;, &#39;T500&#39;
-</pre></div>
-</div>
-</font>
-<p>#Change the <font face="Courier"><strong>run length </strong>:</font>
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./xmlchange STOP_N=1,STOP_OPTION=nmonths
-</pre></div>
-</div>
-</font>
-<p>#Change <font face="Courier"><strong>job queue</strong></font> and <font face="Courier"><strong>account number</strong> (if needed). For instance:</font>
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./xmlchange JOB_QUEUE=regular,PROJECT=UESM0011
-</pre></div>
-</div>
-</font>
-<p>#Build and submit:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qcmd -- ./case.build
-./case.submit
-</pre></div>
-</div>
-</font>
-<p>#When the run is completed, check the fields <font face="Courier"><strong>T750</strong></font> and <font face="Courier"><strong>T500</strong></font> are in the file <font face="Courier"><strong>h1</strong></font>:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
-ncdump -h b1850_T750.cam.h1.0001-01-01-00000.nc
-</pre></div>
-</div>
-</font>
-<p>The file should contain:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   float T500(time, lat, lon) ;
-           T500:units = &quot;K&quot; ;
-            T500:long_name = &quot;Temperature at 500 mbar pressure surface&quot; ;
-            T500:cell_methods = &quot;time: mean&quot; ;
-    float T750(time, lat, lon) ;
-            T750:units = &quot;K&quot; ;
-            T750:long_name = &quot;Temperature at 750 mbar pressure surface&quot; ;
-            T750:cell_methods = &quot;time: mean&quot; ;
-</pre></div>
-</div>
-</font>
-<p>#Create a file with the difference between <font face="Courier"><strong>T750-T500 </strong>:</font>
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
-ncap2 -s ‘T750_minus_T500=T750-T500&#39; b1850_T750.cam.h1.0001-01-01-00000.nc  T750-T500.nc 
-</pre></div>
-</div>
-</font>
-<p>#Look at the difference between <font face="Courier"><strong>T750-T500</strong></font> with <font face="Courier"><strong>ncview</strong></font>:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
-ncview T750-T500.nc
-</pre></div>
-</div>
-</font>
-<p>The field <font face="Courier"><strong>T750-T500</strong></font> looks like:</p>
-<p><em><p style="text-align: center;">
-<img alt="ncview T750-T500" src="../../_images/ncview_T750-T500.png" /><br />
-Figure: Overview of the CESM directories and the SourceMods directories. </p></em></p>
-</details>
-</div>
-<div class="alert alert-success">   
-<details>
-<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
 <p>Create a new case <font face="Courier" color='purple'><strong>b1850_T750</strong></font> with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">cesm2</span><span class="mf">.1</span><span class="n">_tutorial2022</span><span class="o">/</span><span class="n">cime</span><span class="o">/</span><span class="n">scripts</span>
 <span class="o">./</span><span class="n">create_newcase</span> <span class="o">--</span><span class="n">case</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_T750</span> <span class="o">--</span><span class="n">compset</span> <span class="n">B1850</span> <span class="o">--</span><span class="n">res</span> <span class="n">f19_g17</span> 
@@ -881,17 +779,27 @@ Figure: Overview of the CESM directories and the SourceMods directories. </p></e
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>
 </pre></div>
 </div>
-<p>Locate the file where <font face="Courier" color='purple'><strong>T500</strong></font>
-is computed and copy it into <font face="Courier" color='purple'><strong>SourceMods/src.atm</strong></font>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micro_mg_dcs</span> <span class="o">=</span> <span class="mf">500.</span><span class="n">D</span><span class="o">-</span><span class="mi">6</span> 
+<p>Locate the file where <font face="Courier"  color='purple'><strong>T500</strong></font> is computed and copy it into
+<font face="Courier"  color='purple'><strong>SourceMods/src.atm</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">cesm2</span><span class="mf">.1</span><span class="n">_tutorial2022</span><span class="o">/</span><span class="n">components</span><span class="o">/</span><span class="n">cam</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">physics</span><span class="o">/</span><span class="n">cam</span><span class="o">/</span><span class="n">cam_diagnostics</span><span class="o">.</span><span class="n">F90</span> <span class="n">SourceMods</span><span class="o">/</span><span class="n">src</span><span class="o">.</span><span class="n">cam</span>
 </pre></div>
 </div>
-<p>The default value is:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micro_mg_dcs</span> <span class="o">=</span> <span class="mf">200.</span><span class="n">D</span><span class="o">-</span><span class="mi">6</span>
+<p>Edit the file <font face="Courier"  color='purple'><strong>SourceMods/src.cam/cam_diagnostics.F90</strong></font> and add the lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!++ add a variable for T750 
+call addfld (&#39;T750&#39;, horiz_only,  &#39;A&#39;, &#39;K&#39;,&#39;Temperature at 750 mbar pressure surface&#39;)  
+
+!++ add a variable for T750 
+if (hist_fld_active(&#39;T750&#39;)) then 
+    call vertinterp(ncol, pcols, pver, state%pmid, 75000._r8, state%t, p_surf, &amp; 
+         extrapolate=&#39;T&#39;, ps=state%ps, phis=state%phis)
+    call outfld(&#39;T750    &#39;, p_surf, pcols, lchnk )
+end if
 </pre></div>
 </div>
-<p>Edit the file <font face="Courier" color='purple'><strong>user_nl_cam</strong></font>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micro_mg_dcs</span> <span class="o">=</span> <span class="mf">500.</span><span class="n">D</span><span class="o">-</span><span class="mi">6</span> 
+<p>Edit the file <font face="Courier" color='purple'><strong>user_nl_cam</strong></font> and add the lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span>
+    <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span>
+    <span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;T750&#39;</span><span class="p">,</span> <span class="s1">&#39;T500&#39;</span>
 </pre></div>
 </div>
 <p>Change the <font face="Courier" color='purple'><strong>run length</strong></font>:</p>
