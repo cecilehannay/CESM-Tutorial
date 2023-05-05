@@ -778,13 +778,13 @@ is computed and copy it into <font face="Courier" color='purple'><strong>SourceM
 </div>
 <p>Edit the file <font face="Courier" color='purple'><strong>SourceMods/src.cam/cam_diagnostics.F90</strong></font> and add the lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!++ add a variable for T750 
-call addfld (&#39;T750&#39;,       horiz_only,  &#39;A&#39;, &#39;K&#39;,&#39;Temperature at 750 mbar pressure surface&#39;)  
+call addfld (&#39;T750&#39;, horiz_only, &#39;A&#39;, &#39;K&#39;, &#39;Temperature at 750 mbar pressure surface&#39;)  
     
-!++ add a variable for T750 
+!++ Extrapolate the variable T on 750mb and write the result in T750 
 if (hist_fld_active(&#39;T750&#39;)) then 
     call vertinterp(ncol, pcols, pver, state%pmid, 75000._r8, state%t, p_surf, &amp; 
     extrapolate=&#39;T&#39;, ps=state%ps, phis=state%phis)
-    call outfld(&#39;T750    &#39;, p_surf, pcols, lchnk )
+    call outfld(&#39;T750&#39;, p_surf, pcols, lchnk )
 end if
 </pre></div>
 </div>
