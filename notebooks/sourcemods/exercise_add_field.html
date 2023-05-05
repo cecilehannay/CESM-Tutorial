@@ -868,6 +868,118 @@ ncview T750-T500.nc
 Figure: Overview of the CESM directories and the SourceMods directories. </p></em></p>
 </details>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+&lt;div class=&quot;alert alert-success&quot;&gt;   
+&lt;details&gt;
+&lt;summary&gt;&lt;font face=&quot;Times New Roman&quot; color=&#39;blue&#39;&gt;Click here for the solution&lt;/font&gt;&lt;/summary&gt;&lt;br&gt;
+                
+Create a new case &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;b1850_T750&lt;/strong&gt;&lt;/font&gt; with the command:
+```
+cd /glade/p/cesm/tutorial/cesm2.1_tutorial2022/cime/scripts
+./create_newcase --case ~/cases/b1850_T750 --compset B1850 --res f19_g17 
+```
+
+Case &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;setup&lt;/strong&gt;&lt;/font&gt;:
+```    
+cd ~/cases/b1850_T750
+./case.setup
+```
+    
+Locate the file where &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;T500&lt;/strong&gt;&lt;/font&gt; 
+is computed and copy it into &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;SourceMods/src.atm&lt;/strong&gt;&lt;/font&gt;:
+```
+cp /glade/p/cesm/tutorial/cesm2.1_tutorial2022/components/cam/src/physics/cam/cam_diagnostics.F90 SourceMods/src.cam
+```
+    
+Edit the file &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;SourceMods/src.cam/cam_diagnostics.F90&lt;/strong&gt;&lt;/font&gt; and add the lines:
+```   
+!++ add a variable for T750 
+call addfld (&#39;T750&#39;, horiz_only, &#39;A&#39;, &#39;K&#39;, &#39;Temperature at 750 mbar pressure surface&#39;)  
+    
+!++ Extrapolate the variable T on 750mb and write the result in T750 
+if (hist_fld_active(&#39;T750&#39;)) then 
+    call vertinterp(ncol, pcols, pver, state%pmid, 75000._r8, state%t, p_surf, &amp; 
+    extrapolate=&#39;T&#39;, ps=state%ps, phis=state%phis)
+    call outfld(&#39;T750&#39;, p_surf, pcols, lchnk )
+end if
+```
+    
+Edit the file &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;user_nl_cam&lt;/strong&gt;&lt;/font&gt; and add the lines:
+```
+nhtfrq = 0, -24
+mfilt = 1, 31
+fincl2 = &#39;T750&#39;, &#39;T500&#39;
+```
+    
+Change the &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;run length&lt;/strong&gt;&lt;/font&gt;:
+```   
+./xmlchange STOP_N=1,STOP_OPTION=nmonths
+```
+
+If needed, change &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;job queue&lt;/strong&gt;&lt;/font&gt; 
+and &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;account number&lt;/strong&gt;&lt;/font&gt;. 
+For instance:
+```  
+./xmlchange JOB_QUEUE=regular,PROJECT=UESM0011
+```
+
+Build and submit:
+```
+qcmd -- ./case.build
+./case.submit
+```
+    
+When the run is completed, check the fields &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;T750&lt;/strong&gt;&lt;/font&gt; 
+    and &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;T500&lt;/strong&gt;&lt;/font&gt; are in the file 
+    &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;h1&lt;/strong&gt;&lt;/font&gt;:
+```  
+cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
+ncdump -h b1850_T750.cam.h1.0001-01-01-00000.nc
+```
+    
+The file should contain:
+```
+float T500(time, lat, lon) ;
+    T500:units = &quot;K&quot; ;
+    T500:long_name = &quot;Temperature at 500 mbar pressure surface&quot; ;
+    T500:cell_methods = &quot;time: mean&quot; ;
+float T750(time, lat, lon) ;
+    T750:units = &quot;K&quot; ;
+    T750:long_name = &quot;Temperature at 750 mbar pressure surface&quot; ;
+    T750:cell_methods = &quot;time: mean&quot; ;
+```
+If you don&#39;t see these variables, check you correctly set the 
+    &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;user_nl_cam&lt;/strong&gt;&lt;/font&gt;.
+    
+Create a file with the difference between 
+    &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;T750-T500 &lt;/strong&gt;:&lt;/font&gt;
+```    
+cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
+ncap2 -s ‘T750_minus_T500=T750-T500&#39; b1850_T750.cam.h1.0001-01-01-00000.nc  T750-T500.nc 
+```
+
+Look at the difference between &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;T750-T500&lt;/strong&gt;&lt;/font&gt; 
+    with &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;ncview&lt;/strong&gt;&lt;/font&gt;: 
+```
+cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
+ncview T750-T500.nc
+```
+  
+The field &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;T750-T500&lt;/strong&gt;&lt;/font&gt; looks like:
+
+*&lt;p style=&quot;text-align: center;&quot;&gt; 
+    ![ncview T750-T500](../../images/sourcemods/ncview_T750-T500.png)  
+    Figure: Overview of the CESM directories and the SourceMods directories. &lt;/p&gt;*
+    
+&lt;/details&gt;
+&lt;/div&gt;
+
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
