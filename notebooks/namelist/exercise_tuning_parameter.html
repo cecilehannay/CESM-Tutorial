@@ -788,14 +788,13 @@ if (hist_fld_active(&#39;T750&#39;)) then
 end if
 </pre></div>
 </div>
-<p>Edit the file <font face="Courier" color='purple'><strong>user_nl_cam</strong></font><br />
-and add the lines:</p>
+<p>Edit the file <font face="Courier" color='purple'><strong>user_nl_cam</strong></font> and add the lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span>
 <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span>
 <span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;T750&#39;</span><span class="p">,</span> <span class="s1">&#39;T500&#39;</span>
 </pre></div>
 </div>
-<p>Change the <font face="Courier" color='purple'><strong>run length </strong></font>:</p>
+<p>Change the <font face="Courier" color='purple'><strong>run length</strong></font>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">nmonths</span>
 </pre></div>
 </div>
@@ -810,9 +809,9 @@ For instance:</p>
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
 </pre></div>
 </div>
-<p>When the run is completed, check the fields &lt;font face=”Courier”color=’purple’&gt;<strong>T750</strong></font>
-and &lt;font face=”Courier”color=’purple’&gt;<strong>T500</strong></font> are in the file
-&lt;font face=”Courier”color=’purple’&gt;<strong>h1</strong></font>:</p>
+<p>When the run is completed, check the fields <font face="Courier" color='purple'><strong>T750</strong></font>
+and <font face="Courier" color='purple'><strong>T500</strong></font> are in the file
+<font face="Courier" color='purple'><strong>h1</strong></font>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
 ncdump -h b1850_dcs.cam.h1.0001-01-01-00000.nc
 </pre></div>
@@ -828,16 +827,18 @@ ncdump -h b1850_dcs.cam.h1.0001-01-01-00000.nc
     <span class="n">T750</span><span class="p">:</span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span> <span class="p">;</span>
 </pre></div>
 </div>
-<p>If you don’t see these variables, check you correctly set the user_nl_cam.</p>
-<p>Create a file with the difference between <font face="Courier" color='purple'><strong>T750-T500 </strong>:</font></p>
+<p>If you don’t see these variables, check you correctly set the
+<font face="Courier" color='purple'><strong>user_nl_cam</strong></font>.</p>
+<p>Create a file with the difference between
+<font face="Courier" color='purple'><strong>T750-T500 </strong>:</font></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
 ncap2 -s ‘T750_minus_T500=T750-T500&#39; b1850_dcs.cam.h1.0001-01-01-00000.nc  T750-T500.nc 
 </pre></div>
 </div>
 <p>Look at the difference between <font face="Courier" color='purple'><strong>T750-T500</strong></font>
 with <font face="Courier" color='purple'><strong>ncview</strong></font>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
-    ncview T750-T500.nc
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
+ncview T750-T500.nc
 </pre></div>
 </div>
 <p>The field <font face="Courier" color='purple'><strong>T750-T500</strong></font> looks like:</p>
