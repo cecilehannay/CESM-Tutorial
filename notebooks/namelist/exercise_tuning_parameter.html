@@ -760,24 +760,20 @@ ncview diff.nc
 </div>
 <div class="alert alert-success">   
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>#Create a new case <font face="Courier"><strong>b1850_dcs</strong></font> with the command:
-<font face="Courier" color='black'><br />
-cd /glade/p/cesm/tutorial/cesm2.1_tutorial2022/cime/scripts
-./create_newcase –case ~/cases/b1850_dcs –compset B1850 –res f19_g17
-</font></p>
-<p>#Case <font face="Courier"><strong>setup</strong></font>:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd ~/cases/b1850_dcs
-./case.setup
+<p>#Create a new case <font face="Courier"><strong>b1850_dcs</strong></font> with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cd</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">cesm2</span><span class="mf">.1</span><span class="n">_tutorial2022</span><span class="o">/</span><span class="n">cime</span><span class="o">/</span><span class="n">scripts</span>
+    <span class="o">./</span><span class="n">create_newcase</span> <span class="o">--</span><span class="n">case</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_dcs</span> <span class="o">--</span><span class="n">compset</span> <span class="n">B1850</span> <span class="o">--</span><span class="n">res</span> <span class="n">f19_g17</span> 
 </pre></div>
 </div>
-</font>
+<p>#Case <font face="Courier"><strong>setup</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cd</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_dcs</span>
+    <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>
+</pre></div>
+</div>
 <p>#Locate the file where <font face="Courier"><strong>T500</strong> is computed and copy it into <strong>SourceMods/src.atm</strong></font>:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cp /glade/p/cesm/tutorial/cesm2.1_tutorial2022/components/cam/src/physics/cam/cam_diagnostics.F90 SourceMods/src.cam
-</pre></div>
-</div>
-</font>
+<font face="Courier" color='black'><br />
+cp /glade/p/cesm/tutorial/cesm2.1_tutorial2022/components/cam/src/physics/cam/cam_diagnostics.F90 SourceMods/src.cam
+</font></p>
 <p>#Edit the file <font face="Courier"><strong>SourceMods/src.cam/cam_diagnostics.F90</strong></font> and add the lines:
 <font face="Courier" color='black'></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  !++ add a variable for T750 
