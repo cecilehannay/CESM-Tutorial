@@ -771,37 +771,33 @@ ncview diff.nc
 </pre></div>
 </div>
 <p>Locate the file where <font face="Courier" color='purple'><strong>T500</strong></font>
-is computed and copy it into <font face="Courier" color='purple'><strong>SourceMods/src.atm</strong></font>:
-<font face="Courier" color='black'><br />
-cp /glade/p/cesm/tutorial/cesm2.1_tutorial2022/components/cam/src/physics/cam/cam_diagnostics.F90 SourceMods/src.cam
-</font></p>
-<p>#Edit the file <font face="Courier"><strong>SourceMods/src.cam/cam_diagnostics.F90</strong></font> and add the lines:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  !++ add a variable for T750 
-  call addfld (&#39;T750&#39;,       horiz_only,  &#39;A&#39;, &#39;K&#39;,&#39;Temperature at 750 mbar pressure surface&#39;)  
-  !++ add a variable for T750 
-  if (hist_fld_active(&#39;T750&#39;)) then 
-     call vertinterp(ncol, pcols, pver, state%pmid, 75000._r8, state%t, p_surf, &amp; 
-         extrapolate=&#39;T&#39;, ps=state%ps, phis=state%phis)
-     call outfld(&#39;T750    &#39;, p_surf, pcols, lchnk )
-  end if
+is computed and copy it into <font face="Courier" color='purple'><strong>SourceMods/src.atm</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cp</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">cesm2</span><span class="mf">.1</span><span class="n">_tutorial2022</span><span class="o">/</span><span class="n">components</span><span class="o">/</span><span class="n">cam</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">physics</span><span class="o">/</span><span class="n">cam</span><span class="o">/</span><span class="n">cam_diagnostics</span><span class="o">.</span><span class="n">F90</span> <span class="n">SourceMods</span><span class="o">/</span><span class="n">src</span><span class="o">.</span><span class="n">cam</span>
 </pre></div>
 </div>
-</font>
-<p>#Edit the file <font face="Courier"><strong>user_nl_cam</strong>  and add the lines:</font>
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nhtfrq = 0, -24
-mfilt = 1, 31
-fincl2 = &#39;T750&#39;, &#39;T500&#39;
+<p>Edit the file <font face="Courier" color='purple'><strong>SourceMods/src.cam/cam_diagnostics.F90</strong></font> and add the lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    !++ add a variable for T750 
+    call addfld (&#39;T750&#39;,       horiz_only,  &#39;A&#39;, &#39;K&#39;,&#39;Temperature at 750 mbar pressure surface&#39;)  
+    
+    !++ add a variable for T750 
+    if (hist_fld_active(&#39;T750&#39;)) then 
+        call vertinterp(ncol, pcols, pver, state%pmid, 75000._r8, state%t, p_surf, &amp; 
+             extrapolate=&#39;T&#39;, ps=state%ps, phis=state%phis)
+        call outfld(&#39;T750    &#39;, p_surf, pcols, lchnk )
+    end if
 </pre></div>
 </div>
-</font>
-<p>#Change the <font face="Courier"><strong>run length </strong>:</font>
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./xmlchange STOP_N=1,STOP_OPTION=nmonths
+<p>Edit the file <font face="Courier" color='purple'><strong>user_nl_cam</strong><br />
+and add the lines:</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span>
+    <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span>
+    <span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;T750&#39;</span><span class="p">,</span> <span class="s1">&#39;T500&#39;</span>
 </pre></div>
 </div>
-</font>
+<p>Change the <font face="Courier" color='purple'><strong>run length </strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">nmonths</span>
+</pre></div>
+</div>
 <p>#Change <font face="Courier"><strong>job queue</strong></font> and <font face="Courier"><strong>account number</strong> (if needed). For instance:</font>
 <font face="Courier" color='black'></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./xmlchange JOB_QUEUE=regular,PROJECT=UESM0011
