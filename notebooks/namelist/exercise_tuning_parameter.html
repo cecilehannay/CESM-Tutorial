@@ -827,21 +827,19 @@ ncdump -h b1850_dcs.cam.h1.0001-01-01-00000.nc
     <span class="n">T750</span><span class="p">:</span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span> <span class="p">;</span>
 </pre></div>
 </div>
-<p>#Create a file with the difference between <font face="Courier"><strong>T750-T500 </strong>:</font>
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
+<p>If you don’t see these variables, check you correctly set the user_nl_cam.</p>
+<p>Create a file with the difference between <font face="Courier" color='purple'><strong>T750-T500 </strong>:</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
 ncap2 -s ‘T750_minus_T500=T750-T500&#39; b1850_dcs.cam.h1.0001-01-01-00000.nc  T750-T500.nc 
 </pre></div>
 </div>
-</font>
-<p>#Look at the difference between <font face="Courier"><strong>T750-T500</strong></font> with <font face="Courier"><strong>ncview</strong></font>:
-<font face="Courier" color='black'></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
-ncview T750-T500.nc
+<p>Look at the difference between <font face="Courier" color='purple'><strong>T750-T500</strong></font>
+with <font face="Courier" color='purple'><strong>ncview</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    cd /glade/scratch/$user/archive/b1850_dcs/atm/hist/ 
+    ncview T750-T500.nc
 </pre></div>
 </div>
-</font>
-<p>The field <font face="Courier"><strong>T750-T500</strong></font> looks like:</p>
+<p>The field <font face="Courier" color='purple'><strong>T750-T500</strong></font> looks like:</p>
 <p><em><p style="text-align: center;">
 <img alt="ncview T750-T500" src="../../_images/ncview_T750-T500.png" /><br />
 Figure: Overview of the CESM directories and the SourceMods directories. </p></em></p>
