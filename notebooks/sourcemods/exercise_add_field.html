@@ -868,117 +868,84 @@ ncview T750-T500.nc
 Figure: Overview of the CESM directories and the SourceMods directories. </p></em></p>
 </details>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
-&lt;div class=&quot;alert alert-success&quot;&gt;   
-&lt;details&gt;
-&lt;summary&gt;&lt;font face=&quot;Times New Roman&quot; color=&#39;blue&#39;&gt;Click here for the solution&lt;/font&gt;&lt;/summary&gt;&lt;br&gt;
-                
-Create a new case &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;b1850_T750&lt;/strong&gt;&lt;/font&gt; with the command:
-```
-cd /glade/p/cesm/tutorial/cesm2.1_tutorial2022/cime/scripts
-./create_newcase --case ~/cases/b1850_T750 --compset B1850 --res f19_g17 
-```
-
-Case &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;setup&lt;/strong&gt;&lt;/font&gt;:
-```    
-cd ~/cases/b1850_T750
-./case.setup
-```
-    
-Locate the file where &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;T500&lt;/strong&gt;&lt;/font&gt; 
-is computed and copy it into &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;SourceMods/src.atm&lt;/strong&gt;&lt;/font&gt;:
-```
-cp /glade/p/cesm/tutorial/cesm2.1_tutorial2022/components/cam/src/physics/cam/cam_diagnostics.F90 SourceMods/src.cam
-```
-    
-Edit the file &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;SourceMods/src.cam/cam_diagnostics.F90&lt;/strong&gt;&lt;/font&gt; and add the lines:
-```   
-!++ add a variable for T750 
-call addfld (&#39;T750&#39;, horiz_only, &#39;A&#39;, &#39;K&#39;, &#39;Temperature at 750 mbar pressure surface&#39;)  
-    
-!++ Extrapolate the variable T on 750mb and write the result in T750 
-if (hist_fld_active(&#39;T750&#39;)) then 
-    call vertinterp(ncol, pcols, pver, state%pmid, 75000._r8, state%t, p_surf, &amp; 
-    extrapolate=&#39;T&#39;, ps=state%ps, phis=state%phis)
-    call outfld(&#39;T750&#39;, p_surf, pcols, lchnk )
-end if
-```
-    
-Edit the file &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;user_nl_cam&lt;/strong&gt;&lt;/font&gt; and add the lines:
-```
-nhtfrq = 0, -24
-mfilt = 1, 31
-fincl2 = &#39;T750&#39;, &#39;T500&#39;
-```
-    
-Change the &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;run length&lt;/strong&gt;&lt;/font&gt;:
-```   
-./xmlchange STOP_N=1,STOP_OPTION=nmonths
-```
-
-If needed, change &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;job queue&lt;/strong&gt;&lt;/font&gt; 
-and &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;account number&lt;/strong&gt;&lt;/font&gt;. 
-For instance:
-```  
-./xmlchange JOB_QUEUE=regular,PROJECT=UESM0011
-```
-
-Build and submit:
-```
-qcmd -- ./case.build
-./case.submit
-```
-    
-When the run is completed, check the fields &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;T750&lt;/strong&gt;&lt;/font&gt; 
-    and &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;T500&lt;/strong&gt;&lt;/font&gt; are in the file 
-    &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;h1&lt;/strong&gt;&lt;/font&gt;:
-```  
-cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
-ncdump -h b1850_T750.cam.h1.0001-01-01-00000.nc
-```
-    
-The file should contain:
-```
-float T500(time, lat, lon) ;
-    T500:units = &quot;K&quot; ;
-    T500:long_name = &quot;Temperature at 500 mbar pressure surface&quot; ;
-    T500:cell_methods = &quot;time: mean&quot; ;
-float T750(time, lat, lon) ;
-    T750:units = &quot;K&quot; ;
-    T750:long_name = &quot;Temperature at 750 mbar pressure surface&quot; ;
-    T750:cell_methods = &quot;time: mean&quot; ;
-```
-If you don&#39;t see these variables, check you correctly set the 
-    &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;user_nl_cam&lt;/strong&gt;&lt;/font&gt;.
-    
-Create a file with the difference between 
-    &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;T750-T500 &lt;/strong&gt;:&lt;/font&gt;
-```    
-cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
-ncap2 -s ‘T750_minus_T500=T750-T500&#39; b1850_T750.cam.h1.0001-01-01-00000.nc  T750-T500.nc 
-```
-
-Look at the difference between &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;T750-T500&lt;/strong&gt;&lt;/font&gt; 
-    with &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;ncview&lt;/strong&gt;&lt;/font&gt;: 
-```
-cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
-ncview T750-T500.nc
-```
-  
-The field &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;T750-T500&lt;/strong&gt;&lt;/font&gt; looks like:
-
-*&lt;p style=&quot;text-align: center;&quot;&gt; 
-    ![ncview T750-T500](../../images/sourcemods/ncview_T750-T500.png)  
-    Figure: Overview of the CESM directories and the SourceMods directories. &lt;/p&gt;*
-    
-&lt;/details&gt;
-&lt;/div&gt;
-
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p>Create a new case <font face="Courier" color='purple'><strong>b1850_T750</strong></font> with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">cesm2</span><span class="mf">.1</span><span class="n">_tutorial2022</span><span class="o">/</span><span class="n">cime</span><span class="o">/</span><span class="n">scripts</span>
+<span class="o">./</span><span class="n">create_newcase</span> <span class="o">--</span><span class="n">case</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_T750</span> <span class="o">--</span><span class="n">compset</span> <span class="n">B1850</span> <span class="o">--</span><span class="n">res</span> <span class="n">f19_g17</span> 
 </pre></div>
 </div>
+<p>Case <font face="Courier" color='purple'><strong>setup</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_T750</span>
+<span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>
+</pre></div>
 </div>
+<p>Locate the file where <font face="Courier" color='purple'><strong>T500</strong></font>
+is computed and copy it into <font face="Courier" color='purple'><strong>SourceMods/src.atm</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micro_mg_dcs</span> <span class="o">=</span> <span class="mf">500.</span><span class="n">D</span><span class="o">-</span><span class="mi">6</span> 
+</pre></div>
+</div>
+<p>The default value is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micro_mg_dcs</span> <span class="o">=</span> <span class="mf">200.</span><span class="n">D</span><span class="o">-</span><span class="mi">6</span>
+</pre></div>
+</div>
+<p>Edit the file <font face="Courier" color='purple'><strong>user_nl_cam</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micro_mg_dcs</span> <span class="o">=</span> <span class="mf">500.</span><span class="n">D</span><span class="o">-</span><span class="mi">6</span> 
+</pre></div>
+</div>
+<p>Change the <font face="Courier" color='purple'><strong>run length</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">nmonths</span>
+</pre></div>
+</div>
+<p>If needed, change <font face="Courier" color='purple'><strong>job queue</strong></font>
+and <font face="Courier" color='purple'><strong>account number</strong></font>.
+For instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">regular</span><span class="p">,</span><span class="n">PROJECT</span><span class="o">=</span><span class="n">UESM0011</span>
+</pre></div>
+</div>
+<p>Build and submit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
+<span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
+</pre></div>
+</div>
+<p>When the run is completed, check the fields <font face="Courier" color='purple'><strong>T750</strong></font>
+and <font face="Courier" color='purple'><strong>T500</strong></font> are in the file
+<font face="Courier" color='purple'><strong>h1</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
+ncdump -h b1850_T750.cam.h1.0001-01-01-00000.nc
+</pre></div>
+</div>
+<p>The file should contain:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">T500</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">T500</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;K&quot;</span> <span class="p">;</span>
+    <span class="n">T500</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Temperature at 500 mbar pressure surface&quot;</span> <span class="p">;</span>
+    <span class="n">T500</span><span class="p">:</span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span> <span class="p">;</span>
+<span class="nb">float</span> <span class="n">T750</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">T750</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;K&quot;</span> <span class="p">;</span>
+    <span class="n">T750</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Temperature at 750 mbar pressure surface&quot;</span> <span class="p">;</span>
+    <span class="n">T750</span><span class="p">:</span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span> <span class="p">;</span>
+</pre></div>
+</div>
+<p>If you don’t see these variables, check you correctly set the
+<font face="Courier" color='purple'><strong>user_nl_cam</strong></font>.</p>
+<p>Create a file with the difference between
+<font face="Courier" color='purple'><strong>T750-T500 </strong>:</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
+ncap2 -s ‘T750_minus_T500=T750-T500&#39; b1850_T750.cam.h1.0001-01-01-00000.nc  T750-T500.nc 
+</pre></div>
+</div>
+<p>Look at the difference between <font face="Courier" color='purple'><strong>T750-T500</strong></font>
+with <font face="Courier" color='purple'><strong>ncview</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
+ncview T750-T500.nc
+</pre></div>
+</div>
+<p>The field <font face="Courier" color='purple'><strong>T750-T500</strong></font> looks like:</p>
+<p><em><p style="text-align: center;">
+<img alt="ncview T750-T500" src="../../_images/ncview_T750-T500.png" /><br />
+Figure: Overview of the CESM directories and the SourceMods directories. </p></em></p>
+</details>
 </div>
 </section>
 

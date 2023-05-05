@@ -771,27 +771,13 @@ ncview diff.nc
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>
 </pre></div>
 </div>
-<p>Locate the file where <font face="Courier" color='purple'><strong>T500</strong></font>
+<p>Locate where to modfify dcs<font face="Courier" color='purple'><strong>T500</strong></font>
 is computed and copy it into <font face="Courier" color='purple'><strong>SourceMods/src.atm</strong></font>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">cesm2</span><span class="mf">.1</span><span class="n">_tutorial2022</span><span class="o">/</span><span class="n">components</span><span class="o">/</span><span class="n">cam</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">physics</span><span class="o">/</span><span class="n">cam</span><span class="o">/</span><span class="n">cam_diagnostics</span><span class="o">.</span><span class="n">F90</span> <span class="n">SourceMods</span><span class="o">/</span><span class="n">src</span><span class="o">.</span><span class="n">cam</span>
-</pre></div>
-</div>
-<p>Edit the file <font face="Courier" color='purple'><strong>SourceMods/src.cam/cam_diagnostics.F90</strong></font> and add the lines:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!++ add a variable for T750 
-call addfld (&#39;T750&#39;, horiz_only, &#39;A&#39;, &#39;K&#39;, &#39;Temperature at 750 mbar pressure surface&#39;)  
-    
-!++ Extrapolate the variable T on 750mb and write the result in T750 
-if (hist_fld_active(&#39;T750&#39;)) then 
-    call vertinterp(ncol, pcols, pver, state%pmid, 75000._r8, state%t, p_surf, &amp; 
-    extrapolate=&#39;T&#39;, ps=state%ps, phis=state%phis)
-    call outfld(&#39;T750&#39;, p_surf, pcols, lchnk )
-end if
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">blabla</span>
 </pre></div>
 </div>
 <p>Edit the file <font face="Courier" color='purple'><strong>user_nl_cam</strong></font> and add the lines:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span>
-<span class="n">mfilt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span>
-<span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;T750&#39;</span><span class="p">,</span> <span class="s1">&#39;T500&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">blabla</span>
 </pre></div>
 </div>
 <p>Change the <font face="Courier" color='purple'><strong>run length</strong></font>:</p>
