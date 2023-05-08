@@ -754,7 +754,11 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#addfld">
-   addfld
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     addfld
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -788,7 +792,11 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#addfld">
-   addfld
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     addfld
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -814,7 +822,7 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="adding-new-history-fields">
 <h1>Adding New History Fields<a class="headerlink" href="#adding-new-history-fields" title="Permalink to this headline">#</a></h1>
 <p>A common source code modification that you may want to do is to output a <strong>new variable</strong>.</p>
-<p>As an example, CAM has a history field that corresponds to the temperature at 500hPa and a number of other pressure levels, but not at 750hPa. Suppose you wanted to output the temperature at 750hPa. The following two
+<p>As an example, CAM has a history field that corresponds to the <strong>temperature at 500hPa</strong> and a number of other pressure levels, but not at 750hPa. Suppose you wanted to output the <strong>temperature at 750hPa</strong>. The following two
 calls are required to add an output variable:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>call addfld(’T750’,...) (Add a field to the master field list)
 call outfld(’T750’,...) (Collect values for this field and write to history file)
@@ -822,8 +830,8 @@ call outfld(’T750’,...) (Collect values for this field and write to history 
 </div>
 <p>Each of these are now described in more detail:</p>
 <section id="addfld">
-<h2>addfld<a class="headerlink" href="#addfld" title="Permalink to this headline">#</a></h2>
-<p>The sub-routine addfld adds a field to the master list with the following syntax:</p>
+<h2><code class="docutils literal notranslate"><span class="pre">addfld</span></code><a class="headerlink" href="#addfld" title="Permalink to this headline">#</a></h2>
+<p>The sub-routine <code class="docutils literal notranslate"><span class="pre">addfld</span></code> adds a field to the master list with the following syntax:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">addfld</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span><span class="nb">type</span><span class="p">,</span><span class="n">avgflag</span><span class="p">,</span><span class="n">units</span><span class="p">,</span><span class="n">long</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
