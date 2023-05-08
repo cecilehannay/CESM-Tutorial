@@ -738,57 +738,81 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="modify-cam-output">
 <h1>Modify CAM output<a class="headerlink" href="#modify-cam-output" title="Permalink to this headline">#</a></h1>
 <div class="alert alert-info">
-<strong>Exercise: Modify a parameter, dcs</strong><br><br>
-<p>In the tuning lecture, we talked about the parameter dcs:
-<a class="reference external" href="http://www.cesm.ucar.edu/events/tutorials/2019/files/Specialized-hannay.pdf">http://www.cesm.ucar.edu/events/tutorials/2019/files/Specialized-hannay.pdf</a></p>
-<p>Create a case called “b1850_dcs” using the compset  B1850  at f19_g17 resolution.</p>
-<p>Locate where to change the parameter Dcs and change from the default value:
-dcs = 200.D-6
-to
-dcs = 500.D-6</p>
+<strong>Exercise: Customize your CAM history files</strong><br><br>
+<p>Create a case called <strong>b1850_high_freq</strong> using the compset  <code class="docutils literal notranslate"><span class="pre">B1850</span></code>  at <code class="docutils literal notranslate"><span class="pre">f19_g17</span></code> resolution.</p>
+<p>Set the run length to <strong>1 month</strong>.</p>
+<p>In addition to the monthly history file <code class="docutils literal notranslate"><span class="pre">h0</span></code>, output:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">h1</span></code> file with <strong>instantaneous</strong> values of T, Q, U and V every <strong>24 hour</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">h2</span></code> file with <strong>time-average</strong> values of T, Q, U and V every <strong>3 hour</strong>.</p></li>
+</ul>
+<p>Set your namelist so that you output:</p>
+<ul class="simple">
+<li><p>a <strong>single</strong> <code class="docutils literal notranslate"><span class="pre">h1</span></code> file with all the daily output for the month.</p></li>
+<li><p>multiple <code class="docutils literal notranslate"><span class="pre">h2</span></code> files, <strong>one for every day</strong> of the month.</p></li>
+</ul>
+<p>Your goal is to produce:</p>
+<ul class="simple">
+<li><p>one <code class="docutils literal notranslate"><span class="pre">h1</span></code> file with 31 timesteps and</p></li>
+<li><p>thirty-one <code class="docutils literal notranslate"><span class="pre">h2</span></code> files with 8 timesteps each.</p></li>
+</ul>
 <p>Make a 1-month run.</p>
 </div>
 <div class="alert alert-warning">  
-<details>
-   <summary>
-      <font face="Times New Roman" color='blue'>Click here for hints</font>
-    </summary>
-<ul class="simple">
-<li><p>The trick is going to locate where to change dcs</p></li>
-<li><p>Compare to this run to the first run you did today: b1850_high_freq.</p></li>
-<li><p>You can use ncdiff and ncview to look at the difference between the 2 runs.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ncdiff /glade/scratch/$user/archive/b1850_dcs/atm/hist/b1850_dcs.cam.h0.0001-01.nc /glade/scratch/$user/archive/b1850_high_freq/atm/hist/b1850_high_freq.cam.h0.0001-01.nc diff.nc
-
-ncview diff.nc
+   <summary> <font face="Times New Roman" color='blue'>Click here for hints</font> </summary>
+<p><strong>How do I compile?</strong></p>
+<p>You can compile with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Analyze how this does this affect the LWCF ?</p></li>
-</ul>
+<p><strong>How do I control the output?</strong>
+Use namelist variables: <code class="docutils literal notranslate"><span class="pre">nhtfrq</span></code>, <code class="docutils literal notranslate"><span class="pre">mfilt</span></code>, <code class="docutils literal notranslate"><span class="pre">fincl</span></code>.
+Look at the online documentation for these variables.</p>
+<p><strong>How do I check my solution?</strong></p>
+<p>When your run is completed, go to the archive directory.</p>
+<p>(1) Check that your archive directory contains the files:</p>
+<p>h0 files</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h0</span><span class="mf">.0001</span><span class="o">-</span><span class="mf">01.</span><span class="n">nc</span>
+</pre></div>
+</div>
+<p>h1 files</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+<span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+</pre></div>
+</div>
+<p>h2 files</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>b1850_high_freq.cam.h2.0001-01-01-00000.nc
+…
+b1850_high_freq.cam.h2.0001-01-31-00000.nc
+b1850_high_freq.cam.h2.0001-02-01-00000.nc
+</pre></div>
+</div>
+<p>(2) Compare the contents of the h1 and h2 files using “ncdump”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncdump</span> <span class="o">-</span><span class="n">h</span> <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+<span class="n">ncdump</span> <span class="o">-</span><span class="n">h</span> <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+</pre></div>
+</div>
+<p>(3) Check the number of timesteps in the <code class="docutils literal notranslate"><span class="pre">h1</span></code> and the <code class="docutils literal notranslate"><span class="pre">h2</span></code> files.
+Look at the sizes of the files.</p>
 </details>
 </div>
 <div class="alert alert-success">   
-<details>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>Create a new case <font face="Courier" color='purple'><strong>b1850_dcs</strong></font> with the command:</p>
+<p>Create a new case <font face="Courier" color='purple'><strong>b1850_high_freq </strong></font> with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">cesm2</span><span class="mf">.1</span><span class="n">_tutorial2022</span><span class="o">/</span><span class="n">cime</span><span class="o">/</span><span class="n">scripts</span>
-<span class="o">./</span><span class="n">create_newcase</span> <span class="o">--</span><span class="n">case</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_dcs</span> <span class="o">--</span><span class="n">compset</span> <span class="n">B1850</span> <span class="o">--</span><span class="n">res</span> <span class="n">f19_g17</span> 
+<span class="o">./</span><span class="n">create_newcase</span> <span class="o">--</span><span class="n">case</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_high_freq</span>  <span class="o">--</span><span class="n">compset</span> <span class="n">B1850</span> <span class="o">--</span><span class="n">res</span> <span class="n">f19_g17</span> 
 </pre></div>
 </div>
 <p>Case <font face="Courier" color='purple'><strong>setup</strong></font>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_dcs</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_high_freq</span> 
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>
 </pre></div>
 </div>
-<p>Locate the variable to modify dcs.
-The variable is: <font face="Courier" color='purple'><strong>micro_mg_dcs</strong></font>.
-By default this variable is set to:
-micro_mg_dcs = 200 microns
-You want to set it to:
-micro_mg_dcs = 500 microns</p>
 <p>Edit the file <font face="Courier" color='purple'><strong>user_nl_cam</strong></font> and add the lines:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micro_mg_dcs</span> <span class="o">=</span> <span class="mf">500.</span><span class="n">D</span><span class="o">-</span><span class="mi">6</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span>
+ <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">8</span> 
+ <span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;T:I&#39;</span><span class="p">,</span><span class="s1">&#39;Q:I&#39;</span><span class="p">,</span><span class="s1">&#39;U:I&#39;</span><span class="p">,</span><span class="s1">&#39;V:I&#39;</span>
+ <span class="n">fincl3</span> <span class="o">=</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;Q&#39;</span><span class="p">,</span><span class="s1">&#39;U&#39;</span><span class="p">,</span><span class="s1">&#39;V&#39;</span>
 </pre></div>
 </div>
 <p>Change the <font face="Courier" color='purple'><strong>run length</strong></font>:</p>
@@ -808,31 +832,39 @@ For instance:</p>
 </div>
 <p>When the run is completed, compare to the first run:
 <font face="Courier" color='purple'><strong>b1850_high_freq</strong></font>.</p>
-<p>Create a file with the difference in
-<font face="Courier" color='purple'><strong>LWCF</strong></font>
-between <font face="Courier" color='purple'><strong>b1850_dcs</strong></font>
-and <font face="Courier" color='purple'><strong>b1850_high_freq</strong></font>.</p>
-<p>You can use ncdiff and ncview to look at the difference between the 2 runs.</p>
-<p>For instance:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs 
-ncdiff /glade/scratch/$user/archive/b1850_dcs/atm/hist/b1850_dcs.cam.h0.0001-01.nc /glade/scratch/$user/archive/b1850_high_freq/atm/hist/b1850_high_freq.cam.h0.0001-01.nc diff.nc
-</pre></div>
-</div>
-<p>Use ncview to look at the file you created.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncview</span> <span class="n">diff</span><span class="o">.</span><span class="n">nc</span>
-</pre></div>
-</div>
-<p>How does this affect the LWCF ?</p>
-<p>Dcs = Threshold diameter to convert cloud ice particles to snow</p>
-<p><em><p style="text-align: center;">
-<img alt="dcs representation" src="notebooks/images/namelist/dcs.png" /><br />
-Figure: Representation of Dcs. </p></em></p>
-<p>We increased Dcs from 200 microns to 500 microns. We should have more ice cloud and the LWCF should be larger.</p>
-<p>The field <font face="Courier" color='purple'><strong>LWCF</strong></font> difference looks like
-<em><p style="text-align: center;">
-<img alt="ncview diff LWCF" src="notebooks/images/namelist/ncview_diff_dcs.png" /><br />
-Figure: Difference of LWCF for micro_mg_dcs = 200.D-6-&gt;500.D-6 </p></em></p>
-<p>We can see that the change in Dcs affects the tropics where LWCF is large. However, 1-month run is too short to look at robust statistics.</p>
+<p>(1) Check that your archive directory:
+cd /glade/scratch/$user/archive/b1850_high_freq/atm/hist
+ls</p>
+<p>(2) Compare the contents of the h1 and h2 files using “ncdump”.
+Look at the variables attributes. What is the difference between the 2 files ?</p>
+<p>The file with the instantaneous output (h1) have no cell_methods attribute while the average output (h2) has a attribute: cell_methods = “time: mean” ;</p>
+<p>For instance for the field Q.</p>
+<p>In: b1850_high_freq.cam.h1.0001-01-01-00000.nc
+float Q(time, lev, lat, lon) ;
+Q:mdims = 1 ;
+Q:units = “kg/kg” ;
+Q:mixing_ratio = “wet” ;
+Q:long_name = “Specific humidity” ;</p>
+<p>In: b1850_high_freq.cam.h2.0001-01-01-00000.nc
+float Q(time, lev, lat, lon) ;
+Q:mdims = 1 ;
+Q:units = “kg/kg” ;
+Q:mixing_ratio = “wet” ;
+Q:long_name = “Specific humidity” ;
+Q:cell_methods = “time: mean” ;</p>
+<p>(3) Check the number of timesteps in the h1 and the h2 files.</p>
+<p>h1 =&gt; 31 timestep. In the netcdf file,  time = UNLIMITED ; // (31 currently)
+h2 =&gt; 8 timesteps. In the netcdf file, time = UNLIMITED ; // (8 currently)</p>
+<p>Check size of the files
+du –ks –h /glade/scratch/$user/archive/b1850_high_freq/atm/hist/*</p>
+<p>234M    b1850_high_freq.cam.h0.0001-01.nc</p>
+<p>210M    b1850_high_freq.cam.h1.0001-01-01-00000.nc
+7.0M    b1850_high_freq.cam.h1.0001-02-01-00000.nc</p>
+<p>55M     b1850_high_freq.cam.h2.0001-01-01-00000.nc
+55M     b1850_high_freq.cam.h2.0001-01-02-00000.nc
+…
+55M     b1850_high_freq.cam.h2.0001-01-31-00000.nc
+7.0M    b1850_high_freq.cam.h2.0001-02-01-00000.nc</p>
 </details>
 </div>
 </section>
