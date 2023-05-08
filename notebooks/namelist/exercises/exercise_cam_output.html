@@ -871,32 +871,50 @@ Look at the variables attributes. What is the difference between the 2 files ?</
 </pre></div>
 </div>
 <p>For instance for the field Q.</p>
-<p>In: b1850_high_freq.cam.h1.0001-01-01-00000.nc
-float Q(time, lev, lat, lon) ;
-Q:mdims = 1 ;
-Q:units = “kg/kg” ;
-Q:mixing_ratio = “wet” ;
-Q:long_name = “Specific humidity” ;</p>
-<p>In: b1850_high_freq.cam.h2.0001-01-01-00000.nc
-float Q(time, lev, lat, lon) ;
-Q:mdims = 1 ;
-Q:units = “kg/kg” ;
-Q:mixing_ratio = “wet” ;
-Q:long_name = “Specific humidity” ;
-Q:cell_methods = “time: mean” ;</p>
+<p>In: <code class="docutils literal notranslate"><span class="pre">b1850_high_freq.cam.h1.0001-01-01-00000.nc</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">Q</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lev</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">Q</span><span class="p">:</span><span class="n">mdims</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
+                <span class="n">Q</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;kg/kg&quot;</span> <span class="p">;</span>
+                <span class="n">Q</span><span class="p">:</span><span class="n">mixing_ratio</span> <span class="o">=</span> <span class="s2">&quot;wet&quot;</span> <span class="p">;</span>
+                <span class="n">Q</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Specific humidity&quot;</span> <span class="p">;</span>
+</pre></div>
+</div>
+<p>In: <code class="docutils literal notranslate"><span class="pre">b1850_high_freq.cam.h2.0001-01-01-00000.nc</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">Q</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lev</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">Q</span><span class="p">:</span><span class="n">mdims</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
+                <span class="n">Q</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;kg/kg&quot;</span> <span class="p">;</span>
+                <span class="n">Q</span><span class="p">:</span><span class="n">mixing_ratio</span> <span class="o">=</span> <span class="s2">&quot;wet&quot;</span> <span class="p">;</span>
+                <span class="n">Q</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Specific humidity&quot;</span> <span class="p">;</span>
+                <span class="n">Q</span><span class="p">:</span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span> <span class="p">;</span>
+</pre></div>
+</div>
 <p>(3) Check the number of timesteps in the h1 and the h2 files.</p>
-<p>h1 =&gt; 31 timestep. In the netcdf file,  time = UNLIMITED ; // (31 currently)
-h2 =&gt; 8 timesteps. In the netcdf file, time = UNLIMITED ; // (8 currently)</p>
-<p>Check size of the files
-du –ks –h /glade/scratch/$user/archive/b1850_high_freq/atm/hist/*</p>
-<p>234M    b1850_high_freq.cam.h0.0001-01.nc</p>
-<p>210M    b1850_high_freq.cam.h1.0001-01-01-00000.nc
-7.0M    b1850_high_freq.cam.h1.0001-02-01-00000.nc</p>
-<p>55M     b1850_high_freq.cam.h2.0001-01-01-00000.nc
-55M     b1850_high_freq.cam.h2.0001-01-02-00000.nc
-…
-55M     b1850_high_freq.cam.h2.0001-01-31-00000.nc
-7.0M    b1850_high_freq.cam.h2.0001-02-01-00000.nc</p>
+<p><code class="docutils literal notranslate"><span class="pre">h1</span></code> =&gt; 31 timestep.
+In the netcdf file,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">UNLIMITED</span> <span class="p">;</span> <span class="o">//</span> <span class="p">(</span><span class="mi">31</span> <span class="n">currently</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">h2</span></code> =&gt; 8 timesteps.
+In the netcdf file,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">UNLIMITED</span> <span class="p">;</span> <span class="o">//</span> <span class="p">(</span><span class="mi">8</span> <span class="n">currently</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Check size of the files</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>du –ks –h /glade/scratch/$user/archive/b1850_high_freq/atm/hist/*
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">234</span><span class="n">M</span>    <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h0</span><span class="mf">.0001</span><span class="o">-</span><span class="mf">01.</span><span class="n">nc</span>
+
+<span class="mi">210</span><span class="n">M</span>    <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+<span class="mf">7.0</span><span class="n">M</span>    <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+
+<span class="mi">55</span><span class="n">M</span>     <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+<span class="mi">55</span><span class="n">M</span>     <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+<span class="o">...</span>
+<span class="mi">55</span><span class="n">M</span>     <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+<span class="mf">7.0</span><span class="n">M</span>    <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+</pre></div>
+</div>
 </details>
 </div>
 </section>
