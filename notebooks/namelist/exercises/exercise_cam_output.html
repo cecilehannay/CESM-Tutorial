@@ -768,7 +768,7 @@ title="Print to PDF"
 <p>Set your namelist so that you output:</p>
 <ul class="simple">
 <li><p>a <strong>single</strong> <code class="docutils literal notranslate"><span class="pre">h1</span></code> file with all the daily output for the month.</p></li>
-<li><p>multiple <code class="docutils literal notranslate"><span class="pre">h2</span></code> files, <strong>one for every day</strong> of the month.</p></li>
+<li><p><strong>multiple</strong> <code class="docutils literal notranslate"><span class="pre">h2</span></code> files, one for every day of the month.</p></li>
 </ul>
 <p>Your goal is to produce:</p>
 <ul class="simple">
@@ -778,41 +778,48 @@ title="Print to PDF"
 <p>Make a 1-month run.</p>
 </div>
 <div class="alert alert-warning">  
-   <summary> <font face="Times New Roman" color='blue'>Click here for hints</font> </summary>
+<details>
+<summary> <font face="Times New Roman" color='blue'>Click here for hints</font> </summary>
 <p><strong>How do I compile?</strong></p>
 <p>You can compile with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
 </pre></div>
 </div>
-<p><strong>How do I control the output?</strong>
-Use namelist variables: <code class="docutils literal notranslate"><span class="pre">nhtfrq</span></code>, <code class="docutils literal notranslate"><span class="pre">mfilt</span></code>, <code class="docutils literal notranslate"><span class="pre">fincl</span></code>.
+<p><strong>How do I control the output?</strong></p>
+<p>Use namelist variables: <code class="docutils literal notranslate"><span class="pre">nhtfrq</span></code>, <code class="docutils literal notranslate"><span class="pre">mfilt</span></code>, <code class="docutils literal notranslate"><span class="pre">fincl</span></code>.
 Look at the online documentation for these variables.</p>
 <p><strong>How do I check my solution?</strong></p>
 <p>When your run is completed, go to the archive directory.</p>
-<p>(1) Check that your archive directory contains the files:</p>
-<p>h0 files</p>
+<ul class="simple">
+<li><p>(1) Check that your archive directory contains the files:</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">h0</span></code> files</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h0</span><span class="mf">.0001</span><span class="o">-</span><span class="mf">01.</span><span class="n">nc</span>
 </pre></div>
 </div>
-<p>h1 files</p>
+<p><code class="docutils literal notranslate"><span class="pre">h1</span></code> files</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
 <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
 </pre></div>
 </div>
-<p>h2 files</p>
+<p><code class="docutils literal notranslate"><span class="pre">h2</span></code> files</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>b1850_high_freq.cam.h2.0001-01-01-00000.nc
 …
 b1850_high_freq.cam.h2.0001-01-31-00000.nc
 b1850_high_freq.cam.h2.0001-02-01-00000.nc
 </pre></div>
 </div>
-<p>(2) Compare the contents of the h1 and h2 files using “ncdump”.</p>
+<ul class="simple">
+<li><p>(2) Compare the contents of the <code class="docutils literal notranslate"><span class="pre">h1</span></code> and <code class="docutils literal notranslate"><span class="pre">h2</span></code> files using <code class="docutils literal notranslate"><span class="pre">ncdump</span></code>.</p></li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncdump</span> <span class="o">-</span><span class="n">h</span> <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
 <span class="n">ncdump</span> <span class="o">-</span><span class="n">h</span> <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
 </pre></div>
 </div>
-<p>(3) Check the number of timesteps in the <code class="docutils literal notranslate"><span class="pre">h1</span></code> and the <code class="docutils literal notranslate"><span class="pre">h2</span></code> files.
-Look at the sizes of the files.</p>
+<ul class="simple">
+<li><p>(3) Check the number of timesteps in the <code class="docutils literal notranslate"><span class="pre">h1</span></code> and the <code class="docutils literal notranslate"><span class="pre">h2</span></code> files.
+Look at the sizes of the files.</p></li>
+</ul>
 </details>
 </div>
 <div class="alert alert-success">   
