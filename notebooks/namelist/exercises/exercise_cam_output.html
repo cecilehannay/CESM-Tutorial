@@ -823,6 +823,7 @@ Look at the sizes of the files.</p>
 </details>
 </div>
 <div class="alert alert-success">   
+<details>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
 <p>Create a new case <font face="Courier" color='purple'><strong>b1850_high_freq </strong></font> with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">cesm2</span><span class="mf">.1</span><span class="n">_tutorial2022</span><span class="o">/</span><span class="n">cime</span><span class="o">/</span><span class="n">scripts</span>
@@ -858,16 +859,17 @@ For instance:</p>
 </div>
 <p>When the run is completed, look into the archive directory for:
 <font face="Courier" color='purple'><strong>b1850_high_freq</strong></font>.</p>
-<ul class="simple">
-<li><p>(1) Check that your archive directory on cheyenne (The path will be different on otehr machines):</p></li>
-</ul>
+<p>(1) Check that your archive directory on cheyenne (The path will be different on otehr machines):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_high_freq/atm/hist
 ls 
 </pre></div>
 </div>
-<p>(2) Compare the contents of the h1 and h2 files using “ncdump”.
+<p>(2) Compare the contents of the <code class="docutils literal notranslate"><span class="pre">h1</span></code> and <code class="docutils literal notranslate"><span class="pre">h2</span></code> files using <code class="docutils literal notranslate"><span class="pre">ncdump</span></code>.
 Look at the variables attributes. What is the difference between the 2 files ?</p>
-<p>The file with the instantaneous output (h1) have no cell_methods attribute while the average output (h2) has a attribute: cell_methods = “time: mean” ;</p>
+<p>The file with the instantaneous output <code class="docutils literal notranslate"><span class="pre">h1`</span> <span class="pre">have</span> <span class="pre">no</span> <span class="pre">cell_methods</span> <span class="pre">attribute</span> <span class="pre">while</span> <span class="pre">the</span> <span class="pre">average</span> <span class="pre">output</span> </code>h2`` has a attribute:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span>
+</pre></div>
+</div>
 <p>For instance for the field Q.</p>
 <p>In: b1850_high_freq.cam.h1.0001-01-01-00000.nc
 float Q(time, lev, lat, lon) ;
