@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercise: change a tuning parameter &#8212; CESM Tutorial</title>
+    <title>Change a tuning parameter in CAM &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -374,7 +374,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Exercise: change a tuning parameter
+     Change a tuning parameter in CAM
     </a>
    </li>
   </ul>
@@ -742,7 +742,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Exercise: change a tuning parameter</h1>
+                <h1>Change a tuning parameter in CAM</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -754,18 +754,18 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-change-a-tuning-parameter">
-<h1>Exercise: change a tuning parameter<a class="headerlink" href="#exercise-change-a-tuning-parameter" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="change-a-tuning-parameter-in-cam">
+<h1>Change a tuning parameter in CAM<a class="headerlink" href="#change-a-tuning-parameter-in-cam" title="Permalink to this headline">#</a></h1>
 <div class="alert alert-info">
 <strong>Exercise: Modify a parameter, dcs</strong><br><br>
 <p>In the tuning lecture, we talked about the parameter dcs:
 <a class="reference external" href="http://www.cesm.ucar.edu/events/tutorials/2019/files/Specialized-hannay.pdf">http://www.cesm.ucar.edu/events/tutorials/2019/files/Specialized-hannay.pdf</a></p>
-<p>Create a case called “b1850_dcs” using the compset  B1850  at f19_g17 resolution.</p>
-<p>Locate where to change the parameter Dcs and change from the default value:
+<p>Create a case called <strong>b1850_dcs</strong> using the compset  <code class="docutils literal notranslate"><span class="pre">B1850</span></code>  at <code class="docutils literal notranslate"><span class="pre">f19_g17</span></code> resolution.</p>
+<p>Locate where to change the parameter <strong>Dcs</strong> and change from the default value:
 dcs = 200.D-6
 to
 dcs = 500.D-6</p>
-<p>Make a 1-month run.</p>
+<p>Make a <strong>1-month</strong> run.</p>
 </div>
 <div class="alert alert-warning">  
 <details>
@@ -844,12 +844,12 @@ ncdiff /glade/scratch/$user/archive/b1850_dcs/atm/hist/b1850_dcs.cam.h0.0001-01.
 <p>How does this affect the LWCF ?</p>
 <p>Dcs = Threshold diameter to convert cloud ice particles to snow</p>
 <p><em><p style="text-align: center;">
-<img alt="dcs representation" src="notebooks/images/namelist/dcs.png" /><br />
+<img alt="dcs representation" src="../../../_images/dcs.png" /><br />
 Figure: Representation of Dcs. </p></em></p>
 <p>We increased Dcs from 200 microns to 500 microns. We should have more ice cloud and the LWCF should be larger.</p>
 <p>The field <font face="Courier" color='purple'><strong>LWCF</strong></font> difference looks like
 <em><p style="text-align: center;">
-<img alt="ncview diff LWCF" src="notebooks/images/namelist/ncview_diff_dcs.png" /><br />
+<img alt="ncview diff LWCF" src="../../../_images/ncview_diff_dcs.png" /><br />
 Figure: Difference of LWCF for micro_mg_dcs = 200.D-6-&gt;500.D-6 </p></em></p>
 <p>We can see that the change in Dcs affects the tropics where LWCF is large. However, 1-month run is too short to look at robust statistics.</p>
 </details>
