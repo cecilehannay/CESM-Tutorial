@@ -918,10 +918,10 @@ title="Print to PDF"
 <div class="alert alert-success">
 <details>   
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-Add the following line to <font face="Courier"><strong>user_nl_clm</strong></font>:<br>
-```
-    hist_nhtfrq = -3
-```
+<p>Add the following line to <font face="Courier"><strong>user_nl_clm</strong></font>:<br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">hist_nhtfrq</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
+</pre></div>
+</div>
 </details>
 </div></section>
 <section id="add-extra-variables-and-history-files-hist-fincl">
@@ -934,7 +934,7 @@ Add the following line to <font face="Courier"><strong>user_nl_clm</strong></fon
 <li><p>…</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">hist_fincl10</span></code></strong> controls the fields in <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong></p></li>
 </ul>
-<p>For example, to add the field ‘TG’ to the h0 file, use the line:</p>
+<p>For example, to add the field ‘TG’ to the <code class="docutils literal notranslate"><span class="pre">h0</span></code> file, use the line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">hist_fincl1</span> <span class="o">=</span> <span class="s1">&#39;TG&#39;</span> 
 </pre></div>
 </div>
@@ -1030,7 +1030,7 @@ This variable specifies is the maximum number of time samples written to a histo
 <div class="alert alert-success">  
 <details>  
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>In addition to the monthly history file <strong>h0</strong>, we output 4 extra history files with daily, six-hourly, hourly, and every time-step values of TG and TV (leaving the primary history files as monthly):</p>
+<p>In addition to the monthly history file <strong>h0</strong>, we output 4 extra history files with daily, six-hourly, hourly, and every time-step values of TG and TV (leaving the primary history <code class="docutils literal notranslate"><span class="pre">h0</span></code> files as monthly).</p>
 </details>
 </div></section>
 </section>
