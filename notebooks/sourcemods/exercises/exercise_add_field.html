@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercise: change a tuning parameter &#8212; CESM Tutorial</title>
+    <title>Exercise: add output variable &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Overview of SourceMods Modifications" href="../../sourcemods/overview.html" />
-    <link rel="prev" title="Modify CAM output" href="exercise_cam_output.html" />
+    <link rel="next" title="Troubleshooting" href="../../troubleshooting/troubleshooting.html" />
+    <link rel="prev" title="Exercise Overview" href="../exercises_overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -314,19 +314,19 @@ const thebe_selector_output = ".output, .cell_output"
   Namelist Modifications
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../overview.html">
+  <a class="reference internal" href="../../namelist/overview.html">
    Overview of Namelist Modifications
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../documentation.html">
+  <a class="reference internal" href="../../namelist/documentation.html">
    Using Documentation about Namelist Variables
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../output.html">
+  <a class="reference internal" href="../../namelist/output.html">
    Customizing Output in CESM
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -336,44 +336,44 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../output/output_cam.html">
+    <a class="reference internal" href="../../namelist/output/output_cam.html">
      Customize CAM output
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../output/output_clm.html">
+    <a class="reference internal" href="../../namelist/output/output_clm.html">
      Customize CLM output
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../output/output_cice.html">
+    <a class="reference internal" href="../../namelist/output/output_cice.html">
      Customize CICE output
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../output/output_pop.html">
+    <a class="reference internal" href="../../namelist/output/output_pop.html">
      Customize POP output
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../exercises_overview.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../namelist/exercises_overview.html">
    Exercise Overview
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="exercise_cam_output.html">
+    <a class="reference internal" href="../../namelist/exercises/exercise_cam_output.html">
      Modify CAM output
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../namelist/exercises/exercise_tuning_parameter.html">
      Exercise: change a tuning parameter
     </a>
    </li>
@@ -385,29 +385,29 @@ const thebe_selector_output = ".output, .cell_output"
   Source Modifications
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../sourcemods/overview.html">
+  <a class="reference internal" href="../overview.html">
    Overview of SourceMods Modifications
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../sourcemods/add_fields_cam.html">
+  <a class="reference internal" href="../add_fields_cam.html">
    Adding New History Fields
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../sourcemods/exercises_overview.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../exercises_overview.html">
    Exercise Overview
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../sourcemods/exercises/exercise_add_field.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Exercise: add output variable
     </a>
    </li>
@@ -605,7 +605,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/namelist/exercises/exercise_tuning_parameter.ipynb"
+        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/sourcemods/exercises/exercise_add_field.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -665,7 +665,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/namelist/exercises/exercise_tuning_parameter.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/sourcemods/exercises/exercise_add_field.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -693,7 +693,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../_sources/notebooks/namelist/exercises/exercise_tuning_parameter.ipynb"
+        <a href="../../../_sources/notebooks/sourcemods/exercises/exercise_add_field.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -742,7 +742,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Exercise: change a tuning parameter</h1>
+                <h1>Exercise: add output variable</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -754,60 +754,81 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-change-a-tuning-parameter">
-<h1>Exercise: change a tuning parameter<a class="headerlink" href="#exercise-change-a-tuning-parameter" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-add-output-variable">
+<h1>Exercise: add output variable<a class="headerlink" href="#exercise-add-output-variable" title="Permalink to this headline">#</a></h1>
 <div class="alert alert-info">
-<strong>Exercise: Modify a parameter, dcs</strong><br><br>
-<p>In the tuning lecture, we talked about the parameter dcs:
-<a class="reference external" href="http://www.cesm.ucar.edu/events/tutorials/2019/files/Specialized-hannay.pdf">http://www.cesm.ucar.edu/events/tutorials/2019/files/Specialized-hannay.pdf</a></p>
-<p>Create a case called “b1850_dcs” using the compset  B1850  at f19_g17 resolution.</p>
-<p>Locate where to change the parameter Dcs and change from the default value:
-dcs = 200.D-6
-to
-dcs = 500.D-6</p>
-<p>Make a 1-month run.</p>
+<strong>Exercise: Add an additional output variable</strong><br><br>
+<p>Create a case called “b1850_T750” using the compset  B1850  at f19_g17 resolution.</p>
+<ul class="simple">
+<li><p>Add an output field for the temperature at 750 mbar.</p></li>
+<li><p>Output daily values of T750 and T500 in the “h1” history file.</p></li>
+<li><p>Set the namelist to output a single h1 for the run.</p></li>
+<li><p>Make a 1-month run.</p></li>
+</ul>
 </div>
 <div class="alert alert-warning">  
-<details>
+<details> 
    <summary>
       <font face="Times New Roman" color='blue'>Click here for hints</font>
     </summary>
+<p><strong>Tip to add <font face="Courier"><strong>T750</strong></font></strong>  <br></p>
 <ul class="simple">
-<li><p>The trick is going to locate where to change dcs</p></li>
-<li><p>Compare to this run to the first run you did today: b1850_high_freq.</p></li>
-<li><p>You can use ncdiff and ncview to look at the difference between the 2 runs.</p></li>
+<li><p>Use <font face="Courier"><strong>T500</strong></font> as a template for your changes.</p></li>
+<li><p>Find the subroutine containing <font face="Courier"><strong>T750</strong></font>.
+For instance, in the CESMROOT, use the command:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ncdiff /glade/scratch/$user/archive/b1850_dcs/atm/hist/b1850_dcs.cam.h0.0001-01.nc /glade/scratch/$user/archive/b1850_high_freq/atm/hist/b1850_high_freq.cam.h0.0001-01.nc diff.nc
-
-ncview diff.nc
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    grep –r T500 *    
+</pre></div>
+</div>
+<p><strong>Tip to check your solution <font face="Courier"><strong>T750</strong></font></strong> <br></p>
+<ul class="simple">
+<li><p>When the run is completed, go to your archive directory:</p></li>
+<li><p>check the fields <font face="Courier"><strong>T750</strong></font> and <font face="Courier"><strong>T500</strong></font> are in the file <font face="Courier"><strong>h1</strong></font></p></li>
+<li><p>create a file with the difference between <font face="Courier"><strong>T750-T500 </strong></font></p></li>
+<li><p>For instance, you can use <code class="docutils literal notranslate"><span class="pre">ncap2</span></code></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    ncap2 -s ’T750_minus_T500=T750-T500&#39; b1850_T750.cam.h1.0001-01-01-00000.nc  T750-T500.nc
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Analyze how this does this affect the LWCF ?</p></li>
+<li><p>Look at the difference with <code class="docutils literal notranslate"><span class="pre">ncview</span></code>.</p></li>
 </ul>
 </details>
 </div>
 <div class="alert alert-success">   
 <details>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>Create a new case <font face="Courier" color='purple'><strong>b1850_dcs</strong></font> with the command:</p>
+<p>Create a new case <font face="Courier" color='purple'><strong>b1850_T750</strong></font> with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">cesm2</span><span class="mf">.1</span><span class="n">_tutorial2022</span><span class="o">/</span><span class="n">cime</span><span class="o">/</span><span class="n">scripts</span>
-<span class="o">./</span><span class="n">create_newcase</span> <span class="o">--</span><span class="n">case</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_dcs</span> <span class="o">--</span><span class="n">compset</span> <span class="n">B1850</span> <span class="o">--</span><span class="n">res</span> <span class="n">f19_g17</span> 
+<span class="o">./</span><span class="n">create_newcase</span> <span class="o">--</span><span class="n">case</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_T750</span> <span class="o">--</span><span class="n">compset</span> <span class="n">B1850</span> <span class="o">--</span><span class="n">res</span> <span class="n">f19_g17</span> 
 </pre></div>
 </div>
 <p>Case <font face="Courier" color='purple'><strong>setup</strong></font>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_dcs</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_T750</span>
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>
 </pre></div>
 </div>
-<p>Locate the variable to modify dcs.
-The variable is: <font face="Courier" color='purple'><strong>micro_mg_dcs</strong></font>.
-By default this variable is set to:
-micro_mg_dcs = 200 microns
-You want to set it to:
-micro_mg_dcs = 500 microns</p>
+<p>Locate the file where <font face="Courier"  color='purple'><strong>T500</strong></font> is computed and copy it into
+<font face="Courier"  color='purple'><strong>SourceMods/src.atm</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">cesm2</span><span class="mf">.1</span><span class="n">_tutorial2022</span><span class="o">/</span><span class="n">components</span><span class="o">/</span><span class="n">cam</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">physics</span><span class="o">/</span><span class="n">cam</span><span class="o">/</span><span class="n">cam_diagnostics</span><span class="o">.</span><span class="n">F90</span> <span class="n">SourceMods</span><span class="o">/</span><span class="n">src</span><span class="o">.</span><span class="n">cam</span>
+</pre></div>
+</div>
+<p>Edit the file <font face="Courier"  color='purple'><strong>SourceMods/src.cam/cam_diagnostics.F90</strong></font> and add the lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!++ add a variable for T750 
+call addfld (&#39;T750&#39;, horiz_only,  &#39;A&#39;, &#39;K&#39;,&#39;Temperature at 750 mbar pressure surface&#39;)  
+
+!++ add a variable for T750 
+if (hist_fld_active(&#39;T750&#39;)) then 
+    call vertinterp(ncol, pcols, pver, state%pmid, 75000._r8, state%t, p_surf, &amp; 
+         extrapolate=&#39;T&#39;, ps=state%ps, phis=state%phis)
+    call outfld(&#39;T750    &#39;, p_surf, pcols, lchnk )
+end if
+</pre></div>
+</div>
 <p>Edit the file <font face="Courier" color='purple'><strong>user_nl_cam</strong></font> and add the lines:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micro_mg_dcs</span> <span class="o">=</span> <span class="mf">500.</span><span class="n">D</span><span class="o">-</span><span class="mi">6</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span>
+    <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span>
+    <span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;T750&#39;</span><span class="p">,</span> <span class="s1">&#39;T500&#39;</span>
 </pre></div>
 </div>
 <p>Change the <font face="Courier" color='purple'><strong>run length</strong></font>:</p>
@@ -825,33 +846,42 @@ For instance:</p>
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
 </pre></div>
 </div>
-<p>When the run is completed, compare to the first run:
-<font face="Courier" color='purple'><strong>b1850_high_freq</strong></font>.</p>
-<p>Create a file with the difference in
-<font face="Courier" color='purple'><strong>LWCF</strong></font>
-between <font face="Courier" color='purple'><strong>b1850_dcs</strong></font>
-and <font face="Courier" color='purple'><strong>b1850_high_freq</strong></font>.</p>
-<p>You can use ncdiff and ncview to look at the difference between the 2 runs.</p>
-<p>For instance:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs 
-ncdiff /glade/scratch/$user/archive/b1850_dcs/atm/hist/b1850_dcs.cam.h0.0001-01.nc /glade/scratch/$user/archive/b1850_high_freq/atm/hist/b1850_high_freq.cam.h0.0001-01.nc diff.nc
+<p>When the run is completed, check the fields <font face="Courier" color='purple'><strong>T750</strong></font>
+and <font face="Courier" color='purple'><strong>T500</strong></font> are in the file
+<font face="Courier" color='purple'><strong>h1</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
+ncdump -h b1850_T750.cam.h1.0001-01-01-00000.nc
 </pre></div>
 </div>
-<p>Use ncview to look at the file you created.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncview</span> <span class="n">diff</span><span class="o">.</span><span class="n">nc</span>
+<p>The file should contain:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">T500</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">T500</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;K&quot;</span> <span class="p">;</span>
+    <span class="n">T500</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Temperature at 500 mbar pressure surface&quot;</span> <span class="p">;</span>
+    <span class="n">T500</span><span class="p">:</span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span> <span class="p">;</span>
+<span class="nb">float</span> <span class="n">T750</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">T750</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;K&quot;</span> <span class="p">;</span>
+    <span class="n">T750</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Temperature at 750 mbar pressure surface&quot;</span> <span class="p">;</span>
+    <span class="n">T750</span><span class="p">:</span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span> <span class="p">;</span>
 </pre></div>
 </div>
-<p>How does this affect the LWCF ?</p>
-<p>Dcs = Threshold diameter to convert cloud ice particles to snow</p>
+<p>If you don’t see these variables, check you correctly set the
+<font face="Courier" color='purple'><strong>user_nl_cam</strong></font>.</p>
+<p>Create a file with the difference between
+<font face="Courier" color='purple'><strong>T750-T500 </strong>:</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
+ncap2 -s ‘T750_minus_T500=T750-T500&#39; b1850_T750.cam.h1.0001-01-01-00000.nc  T750-T500.nc 
+</pre></div>
+</div>
+<p>Look at the difference between <font face="Courier" color='purple'><strong>T750-T500</strong></font>
+with <font face="Courier" color='purple'><strong>ncview</strong></font>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
+ncview T750-T500.nc
+</pre></div>
+</div>
+<p>The field <font face="Courier" color='purple'><strong>T750-T500</strong></font> looks like:</p>
 <p><em><p style="text-align: center;">
-<img alt="dcs representation" src="notebooks/images/namelist/dcs.png" /><br />
-Figure: Representation of Dcs. </p></em></p>
-<p>We increased Dcs from 200 microns to 500 microns. We should have more ice cloud and the LWCF should be larger.</p>
-<p>The field <font face="Courier" color='purple'><strong>LWCF</strong></font> difference looks like
-<em><p style="text-align: center;">
-<img alt="ncview diff LWCF" src="notebooks/images/namelist/ncview_diff_dcs.png" /><br />
-Figure: Difference of LWCF for micro_mg_dcs = 200.D-6-&gt;500.D-6 </p></em></p>
-<p>We can see that the change in Dcs affects the tropics where LWCF is large. However, 1-month run is too short to look at robust statistics.</p>
+<img alt="ncview T750-T500" src="notebooks/images/sourcemods/ncview_T750-T500.png" /><br />
+Figure: Overview of the CESM directories and the SourceMods directories. </p></em></p>
 </details>
 </div>
 </section>
@@ -869,7 +899,7 @@ Figure: Difference of LWCF for micro_mg_dcs = 200.D-6-&gt;500.D-6 </p></em></p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks/namelist/exercises"
+            path: "./notebooks/sourcemods/exercises"
         },
         predefinedOutput: true
     }
@@ -883,17 +913,17 @@ Figure: Difference of LWCF for micro_mg_dcs = 200.D-6-&gt;500.D-6 </p></em></p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="exercise_cam_output.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../exercises_overview.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Modify CAM output</p>
+            <p class="prev-next-title">Exercise Overview</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../../sourcemods/overview.html" title="next page">
+    <a class='right-next' id="next-link" href="../../troubleshooting/troubleshooting.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Overview of SourceMods Modifications</p>
+        <p class="prev-next-title">Troubleshooting</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
