@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Overview of Namelist Modifications &#8212; CESM Tutorial</title>
+    <title>Troubleshooting runtime errors &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Exercise Overview" href="exercises_overview.html" />
@@ -422,7 +424,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Overview of Namelist Modifications
+   Troubleshooting runtime errors
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -754,7 +756,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Overview of Namelist Modifications</h1>
+                <h1>Troubleshooting runtime errors</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -766,10 +768,18 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="overview-of-namelist-modifications">
-<h1>Overview of Namelist Modifications<a class="headerlink" href="#overview-of-namelist-modifications" title="Permalink to this headline">#</a></h1>
-<p>There are a number of ways that the model can be modified via namelist settings. These values control the way the code is run and <strong>do not require a recompile</strong> of the code after they are changed.</p>
-<p>The <strong>namelist variables</strong> include settings to tune the model for various quantities, control over output and many other options. For instance, the output frequency in the different components can be controled via the namelists.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="troubleshooting-runtime-errors">
+<h1>Troubleshooting runtime errors<a class="headerlink" href="#troubleshooting-runtime-errors" title="Permalink to this headline">#</a></h1>
+<p>There are several places to look for information if a job fails. Start with the STDOUT and STDERR file(s) in <span class="math notranslate nohighlight">\(CASEROOT. If you don’t find an obvious error message there, the \)</span>RUNDIR/<span class="math notranslate nohighlight">\(model.log.\)</span>datestamp files will probably give you a hint.</p>
+<p>First, check cpl.log.<span class="math notranslate nohighlight">\(datestamp, which will often tell you when the model failed. Then check the rest of the component log files. See troubleshooting run-time problems for more information.There are several places to look for information if a job fails. Start with the STDOUT and STDERR file(s) in \)</span>CASEROOT.</p>
+<p>To see if a run completed successfully, check the last several lines of the cpl.log file for a string like SUCCESSFUL TERMINATION. A successful job also usually copies the log files to the $CASEROOT/logs directory.</p>
+<p>Check these things first when a job fails:</p>
+<p>Did the model time out?</p>
+<p>Was a disk quota limit hit?</p>
+<p>Did a machine go down?</p>
+<p>Did a file system become full?</p>
+<p>If any of those things happened, take appropriate corrective action (see suggestions below) and resubmit the job.</p>
+<p>If it is not clear that any of the above caused a case to fail, there are several places to look for error messages.</p>
 <div class="alert alert-info" style="text-align: left;">
 <p>The <strong>steps</strong> to modify the <strong>namelists</strong> are:</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">$CASEROOT</span></code></p>
@@ -781,8 +791,8 @@ title="Print to PDF"
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">*_in</span></code> files <strong>should not be edited</strong>. Any manual changes of the <code class="docutils literal notranslate"><span class="pre">*_in</span></code> files will be overwritten when you compile or submit the run.</p>
 <p>Note that step <code class="docutils literal notranslate"><span class="pre">./preview_namelists</span></code> is <strong>optional</strong> as the script <em>preview_namelists</em> is also called when you build the model.</p>
-<p><img alt="CESM directories and namelists" src="../../_images/CESM_directories_and_namelists.png" /></p>
-<p><em><p style="text-align: center;"> Figure: Overview of the CESM directories and the namelist files. </p></em></p>
+<p><img alt="CESM directories and namelists" src="../../_images/CESM_directories_and_log_files.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Overview of the CESM directories and the log files. </p></em></p>
 <div class="alert alert-info" style="text-align: center;">
 <p>Complete documentation about the namelist variables can be found on the <a class="reference external" href="https://www2.cesm.ucar.edu/models/cesm2/settings/current/">CESM webpage.</a></p>
 </div></section>
