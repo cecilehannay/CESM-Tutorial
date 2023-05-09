@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Add output variable in CAM &#8212; CESM Tutorial</title>
+    <title>Debugging CAM &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -437,7 +437,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Add output variable in CAM
+     Debugging CAM
     </a>
    </li>
   </ul>
@@ -754,7 +754,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Add output variable in CAM</h1>
+                <h1>Debugging CAM</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -766,23 +766,53 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="add-output-variable-in-cam">
-<h1>Add output variable in CAM<a class="headerlink" href="#add-output-variable-in-cam" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="debugging-cam">
+<h1>Debugging CAM<a class="headerlink" href="#debugging-cam" title="Permalink to this headline">#</a></h1>
 <div class="alert alert-info">
 <strong>Exercise: Add an additional output variable</strong><br><br>
-<p>Create a case called “b1850_T750” using the compset  B1850  at f19_g17 resolution.</p>
+<p>Create a case called <strong>b1850_high_freq_bugfixing</strong> using the compset  <code class="docutils literal notranslate"><span class="pre">B1850</span></code>  at <code class="docutils literal notranslate"><span class="pre">f19_g17</span></code> resolution.</p>
+<p>Set the run length to <strong>1 month</strong>.</p>
+<p>Now in addition to the default monthly output, add the following output</p>
 <ul class="simple">
-<li><p>Add an output field for the temperature at 750 mbar.</p></li>
-<li><p>Output daily values of T750 and T500 in the “h1” history file.</p></li>
-<li><p>Set the namelist to output a single h1 for the run.</p></li>
-<li><p>Make a 1-month run.</p></li>
+<li><p>an <code class="docutils literal notranslate"><span class="pre">h1</span></code> file containing daily averages of T2M</p></li>
+<li><p>set your namelist so that there is one file per day for this daily averaged output.
+i.e., you would need the following in user nl cam</p></li>
 </ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>fincl2=’T2M:A’
+nhtfrq=0,-24
+mfilt=1,1
+</pre></div>
+</div>
+<p>Your goal is to make the model crashes.</p>
+<p>Set up, build and submit your case.</p>
 </div>
 <div class="alert alert-warning">  
 <details> 
    <summary>
       <font face="Times New Roman" color='blue'>Click here for hints</font>
     </summary>
+<p>Is it running? When it says completed in the queue, can you see the history files in the archive directory? The answer should be no. Go to the run directory.</p>
+<p>Is there any evidence of history files or restart files being created by the run? The answer, again,
+should be no. This is because we have tricked you, with a bug.
+What you should find in your run directory is three log files. One for the coupler (cpl.log.<em>),
+one for CAM (atm.log.</em>) and one for CESM (cesm.log.<em>).
+Somewhere in these log files is information about what has gone wrong, but it is often not entirely
+straightforward to find.
+Often at the bottom of the log file, there are errors that are not relative to your problem because
+they are just demonstrating that individual processes are exiting. Often the relevant error lies
+above this and can sometimes be found by searching for the first occurrence of ERROR or ABORT or
+cesm.exe. In this case, searching for the first occurrence of ERROR in cesm.log.</em> gives us some
+relevant information. We find
+ERROR: FLDLST: 1 errors found, see log
+This tells us is that something has gone wrong with the list of output variables that we have asked
+for.
+More information can then be found in the CAM log file (atm.log.*).
+Look at the very end of that file and you should see
+FLDLST: T2M in fincl(1, 2) not found
+ERROR: FLDLST: 1 errors found, see log
+This tells us that T2M is not a valid history variable for CAM. That’s because the correct variable
+for near surface temperature is TREFHT, as we used in the previous example. T2M is not a CAM
+history field and this has caused CESM to crash on initialization.</p>
 <p><strong>Tip to add <font face="Courier"><strong>T750</strong></font></strong>  <br></p>
 <ul class="simple">
 <li><p>Use <font face="Courier"><strong>T500</strong></font> as a template for your changes.</p></li>
