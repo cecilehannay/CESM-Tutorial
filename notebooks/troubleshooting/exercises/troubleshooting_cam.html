@@ -869,41 +869,39 @@ For instance:</p>
 </pre></div>
 </div>
 <p>Build and submit:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>qcmd -- ./case.build
-./case.submit
-
-
-What you should find in your run directory is three log files. One for the coupler (cpl.log.*),
-one for CAM (atm.log.*) and one for CESM (cesm.log.*).
-Somewhere in these log files is information about what has gone wrong, but it is often not entirely
-straightforward to find.
-Often at the bottom of the log file, there are errors that are not relative to your problem because
-they are just demonstrating that individual processes are exiting. Often the relevant error lies
-above this and can sometimes be found by searching for the first occurrence of ERROR or ABORT or
-cesm.exe. In this case, searching for the first occurrence of ERROR in cesm.log.* gives us some
-relevant information. We find
-ERROR: FLDLST: 1 errors found, see log
-This tells us is that something has gone wrong with the list of output variables that we have asked
-for.
-More information can then be found in the CAM log file (atm.log.*).
-Look at the very end of that file and you should see
-FLDLST: T2M in fincl(1, 2) not found
-ERROR: FLDLST: 1 errors found, see log
-This tells us that T2M is not a valid history variable for CAM. That’s because the correct variable
-for near surface temperature is TREFHT, as we used in the previous example. T2M is not a CAM
-history field and this has caused CESM to crash
-    
-    
-The field &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong&gt;T750-T500&lt;/strong&gt;&lt;/font&gt; looks like:
-
-*&lt;p style=&quot;text-align: center;&quot;&gt; 
-    ![ncview T750-T500](../../../images/sourcemods/ncview_T750-T500.png)  
-    Figure: Overview of the CESM directories and the SourceMods directories. &lt;/p&gt;*
-    
-&lt;/details&gt;
-&lt;/div&gt;
-
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
+<span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
 </pre></div>
+</div>
+<p><strong>Your run should crash !!!</strong>. This is normal. The goal of the exercise is to troubleshooting.</p>
+<p>What you should find in your run directory is three log files.</p>
+<ul class="simple">
+<li><p>One for the coupler <code class="docutils literal notranslate"><span class="pre">cpl.log.*</span></code>,</p></li>
+<li><p>one for CAM <code class="docutils literal notranslate"><span class="pre">atm.log.*</span></code></p></li>
+<li><p>and one for CESM <code class="docutils literal notranslate"><span class="pre">cesm.log.*</span></code>.</p></li>
+</ul>
+<p>Somewhere in these log files is information about what has gone wrong, but it is often not entirely
+straightforward to find.</p>
+<ul class="simple">
+<li><p>Often at the bottom of the log file, there are errors that are not relative to your problem because
+they are just demonstrating that individual processes are exiting.</p></li>
+<li><p>Often the relevant error lies above this and can sometimes be found by searching for the first occurrence of ERROR or ABORT or cesm.exe.</p></li>
+</ul>
+<p>In this case, searching for the first occurrence of ERROR in <code class="docutils literal notranslate"><span class="pre">cesm.log.*</span></code> gives us some relevant information. We find</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">:</span> <span class="n">FLDLST</span><span class="p">:</span> <span class="mi">1</span> <span class="n">errors</span> <span class="n">found</span><span class="p">,</span> <span class="n">see</span> <span class="n">log</span>
+</pre></div>
+</div>
+<p>This tells us is that something has gone wrong with the list of output variables that we have asked for.</p>
+<p>More information can then be found in the CAM log file <code class="docutils literal notranslate"><span class="pre">atm.log.*</span></code>.
+Look at the very end of that file and you should see</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FLDLST</span><span class="p">:</span> <span class="n">T2M</span> <span class="ow">in</span> <span class="n">fincl</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">not</span> <span class="n">found</span>
+<span class="n">ERROR</span><span class="p">:</span> <span class="n">FLDLST</span><span class="p">:</span> <span class="mi">1</span> <span class="n">errors</span> <span class="n">found</span><span class="p">,</span> <span class="n">see</span> <span class="n">log</span>
+</pre></div>
+</div>
+<p>This tells us that <code class="docutils literal notranslate"><span class="pre">T2M</span></code> is not a valid history variable for CAM. That’s because the correct variable
+for near surface temperature is <code class="docutils literal notranslate"><span class="pre">TREFHT</span></code>, as we used in the previous example. <code class="docutils literal notranslate"><span class="pre">T2M</span></code> is not a CAM
+history field and this has caused CESM to crash</p>
+</details>
 </div>
 </section>
 
