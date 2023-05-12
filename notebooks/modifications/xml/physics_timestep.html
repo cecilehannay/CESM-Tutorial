@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Overview of Namelist Modifications" href="../../namelist/overview.html" />
-    <link rel="prev" title="Copying Cases" href="copying_cases.html" />
+    <link rel="next" title="Other Useful XML Variables in env_run.xml" href="other_xml_variables.html" />
+    <link rel="prev" title="Run Variables Related to Run Type" href="modify_run_type/run_variables.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -261,12 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="run_length/changing_run_length.html">
-     Changing Run Length
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="run_length/number_of_submissions.html">
-     Controlling the Number of Submissions
+     Changing Run Length and Number of Submissions
     </a>
    </li>
    <li class="toctree-l2">
@@ -293,20 +288,62 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="modify_run_type/run_variables.html">
-     Run Variables (RUN_*)
+     Run Variables Related to Run Type
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="copying_cases.html">
-   Copying Cases
-  </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Physics Timestep
   </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="other_xml_variables.html">
+   Other Useful XML Variables in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     env_run.xml
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="exercises.html">
+   Exercise Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/xml_length_exercise.html">
+     Exercise 1: Modify run length in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       env_run.xml
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/xml_runtype_exercise.html">
+     Exercise 2: Modify run type in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       env_run.xml
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/xml_timestep_exercise.html">
+     Exercise 3: Change physics timestep
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -329,8 +366,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../namelist/output.html">
    Customizing Output in CESM
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -361,8 +398,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../namelist/exercises_overview.html">
    Exercise Overview
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -400,8 +437,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../sourcemods/exercises_overview.html">
    Exercise Overview
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -429,8 +466,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../troubleshooting/exercises_overview.html">
    Exercise Overview
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -497,8 +534,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../tools/community_experiments.html">
    CESM Community Experiments
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -519,8 +556,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../tools/unix_basics.html">
    UNIX Basics
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -768,19 +805,19 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="physics-timestep">
 <h1>Physics Timestep<a class="headerlink" href="#physics-timestep" title="Permalink to this headline">#</a></h1>
-<p>Where and When to Change Time Steps:</p>
+<p><strong>Where and When to Change Time Steps</strong>:</p>
 <p>When the model crashes due to large, temporary instabilities, one method to overcome the problem is to change the time step.
 This is typically done in either the atmosphere or ocean components.</p>
 <ul class="simple">
-<li><p>For atmosphere and land component (CAM/CLM): change ATM_NCPL in env_run.xml.<br></p></li>
-<li><p>For ocean (POP): change dt_count in POP namelist.</p></li>
+<li><p>For atmosphere and land component (CAM/CLM): change <code class="docutils literal notranslate"><span class="pre">ATM_NCPL</span></code> in <code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code>.<br></p></li>
+<li><p>For ocean (POP): change <code class="docutils literal notranslate"><span class="pre">dt_count</span></code> in POP namelist.</p></li>
 </ul>
 <br>
 <hr class="docutils" />
 <br><ul class="simple">
-<li><p><strong>For the atmosphere component (CAM)</strong>, the physics time step is set by <code class="docutils literal notranslate"><span class="pre">$ATM_NCPL</span></code> in env_run.xml. This variable specifies the number of coupling intervals per day between the atmosphere/land and the coupled system. Based on ATM_NCPL, the scripts will automatically compute the time step for the atmosphere and land and populate the namelist files accordingly.</p></li>
-<li><p><strong>For the land component (CLM)</strong>, the physics ime step is the same as the CAM time step; this is automatically set with the CAM time step via ATM_NCPL. You cannot set this separately.</p></li>
-<li><p><strong>For the ocean component (POP2)</strong>, the physics time step is changed in the user_nl_pop file and is based on <code class="docutils literal notranslate"><span class="pre">$OCN_NCPL</span></code> (found in env_run.xml), “dt_count” , and “dt_option”. The default dt_option is “steps_per_day”.</p></li>
+<li><p><strong>For the atmosphere component (CAM)</strong>, the physics time step is set by <code class="docutils literal notranslate"><span class="pre">$ATM_NCPL</span></code> in <code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code>. This variable specifies the number of coupling intervals per day between the atmosphere/land and the coupled system. Based on <code class="docutils literal notranslate"><span class="pre">ATM_NCPL</span></code>, the scripts will automatically compute the time step for the atmosphere and land and populate the namelist files accordingly.</p></li>
+<li><p><strong>For the land component (CLM)</strong>, the physics ime step is the same as the CAM time step; this is automatically set with the CAM time step via <code class="docutils literal notranslate"><span class="pre">ATM_NCPL</span></code>. You cannot set this separately.</p></li>
+<li><p><strong>For the ocean component (POP2)</strong>, the physics time step is changed in the <code class="docutils literal notranslate"><span class="pre">user_nl_pop</span></code> file and is based on <code class="docutils literal notranslate"><span class="pre">$OCN_NCPL</span></code> (found in <code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code>), <code class="docutils literal notranslate"><span class="pre">dt_count</span></code> , and <code class="docutils literal notranslate"><span class="pre">dt_option</span></code>. The default <code class="docutils literal notranslate"><span class="pre">dt_option</span></code> is <code class="docutils literal notranslate"><span class="pre">“steps_per_day”</span></code>.</p></li>
 <li><p><strong>For the sea ice component (CICE)</strong>, the physics time step is set by the coupling interval variable <code class="docutils literal notranslate"><span class="pre">$ICE_NCPL</span></code> found in env_run.xml.</p></li>
 </ul>
 </section>
@@ -812,17 +849,17 @@ This is typically done in either the atmosphere or ocean components.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="copying_cases.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="modify_run_type/run_variables.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Copying Cases</p>
+            <p class="prev-next-title">Run Variables Related to Run Type</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../../namelist/overview.html" title="next page">
+    <a class='right-next' id="next-link" href="other_xml_variables.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Overview of Namelist Modifications</p>
+        <p class="prev-next-title">Other Useful XML Variables in <code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

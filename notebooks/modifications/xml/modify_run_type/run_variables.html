@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Run Variables (RUN_*) &#8212; CESM Tutorial</title>
+    <title>Run Variables Related to Run Type &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Copying Cases" href="../copying_cases.html" />
+    <link rel="next" title="Physics Timestep" href="../physics_timestep.html" />
     <link rel="prev" title="Hybrid, Branch and Startup runs" href="hybrid_branch_restart.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -261,12 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../run_length/changing_run_length.html">
-     Changing Run Length
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../run_length/number_of_submissions.html">
-     Controlling the Number of Submissions
+     Changing Run Length and Number of Submissions
     </a>
    </li>
    <li class="toctree-l2">
@@ -293,20 +288,62 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Run Variables (RUN_*)
+     Run Variables Related to Run Type
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../copying_cases.html">
-   Copying Cases
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../physics_timestep.html">
    Physics Timestep
   </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../other_xml_variables.html">
+   Other Useful XML Variables in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     env_run.xml
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../exercises.html">
+   Exercise Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/xml_length_exercise.html">
+     Exercise 1: Modify run length in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       env_run.xml
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/xml_runtype_exercise.html">
+     Exercise 2: Modify run type in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       env_run.xml
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../exercises/xml_timestep_exercise.html">
+     Exercise 3: Change physics timestep
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -329,8 +366,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../../namelist/output.html">
    Customizing Output in CESM
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -361,8 +398,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../../namelist/exercises_overview.html">
    Exercise Overview
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -400,8 +437,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../../sourcemods/exercises_overview.html">
    Exercise Overview
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -429,8 +466,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../../troubleshooting/exercises_overview.html">
    Exercise Overview
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -497,8 +534,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../../tools/community_experiments.html">
    CESM Community Experiments
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -519,8 +556,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../../tools/unix_basics.html">
    UNIX Basics
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -754,7 +791,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Run Variables (RUN_*)</h1>
+                <h1>Run Variables Related to Run Type</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -766,16 +803,17 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="run-variables-run">
-<h1>Run Variables (RUN_*)<a class="headerlink" href="#run-variables-run" title="Permalink to this headline">#</a></h1>
-<p>A summary of the RUN_* variables pertaining to run type.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="run-variables-related-to-run-type">
+<h1>Run Variables Related to Run Type<a class="headerlink" href="#run-variables-related-to-run-type" title="Permalink to this headline">#</a></h1>
+<p>A summary of the xml variables pertaining to run type in <code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code>.</p>
 <br>
 <hr class="docutils" />
-<br><ul class="simple">
-<li><p><strong>RUN_TYPE</strong> -&gt; Determines the model run initialization type. Only important for the initial run of a production run when the <code class="docutils literal notranslate"><span class="pre">$CONTINUE_RUN</span></code> variable is set to FALSE. Valid values:startup, hybrid, branch.</p></li>
-<li><p><strong>RUN_STARTDATE</strong> -&gt; Run start date (yyyy-mm-dd). Only used for startup or hybrid runs.</p></li>
-<li><p><strong>RUN_REFCASE</strong> -&gt; For hybrid or branch runs, name of the reference case you are starting from.</p></li>
-<li><p><strong>RUN_REFDATA</strong>  -&gt; For hybrid or branch runs, date stamp (yyyy-mm-dd) of reference case you are starting from.</p></li>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">RUN_TYPE</span></code></strong> ==&gt; Determines the model run initialization type. Only important for the initial run of a production run when the <code class="docutils literal notranslate"><span class="pre">$CONTINUE_RUN</span></code> variable is set to <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>. Valid values are: ‘startup’, ‘hybrid’, ‘branch’.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">RUN_STARTDATE</span></code></strong> ==&gt; Run start date (yyyy-mm-dd). Only used for startup or hybrid runs.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">RUN_REFCASE</span></code></strong> ==&gt; For hybrid or branch runs, name of the reference case you are starting from.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">RUN_REFDATE</span></code></strong>  ==&gt; For hybrid or branch runs, date stamp (yyyy-mm-dd) of reference case you are starting from.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">GET_REFCASE</span></code></strong> ==&gt;  Flag for automatically prestaging the refcase restart dataset. If <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>, then the refcase data is prestaged into the executable directory. If <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>, the user need to manually put the restart files into the <code class="docutils literal notranslate"><span class="pre">$RUNDIR</span></code>.</p></li>
 </ul>
 </section>
 
@@ -813,10 +851,10 @@ title="Print to PDF"
             <p class="prev-next-title">Hybrid, Branch and Startup runs</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../copying_cases.html" title="next page">
+    <a class='right-next' id="next-link" href="../physics_timestep.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Copying Cases</p>
+        <p class="prev-next-title">Physics Timestep</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

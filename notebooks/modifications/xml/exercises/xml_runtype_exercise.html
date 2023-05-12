@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Controlling the Number of Submissions &#8212; CESM Tutorial</title>
+    <title>Exercise 2: Modify run type in env_run.xml &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Exercise 3: Change physics timestep" href="xml_timestep_exercise.html" />
+    <link rel="prev" title="Exercise 1: Modify run length in env_run.xml" href="xml_length_exercise.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -226,7 +228,7 @@ const thebe_selector_output = ".output, .cell_output"
   Simple XML Modifications
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../overview.html">
    Overview of Simple XML Modifications
@@ -248,22 +250,22 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="starting_and_stopping.html">
+    <a class="reference internal" href="../run_length/starting_and_stopping.html">
      Starting and Stopping
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="restarting.html">
+    <a class="reference internal" href="../run_length/restarting.html">
      Restarting a Run
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="changing_run_length.html">
+    <a class="reference internal" href="../run_length/changing_run_length.html">
      Changing Run Length and Number of Submissions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="timing_files.html">
+    <a class="reference internal" href="../run_length/timing_files.html">
      Using Timing Files
     </a>
    </li>
@@ -306,18 +308,18 @@ const thebe_selector_output = ".output, .cell_output"
    </code>
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../exercises.html">
    Exercise Overview
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../exercises/xml_length_exercise.html">
+    <a class="reference internal" href="xml_length_exercise.html">
      Exercise 1: Modify run length in
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -326,8 +328,8 @@ const thebe_selector_output = ".output, .cell_output"
      </code>
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../exercises/xml_runtype_exercise.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Exercise 2: Modify run type in
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -337,7 +339,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../exercises/xml_timestep_exercise.html">
+    <a class="reference internal" href="xml_timestep_exercise.html">
      Exercise 3: Change physics timestep
     </a>
    </li>
@@ -652,7 +654,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/modifications/xml/run_length/number_of_submissions.ipynb"
+        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/modifications/xml/exercises/xml_runtype_exercise.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -712,7 +714,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/modifications/xml/run_length/number_of_submissions.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/modifications/xml/exercises/xml_runtype_exercise.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -740,7 +742,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../../_sources/notebooks/modifications/xml/run_length/number_of_submissions.ipynb"
+        <a href="../../../../_sources/notebooks/modifications/xml/exercises/xml_runtype_exercise.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -789,7 +791,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Controlling the Number of Submissions</h1>
+                <h1>Exercise 2: Modify run type in env_run.xml</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -801,9 +803,98 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="controlling-the-number-of-submissions">
-<h1>Controlling the Number of Submissions<a class="headerlink" href="#controlling-the-number-of-submissions" title="Permalink to this headline">#</a></h1>
-<p>This is a placeholder for this lesson.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-2-modify-run-type-in-env-run-xml">
+<h1>Exercise 2: Modify run type in <code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code><a class="headerlink" href="#exercise-2-modify-run-type-in-env-run-xml" title="Permalink to this headline">#</a></h1>
+<div class="alert alert-info">
+<p><strong>Exercise: Modify the <code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code> file </strong><br><br></p>
+<p>Branch from the end of Exercise 1 Part I to create a new case named “b.day2.2”.<br />
+Double CO2 for atmosphere and ocean. Double methane for the atmosphere. Include an atmosphere initial file in the output. Run for 1 month, then restart for 1 month.</p>
+</div><div class="alert alert-warning">
+<details>   
+   <summary>
+        <img src="https://freesvg.org/img/bulb_on.png" width="20px">
+       <font face="Times New Roman" color='blue' size="4">Hint!</font>
+    </summary>
+<ol>
+<li><p>For a branch run, we need to set several variables related to the reference case in <code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code>. To find variables applied to reference case (Branch and Hybrid runs), use ./xmlquery -p REF.</p></li>
+<li><p>Ocean CO2 need to be changed in <code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code>. Atmospehre CO2 and methane are controlled by the variables <code class="docutils literal notranslate"><span class="pre">co2vmr</span></code> and <code class="docutils literal notranslate"><span class="pre">ch4vmr</span></code> respectively in the atmosphere model namelist file. You can check the default values of these variables in your <code class="docutils literal notranslate"><span class="pre">$CASEROOT/CaseDocs/atm_in</span></code>.</p>
+<p>Make modifications to the namelist file using <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code>. Then run <code class="docutils literal notranslate"><span class="pre">./preview_namelist</span></code>. Check if your changes were implemented in your run directory (<code class="docutils literal notranslate"><span class="pre">$RUNDIR</span></code>) and in <code class="docutils literal notranslate"><span class="pre">$CASEROOT/CaseDocs/atm_in</span></code>.
+Learn the <a class="reference internal" href="../../../namelist/overview.html"><span class="doc std std-doc">basics of namelist modification here</span></a>. We will dive into the details in the next chapter.</p>
+</li>
+<li><p>Make sure to update the walltime to match the run length.</p></li>
+<li><p>Don’t forget to put restart files into the run directory <code class="docutils literal notranslate"><span class="pre">$RUNDIR</span></code>.</p></li>
+</ol>
+</details>
+</div><div class="alert alert-success">
+<details>   
+   <summary>
+        <img src="https://freesvg.org/img/help-browser.png" width="20px">
+       <font face="Times New Roman" color='blue' size="4">Click here for the solution</font>
+    </summary>
+<ol class="simple">
+<li><p>From the script directory, create your new case:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">create_newcase</span> <span class="o">--</span><span class="n">case</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b</span><span class="o">.</span><span class="n">day2</span><span class="mf">.2</span> <span class="o">--</span><span class="n">res</span> <span class="n">f19_g17</span> <span class="o">--</span><span class="n">compset</span> <span class="n">B1850</span>
+</pre></div>
+</div>
+<br>
+<ol class="simple">
+<li><p>In your case directory, change the run type to branch, and change the associated RUN_* variables:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cd</span> <span class="o">~/</span><span class="n">case</span><span class="o">/</span><span class="n">b</span><span class="o">.</span><span class="n">day2</span><span class="mf">.2</span><span class="o">/</span>
+    <span class="o">./</span><span class="n">xmlchange</span> <span class="n">RUN_TYPE</span><span class="o">=</span><span class="n">branch</span>
+    <span class="o">./</span><span class="n">xmlchange</span> <span class="n">RUN_REFCASE</span><span class="o">=</span><span class="n">b</span><span class="o">.</span><span class="n">day2</span><span class="mf">.1</span><span class="p">,</span><span class="n">RUN_REFDATE</span><span class="o">=</span><span class="mi">0001</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="n">GET_REFCASE</span><span class="o">=</span><span class="n">FALSE</span>
+</pre></div>
+</div>
+<br>    
+<ol class="simple">
+<li><p>Set run time variables:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">nmonths</span><span class="p">,</span><span class="n">STOP_N</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">RESUBMIT</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">JOB_WALLCLOCK_TIME</span><span class="o">=</span><span class="mi">02</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+</pre></div>
+</div>
+<br>
+<ol class="simple">
+<li><p>Change CO2 level in <code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code>:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">xmlchange</span> <span class="n">CCSM_CO2_PPMV</span><span class="o">=</span><span class="mf">569.4</span>
+</pre></div>
+</div>
+<br>    
+<ol class="simple">
+<li><p>Set up the case, put the initial and restart files in the <code class="docutils literal notranslate"><span class="pre">$RUNDIR</span></code>:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    ./case.setup
+    cp /glade/scratch/$LOGNAME/archive/b.day2.1/rest/0001-02-01-00000/*  /glade/scratch/$LOGNAME/b.day2.2/run/
+</pre></div>
+</div>
+<br>  
+<ol class="simple">
+<li><p>Make changes to the atmosphere namelist. In <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code>, add the following lines:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    co2vmr=569.4e-6
+    ch4vmr=1583.2e-9
+    inithist=‘MONTHLY‘ 
+</pre></div>
+</div>
+<br>
+<ol class="simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">preview_namelist</span></code> to resolve the namelist modifications.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">preview_namelist</span>
+</pre></div>
+</div>
+<p>Check if the changes were implemented in $CASEROOT/CaseDocs/atm_in</p>
+<br>
+8. Carry on to build and submit the run:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span> <span class="p">(</span><span class="n">qcmd</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">on</span> <span class="n">Cheyenne</span> <span class="n">only</span><span class="p">)</span>
+      <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
+</pre></div>
+</div>
+<br>    
+<p>After the job completes, go to the short term archive space and explore.</p>
+</details>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -819,7 +910,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks/modifications/xml/run_length"
+            path: "./notebooks/modifications/xml/exercises"
         },
         predefinedOutput: true
     }
@@ -833,6 +924,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="xml_length_exercise.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Exercise 1: Modify run length in <code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="xml_timestep_exercise.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise 3: Change physics timestep</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
