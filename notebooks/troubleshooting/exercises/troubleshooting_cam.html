@@ -779,47 +779,12 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tip-to-add-a-h1-file">
-   Tip to add a
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     h1
-    </span>
-   </code>
-   file
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tip-to-for-troubleshooting">
-   Tip to for troubleshooting
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
@@ -831,30 +796,6 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tip-to-add-a-h1-file">
-   Tip to add a
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     h1
-    </span>
-   </code>
-   file
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tip-to-for-troubleshooting">
-   Tip to for troubleshooting
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -866,8 +807,8 @@ title="Print to PDF"
 <h1>Debugging CAM<a class="headerlink" href="#debugging-cam" title="Permalink to this headline">#</a></h1>
 <div class="alert alert-info">
 <strong>Exercise: Add an additional output variable</strong><br><br>
-<p>Create a case called <strong>b1850_high_freq_bugfixing</strong> using the compset  <code class="docutils literal notranslate"><span class="pre">B1850</span></code>  at <code class="docutils literal notranslate"><span class="pre">f19_g17</span></code> resolution.
-Set the run length to <strong>1 month</strong>.</p>
+<p>Create a case called <code class="docutils literal notranslate"><span class="pre">b1850_high_freq_bugfixing</span></code> using the compset  <code class="docutils literal notranslate"><span class="pre">B1850</span></code>  at <code class="docutils literal notranslate"><span class="pre">f19_g17</span></code> resolution.
+Set the run length to <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">month</span></code>.</p>
 <p>Now in addition to the default monthly output, add the following output:</p>
 <ul class="simple">
 <li><p>an <code class="docutils literal notranslate"><span class="pre">h1</span></code> file containing daily averages of <code class="docutils literal notranslate"><span class="pre">T2M</span></code> and set your namelist so that there is one file per day for this daily averaged output.</p></li>
@@ -880,19 +821,18 @@ Set the run length to <strong>1 month</strong>.</p>
    <summary>
       <font face="Times New Roman" color='blue'>Click here for hints</font>
     </summary>
-<section id="tip-to-add-a-h1-file">
-<h2>Tip to add a <code class="docutils literal notranslate"><span class="pre">h1</span></code> file<a class="headerlink" href="#tip-to-add-a-h1-file" title="Permalink to this headline">#</a></h2>
-<p>For more information about how to add a <code class="docutils literal notranslate"><span class="pre">h1</span></code> file, check the section about namelist modifications.</p>
-<p>If you don’t have time to check the section immediately, the way to add an <code class="docutils literal notranslate"><span class="pre">h1</span></code> file with daily averages of <code class="docutils literal notranslate"><span class="pre">T2M</span></code> and create one file per day for this daily averaged output, you need to add the following in <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">nl</span> <span class="pre">cam</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>fincl2=’T2M:A’
-nhtfrq=0,-24
-mfilt=1,1
+<p><strong>Tip to add a <code class="docutils literal notranslate"><span class="pre">h1</span></code> file</strong>
+For more information about how to add a <code class="docutils literal notranslate"><span class="pre">h1</span></code> file, check the section about namelist modifications.</p>
+<p>If you don’t have time to check the section immediately, the way to add an <code class="docutils literal notranslate"><span class="pre">h1</span></code> file with daily averages of <code class="docutils literal notranslate"><span class="pre">T2M</span></code> and create one file per day for this daily averaged output is:</p>
+<p>add the following lines in <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">nl</span> <span class="pre">cam</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    fincl2 = ’T2M:A’
+    nhtfrq = 0,-24
+    mfilt = 1,1
 </pre></div>
 </div>
-</section>
-<section id="tip-to-for-troubleshooting">
-<h2>Tip to for troubleshooting<a class="headerlink" href="#tip-to-for-troubleshooting" title="Permalink to this headline">#</a></h2>
-<p>Check the cheyenne queue. When your run is not in the queue:</p>
+<p><strong>Tip to for troubleshooting</strong></p>
+<p>Check the cheyenne queue and wait until your run doesn’t show in the queue anymore.</p>
+<p>When your run is not in the queue anymore:</p>
 <ul class="simple">
 <li><p>Go to the archive directory: can you see the history files in the archive directory? The answer should be no. Why?</p></li>
 <li><p>Go to the run directory: Is there any evidence of history files or restart files being created by the run? The answer, again, should be no. This is because we have tricked you, with a bug.</p></li>
@@ -965,7 +905,6 @@ The field &lt;font face=&quot;Courier&quot; color=&#39;purple&#39;&gt;&lt;strong
 
 </pre></div>
 </div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
