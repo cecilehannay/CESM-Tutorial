@@ -821,21 +821,21 @@ Set the run length to <code class="docutils literal notranslate"><span class="pr
    <summary>
       <font face="Times New Roman" color='blue'>Click here for hints</font>
     </summary>
-<p><strong>Tip to add a <code class="docutils literal notranslate"><span class="pre">h1</span></code> file</strong>
-For more information about how to add a <code class="docutils literal notranslate"><span class="pre">h1</span></code> file, check the section about namelist modifications.</p>
+<p><strong>Tip to add a <code class="docutils literal notranslate"><span class="pre">h1</span></code> file</strong></p>
+<p>For more information about how to add a <code class="docutils literal notranslate"><span class="pre">h1</span></code> file, check the section about namelist modifications.</p>
 <p>If you don’t have time to check the section immediately, the way to add an <code class="docutils literal notranslate"><span class="pre">h1</span></code> file with daily averages of <code class="docutils literal notranslate"><span class="pre">T2M</span></code> and create one file per day for this daily averaged output is:</p>
 <p>add the following lines in <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">nl</span> <span class="pre">cam</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    fincl2 = ’T2M:A’
-    nhtfrq = 0,-24
-    mfilt = 1,1
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> fincl2 = ’T2M:A’
+ nhtfrq = 0,-24
+ mfilt = 1,1
 </pre></div>
 </div>
 <p><strong>Tip to for troubleshooting</strong></p>
 <p>Check the cheyenne queue and wait until your run doesn’t show in the queue anymore.</p>
 <p>When your run is not in the queue anymore:</p>
 <ul class="simple">
-<li><p>Go to the archive directory: can you see the history files in the archive directory? The answer should be no. Why?</p></li>
-<li><p>Go to the run directory: Is there any evidence of history files or restart files being created by the run? The answer, again, should be no. This is because we have tricked you, with a bug.</p></li>
+<li><p>Go to the <code class="docutils literal notranslate"><span class="pre">archive</span></code> directory: can you see the history files in the archive directory? The answer should be no. Why?</p></li>
+<li><p>Go to the <code class="docutils literal notranslate"><span class="pre">run</span></code> directory: Is there any evidence of history files or restart files being created by the run? The answer, again, should be no. This is because we have tricked you, with a bug.</p></li>
 </ul>
 <p>Look at the log files in the <code class="docutils literal notranslate"><span class="pre">RUNDIR</span></code> to try to understand why the run crashed.</p>
 </details>
@@ -844,19 +844,19 @@ For more information about how to add a <code class="docutils literal notranslat
 <details>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
 <p>Create a new case <code class="docutils literal notranslate"><span class="pre">b1850_high_freq_bugfixing</span></code> with the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">cesm2</span><span class="mf">.1</span><span class="n">_tutorial2022</span><span class="o">/</span><span class="n">cime</span><span class="o">/</span><span class="n">scripts</span>
-<span class="o">./</span><span class="n">create_newcase</span> <span class="o">--</span><span class="n">case</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_high_freq_bugfixing</span> <span class="o">--</span><span class="n">compset</span> <span class="n">B1850</span> <span class="o">--</span><span class="n">res</span> <span class="n">f19_g17</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">cd</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">cesm2</span><span class="mf">.1</span><span class="n">_tutorial2022</span><span class="o">/</span><span class="n">cime</span><span class="o">/</span><span class="n">scripts</span>
+ <span class="o">./</span><span class="n">create_newcase</span> <span class="o">--</span><span class="n">case</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_high_freq_bugfixing</span> <span class="o">--</span><span class="n">compset</span> <span class="n">B1850</span> <span class="o">--</span><span class="n">res</span> <span class="n">f19_g17</span> 
 </pre></div>
 </div>
 <p>Case <code class="docutils literal notranslate"><span class="pre">setup</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_high_freq_bugfixing</span>
-<span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">cd</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_high_freq_bugfixing</span>
+ <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>
 </pre></div>
 </div>
 <p>Add the daily output of <code class="docutils literal notranslate"><span class="pre">T2M</span></code> by editing the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code> and adding the lines:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    fincl2 = ’T2M:A’
-    nhtfrq = 0,-24
-    mfilt = 1,1
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> fincl2 = ’T2M:A’
+ nhtfrq = 0,-24
+ mfilt = 1,1
 </pre></div>
 </div>
 <p>Set the <strong>run length</strong> to 1 month:</p>
