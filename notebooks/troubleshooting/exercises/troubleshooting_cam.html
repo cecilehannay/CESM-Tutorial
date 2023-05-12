@@ -807,20 +807,13 @@ title="Print to PDF"
 <h1>Debugging CAM<a class="headerlink" href="#debugging-cam" title="Permalink to this headline">#</a></h1>
 <div class="alert alert-info">
 <strong>Exercise: Add an additional output variable</strong><br><br>
-<p>Create a case called <strong>b1850_high_freq_bugfixing</strong> using the compset  <code class="docutils literal notranslate"><span class="pre">B1850</span></code>  at <code class="docutils literal notranslate"><span class="pre">f19_g17</span></code> resolution.</p>
-<p>Set the run length to <strong>1 month</strong>.</p>
-<p>Now in addition to the default monthly output, add the following output</p>
+<p>Create a case called <strong>b1850_high_freq_bugfixing</strong> using the compset  <code class="docutils literal notranslate"><span class="pre">B1850</span></code>  at <code class="docutils literal notranslate"><span class="pre">f19_g17</span></code> resolution.
+Set the run length to <strong>1 month</strong>.</p>
+<p>Now in addition to the default monthly output, add the following output:</p>
 <ul class="simple">
-<li><p>an <code class="docutils literal notranslate"><span class="pre">h1</span></code> file containing daily averages of T2M</p></li>
-<li><p>set your namelist so that there is one file per day for this daily averaged output.
-i.e., you would need the following in user nl cam</p></li>
+<li><p>an <code class="docutils literal notranslate"><span class="pre">h1</span></code> file containing daily averages of <code class="docutils literal notranslate"><span class="pre">T2M</span></code> and set your namelist so that there is one file per day for this daily averaged output.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>fincl2=’T2M:A’
-nhtfrq=0,-24
-mfilt=1,1
-</pre></div>
-</div>
-<p>Your goal is to make the model crashes.</p>
+<p>Note that  the variable <code class="docutils literal notranslate"><span class="pre">T2M</span></code> doesn’t exist. Your goal is to make the model crashes.</p>
 <p>Set up, build and submit your case.</p>
 </div>
 <div class="alert alert-warning">  
@@ -828,6 +821,13 @@ mfilt=1,1
    <summary>
       <font face="Times New Roman" color='blue'>Click here for hints</font>
     </summary>
+<p>For more information about how to add a h1 file, check the section about namelist modifications.</p>
+<p>If you don’t have time to check the section immediately, the way to add an <code class="docutils literal notranslate"><span class="pre">h1</span></code> file with daily averages of <code class="docutils literal notranslate"><span class="pre">T2M</span></code> and create one file per day for this daily averaged output, you need to add the following in <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">nl</span> <span class="pre">cam</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>fincl2=’T2M:A’
+nhtfrq=0,-24
+mfilt=1,1
+</pre></div>
+</div>
 <p>Is it running? When it says completed in the queue, can you see the history files in the archive directory? The answer should be no. Go to the run directory.</p>
 <p>Is there any evidence of history files or restart files being created by the run? The answer, again,
 should be no. This is because we have tricked you, with a bug.
