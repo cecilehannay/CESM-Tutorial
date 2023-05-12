@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Exercise Overview" href="exercises_overview.html" />
@@ -781,12 +779,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#looking-at-the-log-files">
+   Looking at the log files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-with-more-debugging-information">
+   Running with more debugging information
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -798,6 +825,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#looking-at-the-log-files">
+   Looking at the log files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-with-more-debugging-information">
+   Running with more debugging information
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -807,39 +852,56 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="troubleshooting-runtime-errors">
 <h1>Troubleshooting runtime errors<a class="headerlink" href="#troubleshooting-runtime-errors" title="Permalink to this headline">#</a></h1>
-<p>There are several places to look for information if a job fails. Start with the <code class="docutils literal notranslate"><span class="pre">STDOUT</span></code> and <code class="docutils literal notranslate"><span class="pre">STDERR</span></code> file(s) in <code class="docutils literal notranslate"><span class="pre">$CASEROOT</span></code>.</p>
-<p>If you don’t find an obvious error message there, the logs files will probably give you a hint.</p>
+<p>There are several places to look for information if a job fails. The logs files will probably give you a hint.</p>
+<section id="looking-at-the-log-files">
+<h2>Looking at the log files<a class="headerlink" href="#looking-at-the-log-files" title="Permalink to this headline">#</a></h2>
 <p>The log files are files in the format <code class="docutils literal notranslate"><span class="pre">$model.log.*</span></code></p>
 <ul class="simple">
 <li><p>When the model is running, it produces the log files in the <strong>run directory</strong>: <code class="docutils literal notranslate"><span class="pre">RUNDIR</span></code>.</p></li>
-<li><p>When the run completes successfully, the model moves the log files into the <strong>archive</strong> directory:</p></li>
+<li><p>When the run completes successfully, the model moves the log files into the <strong>archive</strong> directory: <code class="docutils literal notranslate"><span class="pre">DOUT_S_ROOT</span></code></p></li>
 <li><p>When the model fails, the log files remains in the run directory <code class="docutils literal notranslate"><span class="pre">RUNDIR</span></code></p></li>
 </ul>
-<p>First, check ``cpl.log.<span class="math notranslate nohighlight">\(datestamp, which will often tell you when the model failed. Then check the rest of the component log files. See troubleshooting run-time problems for more information.There are several places to look for information if a job fails. Start with the STDOUT and STDERR file(s) in \)</span>CASEROOT.</p>
-<p>To see if a run completed successfully, check the last several lines of the cpl.log file for a string like SUCCESSFUL TERMINATION. A successful job also usually copies the log files to the $CASEROOT/logs directory.</p>
-<p>Check these things first when a job fails:</p>
-<p>Did the model time out?</p>
-<p>Was a disk quota limit hit?</p>
-<p>Did a machine go down?</p>
-<p>Did a file system become full?</p>
-<p>If any of those things happened, take appropriate corrective action (see suggestions below) and resubmit the job.</p>
-<p>If it is not clear that any of the above caused a case to fail, there are several places to look for error messages.</p>
-<div class="alert alert-info" style="text-align: left;">
-<p>The <strong>steps</strong> to modify the <strong>namelists</strong> are:</p>
-<p>In <code class="docutils literal notranslate"><span class="pre">$CASEROOT</span></code></p>
-<ul class="simple">
-<li><p>edit the <strong><code class="docutils literal notranslate"><span class="pre">user_nl_xxx</span></code></strong> files.</p></li>
-<li><p>generate the namelists by running <strong><code class="docutils literal notranslate"><span class="pre">./preview_namelists</span></code></strong>.</p></li>
-</ul>
-<p>This results in the creation of component namelists, the <code class="docutils literal notranslate"><span class="pre">*_in</span></code> files (i.e. atm_in, lnd_in, and so on) in <code class="docutils literal notranslate"><span class="pre">$CASEROOT/CaseDocs/</span></code> and in <code class="docutils literal notranslate"><span class="pre">$RUNDIR</span></code>.</p>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">*_in</span></code> files <strong>should not be edited</strong>. Any manual changes of the <code class="docutils literal notranslate"><span class="pre">*_in</span></code> files will be overwritten when you compile or submit the run.</p>
-<p>Note that step <code class="docutils literal notranslate"><span class="pre">./preview_namelists</span></code> is <strong>optional</strong> as the script <em>preview_namelists</em> is also called when you build the model.</p>
 <p><img alt="CESM directories and namelists" src="../../_images/CESM_directories_and_log_files.png" /></p>
 <p><em><p style="text-align: center;"> Figure: Overview of the CESM directories and the log files. </p></em></p>
+<p>First, check the latest <code class="docutils literal notranslate"><span class="pre">cpl.log.*</span></code>, which will often tell you when the model failed. If a run completed successfully, the last several lines of the <code class="docutils literal notranslate"><span class="pre">cpl.log.*</span></code> file will have a string like <code class="docutils literal notranslate"><span class="pre">SUCCESSFUL</span> <span class="pre">TERMINATION</span> <span class="pre">OF</span> <span class="pre">CESM</span></code>.
+If you don’t see this message, it means the run has failed.</p>
+<p>Check these things first when a job fails:</p>
+<ul class="simple">
+<li><p>Did the model time out?</p></li>
+<li><p>Was a disk quota limit hit?</p></li>
+<li><p>Did a machine go down?</p></li>
+<li><p>Did a file system become full?
+If any of those things happened, take appropriate corrective action and resubmit the job.</p></li>
+</ul>
+<p>If it is not clear that any of the above caused a case to fail, check the rest of the component log files <code class="docutils literal notranslate"><span class="pre">$model.log.*</span></code> for error messages. It takes a bit of practice to interpret message errors. We will look at an example in this chapter exercices.</p>
+</section>
+<section id="running-with-more-debugging-information">
+<h2>Running with more debugging information<a class="headerlink" href="#running-with-more-debugging-information" title="Permalink to this headline">#</a></h2>
+<p>If you cannot find the reason of the crash in the <strong>log</strong> files, there are two ways to add more debugging information.</p>
+<ul class="simple">
+<li><p>Increase the value of the run-time xml variable <code class="docutils literal notranslate"><span class="pre">INFO_DBUG</span></code> (This <strong>does NOT require rebuilding</strong>):</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">INFO_DBUG</span><span class="o">=</span><span class="mf">2.</span> 
+</pre></div>
+</div>
+<p>This adds more information to the <code class="docutils literal notranslate"><span class="pre">cpl.log</span></code> file that can be useful if you can’t tell what component is aborting the run, or where bad coupling fields are originating.</p>
+<ul class="simple">
+<li><p>Try rebuilding and rerunning with the variable DEBUG set to TRUE (This ** requires rebuilding**):</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">DEBUG</span><span class="o">=</span><span class="n">TRUE</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>This adds various runtime checks that trap conditions such as out-of-bounds array indexing, divide by 0, and other floating point exceptions.
+Before running, you must rebuild run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span> <span class="o">--</span><span class="n">clean</span><span class="o">-</span><span class="nb">all</span>
+<span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Note that the model will run <strong>significantly slower</strong> in <code class="docutils literal notranslate"><span class="pre">DEBUG</span> <span class="pre">mode</span></code>, so this may not be feasible if the model has to run a long time before producing the error.</p>
 <div class="alert alert-info" style="text-align: center;">
-<p>Complete documentation about the namelist variables can be found on the <a class="reference external" href="https://www2.cesm.ucar.edu/models/cesm2/settings/current/">CESM webpage.</a></p>
+<p>More information about troubleshooting can be found in the <a class="reference external" href="https://esmci.github.io/cime/versions/master/html/users_guide/troubleshooting.html">CIME documentation</a>.</p>
 </div></section>
+</section>
 
     <script type="text/x-thebe-config">
     {
