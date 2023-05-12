@@ -779,12 +779,47 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tip-to-add-a-h1-file">
+   Tip to add a
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     h1
+    </span>
+   </code>
+   file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tip-to-for-troubleshooting">
+   Tip to for troubleshooting
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -796,6 +831,30 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tip-to-add-a-h1-file">
+   Tip to add a
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     h1
+    </span>
+   </code>
+   file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tip-to-for-troubleshooting">
+   Tip to for troubleshooting
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -813,43 +872,33 @@ Set the run length to <strong>1 month</strong>.</p>
 <ul class="simple">
 <li><p>an <code class="docutils literal notranslate"><span class="pre">h1</span></code> file containing daily averages of <code class="docutils literal notranslate"><span class="pre">T2M</span></code> and set your namelist so that there is one file per day for this daily averaged output.</p></li>
 </ul>
-<p>Note that  the variable <code class="docutils literal notranslate"><span class="pre">T2M</span></code> doesn’t exist. Your goal is to make the model crashes.</p>
 <p>Set up, build and submit your case.</p>
+<p>NB: Your goal is to make the model crashes. And then to troubleshoot why it crashed.</p>
 </div>
 <div class="alert alert-warning">  
 <details> 
    <summary>
       <font face="Times New Roman" color='blue'>Click here for hints</font>
     </summary>
-<p>For more information about how to add a h1 file, check the section about namelist modifications.</p>
+<section id="tip-to-add-a-h1-file">
+<h2>Tip to add a <code class="docutils literal notranslate"><span class="pre">h1</span></code> file<a class="headerlink" href="#tip-to-add-a-h1-file" title="Permalink to this headline">#</a></h2>
+<p>For more information about how to add a <code class="docutils literal notranslate"><span class="pre">h1</span></code> file, check the section about namelist modifications.</p>
 <p>If you don’t have time to check the section immediately, the way to add an <code class="docutils literal notranslate"><span class="pre">h1</span></code> file with daily averages of <code class="docutils literal notranslate"><span class="pre">T2M</span></code> and create one file per day for this daily averaged output, you need to add the following in <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">nl</span> <span class="pre">cam</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>fincl2=’T2M:A’
 nhtfrq=0,-24
 mfilt=1,1
 </pre></div>
 </div>
-<p>Is it running? When it says completed in the queue, can you see the history files in the archive directory? The answer should be no. Go to the run directory.</p>
-<p>Is there any evidence of history files or restart files being created by the run? The answer, again,
-should be no. This is because we have tricked you, with a bug.
-What you should find in your run directory is three log files. One for the coupler (cpl.log.<em>),
-one for CAM (atm.log.</em>) and one for CESM (cesm.log.<em>).
-Somewhere in these log files is information about what has gone wrong, but it is often not entirely
-straightforward to find.
-Often at the bottom of the log file, there are errors that are not relative to your problem because
-they are just demonstrating that individual processes are exiting. Often the relevant error lies
-above this and can sometimes be found by searching for the first occurrence of ERROR or ABORT or
-cesm.exe. In this case, searching for the first occurrence of ERROR in cesm.log.</em> gives us some
-relevant information. We find
-ERROR: FLDLST: 1 errors found, see log
-This tells us is that something has gone wrong with the list of output variables that we have asked
-for.
-More information can then be found in the CAM log file (atm.log.*).
-Look at the very end of that file and you should see
-FLDLST: T2M in fincl(1, 2) not found
-ERROR: FLDLST: 1 errors found, see log
-This tells us that T2M is not a valid history variable for CAM. That’s because the correct variable
-for near surface temperature is TREFHT, as we used in the previous example. T2M is not a CAM
-history field and this has caused CESM to crash on initialization.</p>
+</section>
+<section id="tip-to-for-troubleshooting">
+<h2>Tip to for troubleshooting<a class="headerlink" href="#tip-to-for-troubleshooting" title="Permalink to this headline">#</a></h2>
+<p>Check the cheyenne queue. When your run is not in the queue:</p>
+<ul class="simple">
+<li><p>Go to the archive directory: can you see the history files in the archive directory? The answer should be no. Why?</p></li>
+<li><p>Go to the run directory: Is there any evidence of history files or restart files being created by the run? The answer, again, should be no. This is because we have tricked you, with a bug.</p></li>
+</ul>
+<p>Look at the log files to try to understand why the run crashed.
+on initialization.</p>
 <p><strong>Tip to add <font face="Courier"><strong>T750</strong></font></strong>  <br></p>
 <ul class="simple">
 <li><p>Use <font face="Courier"><strong>T500</strong></font> as a template for your changes.</p></li>
@@ -957,12 +1006,32 @@ with <font face="Courier" color='purple'><strong>ncview</strong></font>:</p>
 ncview T750-T500.nc
 </pre></div>
 </div>
+<p>What you should find in your run directory is three log files. One for the coupler (cpl.log.<em>),
+one for CAM (atm.log.</em>) and one for CESM (cesm.log.<em>).
+Somewhere in these log files is information about what has gone wrong, but it is often not entirely
+straightforward to find.
+Often at the bottom of the log file, there are errors that are not relative to your problem because
+they are just demonstrating that individual processes are exiting. Often the relevant error lies
+above this and can sometimes be found by searching for the first occurrence of ERROR or ABORT or
+cesm.exe. In this case, searching for the first occurrence of ERROR in cesm.log.</em> gives us some
+relevant information. We find
+ERROR: FLDLST: 1 errors found, see log
+This tells us is that something has gone wrong with the list of output variables that we have asked
+for.
+More information can then be found in the CAM log file (atm.log.*).
+Look at the very end of that file and you should see
+FLDLST: T2M in fincl(1, 2) not found
+ERROR: FLDLST: 1 errors found, see log
+This tells us that T2M is not a valid history variable for CAM. That’s because the correct variable
+for near surface temperature is TREFHT, as we used in the previous example. T2M is not a CAM
+history field and this has caused CESM to crash</p>
 <p>The field <font face="Courier" color='purple'><strong>T750-T500</strong></font> looks like:</p>
 <p><em><p style="text-align: center;">
 <img alt="ncview T750-T500" src="../../../_images/ncview_T750-T500.png" /><br />
 Figure: Overview of the CESM directories and the SourceMods directories. </p></em></p>
 </details>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
