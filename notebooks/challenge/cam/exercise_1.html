@@ -898,13 +898,14 @@ set COMPSET = F2000climo
 set RESOLUTION = f19_f19_mg17
 </pre></div>
 </div>
-<p>-<strong>Create a <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">case</span></code></strong></p>
+<p>-<strong>Create a new case</strong></p>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">case</span></code> with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/p/cesm/tutorial/cesm2.1_tutorial2022/cime/scripts/
 ./create_newcase --case $CASEDIR --res $RESOLUTION --compset $COMPSET --run-unsupported –project UESM0011
 </pre></div>
 </div>
-<p><strong>Case <code class="docutils literal notranslate"><span class="pre">setup</span></code></strong></p>
+<p>-<strong>Case setup</strong>
+Invoke <code class="docutils literal notranslate"><span class="pre">case.setup</span></code> with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $CASEDIR
 ./case.setup    
 </pre></div>
