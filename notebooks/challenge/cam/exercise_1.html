@@ -909,9 +909,9 @@ set RESOLUTION = f19_f19_mg17
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><strong>Setup</strong>
-Invoke <code class="docutils literal notranslate"><span class="pre">case.setup</span></code> with the command:</p></li>
+<li><p><strong>Setup</strong></p></li>
 </ul>
+<p>Invoke <code class="docutils literal notranslate"><span class="pre">case.setup</span></code> with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $CASEDIR
 ./case.setup    
 </pre></div>
@@ -933,13 +933,15 @@ Invoke <code class="docutils literal notranslate"><span class="pre">case.setup</
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><strong>Set run length</strong>
-If needed, change the <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">length</span></code> to 5 days. You don’t have to do this, as 5 day is the default.</p></li>
+<li><p><strong>Set run length</strong></p></li>
 </ul>
+<p>If needed, change the <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">length</span></code>. If you want to run 5 days, you don’t have to do this, as 5 day is the default.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">ndays</span>
 </pre></div>
 </div>
-<p><strong>Set job queue and account number</strong></p>
+<ul class="simple">
+<li><p><strong>Set job queue and account number</strong></p></li>
+</ul>
 <p>If needed, change <code class="docutils literal notranslate"><span class="pre">job</span> <span class="pre">queue</span></code> and <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">number</span></code>.
 For instance:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">regular</span><span class="p">,</span><span class="n">PROJECT</span><span class="o">=</span><span class="n">UESM0011</span>
