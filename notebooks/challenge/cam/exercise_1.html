@@ -906,7 +906,7 @@ set RESOLUTION = f19_f19_mg17
 <ul class="simple">
 <li><p><strong>Create a new case</strong></p></li>
 </ul>
-<p>Create a <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">case</span></code> with the command:</p>
+<p>Create a new case with the command <code class="docutils literal notranslate"><span class="pre">create_newcase</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/p/cesm/tutorial/cesm2.1_tutorial2022/cime/scripts/
 ./create_newcase --case $CASEDIR --res $RESOLUTION --compset $COMPSET --run-unsupported –project UESM0011
 </pre></div>
@@ -923,15 +923,15 @@ set RESOLUTION = f19_f19_mg17
 <li><p><strong>Customize namelists</strong></p></li>
 </ul>
 <p>Edit the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code> and add the lines:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NHTFRQ</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
-<span class="n">MFILT</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">240</span>
-<span class="n">FINCL2</span> <span class="o">=</span> <span class="s1">&#39;TS:I&#39;</span><span class="p">,</span><span class="s1">&#39;PS:I&#39;</span><span class="p">,</span> <span class="s1">&#39;U850:I&#39;</span><span class="p">,</span><span class="s1">&#39;T850:I&#39;</span><span class="p">,</span><span class="s1">&#39;PRECT:I&#39;</span><span class="p">,</span><span class="s1">&#39;LHFLX:I&#39;</span><span class="p">,</span><span class="s1">&#39;SHFLX:I&#39;</span><span class="p">,</span><span class="s1">&#39;FLNT:I&#39;</span><span class="p">,</span><span class="s1">&#39;FLNS:I&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nhtfrq</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
+<span class="n">mfilt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">240</span>
+<span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;TS:I&#39;</span><span class="p">,</span><span class="s1">&#39;PS:I&#39;</span><span class="p">,</span> <span class="s1">&#39;U850:I&#39;</span><span class="p">,</span><span class="s1">&#39;T850:I&#39;</span><span class="p">,</span><span class="s1">&#39;PRECT:I&#39;</span><span class="p">,</span><span class="s1">&#39;LHFLX:I&#39;</span><span class="p">,</span><span class="s1">&#39;SHFLX:I&#39;</span><span class="p">,</span><span class="s1">&#39;FLNT:I&#39;</span><span class="p">,</span><span class="s1">&#39;FLNS:I&#39;</span>
 </pre></div>
 </div>
 <p>You can do this with a text editor. Alternatively, you can use the echo command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;NHTFRQ(2) = -3&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
-<span class="n">echo</span> <span class="s2">&quot;MFILT(2) = 240&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
-<span class="n">echo</span> <span class="s2">&quot;FINCL2 = &#39;TS:I&#39;,&#39;PS:I&#39;, &#39;U850:I&#39;,&#39;T850:I&#39;,&#39;PRECT:I&#39;,&#39;LHFLX:I&#39;,&#39;SHFLX:I&#39;,&#39;FLNT:I&#39;,&#39;FLNS:I&#39;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;nhtfrq(2) = -3&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
+<span class="n">echo</span> <span class="s2">&quot;mfilt(2) = 240&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
+<span class="n">echo</span> <span class="s2">&quot;fincl2 = &#39;TS:I&#39;,&#39;PS:I&#39;, &#39;U850:I&#39;,&#39;T850:I&#39;,&#39;PRECT:I&#39;,&#39;LHFLX:I&#39;,&#39;SHFLX:I&#39;,&#39;FLNT:I&#39;,&#39;FLNS:I&#39;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
 <span class="n">echo</span> <span class="s2">&quot;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
 </pre></div>
 </div>
