@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Exercise 1" href="cam/exercise_1.html" />
+    <link rel="next" title="Exercise 1: Control case" href="cam/exercise_1.html" />
     <link rel="prev" title="ESDS" href="../diagnostics/esds.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -530,7 +530,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="cam/exercise_1.html">
-     Exercise 1
+     Exercise 1: Control case
     </a>
    </li>
    <li class="toctree-l2">
@@ -843,12 +843,36 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview-of-the-exercises">
+   Overview of the exercises
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -860,6 +884,19 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview-of-the-exercises">
+   Overview of the exercises
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -869,24 +906,27 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="challenge-exercises-for-cam">
 <h1>Challenge Exercises for CAM<a class="headerlink" href="#challenge-exercises-for-cam" title="Permalink to this headline">#</a></h1>
-<p>In this chapter we will run the experiments with the <code class="docutils literal notranslate"><span class="pre">F</span></code> compsets.
+<p>In this chapter we will run the experiments with the <strong><code class="docutils literal notranslate"><span class="pre">F</span></code> compsets</strong>.
 The <code class="docutils literal notranslate"><span class="pre">F</span></code> compsets use prescribed ocean (observed sea-surface temperature data) and prescribed sea-ice (observed sea-ice thickness and area)</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">F2000climo</span></code> uses climatological forcings from around year 2000</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">F2010climo</span></code> uses climatological forcings from around year 2010</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FHIST</span></code> use time varying forcing</p></li>
 </ul>
+<section id="overview-of-the-exercises">
+<h2>Overview of the exercises<a class="headerlink" href="#overview-of-the-exercises" title="Permalink to this headline">#</a></h2>
 <p>Start running a control case with the compset <code class="docutils literal notranslate"><span class="pre">F2000climo</span></code></p>
 <p>Then choose one or more exercises to try:</p>
 <ul class="simple">
 <li><p>Use historical SSTs/forcings instead of fixed (compset change)</p></li>
-<li><p>Try running starting 1850 with spun-up pre-industrial model
-Increase orographic height over the western US (dataset change)</p></li>
-<li><p>Modify sea surface temperature in the tropics
-Increase the triggering threshold for deep convection over land (code change–simple)
-Add a (fake) physics parameterization (code change–advanced)
-Compare your test exercise to your control</p></li>
+<li><p>Try running starting 1850 with spun-up pre-industrial model</p></li>
+<li><p>Increase orographic height over the western US (dataset change)</p></li>
+<li><p>Modify sea surface temperature in the tropics</p></li>
+<li><p>Increase the triggering threshold for deep convection over land (code change–simple)</p></li>
+<li><p>Add a (fake) physics parameterization (code change–advanced)
+Compare your test exercise(s) to your control</p></li>
 </ul>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -928,7 +968,7 @@ Compare your test exercise to your control</p></li>
     <a class='right-next' id="next-link" href="cam/exercise_1.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exercise 1</p>
+        <p class="prev-next-title">Exercise 1: Control case</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
