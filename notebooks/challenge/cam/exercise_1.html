@@ -906,7 +906,7 @@ set RESOLUTION = f19_f19_mg17
 </pre></div>
 </div>
 <p>** Customize namelists **</p>
-<p>Edit the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam&lt;</span></code>and add the lines:</p>
+<p>Edit the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code>and add the lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NHTFRQ</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
 <span class="n">MFILT</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">240</span>
 <span class="n">FINCL2</span> <span class="o">=</span> <span class="s1">&#39;TS:I&#39;</span><span class="p">,</span><span class="s1">&#39;PS:I&#39;</span><span class="p">,</span> <span class="s1">&#39;U850:I&#39;</span><span class="p">,</span><span class="s1">&#39;T850:I&#39;</span><span class="p">,</span><span class="s1">&#39;PRECT:I&#39;</span><span class="p">,</span><span class="s1">&#39;LHFLX:I&#39;</span><span class="p">,</span><span class="s1">&#39;SHFLX:I&#39;</span><span class="p">,</span><span class="s1">&#39;FLNT:I&#39;</span><span class="p">,</span><span class="s1">&#39;FLNS:I&#39;</span>
@@ -919,16 +919,18 @@ set RESOLUTION = f19_f19_mg17
 <span class="n">echo</span> <span class="s2">&quot;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
 </pre></div>
 </div>
-<p>If needed, change the <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">length</span></code></p>
+<p>** Set run length to 5 days **
+If needed, change the <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">length</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">ndays</span>
 </pre></div>
 </div>
+<p>** Set job queue and account number**</p>
 <p>If needed, change <code class="docutils literal notranslate"><span class="pre">job</span> <span class="pre">queue</span></code> and <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">number</span></code>.
 For instance:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">regular</span><span class="p">,</span><span class="n">PROJECT</span><span class="o">=</span><span class="n">UESM0011</span>
 </pre></div>
 </div>
-<p>Build and submit:</p>
+<p><strong>Build and submit</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
 </pre></div>
