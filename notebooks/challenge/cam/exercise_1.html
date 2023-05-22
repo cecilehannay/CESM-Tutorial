@@ -907,10 +907,12 @@ set RESOLUTION = f19_f19_mg17
 <p><strong># Set job queue and account number</strong></p>
 <p>If needed, change <code class="docutils literal notranslate"><span class="pre">job</span> <span class="pre">queue</span></code> and <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">number</span></code>.
 For instance:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">regular</span><span class="p">,</span><span class="n">PROJECT</span><span class="o">=</span><span class="n">P93300642</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $CASEDIR
+./xmlchange JOB_QUEUE=regular,PROJECT=P93300642
 </pre></div>
 </div>
-<p><strong># Setup</strong></p>
+<p>This step can be redone at anytime in the process.
+<strong># Setup</strong></p>
 <p>Invoke <code class="docutils literal notranslate"><span class="pre">case.setup</span></code> with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $CASEDIR
 ./case.setup    
