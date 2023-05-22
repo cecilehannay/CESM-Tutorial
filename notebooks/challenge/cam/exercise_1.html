@@ -889,7 +889,7 @@ You are also welcome to output your own variables</p>
 <div class="alert alert-success">   
 <details>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p><strong>Set variables</strong></p>
+<p><strong>Set environment variables</strong></p>
 <p>Set environment variables with the commands:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set CASENAME = f2000_control
 set CASEDIR = /glade/u/home/$USER/cases/$CASENAME
@@ -898,7 +898,8 @@ set COMPSET = F2000climo
 set RESOLUTION = f19_f19_mg17
 </pre></div>
 </div>
-<p><strong>Create a <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">case</span></code></strong> with the command:</p>
+<p><strong>create_newcase</strong></p>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">case</span></code> with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/p/cesm/tutorial/cesm2.1_tutorial2022/cime/scripts/
 ./create_newcase --case $CASEDIR --res $RESOLUTION --compset $COMPSET --run-unsupported –project UESM0011
 </pre></div>
@@ -908,7 +909,7 @@ set RESOLUTION = f19_f19_mg17
 ./case.setup    
 </pre></div>
 </div>
-<p>** Customize namelists **</p>
+<p><strong>Customize namelists</strong></p>
 <p>Edit the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code>and add the lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NHTFRQ</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
 <span class="n">MFILT</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">240</span>
@@ -922,12 +923,12 @@ set RESOLUTION = f19_f19_mg17
 <span class="n">echo</span> <span class="s2">&quot;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
 </pre></div>
 </div>
-<p>** Set run length to 5 days **
+<p>**Set run length to 5 days **
 If needed, change the <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">length</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">ndays</span>
 </pre></div>
 </div>
-<p>** Set job queue and account number**</p>
+<p><strong>Set job queue and account number</strong></p>
 <p>If needed, change <code class="docutils literal notranslate"><span class="pre">job</span> <span class="pre">queue</span></code> and <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">number</span></code>.
 For instance:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">regular</span><span class="p">,</span><span class="n">PROJECT</span><span class="o">=</span><span class="n">UESM0011</span>
