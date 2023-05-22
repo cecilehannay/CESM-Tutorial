@@ -871,7 +871,7 @@ title="Print to PDF"
 <h1>Exercise 1: Control case<a class="headerlink" href="#exercise-1-control-case" title="Permalink to this headline">#</a></h1>
 <div class="alert alert-info">
 <strong>Exercise: Customize your CAM history files</strong><br><br>
-<p>Create a CAM6 run with the <code class="docutils literal notranslate"><span class="pre">F2000climo</span></code> compset (data ocean and climatological forcings from around year 2000).</p>
+<p>Create, configure, build and run a case called <code class="docutils literal notranslate"><span class="pre">f2000_control</span></code> with the <code class="docutils literal notranslate"><span class="pre">F2000climo</span></code> compset (data ocean and climatological forcings from around year 2000).</p>
 <p>Run for 5 days, with 3-hourly instantaneous output of the variables: TS, PS, Z500, U850, U200, T850, T500, T200, CLDLOW, PRECT, LHFLX, SHFLX, FLNT, FLNS.
 You are also welcome to output your own variables</p>
 </div>
@@ -881,13 +881,13 @@ You are also welcome to output your own variables</p>
 <p><strong>How do I output 3 hourly instantaneous variables?</strong></p>
 <p>Use namelist variables: <code class="docutils literal notranslate"><span class="pre">nhtfrq</span></code>, <code class="docutils literal notranslate"><span class="pre">mfilt</span></code>, <code class="docutils literal notranslate"><span class="pre">fincl</span></code>.</p>
 <p>Look at the chapter:
-<code class="docutils literal notranslate"><span class="pre">NAMELIST</span> <span class="pre">MODIFICATIONS</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Customize</span> <span class="pre">CAM</span> <span class="pre">output</span></code></p>
+<strong>NAMELIST MODIFICATIONS</strong> -&gt; <strong>Customize CAM output</strong></p>
 </details>
 </div>
 <div class="alert alert-success">   
 <details>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>Set variables with the commands:</p>
+<p><strong>Set variables</strong> with the commands:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set CASENAME = f2000_control
 set CASEDIR = /glade/u/home/$USER/cases/$CASENAME
 set RUNDIR = /glade/scratch/$USER/$CASENAME/run
@@ -895,18 +895,17 @@ set COMPSET = F2000climo
 set RESOLUTION = f19_f19_mg17
 </pre></div>
 </div>
-<p>Create a <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">case</span></code> with the command:</p>
+<p><strong>Create a <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">case</span></code></strong> with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/p/cesm/tutorial/cesm2.1_tutorial2022/cime/scripts/
 ./create_newcase --case $CASEDIR --res $RESOLUTION --compset $COMPSET --run-unsupported –project UESM0011
 </pre></div>
 </div>
-<p>Case <code class="docutils literal notranslate"><span class="pre">setup</span></code> and create namelists:</p>
+<p><strong>Case <code class="docutils literal notranslate"><span class="pre">setup</span></code></strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $CASEDIR
-./xmlchange JOB_QUEUE=regular,PROJECT=UESM0011  # if needed after 5pm
-./case.setup
-./preview_namelists      
+./case.setup    
 </pre></div>
 </div>
+<p>** Customize namelists **</p>
 <p>Edit the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam&lt;</span></code>and add the lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NHTFRQ</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
 <span class="n">MFILT</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">240</span>
