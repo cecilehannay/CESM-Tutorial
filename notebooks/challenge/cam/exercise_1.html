@@ -953,68 +953,49 @@ For instance, to run in the queue <code class="docutils literal notranslate"><sp
 </div>
 <hr class="docutils" />
 <p><strong># Check your solution</strong></p>
-<p>When the run is completed, look at the history into the archive directory.</p>
+<p>When the run is completed, look at the history files into the archive directory.</p>
 <p>(1) Check that your archive directory on cheyenne (The path will be different on other machines):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/f2000_control/atm/hist
 ls 
 </pre></div>
 </div>
+<p>As your run is only 5-day, there should be no monthly file (<code class="docutils literal notranslate"><span class="pre">h0</span></code>)</p>
 <p>(2) Look at the contents of the <code class="docutils literal notranslate"><span class="pre">h1</span></code> files using <code class="docutils literal notranslate"><span class="pre">ncdump</span></code>.</p>
-<p>The file with the instantaneous output <code class="docutils literal notranslate"><span class="pre">h1</span></code> have no cell_methods attribute while the average output <code class="docutils literal notranslate"><span class="pre">h2</span></code> has a attribute:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span>
-</pre></div>
-</div>
-<p>For instance for the field Q.</p>
-<p>In the instantaneous file <code class="docutils literal notranslate"><span class="pre">b1850_high_freq.cam.h1.0001-01-01-00000.nc</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">Q</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lev</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">mdims</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;kg/kg&quot;</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">mixing_ratio</span> <span class="o">=</span> <span class="s2">&quot;wet&quot;</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Specific humidity&quot;</span> <span class="p">;</span>
-</pre></div>
-</div>
-<p>In the time-averaged file  <code class="docutils literal notranslate"><span class="pre">b1850_high_freq.cam.h2.0001-01-01-00000.nc</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">Q</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lev</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">mdims</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;kg/kg&quot;</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">mixing_ratio</span> <span class="o">=</span> <span class="s2">&quot;wet&quot;</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Specific humidity&quot;</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span> <span class="p">;</span>
-</pre></div>
-</div>
-<p>(3) Check the number of timesteps in the h1 and the h2 files.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">h1</span></code> contains 31 time samples.<br />
-In the netcdf file,</p></li>
+<li><p>The file should contain the instantaneous output in the file <code class="docutils literal notranslate"><span class="pre">h1</span></code> for the variables:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">UNLIMITED</span> <span class="p">;</span> <span class="o">//</span> <span class="p">(</span><span class="mi">31</span> <span class="n">currently</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="nb">float</span> <span class="n">FLNS</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">FLNS</span><span class="p">:</span><span class="n">Sampling_Sequence</span> <span class="o">=</span> <span class="s2">&quot;rad_lwsw&quot;</span> <span class="p">;</span>
+                <span class="n">FLNS</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;W/m2&quot;</span> <span class="p">;</span>
+                <span class="n">FLNS</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Net longwave flux at surface&quot;</span> <span class="p">;</span>
+        <span class="nb">float</span> <span class="n">FLNT</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">FLNT</span><span class="p">:</span><span class="n">Sampling_Sequence</span> <span class="o">=</span> <span class="s2">&quot;rad_lwsw&quot;</span> <span class="p">;</span>
+                <span class="n">FLNT</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;W/m2&quot;</span> <span class="p">;</span>
+                <span class="n">FLNT</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Net longwave flux at top of model&quot;</span> <span class="p">;</span>
+        <span class="nb">float</span> <span class="n">LHFLX</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">LHFLX</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;W/m2&quot;</span> <span class="p">;</span>
+                <span class="n">LHFLX</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Surface latent heat flux&quot;</span> <span class="p">;</span>
+        <span class="nb">float</span> <span class="n">PRECT</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">PRECT</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;m/s&quot;</span> <span class="p">;</span>
+                <span class="n">PRECT</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Total (convective and large-scale) precipitation rate (liq + ice)&quot;</span> <span class="p">;</span>
+        <span class="nb">float</span> <span class="n">PS</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">PS</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;Pa&quot;</span> <span class="p">;</span>
+                <span class="n">PS</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Surface pressure&quot;</span> <span class="p">;</span>
+        <span class="nb">float</span> <span class="n">SHFLX</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">SHFLX</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;W/m2&quot;</span> <span class="p">;</span>
+                <span class="n">SHFLX</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Surface sensible heat flux&quot;</span> <span class="p">;</span>
+        <span class="nb">float</span> <span class="n">T850</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">T850</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;K&quot;</span> <span class="p">;</span>
+                <span class="n">T850</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Temperature at 850 mbar pressure surface&quot;</span> <span class="p">;</span>
+        <span class="nb">float</span> <span class="n">TS</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">TS</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;K&quot;</span> <span class="p">;</span>
+                <span class="n">TS</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Surface temperature (radiative)&quot;</span> <span class="p">;</span>
+        <span class="nb">float</span> <span class="n">U850</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">U850</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;m/s&quot;</span> <span class="p">;</span>
+                <span class="n">U850</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Zonal wind at 850 mbar pressure surface&quot;</span> <span class="p">;</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">h2</span></code> contains 8 time samples
-In the netcdf file,</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">UNLIMITED</span> <span class="p">;</span> <span class="o">//</span> <span class="p">(</span><span class="mi">8</span> <span class="n">currently</span><span class="p">)</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Check the size of the files</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>du –ks –h /glade/scratch/$user/archive/b1850_high_freq/atm/hist/*
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">234</span><span class="n">M</span>    <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h0</span><span class="mf">.0001</span><span class="o">-</span><span class="mf">01.</span><span class="n">nc</span>
-
-<span class="mi">210</span><span class="n">M</span>    <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-<span class="mf">7.0</span><span class="n">M</span>    <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-
-<span class="mi">55</span><span class="n">M</span>     <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-<span class="mi">55</span><span class="n">M</span>     <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-<span class="o">...</span>
-<span class="mi">55</span><span class="n">M</span>     <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-<span class="mf">7.0</span><span class="n">M</span>    <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-</pre></div>
-</div>
+<p>Note that these variables have no <code class="docutils literal notranslate"><span class="pre">cell_methods</span></code> attribute becasue the output is instantaneous.</p>
 </details>
 </div>
 </section>
