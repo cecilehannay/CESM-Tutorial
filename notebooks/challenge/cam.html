@@ -869,13 +869,24 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="challenge-exercises-for-cam">
 <h1>Challenge Exercises for CAM<a class="headerlink" href="#challenge-exercises-for-cam" title="Permalink to this headline">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">There</span> <span class="n">will</span> <span class="n">be</span> <span class="n">here</span> <span class="n">an</span> <span class="n">eoverview</span> <span class="n">of</span> <span class="n">the</span> <span class="n">challenges</span> <span class="n">exrecises</span> <span class="k">for</span> <span class="n">cam</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>In this chapter we will run the experiments with the <code class="docutils literal notranslate"><span class="pre">F</span></code> compsets.
+The <code class="docutils literal notranslate"><span class="pre">F</span></code> compsets use prescribed ocean (observed sea-surface temperature data) and prescribed sea-ice (observed sea-ice thickness and area)</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F2000climo</span></code> uses climatological forcings from around year 2000</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F2010climo</span></code> uses climatological forcings from around year 2010</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FHIST</span></code> use time varying forcing</p></li>
+</ul>
+<p>Start running a control case with the compset <code class="docutils literal notranslate"><span class="pre">F2000climo</span></code></p>
+<p>Then choose one or more exercises to try:</p>
+<ul class="simple">
+<li><p>Use historical SSTs/forcings instead of fixed (compset change)</p></li>
+<li><p>Try running starting 1850 with spun-up pre-industrial model
+Increase orographic height over the western US (dataset change)</p></li>
+<li><p>Modify sea surface temperature in the tropics
+Increase the triggering threshold for deep convection over land (code change–simple)
+Add a (fake) physics parameterization (code change–advanced)
+Compare your test exercise to your control</p></li>
+</ul>
 <div class="toctree-wrapper compound">
 </div>
 </section>
