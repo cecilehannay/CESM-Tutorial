@@ -901,7 +901,13 @@ set RESOLUTION = f19_f19_mg17
 <p><strong># Create a new case</strong></p>
 <p>Create a new case with the command <code class="docutils literal notranslate"><span class="pre">create_newcase</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/p/cesm/tutorial/cesm2.1_tutorial2022/cime/scripts/
-./create_newcase --case $CASEDIR --res $RESOLUTION --compset $COMPSET --run-unsupported –project UESM0011
+./create_newcase --case $CASEDIR --res $RESOLUTION --compset $COMPSET
+</pre></div>
+</div>
+<p><strong># Set job queue and account number</strong></p>
+<p>If needed, change <code class="docutils literal notranslate"><span class="pre">job</span> <span class="pre">queue</span></code> and <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">number</span></code>.
+For instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">regular</span><span class="p">,</span><span class="n">PROJECT</span><span class="o">=</span><span class="n">P93300642</span>
 </pre></div>
 </div>
 <p><strong># Setup</strong></p>
@@ -924,32 +930,24 @@ set RESOLUTION = f19_f19_mg17
 <span class="n">echo</span> <span class="s2">&quot;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><strong>Set run length</strong></p></li>
-</ul>
+<p><strong># Set run length</strong></p>
 <p>If needed, change the <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">length</span></code>. If you want to run 5 days, you don’t have to do this, as 5 day is the default.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">ndays</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><strong>Set job queue and account number</strong></p></li>
-</ul>
+<p><strong># Set job queue and account number</strong></p>
 <p>If needed, change <code class="docutils literal notranslate"><span class="pre">job</span> <span class="pre">queue</span></code> and <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">number</span></code>.
 For instance:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">regular</span><span class="p">,</span><span class="n">PROJECT</span><span class="o">=</span><span class="n">UESM0011</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><strong>Build and submit</strong>:</p></li>
-</ul>
+<p><strong># Build and submit</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
 </pre></div>
 </div>
 <hr class="docutils" />
-<ul class="simple">
-<li><p>**Check your solution **:</p></li>
-</ul>
+<p>**# Check your solution **:</p>
 <p>When the run is completed, look at the history into the archive directory.</p>
 <p>(1) Check that your archive directory on cheyenne (The path will be different on other machines):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/f2000_control/atm/hist
