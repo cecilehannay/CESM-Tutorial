@@ -904,15 +904,15 @@ set RESOLUTION = f19_f19_mg17
 ./create_newcase --case $CASEDIR --res $RESOLUTION --compset $COMPSET
 </pre></div>
 </div>
-<p><strong># Set job queue and account number</strong></p>
+<p><strong># Change job queue and account number</strong></p>
 <p>If needed, change <code class="docutils literal notranslate"><span class="pre">job</span> <span class="pre">queue</span></code> and <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">number</span></code>.
 For instance:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $CASEDIR
 ./xmlchange JOB_QUEUE=regular,PROJECT=P93300642
 </pre></div>
 </div>
-<p>This step can be redone at anytime in the process.
-<strong># Setup</strong></p>
+<p>This step can be redone at anytime in the process.</p>
+<p><strong># Setup</strong></p>
 <p>Invoke <code class="docutils literal notranslate"><span class="pre">case.setup</span></code> with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $CASEDIR
 ./case.setup    
@@ -932,6 +932,11 @@ For instance:</p>
 <span class="n">echo</span> <span class="s2">&quot;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
 </pre></div>
 </div>
+<p>You build the namelist with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">preview_namelists</span>
+</pre></div>
+</div>
+<p>This step is optional as the script <code class="docutils literal notranslate"><span class="pre">preview_namelists</span></code> is automatically called by <code class="docutils literal notranslate"><span class="pre">case.build</span></code> and <code class="docutils literal notranslate"><span class="pre">case.submit</span></code>.</p>
 <p><strong># Set run length</strong></p>
 <p>If needed, change the <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">length</span></code>. If you want to run 5 days, you don’t have to do this, as 5 day is the default.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">ndays</span>
