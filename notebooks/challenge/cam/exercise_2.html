@@ -894,6 +894,11 @@ Run for 5 days.</p>
 <li><p>For more information, look at the chapter: <br>
 <strong>NAMELIST MODIFICATIONS</strong> -&gt; <strong>Customize CAM output</strong></p></li>
 </ul>
+<p><strong>I am getting an error: <code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">compset</span> <span class="pre">and</span> <span class="pre">grid</span> <span class="pre">combination</span> <span class="pre">is</span> <span class="pre">untested</span> <span class="pre">in</span> <span class="pre">CESM</span></code></strong></p>
+<ul class="simple">
+<li><p>overide this error by adding <code class="docutils literal notranslate"><span class="pre">--run-unsupported</span></code> to the create_newcase command</p></li>
+<li></li>
+</ul>
 </details>
 </div>
 <div class="alert alert-success">   
@@ -911,7 +916,7 @@ set RESOLUTION = f19_f19_mg17
 <p><strong># Create a new case</strong></p>
 <p>Create a new case with the command <code class="docutils literal notranslate"><span class="pre">create_newcase</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/p/cesm/tutorial/cesm2.1_tutorial2022/cime/scripts/
-./create_newcase --case $CASEDIR --res $RESOLUTION --compset $COMPSET
+./create_newcase --case $CASEDIR --res $RESOLUTION --compset $COMPSET --run-unsupported
 </pre></div>
 </div>
 <p><strong># Change the job queue and account number</strong></p>
