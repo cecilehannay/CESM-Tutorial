@@ -883,9 +883,13 @@ title="Print to PDF"
 </div>
 <div class="alert alert-info">
 <strong>Exercise: Customize your CAM history files</strong><br><br>
-<p>Create, configure, build and run a case called <code class="docutils literal notranslate"><span class="pre">f2000_control</span></code> with the <code class="docutils literal notranslate"><span class="pre">F2000climo</span></code> compset (data ocean and climatological forcings from around year 2000).</p>
-<p>Run for 5 days, with 3-hourly instantaneous output of the variables: TS, PS, Z500, U850, U200, T850, T500, T200, CLDLOW, PRECT, LHFLX, SHFLX, FLNT, FLNS.
-You are also welcome to output your own variables</p>
+<p>Create, configure, build and run a case called <code class="docutils literal notranslate"><span class="pre">fhist</span></code> with the compset <code class="docutils literal notranslate"><span class="pre">FHIST</span></code> at the resolution <code class="docutils literal notranslate"><span class="pre">f09_f09_mg17</span></code> using the same history file output as in the control.
+Run for 5 days.</p>
+<ul class="simple">
+<li><p>How can you check that there is a difference between the set up of this and your control?</p></li>
+<li><p>How can you check that it is running the way you intended: using ssts &amp; ghg forcings from time-varying, historical files?</p></li>
+<li><p>What year is the model running?</p></li>
+</ul>
 </div>
 <div class="alert alert-warning">  
 <details>
@@ -904,10 +908,10 @@ You are also welcome to output your own variables</p>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
 <p><strong># Set environment variables</strong></p>
 <p>Set environment variables with the commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set CASENAME = f2000_control
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set CASENAME = fhist
 set CASEDIR = /glade/u/home/$USER/cases/$CASENAME
 set RUNDIR = /glade/scratch/$USER/$CASENAME/run
-set COMPSET = F2000climo
+set COMPSET = FHIST
 set RESOLUTION = f19_f19_mg17
 </pre></div>
 </div>
