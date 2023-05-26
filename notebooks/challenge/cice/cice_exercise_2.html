@@ -989,9 +989,6 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="cice-challenge-exercise-2">
 <h1>CICE Challenge Exercise 2<a class="headerlink" href="#cice-challenge-exercise-2" title="Permalink to this headline">#</a></h1>
-<p>NOTE (from Alice)</p>
-<p>Using this as a reference
-<a class="reference external" href="https://bb.cgd.ucar.edu/cesm/threads/faq-albedo-radiation-tuning-in-cesm-cice.2649/">https://bb.cgd.ucar.edu/cesm/threads/faq-albedo-radiation-tuning-in-cesm-cice.2649/</a></p>
 <p>One of the most common changes to the cice model involves changing the albedo of the snow on the surface of the sea ice using the delta-Eddington radiation scheme. To tune the albedo, you must actually change the inherent optical properties of the snow, bare ice, or ponds.</p>
 <p>Here we will experiment with changing the snow properties using the <code class="docutils literal notranslate"><span class="pre">r_snw</span></code> parameter.</p>
 <p><code class="docutils literal notranslate"><span class="pre">r_snw</span></code> specifies the number of <strong>standard deviations</strong> away from the base optical properties of the shortwave radiative transfer code. <code class="docutils literal notranslate"><span class="pre">r_snw</span></code> is used to determine the non-melting snow grain radius using the following equation:</p>
@@ -999,10 +996,9 @@ title="Print to PDF"
 \[
   {rsnw}_{nonmelt} = 500 - r_{snw} * 250
 \]</div>
-<p>This is in microns and <code class="docutils literal notranslate"><span class="pre">rsnw_nonmelt</span></code> has a minimum value of 100 and a maximum value of <code class="docutils literal notranslate"><span class="pre">rsnw_mlt</span></code>.</p>
-<p>As can be seen, when r_snw is larger then there is a lower value of rsnw_nonmelt. When rsnw_nonmelt is lower then the albedos are higher because the radius of the snow grains when not melting are larger, which leads to higher albedos.</p>
-<p>The figure below shows how this works. The x-axis is temperature and the y-axis is effective snow grain radius. (Can we resize this to be smaller?)</p>
-<p><img alt="rsnw" src="../../../_images/cice_rsnw.png" /></p>
+<p>This is in microns <span class="math notranslate nohighlight">\((\mu m)\)</span> and <code class="docutils literal notranslate"><span class="pre">rsnw_nonmelt</span></code> has a minimum value of 100 and a maximum value of <code class="docutils literal notranslate"><span class="pre">rsnw_mlt</span></code>. As can be seen, when <code class="docutils literal notranslate"><span class="pre">r_snw</span></code> is larger then there is a lower value of <code class="docutils literal notranslate"><span class="pre">rsnw_nonmelt</span></code>. When <code class="docutils literal notranslate"><span class="pre">rsnw_nonmelt</span></code> is lower then the albedos are higher and vice versa. This is because smaller grains lead to higher albedos. Hence the sign of <code class="docutils literal notranslate"><span class="pre">r_snw</span></code> is positive for higher albedos and negative for lower albedos.</p>
+<p>The figure below shows how this works. The x-axis is temperature and the y-axis is effective snow grain radius.</p>
+<center><img src="../../../images/challenge/cice_rsnw2.png"></center>
 <p><em><p style="text-align: center;"> Figure: r_snw parameter plot. </p></em></p>
 <div class="alert alert-info">
 <strong>Exercise: Change snow albedo</strong><br><br>
@@ -1015,47 +1011,37 @@ title="Print to PDF"
 <div class="alert alert-warning">  
 <details>
 <summary> <font face="Times New Roman" color='blue'>Click here for hints</font> </summary>
-<p>NOTE: NONE OF THIS HAS BEEN UPDATED</p>
 <p><strong>How do I compile?</strong></p>
 <p>You can compile with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
 </pre></div>
 </div>
+<br>
 <p><strong>How do I control the output?</strong></p>
-<p>Use namelist variables: <code class="docutils literal notranslate"><span class="pre">nhtfrq</span></code>, <code class="docutils literal notranslate"><span class="pre">mfilt</span></code>, <code class="docutils literal notranslate"><span class="pre">fincl</span></code>.</p>
+<p>Use namelist variables: <code class="docutils literal notranslate"><span class="pre">histfreq</span></code>,<code class="docutils literal notranslate"><span class="pre">histfreq_n</span></code>, and <code class="docutils literal notranslate"><span class="pre">f_var</span></code>.</p>
 <p>Look at the online documentation for these variables.</p>
 <p><strong>How do I check my solution?</strong></p>
 <p>When your run is completed, go to the archive directory.</p>
 <p>(1) Check that your archive directory contains the files:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">h0</span></code> files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">h</span></code> files</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h0</span><span class="mf">.0001</span><span class="o">-</span><span class="mf">01.</span><span class="n">nc</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g_snowalbedo</span><span class="o">.</span><span class="n">cice</span><span class="o">.</span><span class="n">h</span><span class="mf">.0001</span><span class="o">-</span><span class="mf">01.</span><span class="n">nc</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">h1</span></code> files</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-<span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g_snowalbedo</span><span class="o">.</span><span class="n">cice</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+<span class="n">g_snowalbedo</span><span class="o">.</span><span class="n">cice</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">h2</span></code> files</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>b1850_high_freq.cam.h2.0001-01-01-00000.nc
-…
-b1850_high_freq.cam.h2.0001-01-31-00000.nc
-b1850_high_freq.cam.h2.0001-02-01-00000.nc
+<br>
+<p>(2) Compare the contents of the <code class="docutils literal notranslate"><span class="pre">h</span></code> and <code class="docutils literal notranslate"><span class="pre">h1</span></code> files using <code class="docutils literal notranslate"><span class="pre">ncdump</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncdump</span> <span class="o">-</span><span class="n">h</span> <span class="n">g_snowalbedo</span><span class="o">.</span><span class="n">cice</span><span class="o">.</span><span class="n">h</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+<span class="n">ncdump</span> <span class="o">-</span><span class="n">h</span> <span class="n">g_snowalbedo</span><span class="o">.</span><span class="n">cice</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
 </pre></div>
 </div>
-<p>(2) Compare the contents of the <code class="docutils literal notranslate"><span class="pre">h1</span></code> and <code class="docutils literal notranslate"><span class="pre">h2</span></code> files using <code class="docutils literal notranslate"><span class="pre">ncdump</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncdump</span> <span class="o">-</span><span class="n">h</span> <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-<span class="n">ncdump</span> <span class="o">-</span><span class="n">h</span> <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-</pre></div>
-</div>
-<p>(3) Check the number of timesteps in the <code class="docutils literal notranslate"><span class="pre">h1</span></code> and the <code class="docutils literal notranslate"><span class="pre">h2</span></code> files.
-Look at the sizes of the files.</p>
 </details>
 </div>
 <div class="alert alert-success">   
@@ -1066,94 +1052,53 @@ Look at the sizes of the files.</p>
 ./create_clone --case $NEWCASEDIR --clone $OLDCASEDIR 
 </pre></div>
 </div>
+<br>
 <p>Case <font face="Courier" color='purple'><strong>setup</strong></font>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">g_snowalbedo</span>
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>
 </pre></div>
 </div>
+<br>
 <p>Verify that the <font face="Courier" color='purple'><strong>run length</strong></font> is 1 year:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlquery</span> <span class="n">STOP_N</span>
 <span class="o">./</span><span class="n">xmlquery</span> <span class="n">STOP_OPTION</span>
 </pre></div>
 </div>
+<br>
 <p>Edit the file <font face="Courier" color='purple'><strong>user_nl_cice</strong></font> and add the lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">r_snw</span> <span class="o">=</span> <span class="mf">2.0</span>
 </pre></div>
 </div>
+<br>
 <p>If needed, change <font face="Courier" color='purple'><strong>job queue</strong></font>
 and <font face="Courier" color='purple'><strong>account number</strong></font>.
 For instance:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">regular</span><span class="p">,</span><span class="n">PROJECT</span><span class="o">=</span><span class="n">UESM0011</span>
 </pre></div>
 </div>
+<br>
 <p>Build and submit:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
 </pre></div>
 </div>
+<br>
 <p>When the run is completed, look into the archive directory for:
 <font face="Courier" color='purple'><strong>g_snowalbedo</strong></font>.</p>
-<p>(1) Check that your archive directory on cheyenne (The path will be different on otehr machines):</p>
+<p>(1) Check that your archive directory on cheyenne (The path will be different on other machines):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/g_snowalbedo/ice/hist
 ls 
 </pre></div>
 </div>
-<p>(NEEDS ACTUAL UPDATING BELOW)</p>
-<p>(2) Compare the contents of the <code class="docutils literal notranslate"><span class="pre">h1</span></code> and <code class="docutils literal notranslate"><span class="pre">h2</span></code> files using <code class="docutils literal notranslate"><span class="pre">ncdump</span></code>.
-Look at the variables attributes. What is the difference between the 2 files ?</p>
-<p>The file with the instantaneous output <code class="docutils literal notranslate"><span class="pre">h1</span></code> have no cell_methods attribute while the average output <code class="docutils literal notranslate"><span class="pre">h2</span></code> has a attribute:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span>
-</pre></div>
-</div>
-<p>For instance for the field Q.</p>
-<p>In the instantaneous file <code class="docutils literal notranslate"><span class="pre">b1850_high_freq.cam.h1.0001-01-01-00000.nc</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">Q</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lev</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">mdims</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;kg/kg&quot;</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">mixing_ratio</span> <span class="o">=</span> <span class="s2">&quot;wet&quot;</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Specific humidity&quot;</span> <span class="p">;</span>
-</pre></div>
-</div>
-<p>In the time-averaged file  <code class="docutils literal notranslate"><span class="pre">b1850_high_freq.cam.h2.0001-01-01-00000.nc</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">Q</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lev</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">mdims</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;kg/kg&quot;</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">mixing_ratio</span> <span class="o">=</span> <span class="s2">&quot;wet&quot;</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Specific humidity&quot;</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span> <span class="p">;</span>
-</pre></div>
-</div>
-<p>(3) Check the number of timesteps in the h1 and the h2 files.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">h1</span></code> contains 31 time samples.<br />
-In the netcdf file,</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">UNLIMITED</span> <span class="p">;</span> <span class="o">//</span> <span class="p">(</span><span class="mi">31</span> <span class="n">currently</span><span class="p">)</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">h2</span></code> contains 8 time samples
-In the netcdf file,</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">UNLIMITED</span> <span class="p">;</span> <span class="o">//</span> <span class="p">(</span><span class="mi">8</span> <span class="n">currently</span><span class="p">)</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Check the size of the files</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>du –ks –h /glade/scratch/$user/archive/b1850_high_freq/atm/hist/*
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">234</span><span class="n">M</span>    <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h0</span><span class="mf">.0001</span><span class="o">-</span><span class="mf">01.</span><span class="n">nc</span>
+<br>
+<p>(2) Compare to control run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/g_snowalbedo/ice/hist
 
-<span class="mi">210</span><span class="n">M</span>    <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-<span class="mf">7.0</span><span class="n">M</span>    <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+ls
 
-<span class="mi">55</span><span class="n">M</span>     <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-<span class="mi">55</span><span class="n">M</span>     <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-<span class="o">...</span>
-<span class="mi">55</span><span class="n">M</span>     <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-<span class="mf">7.0</span><span class="n">M</span>    <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
+ncdiff g_snowalbedo.cice.h.0001-01 /glade/scratch/$user/archive/g_control/ice/hist/g_control.cice.h.0001-01.nc g_diff.nc
+
+ncview g_diff.nc
 </pre></div>
 </div>
 </details>
@@ -1177,16 +1122,16 @@ In the netcdf file,</p></li>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "npl-conda"
         },
         kernelOptions: {
-            name: "python3",
+            name: "npl-conda",
             path: "./notebooks/challenge/cice"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'npl-conda'</script>
 
               </div>
               

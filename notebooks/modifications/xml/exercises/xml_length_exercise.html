@@ -1007,35 +1007,31 @@ Change the debug level back to 1. Expand Part I to produce a total of 38 months 
         <img src="https://freesvg.org/img/help-browser.png" width="20px">
        <font face="Times New Roman" color='blue' size="4">Click here for the solution to Part II</font>
     </summary>
-<ol class="simple">
-<li><p>To continue the run, set <code class="docutils literal notranslate"><span class="pre">CONTINUE_RUN</span></code> to <code class="docutils literal notranslate"><span class="pre">TRUE</span></code></p></li>
-</ol>
+<br>
+1. To continue the run, set `CONTINUE_RUN` to `TRUE`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">xmlchange</span> <span class="n">CONTINUE_RUN</span><span class="o">=</span><span class="n">TRUE</span>
 </pre></div>
 </div>
-<ol class="simple">
-<li><p>Keep <code class="docutils literal notranslate"><span class="pre">STOP_OPTION</span></code> as “nmonths” <br></p></li>
-<li><p>Set <code class="docutils literal notranslate"><span class="pre">STOP_N</span></code> to “37”</p></li>
-</ol>
+<br>
+2. Keep `STOP_OPTION` as "nmonths” 
+<br>    
+3. Set `STOP_N` to “37”
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">37</span>
 </pre></div>
 </div>
-<ol class="simple">
-<li><p>Set INFO_DBUG to 1</p></li>
-</ol>
+<br>
+4. Set INFO_DBUG to 1
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">xmlchange</span> <span class="n">INFO_DBUG</span><span class="o">=</span><span class="mi">1</span>
 </pre></div>
 </div>
-<ol class="simple">
-<li><p>Change wallclock time to use the maximum of the allowed wallclock on Cheyenne:</p></li>
-</ol>
+<br>
+5. Change wallclock time to use the maximum of the allowed wallclock on Cheyenne:
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">xmlchange</span> <span class="o">--</span><span class="n">subgroup</span> <span class="n">case</span><span class="o">.</span><span class="n">run</span> <span class="n">JOB_WALLCLOCK_TIME</span><span class="o">=</span><span class="mi">12</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
     <span class="o">./</span><span class="n">xmlchange</span> <span class="o">--</span><span class="n">subgroup</span> <span class="n">case</span><span class="o">.</span><span class="n">st_archive</span> <span class="n">JOB_WALLCLOCK_TIME</span><span class="o">=</span><span class="mi">6</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
 </pre></div>
 </div>
-<ol class="simple">
-<li><p>Submit (./case.submit) from your b.day2.1 case directory:</p></li>
-</ol>
+<br>
+6. Submit (./case.submit) from your b.day2.1 case directory:
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
 </pre></div>
 </div>
