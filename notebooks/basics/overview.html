@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1. Overview of CESM Basics &#8212; CESM Tutorial</title>
+    <title>Overview of CESM Basics &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Setting Up the Workspace" href="setting_up_the_workspace.html" />
+    <link rel="next" title="CESM2 Shared Infrastructure and Component Model Coupling" href="cesm_coupling.html" />
     <link rel="prev" title="CESM tutorial introduction" href="../introduction/intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -133,17 +133,27 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. Overview of CESM Basics
+   Overview of CESM Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="setting_up_the_workspace.html">
-   Setting Up the Workspace
+  <a class="reference internal" href="cesm_coupling.html">
+   CESM2 Shared Infrastructure and Component Model Coupling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cesm_quickstart.html">
+   CESM2 Quickstart Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cesm_workspaces.html">
+   CESM2 Workspaces
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="downloading_cesm.html">
-   Downloading CESM
+  <a class="reference internal" href="exercises1_overview.html">
+   Lab Activity 1. Overview
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -152,17 +162,27 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="downloading_cesm/git_clone.html">
+    <a class="reference internal" href="exercises1/cheyenne_login.html">
+     Exercise 1.1 Cheyenne Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises1/github_explore.html">
+     Exercise 1.2 CESM2 Github Page Exploration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises1/git_clone.html">
      Git Clone
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="downloading_cesm/git_checkout.html">
+    <a class="reference internal" href="exercises1/git_checkout.html">
      Git Checkout
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="downloading_cesm/manage_externals.html">
+    <a class="reference internal" href="exercises1/manage_externals.html">
      Manage Externals
     </a>
    </li>
@@ -191,7 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="your_first_cesm_run.html">
+  <a class="reference internal" href="running_cesm.html">
    Running on ‘Cheyenne’ (Example!)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -201,17 +221,17 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="your_first_cesm_run/basic_workflow.html">
+    <a class="reference internal" href="running_cesm/basic_workflow.html">
      Basic Workflow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="your_first_cesm_run/checking_queues_and_jobs.html">
+    <a class="reference internal" href="running_cesm/checking_queues_and_jobs.html">
      Checking Queues and Jobs
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="your_first_cesm_run/case_directory_and_documentation.html">
+    <a class="reference internal" href="running_cesm/case_directory_and_documentation.html">
      Case Directory and Documentation
     </a>
    </li>
@@ -948,42 +968,27 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   1. Overview of CESM Basics
+   Overview of CESM Basics
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cesm-project-web-page">
-   2. CESM Project Web Page
+   1. CESM Project Web Page
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cesm2-web-page">
-   3. CESM2 Web Page
+   2. CESM2 Web Page
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cesm2-components">
-   4. CESM2 Components
+   3. CESM2 Components
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cesm2-common-infrastructure-for-modeling-the-earth-cime">
-   5. CESM2 Common Infrastructure for Modeling the Earth (CIME)
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cesm2-coupling">
-   6. CESM2 Coupling
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#new-earth-system-modeling-framework-esmf-coupling-for-beyond-cesm2">
-   7. New Earth System Modeling Framework (ESMF) Coupling for beyond CESM2
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cesm2-quickstart-workflow">
-   8. CESM2 Quickstart Workflow
+  <a class="reference internal nav-link" href="#cesm-working-groups">
+   4. CESM Working Groups
   </a>
  </li>
 </ul>
@@ -995,7 +1000,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>1. Overview of CESM Basics</h1>
+                <h1>Overview of CESM Basics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1007,42 +1012,27 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   1. Overview of CESM Basics
+   Overview of CESM Basics
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cesm-project-web-page">
-   2. CESM Project Web Page
+   1. CESM Project Web Page
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cesm2-web-page">
-   3. CESM2 Web Page
+   2. CESM2 Web Page
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cesm2-components">
-   4. CESM2 Components
+   3. CESM2 Components
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cesm2-common-infrastructure-for-modeling-the-earth-cime">
-   5. CESM2 Common Infrastructure for Modeling the Earth (CIME)
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cesm2-coupling">
-   6. CESM2 Coupling
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#new-earth-system-modeling-framework-esmf-coupling-for-beyond-cesm2">
-   7. New Earth System Modeling Framework (ESMF) Coupling for beyond CESM2
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cesm2-quickstart-workflow">
-   8. CESM2 Quickstart Workflow
+  <a class="reference internal nav-link" href="#cesm-working-groups">
+   4. CESM Working Groups
   </a>
  </li>
 </ul>
@@ -1056,17 +1046,18 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="overview-of-cesm-basics">
-<h1>1. Overview of CESM Basics<a class="headerlink" href="#overview-of-cesm-basics" title="Permalink to this headline">#</a></h1>
-<p>Welcome to the world of the <strong>Community Earth System Model (CESM)</strong>. CESM is a coupled climate model for simulating Earth’s climate system.
-The model is composed of separate models that simultaneously simulate the Earth’s atmosphere, ocean, land, river run-off, land-ice, and sea-ice.
-In this section you will be introduced to the Basics behind CESM workspaces, component models, coupling, code, running,
+<h1>Overview of CESM Basics<a class="headerlink" href="#overview-of-cesm-basics" title="Permalink to this headline">#</a></h1>
+<p>Welcome to the world of the <strong>Community Earth System Model (CESM)</strong>. CESM is a coupled Earth system model for simulating Earth’s climate system and connected component systems. The model is composed of separate models that simultaneously simulate the Earth’s atmosphere, ocean, land, river run-off, land-ice, and sea-ice.
+In this section you will be introduced to the basics behind CESM component models, coupling, code, workspaces, and running
 and archiving the results of CESM model simulations. Specifically we will cover the steps of:</p>
 <div class="alert alert-info" style="text-align: left;">
 <h1> Outline: </h1>
 <ul class="simple">
 <li><p>The CESM <strong><code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">Webpage</span></code></strong></p></li>
 <li><p>The CESM2 <strong><code class="docutils literal notranslate"><span class="pre">Model</span> <span class="pre">Webpage</span></code></strong></p></li>
-<li><p>CESM2 <strong><code class="docutils literal notranslate"><span class="pre">Component</span> <span class="pre">Models</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">Coupling</span></code></strong></p></li>
+<li><p>CESM2 <strong><code class="docutils literal notranslate"><span class="pre">Component</span> <span class="pre">Models</span></code></strong></p></li>
+<li><p>CESM <strong><code class="docutils literal notranslate"><span class="pre">Working</span> <span class="pre">Groups</span></code></strong></p></li>
+<li><p>CESM2 <strong><code class="docutils literal notranslate"><span class="pre">Coupling</span></code></strong></p></li>
 <li><p>The CESM2 <strong><code class="docutils literal notranslate"><span class="pre">Quickstart</span> <span class="pre">Guide</span></code></strong></p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">Downloading</span></code></strong> CESM2</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">CIME</span></code></strong> and the <strong><code class="docutils literal notranslate"><span class="pre">Case</span> <span class="pre">Control</span> <span class="pre">System</span></code></strong></p></li>
@@ -1075,7 +1066,7 @@ and archiving the results of CESM model simulations. Specifically we will cover 
 </ul>
 </div></section>
 <section class="tex2jax_ignore mathjax_ignore" id="cesm-project-web-page">
-<h1>2. CESM Project Web Page<a class="headerlink" href="#cesm-project-web-page" title="Permalink to this headline">#</a></h1>
+<h1>1. CESM Project Web Page<a class="headerlink" href="#cesm-project-web-page" title="Permalink to this headline">#</a></h1>
 <p>The <strong>CESM Web Page</strong> is the first point of reference for all things CESM. Here we can explore the larger CESM project, delve deeper into individual working groups, models, research activities, model releases, supporting model data, tools, events and much much more. <br>
 Click here to start your CESM exploration <br>
 <a href="http://www.cesm.ucar.edu"> http://www.cesm.ucar.edu </a></p>
@@ -1098,9 +1089,9 @@ Click here to start your CESM exploration <br>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="cesm2-web-page">
-<h1>3. CESM2 Web Page<a class="headerlink" href="#cesm2-web-page" title="Permalink to this headline">#</a></h1>
+<h1>2. CESM2 Web Page<a class="headerlink" href="#cesm2-web-page" title="Permalink to this headline">#</a></h1>
 <p>For information specific to the CESM version 2 Model there is a dedicated <strong>CESM2 Web Page</strong>. This page can be found under models on the CESM Project Web Page.
-The CESM Web Page details release information, downloading instructions, scientifically validated configuration, documentation and more. <br>
+The CESM Web Page details release information, downloading instructions, scientifically validated configurations, documentation and more. <br>
 Click here to start your CESM2 exploration: <br>
 <a href="http://www.cesm.ucar.edu/models/cesm2"> http://www.cesm.ucar.edu/models/cesm2 </a></p>
 <div class="alert alert-info" style="text-align: left;">
@@ -1120,8 +1111,8 @@ Click here to start your CESM2 exploration: <br>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="cesm2-components">
-<h1>4. CESM2 Components<a class="headerlink" href="#cesm2-components" title="Permalink to this headline">#</a></h1>
-<p>The CESM2 Model is comprised of 7 <strong>Prognostic</strong> or otherwise known as <strong>Active</strong> Components that are coupled through the Common Infrastructure for
+<h1>3. CESM2 Components<a class="headerlink" href="#cesm2-components" title="Permalink to this headline">#</a></h1>
+<p>The CESM2 Model is comprised of seven <strong>Prognostic</strong> or otherwise known as <strong>Active</strong> Components that are coupled through the Common Infrastructure for
 Modeling the Earth known as <strong>CIME</strong>. Each model component is detailed on the CESM2 Web Page.
 The models each have a page containing descriptions and documentation for active or prognostic models. You can explore each of the component models and CIME from
 the links below.</p>
@@ -1138,62 +1129,34 @@ the links below.</p>
 <li><p><a href="https://esmci.github.io/cime/versions/master/html/index.html" > <strong><code class="docutils literal notranslate"><span class="pre">CIME</span></code></strong> </a></p></li>
 </ul>
 </div></section>
-<section class="tex2jax_ignore mathjax_ignore" id="cesm2-common-infrastructure-for-modeling-the-earth-cime">
-<h1>5. CESM2 Common Infrastructure for Modeling the Earth (CIME)<a class="headerlink" href="#cesm2-common-infrastructure-for-modeling-the-earth-cime" title="Permalink to this headline">#</a></h1>
-<p>The Common Infrastructure for Modeling the Earth is a python-based framework that is shared between CESM2 and other modeling center efforts to ensure efficient
-coordination of model development. The schema below shows some of the science benefits and organizations that are using the CIME infrastructure.
-<br><br></p>
-<p><img alt="CESM directories and namelists" src="../../_images/CESM2_CIME_Infrastructure.png" />
-<em><p style="text-align: center;"> Figure: Overview of the CESM2 Common Infrastructure for Modeling the Earth (CIME) </p></em></p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="cesm2-coupling">
-<h1>6. CESM2 Coupling<a class="headerlink" href="#cesm2-coupling" title="Permalink to this headline">#</a></h1>
-<p>The CESM2 coupling is performed through the Model Coupling Toolkit (MCT). Additionally, the MCT coupling framework allows data and stub components to
-replace active or prognostic components providing flexible activation/deactivation of feedbacks.
-The schematic below shows all of the components and their connections.
-<br><br></p>
-<p><img alt="CESM directories and namelists" src="../../_images/CESM2_MCT_Coupling.png" />
-<em><p style="text-align: center;"> Figure: Overview of the CESM2 Components and Model Coupling Toolkit (MCT) </p></em></p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="new-earth-system-modeling-framework-esmf-coupling-for-beyond-cesm2">
-<h1>7. New Earth System Modeling Framework (ESMF) Coupling for beyond CESM2<a class="headerlink" href="#new-earth-system-modeling-framework-esmf-coupling-for-beyond-cesm2" title="Permalink to this headline">#</a></h1>
-<p>Development beyond the CESM2 MCT coupling framework is changing to the Earth System Modeling Framework (ESMF)
-National Unified Operational Prediction Capability (NUOPC) framework. More details on NUOPC can be found at
-<a href="https://earthsystemmodeling.org/nuopc/"> https://earthsystemmodeling.org/nuopc/ </a>. The schema below shows the new CESM
-configuration and coupling with NUOPC. This is included for information only as the CESM2 used in this tutorial does not use this new framework.
-<br><br></p>
-<p><img alt="CESM directories and namelists" src="../../_images/CESM_NUOPC_Coupling.png" />
-<em><p style="text-align: center;"> Figure: Overview of the new CESM Components and National Unified Operational Prediction Capability (NUOPC) framework </p></em></p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="cesm2-quickstart-workflow">
-<h1>8. CESM2 Quickstart Workflow<a class="headerlink" href="#cesm2-quickstart-workflow" title="Permalink to this headline">#</a></h1>
-<p>The CESM2 Workflow is documented in the CESM2 Introduction
-<a href="https://escomp.github.io/CESM/release-cesm2/"> https://escomp.github.io/CESM/release-cesm2/ </a>
-and CIME <a href="https://esmci.github.io/cime/versions/master/html/index.html"> https://esmci.github.io/cime/versions/master/html/index.html </a>
-documentation pages. These pages are a guide for both novice and experienced users on the work flow steps for downloading, building and running CESM2.
-These steps will form the basis of the remaining elements of this practical session.
-Specifically we will be covering the Workflow below over the remaining workbooks.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="cesm-working-groups">
+<h1>4. CESM Working Groups<a class="headerlink" href="#cesm-working-groups" title="Permalink to this headline">#</a></h1>
+<p>The CESM modeling effort is coordinated through <strong>Working Groups</strong> that are responsible for the science and development of individual CESM
+components or organized to coordinate other across CESM efforts. Each team takes responsibility for developing and continually improving its
+component of the CESM consistent with the CESM goal of a fully-coupled model and with the CESM design criteria. There are currently 12 Working Groups that are coordinated by the Working Group Co-Chairs. The Working Groups decide their own development
+priorities and work schedules, consistent with the overall goals of CESM, and are subject to oversight by the CESM Scientific Steering
+Committee (SSC). The CESM Working Group Web Page can be found at: <br>
+<a href="http://www.cesm.ucar.edu/working-groups"> http://www.cesm.ucar.edu/working-groups </a></p>
 <div class="alert alert-info" style="text-align: left;">
-<h1> Workflow Elements: </h1>
+<h1> Working Group Links: </h1>
 <ul class="simple">
-<li><p>One-Time Setup Steps</p>
-<ul>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">Download</span></code></strong> the CESM code</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">Create</span></code></strong> an <strong><code class="docutils literal notranslate"><span class="pre">Input</span> <span class="pre">Data</span></code></strong> Root Directory</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">Porting</span></code></strong></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/working-groups/atmosphere"> <strong><code class="docutils literal notranslate"><span class="pre">Atmosphere</span> <span class="pre">Model</span> <span class="pre">Working</span> <span class="pre">Group</span> <span class="pre">(AMWG)</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/working-groups/biogeo"> <strong><code class="docutils literal notranslate"><span class="pre">Biogeochemistry</span> <span class="pre">Working</span> <span class="pre">Group</span> <span class="pre">(BGCWG)</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/working-groups/chemistry"> <strong><code class="docutils literal notranslate"><span class="pre">Chemistry</span> <span class="pre">Climate</span> <span class="pre">Working</span> <span class="pre">Group</span> <span class="pre">(CCWG)</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/working-groups/climate" > <strong><code class="docutils literal notranslate"><span class="pre">Climate</span> <span class="pre">Variability</span> <span class="pre">and</span> <span class="pre">Change</span> <span class="pre">Working</span> <span class="pre">Group</span> <span class="pre">(CVCWG)</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/working-groups/earth-system" > <strong><code class="docutils literal notranslate"><span class="pre">Earth</span> <span class="pre">System</span> <span class="pre">Prediction</span> <span class="pre">Working</span> <span class="pre">Group</span> <span class="pre">(ESPWG)</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/working-groups/land-ice" > <strong><code class="docutils literal notranslate"><span class="pre">Land</span> <span class="pre">Ice</span> <span class="pre">Working</span> <span class="pre">Group</span> <span class="pre">(LIWG)</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/working-groups/land" > <strong><code class="docutils literal notranslate"><span class="pre">Land</span> <span class="pre">Model</span> <span class="pre">Working</span> <span class="pre">Group</span> <span class="pre">(LMWG)</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/working-groups/ocean" > <strong><code class="docutils literal notranslate"><span class="pre">Ocean</span> <span class="pre">Model</span> <span class="pre">Working</span> <span class="pre">Group</span> <span class="pre">(OMWG)</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/working-groups/paleo" > <strong><code class="docutils literal notranslate"><span class="pre">Paleoclimate</span> <span class="pre">Working</span> <span class="pre">Group</span> <span class="pre">(PWG)</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/working-groups/polar" > <strong><code class="docutils literal notranslate"><span class="pre">Polar</span> <span class="pre">Climate</span> <span class="pre">Working</span> <span class="pre">Group</span> <span class="pre">(PCWG)</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/working-groups/software" > <strong><code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">Engineering</span> <span class="pre">Working</span> <span class="pre">Group</span> <span class="pre">(SEWG)</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/working-groups/whole-atmosphere" > <strong><code class="docutils literal notranslate"><span class="pre">Whole</span> <span class="pre">Atmosphere</span> <span class="pre">Model</span> <span class="pre">Working</span> <span class="pre">Group</span> <span class="pre">(WAWG)</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/working-groups/co-chairs" > <strong><code class="docutils literal notranslate"><span class="pre">Co-Chairs</span> <span class="pre">and</span> <span class="pre">Terms</span></code></strong> </a></p></li>
+<li><p><a href="https://www.cesm.ucar.edu/management/ssc" > <strong><code class="docutils literal notranslate"><span class="pre">Scientific</span> <span class="pre">Steering</span> <span class="pre">Committee</span> <span class="pre">(SSC)</span></code></strong> </a></p></li>
 </ul>
-</li>
-<li><p>Creating and Running a Case</p>
-<ul>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">Create</span></code></strong> a New Case</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">Invoke</span></code></strong> case.setup</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">Build</span></code></strong> the Executable with case.build</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">Run</span></code></strong> the Model with case.submit</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">Review</span></code></strong> Output Data</p></li>
-</ul>
-</li>
-</ul>
-</div></section>
+</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1229,10 +1192,10 @@ Specifically we will be covering the Workflow below over the remaining workbooks
             <p class="prev-next-title">CESM tutorial introduction</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="setting_up_the_workspace.html" title="next page">
+    <a class='right-next' id="next-link" href="cesm_coupling.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Setting Up the Workspace</p>
+        <p class="prev-next-title">CESM2 Shared Infrastructure and Component Model Coupling</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

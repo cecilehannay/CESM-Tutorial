@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Setting Up the Workspace &#8212; CESM Tutorial</title>
+    <title>CESM2 Shared Infrastructure and Component Model Coupling &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Downloading CESM" href="downloading_cesm.html" />
-    <link rel="prev" title="1. Overview of CESM Basics" href="overview.html" />
+    <link rel="next" title="CESM2 Quickstart Workflow" href="cesm_quickstart.html" />
+    <link rel="prev" title="Overview of CESM Basics" href="overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -133,17 +133,27 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="overview.html">
-   1. Overview of CESM Basics
+   Overview of CESM Basics
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Setting Up the Workspace
+   CESM2 Shared Infrastructure and Component Model Coupling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cesm_quickstart.html">
+   CESM2 Quickstart Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cesm_workspaces.html">
+   CESM2 Workspaces
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="downloading_cesm.html">
-   Downloading CESM
+  <a class="reference internal" href="exercises1_overview.html">
+   Lab Activity 1. Overview
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -152,17 +162,27 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="downloading_cesm/git_clone.html">
+    <a class="reference internal" href="exercises1/cheyenne_login.html">
+     Exercise 1.1 Cheyenne Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises1/github_explore.html">
+     Exercise 1.2 CESM2 Github Page Exploration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises1/git_clone.html">
      Git Clone
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="downloading_cesm/git_checkout.html">
+    <a class="reference internal" href="exercises1/git_checkout.html">
      Git Checkout
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="downloading_cesm/manage_externals.html">
+    <a class="reference internal" href="exercises1/manage_externals.html">
      Manage Externals
     </a>
    </li>
@@ -191,7 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="your_first_cesm_run.html">
+  <a class="reference internal" href="running_cesm.html">
    Running on ‘Cheyenne’ (Example!)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -201,17 +221,17 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="your_first_cesm_run/basic_workflow.html">
+    <a class="reference internal" href="running_cesm/basic_workflow.html">
      Basic Workflow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="your_first_cesm_run/checking_queues_and_jobs.html">
+    <a class="reference internal" href="running_cesm/checking_queues_and_jobs.html">
      Checking Queues and Jobs
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="your_first_cesm_run/case_directory_and_documentation.html">
+    <a class="reference internal" href="running_cesm/case_directory_and_documentation.html">
      Case Directory and Documentation
     </a>
    </li>
@@ -799,7 +819,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/basics/setting_up_the_workspace.ipynb"
+        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/basics/cesm_coupling.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -859,7 +879,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/basics/setting_up_the_workspace.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/basics/cesm_coupling.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -887,7 +907,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/notebooks/basics/setting_up_the_workspace.ipynb"
+        <a href="../../_sources/notebooks/basics/cesm_coupling.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -924,23 +944,90 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   CESM2 Shared Infrastructure and Component Model Coupling
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cesm2-common-infrastructure-for-modeling-the-earth-cime">
+   1. CESM2 Common Infrastructure for Modeling the Earth (CIME)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cesm2-coupling">
+   2. CESM2 Coupling
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#new-earth-system-modeling-framework-esmf-coupling-for-beyond-cesm2">
+   3. New Earth System Modeling Framework (ESMF) Coupling for beyond CESM2
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Setting Up the Workspace</h1>
+                <h1>CESM2 Shared Infrastructure and Component Model Coupling</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   CESM2 Shared Infrastructure and Component Model Coupling
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cesm2-common-infrastructure-for-modeling-the-earth-cime">
+   1. CESM2 Common Infrastructure for Modeling the Earth (CIME)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cesm2-coupling">
+   2. CESM2 Coupling
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#new-earth-system-modeling-framework-esmf-coupling-for-beyond-cesm2">
+   3. New Earth System Modeling Framework (ESMF) Coupling for beyond CESM2
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -948,9 +1035,36 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="setting-up-the-workspace">
-<h1>Setting Up the Workspace<a class="headerlink" href="#setting-up-the-workspace" title="Permalink to this headline">#</a></h1>
-<p>This is a placeholder for this lesson.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="cesm2-shared-infrastructure-and-component-model-coupling">
+<h1>CESM2 Shared Infrastructure and Component Model Coupling<a class="headerlink" href="#cesm2-shared-infrastructure-and-component-model-coupling" title="Permalink to this headline">#</a></h1>
+<p>The Combined Model Components form the coupled CESM through a shared common set of tools and infrastructure and coupling framework. Here we describe the Common Infrastructure for Modeling the Earth otherwise known as CIME introduced in the component model section, as well as the current CESM2 and future coupling frameworks.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="cesm2-common-infrastructure-for-modeling-the-earth-cime">
+<h1>1. CESM2 Common Infrastructure for Modeling the Earth (CIME)<a class="headerlink" href="#cesm2-common-infrastructure-for-modeling-the-earth-cime" title="Permalink to this headline">#</a></h1>
+<p>The Common Infrastructure for Modeling the Earth is a python-based framework that is shared between CESM2 and other modeling center efforts to ensure efficient
+coordination of model development. The schema below shows some of the science benefits and organizations that are using the CIME infrastructure.
+<br><br></p>
+<p><img alt="CESM directories and namelists" src="../../_images/CESM2_CIME_Infrastructure.png" />
+<em><p style="text-align: center;"> Figure: Overview of the CESM2 Common Infrastructure for Modeling the Earth (CIME) </p></em></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="cesm2-coupling">
+<h1>2. CESM2 Coupling<a class="headerlink" href="#cesm2-coupling" title="Permalink to this headline">#</a></h1>
+<p>The CESM2 coupling is performed through the Model Coupling Toolkit (MCT). Additionally, the MCT coupling framework allows data and stub components to
+replace active or prognostic components providing flexible activation/deactivation of feedbacks.
+The schematic below shows all of the components and their connections.
+<br><br></p>
+<p><img alt="CESM directories and namelists" src="../../_images/CESM2_MCT_Coupling.png" />
+<em><p style="text-align: center;"> Figure: Overview of the CESM2 Components and Model Coupling Toolkit (MCT) </p></em></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="new-earth-system-modeling-framework-esmf-coupling-for-beyond-cesm2">
+<h1>3. New Earth System Modeling Framework (ESMF) Coupling for beyond CESM2<a class="headerlink" href="#new-earth-system-modeling-framework-esmf-coupling-for-beyond-cesm2" title="Permalink to this headline">#</a></h1>
+<p>Development beyond the CESM2 MCT coupling framework is changing to the Earth System Modeling Framework (ESMF)
+National Unified Operational Prediction Capability (NUOPC) framework. More details on NUOPC can be found at
+<a href="https://earthsystemmodeling.org/nuopc/"> https://earthsystemmodeling.org/nuopc/ </a>. The schema below shows the new CESM
+configuration and coupling with NUOPC. This is included for information only as the CESM2 used in this tutorial does not use this new framework.
+<br><br></p>
+<p><img alt="CESM directories and namelists" src="../../_images/CESM_NUOPC_Coupling.png" />
+<em><p style="text-align: center;"> Figure: Overview of the new CESM Components and National Unified Operational Prediction Capability (NUOPC) framework </p></em></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -984,13 +1098,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">1. Overview of CESM Basics</p>
+            <p class="prev-next-title">Overview of CESM Basics</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="downloading_cesm.html" title="next page">
+    <a class='right-next' id="next-link" href="cesm_quickstart.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Downloading CESM</p>
+        <p class="prev-next-title">CESM2 Quickstart Workflow</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

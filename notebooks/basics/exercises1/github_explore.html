@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Git Checkout &#8212; CESM Tutorial</title>
+    <title>Exercise 1.2 CESM2 Github Page Exploration &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Manage Externals" href="manage_externals.html" />
-    <link rel="prev" title="Git Clone" href="git_clone.html" />
+    <link rel="next" title="Git Clone" href="git_clone.html" />
+    <link rel="prev" title="Exercise 1.1 Cheyenne Login" href="cheyenne_login.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -133,17 +133,27 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../overview.html">
-   1. Overview of CESM Basics
+   Overview of CESM Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../setting_up_the_workspace.html">
-   Setting Up the Workspace
+  <a class="reference internal" href="../cesm_coupling.html">
+   CESM2 Shared Infrastructure and Component Model Coupling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cesm_quickstart.html">
+   CESM2 Quickstart Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cesm_workspaces.html">
+   CESM2 Workspaces
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../downloading_cesm.html">
-   Downloading CESM
+  <a class="reference internal" href="../exercises1_overview.html">
+   Lab Activity 1. Overview
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -152,12 +162,22 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="git_clone.html">
-     Git Clone
+    <a class="reference internal" href="cheyenne_login.html">
+     Exercise 1.1 Cheyenne Login
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
+     Exercise 1.2 CESM2 Github Page Exploration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_clone.html">
+     Git Clone
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_checkout.html">
      Git Checkout
     </a>
    </li>
@@ -191,7 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../your_first_cesm_run.html">
+  <a class="reference internal" href="../running_cesm.html">
    Running on ‘Cheyenne’ (Example!)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -201,17 +221,17 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../your_first_cesm_run/basic_workflow.html">
+    <a class="reference internal" href="../running_cesm/basic_workflow.html">
      Basic Workflow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../your_first_cesm_run/checking_queues_and_jobs.html">
+    <a class="reference internal" href="../running_cesm/checking_queues_and_jobs.html">
      Checking Queues and Jobs
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../your_first_cesm_run/case_directory_and_documentation.html">
+    <a class="reference internal" href="../running_cesm/case_directory_and_documentation.html">
      Case Directory and Documentation
     </a>
    </li>
@@ -799,7 +819,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/basics/downloading_cesm/git_checkout.ipynb"
+        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/basics/exercises1/github_explore.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -859,7 +879,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/basics/downloading_cesm/git_checkout.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/basics/exercises1/github_explore.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -887,7 +907,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../_sources/notebooks/basics/downloading_cesm/git_checkout.ipynb"
+        <a href="../../../_sources/notebooks/basics/exercises1/github_explore.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -936,7 +956,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Git Checkout</h1>
+                <h1>Exercise 1.2 CESM2 Github Page Exploration</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -948,10 +968,17 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="git-checkout">
-<h1>Git Checkout<a class="headerlink" href="#git-checkout" title="Permalink to this headline">#</a></h1>
-<p>This is a placeholder for this lesson.</p>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-1-2-cesm2-github-page-exploration">
+<h1>Exercise 1.2 CESM2 Github Page Exploration<a class="headerlink" href="#exercise-1-2-cesm2-github-page-exploration" title="Permalink to this headline">#</a></h1>
+<p>This exercise is to introduce you to the <strong>CESM2 Github Page</strong>. The CESM project is managed through the GitHub online software development platform. The CESM Project is hosted under the Earth System Community Modeling Portal (ESCOMP) which is managed by the University Corporation for Atmospheric Research (UCAR). The ESCOMP portal and the CESM project are publicly available and do not require a Github account for read and download access. The code and data repositories stored in Github can be accessed from the Cheyenne command line using the git utility as explored in the following exercises. For this exercise we will be performing the following:</p>
+<ul class="simple">
+<li><p>Step 1. What is Github?</p></li>
+<li><p>Step 2. The Earth System Community Modeling Portal</p></li>
+<li><p>Step 3. The CESM Project</p></li>
+<li><p>Step 4. The CESM2.1.1 Tutorial Branch</p></li>
+</ul>
+<br>
+* Note this is an exploratory exercise only. You will not need to use Github for other activities in this Tutorial. We do however suggest that in your own time we you should become familar with Github, register as a Github user, and then become an active member of the CESM user and development community to make the most of your experience with CESM. <br></section>
 
     <script type="text/x-thebe-config">
     {
@@ -966,7 +993,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks/basics/downloading_cesm"
+            path: "./notebooks/basics/exercises1"
         },
         predefinedOutput: true
     }
@@ -980,17 +1007,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="git_clone.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="cheyenne_login.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Git Clone</p>
+            <p class="prev-next-title">Exercise 1.1 Cheyenne Login</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="manage_externals.html" title="next page">
+    <a class='right-next' id="next-link" href="git_clone.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Manage Externals</p>
+        <p class="prev-next-title">Git Clone</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
