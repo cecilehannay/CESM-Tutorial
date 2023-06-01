@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>How to Modify Model Control Files (*.xml) &#8212; CESM Tutorial</title>
+    <title>How to Modify XML Files (*.xml) &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Controlling Run Length" href="run_length.html" />
-    <link rel="prev" title="Overview of Simple XML Modifications" href="overview.html" />
+    <link rel="prev" title="Overview" href="overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -246,12 +246,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="overview.html">
-   Overview of Simple XML Modifications
+   Overview
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   How to Modify Model Control Files (*.xml)
+   How to Modify XML Files (*.xml)
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -276,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="run_length/changing_run_length.html">
-     Changing Run Length and Number of Submissions
+     Changing Run Length
     </a>
    </li>
    <li class="toctree-l2">
@@ -288,7 +288,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="modify_run_type.html">
-   Modify the Type of Run
+   Modifying the Type of Run
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -298,12 +298,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="modify_run_type/hybrid_branch_restart.html">
-     Hybrid, Branch and Startup runs
+     Hybrid, Branch and Startup
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="modify_run_type/run_variables.html">
-     Run Variables Related to Run Type
+     Variables Related to Run Type
     </a>
    </li>
   </ul>
@@ -315,12 +315,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="other_xml_variables.html">
-   Other Useful XML Variables in
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     env_run.xml
-    </span>
-   </code>
+   Other Useful XML Variables
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -335,22 +330,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="exercises/xml_length_exercise.html">
-     Exercise 1: Modify run length in
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       env_run.xml
-      </span>
-     </code>
+     Exercise 1: Modify run length
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="exercises/xml_runtype_exercise.html">
-     Exercise 2: Modify run type in
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       env_run.xml
-      </span>
-     </code>
+     Exercise 2: Modify run type
     </a>
    </li>
    <li class="toctree-l2">
@@ -1011,7 +996,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>How to Modify Model Control Files (*.xml)</h1>
+                <h1>How to Modify XML Files (*.xml)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1067,8 +1052,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="how-to-modify-model-control-files-xml">
-<h1>How to Modify Model Control Files (*.xml)<a class="headerlink" href="#how-to-modify-model-control-files-xml" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-modify-xml-files-xml">
+<h1>How to Modify XML Files (*.xml)<a class="headerlink" href="#how-to-modify-xml-files-xml" title="Permalink to this headline">#</a></h1>
 <p>Now let’s learn how to edit and search for variables in an <code class="docutils literal notranslate"><span class="pre">*.xml</span></code> file</p>
 <p>We will use <strong><code class="docutils literal notranslate"><span class="pre">xmlchange</span></code></strong> to modify xml variables and use <strong><code class="docutils literal notranslate"><span class="pre">xmlquery</span></code></strong> to search xml variables.</p>
 <hr class="docutils" />
@@ -1089,7 +1074,7 @@ When using xmlchange to modify multiple envoronment variables, use comma (and no
 You can always find help by typing `./xmlchange --help`
 </div><br><div class="alert alert-info">
 <strong>Evaluate your understanding</strong>
-<p>You want to mannually resubmit an initial case that previously had a <code class="docutils literal notranslate"><span class="pre">CONTINUE_RUN</span></code> value of <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>, change it to <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>.</p>
+<p>If you want to manually resubmit an initial case that previously had a <code class="docutils literal notranslate"><span class="pre">CONTINUE_RUN</span></code> value of <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>, how do you change it to <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>?</p>
 </div>
 <div class="alert alert-success">  
 <details>  
@@ -1122,7 +1107,7 @@ You can always find help by typing `./xmlchange --help`
 </div></blockquote>
 <br><div class="alert alert-info">
 <strong>Evaluate your understanding</strong>
-<p>Let’s check if the variables in Exercise 1 are properly modified.</p>
+<p>Let’s check if the variables in the previous exercise are properly modified.</p>
 <p>Query for the value of <code class="docutils literal notranslate"><span class="pre">STOP_N</span></code>, <code class="docutils literal notranslate"><span class="pre">STOP_OPTION</span></code>, and <code class="docutils literal notranslate"><span class="pre">CONTINUE_RUN</span></code>.</p>
 </div>
 <div class="alert alert-success">
@@ -1214,7 +1199,7 @@ For example, if we want to change the default <code class="docutils literal notr
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Overview of Simple XML Modifications</p>
+            <p class="prev-next-title">Overview</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="run_length.html" title="next page">

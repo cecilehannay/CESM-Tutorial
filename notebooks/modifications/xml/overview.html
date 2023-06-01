@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Overview of Simple XML Modifications &#8212; CESM Tutorial</title>
+    <title>Overview &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="How to Modify Model Control Files (*.xml)" href="model_control_files.html" />
+    <link rel="next" title="How to Modify XML Files (*.xml)" href="model_control_files.html" />
     <link rel="prev" title="Case Directory and Documentation" href="../../basics/running_cesm/case_directory_and_documentation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -246,12 +246,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Overview of Simple XML Modifications
+   Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="model_control_files.html">
-   How to Modify Model Control Files (*.xml)
+   How to Modify XML Files (*.xml)
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -276,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="run_length/changing_run_length.html">
-     Changing Run Length and Number of Submissions
+     Changing Run Length
     </a>
    </li>
    <li class="toctree-l2">
@@ -288,7 +288,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="modify_run_type.html">
-   Modify the Type of Run
+   Modifying the Type of Run
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -298,12 +298,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="modify_run_type/hybrid_branch_restart.html">
-     Hybrid, Branch and Startup runs
+     Hybrid, Branch and Startup
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="modify_run_type/run_variables.html">
-     Run Variables Related to Run Type
+     Variables Related to Run Type
     </a>
    </li>
   </ul>
@@ -315,12 +315,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="other_xml_variables.html">
-   Other Useful XML Variables in
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     env_run.xml
-    </span>
-   </code>
+   Other Useful XML Variables
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -335,22 +330,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="exercises/xml_length_exercise.html">
-     Exercise 1: Modify run length in
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       env_run.xml
-      </span>
-     </code>
+     Exercise 1: Modify run length
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="exercises/xml_runtype_exercise.html">
-     Exercise 2: Modify run type in
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       env_run.xml
-      </span>
-     </code>
+     Exercise 2: Modify run type
     </a>
    </li>
    <li class="toctree-l2">
@@ -985,7 +970,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Overview of Simple XML Modifications</h1>
+                <h1>Overview</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1015,13 +1000,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="overview-of-simple-xml-modifications">
-<h1>Overview of Simple XML Modifications<a class="headerlink" href="#overview-of-simple-xml-modifications" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
 <p>What is an XML file, and how do we use it in CESM?</p>
 <hr class="docutils" />
 <section id="what-is-an-xml-file">
 <h2>1. What is an XML file?<a class="headerlink" href="#what-is-an-xml-file" title="Permalink to this headline">#</a></h2>
-<p>XML (Extensible Markup Language) is a markup language that defines a syntax for encoding documents that both humans and machines could read. It does this through the use of tags that define the structure of the document, as well as how the document should be stored and transported.</p>
+<p>XML (Extensible Markup Language) is a markup language that defines a syntax for encoding documents that both humans and machines could read. It is used to describe data in a structured way and defines how the document should be stored and transported.</p>
 <div class="alert alert-info" style="text-align: center;">
 <p><a class="reference external" href="https://www.howtogeek.com/357092/what-is-an-xml-file-and-how-do-i-open-one/">Additional information on XML files</a></p>
 </div></section>
@@ -1030,7 +1015,14 @@ title="Print to PDF"
 <h2>2. CESM XML files and CESM environment variables<a class="headerlink" href="#cesm-xml-files-and-cesm-environment-variables" title="Permalink to this headline">#</a></h2>
 <p>CESM cases are customized, built and run largely through setting what CESM calls <strong>“environment variables”</strong>. These actually appear to the user as variables defined in xml files.</p>
 <p>These files appear in the case directory once a case is created and are named something like <strong><code class="docutils literal notranslate"><span class="pre">env_*.xml</span></code></strong>. We control how we compile and run the model with these files.</p>
-<p>There are multiple <strong><code class="docutils literal notranslate"><span class="pre">env_*.xml</span></code></strong> files including <strong><code class="docutils literal notranslate"><span class="pre">env_case.xml</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">env_mach_pe.xml</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">env_build.xml</span></code></strong>, and <strong><code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code></strong>.</p>
+<p>There are multiple <strong><code class="docutils literal notranslate"><span class="pre">env_*.xml</span></code></strong> files. These files contain variables used by scripts. Some of the most commonly used ones are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">env_case.xml</span></code>==&gt; set by create_newcase and cannot be modified</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">env_mach_pes.xml</span></code> == specifies layout of components</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">env_build.xml</span></code>: specifies build information</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code> : 	sets run time information (such as length of run, number of 			submissions, …).
+including <strong><code class="docutils literal notranslate"><span class="pre">env_case.xml</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">env_mach_pe.xml</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">env_build.xml</span></code></strong>, and <strong><code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code></strong>.</p></li>
+</ul>
 <p>In this section, we will learn and practice <strong>modifying CESM run length and run type using <code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code></strong>!</p>
 </section>
 </section>
@@ -1072,7 +1064,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="model_control_files.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">How to Modify Model Control Files (*.xml)</p>
+        <p class="prev-next-title">How to Modify XML Files (*.xml)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
