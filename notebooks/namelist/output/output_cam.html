@@ -1177,10 +1177,7 @@ This variable specifies is the maximum number of time samples written to a histo
 <h2>Add extra variables and history files: <strong><code class="docutils literal notranslate"><span class="pre">fincl</span></code></strong><a class="headerlink" href="#add-extra-variables-and-history-files-fincl" title="Permalink to this headline">#</a></h2>
 <p>You can output up to 10 history files: <strong><code class="docutils literal notranslate"><span class="pre">h0</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">h1</span></code></strong>, …, <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong>.</p>
 <ul class="simple">
-<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">h0</span></code></strong> file contains the default variables (added in the code with <code class="docutils literal notranslate"><span class="pre">call</span> <span class="pre">add_default</span></code>.</p></li>
-</ul>
-<p>See <a class="reference external" href="https://ncar.github.io/CESM-Tutorial/notebooks/sourcemods/add_fields_cam.html">SourceMods</a> section.</p>
-<ul class="simple">
+<li><p>The <strong><code class="docutils literal notranslate"><span class="pre">h0</span></code></strong> file contains the default variables or fields. (These are the variables you get by default without doing any modification to the namelist or code).</p></li>
 <li><p>For the files <strong><code class="docutils literal notranslate"><span class="pre">h1</span></code></strong> to <strong><code class="docutils literal notranslate"><span class="pre">h9</span></code></strong>, the user must specify the variables to output.</p></li>
 </ul>
 <p>To control the list of fields in the history files, use the namelist variable <strong><code class="docutils literal notranslate"><span class="pre">fincl</span></code></strong></p>
@@ -1196,7 +1193,12 @@ This variable specifies is the maximum number of time samples written to a histo
 </div>
 <div class="alert alert-info">
 <strong>Evaluate your understanding</strong>
-<p>What is the namelist setting to add a monthly history h1 with the variables U, V, T and a daily history h2 with the variables ‘PRECT’ output 10 time samples in h1 and h2 ?</p>
+<p>What is the namelist setting to add:</p>
+<ul class="simple">
+<li><p>a monthly history <code class="docutils literal notranslate"><span class="pre">h1</span></code> with the variables U, V, T</p></li>
+<li><p>and a daily history <code class="docutils literal notranslate"><span class="pre">h2</span></code> with the variables ‘PRECT’</p></li>
+<li><p>and output 10 time samples in <code class="docutils literal notranslate"><span class="pre">h1</span></code> and <code class="docutils literal notranslate"><span class="pre">h2</span></code> ?</p></li>
+</ul>
 </div>
 <div class="alert alert-success">  
 <details>  
@@ -1208,7 +1210,7 @@ This variable specifies is the maximum number of time samples written to a histo
 <p>Add the following lines to <font face="Courier"><strong>user_nl_cam</strong></font>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span> 
     <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span> 
-    <span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;U, V&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span> 
+    <span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span> 
     <span class="n">fincl3</span> <span class="o">=</span> <span class="s1">&#39;PRECT&#39;</span>
 </pre></div>
 </div>
@@ -1245,7 +1247,12 @@ This variable specifies is the maximum number of time samples written to a histo
 <div class="alert alert-success">  
 <details>  
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>In addition to the monthly history file <strong>h0</strong>, we will also output the file <strong>h1</strong> with instantaneous values of <strong>T, Q, U, and V</strong>. These variables will be output every <strong>3 hours</strong>, resulting in <strong>8 time samples</strong> in each <strong>h1</strong> file. A new file will be created <strong>every day</strong>.</p>
+<p>In addition to the monthly history file <code class="docutils literal notranslate"><span class="pre">h0</span></code>,</p>
+<ul class="simple">
+<li><p>we will also output the file <code class="docutils literal notranslate"><span class="pre">h1</span></code> with instantaneous values of <strong>T, Q, U, and V</strong>.</p></li>
+<li><p>These variables will be output every <strong>3 hours</strong>, resulting in <strong>8 time samples</strong> in each <code class="docutils literal notranslate"><span class="pre">h1</span></code>file.</p></li>
+<li><p>A new file will be created <strong>every day</strong>.</p></li>
+</ul>
 </details>
 </div>
 </section>
