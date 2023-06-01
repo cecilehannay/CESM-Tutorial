@@ -153,7 +153,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../exercises1_overview.html">
-   Lab Activity 1. Overview
+   Lab Exercise 1. Overview
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -944,12 +944,56 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Exercise 1.2 CESM2 Github Page Exploration
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-what-is-github">
+   Step 1. What is Github?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-the-earth-system-community-modeling-portal-escomp">
+   Step 2. The Earth System Community Modeling Portal (ESCOMP)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-the-cesm-project">
+   Step 3. The CESM Project
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-the-cesm2-1-1-tutorial-branch">
+   Step 4. The CESM2.1.1 Tutorial Branch
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -961,6 +1005,39 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Exercise 1.2 CESM2 Github Page Exploration
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-what-is-github">
+   Step 1. What is Github?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-the-earth-system-community-modeling-portal-escomp">
+   Step 2. The Earth System Community Modeling Portal (ESCOMP)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-the-cesm-project">
+   Step 3. The CESM Project
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-the-cesm2-1-1-tutorial-branch">
+   Step 4. The CESM2.1.1 Tutorial Branch
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -973,12 +1050,31 @@ title="Print to PDF"
 <p>This exercise is to introduce you to the <strong>CESM2 Github Page</strong>. The CESM project is managed through the GitHub online software development platform. The CESM Project is hosted under the Earth System Community Modeling Portal (ESCOMP) which is managed by the University Corporation for Atmospheric Research (UCAR). The ESCOMP portal and the CESM project are publicly available and do not require a Github account for read and download access. The code and data repositories stored in Github can be accessed from the Cheyenne command line using the git utility as explored in the following exercises. For this exercise we will be performing the following:</p>
 <ul class="simple">
 <li><p>Step 1. What is Github?</p></li>
-<li><p>Step 2. The Earth System Community Modeling Portal</p></li>
+<li><p>Step 2. The Earth System Community Modeling Portal (ESCOMP)</p></li>
 <li><p>Step 3. The CESM Project</p></li>
 <li><p>Step 4. The CESM2.1.1 Tutorial Branch</p></li>
 </ul>
 <br>
-* Note this is an exploratory exercise only. You will not need to use Github for other activities in this Tutorial. We do however suggest that in your own time we you should become familar with Github, register as a Github user, and then become an active member of the CESM user and development community to make the most of your experience with CESM. <br></section>
+* Note this is an exploratory exercise only. You will not need to use Github for other activities in this Tutorial. We do however suggest that in your own time you become familar with Github, register as a Github user, and then become an active member of the CESM user and development community to make the most of your experience with CESM. Github, ESCOMP, and the CESM project are vast and you can get lost in this material for hours, days, weeks or even years. Don't go too far off the path in this exercise as there are other Cheyenne and CESM code download tasks that will take your time. You can always come back when you are done.<br></section>
+<section class="tex2jax_ignore mathjax_ignore" id="step-1-what-is-github">
+<h1>Step 1. What is Github?<a class="headerlink" href="#step-1-what-is-github" title="Permalink to this headline">#</a></h1>
+<p>GitHub is an online software development platform. It’s used for storing, tracking, and collaborating on software projects. It makes it easy for developers to share code files and collaborate with fellow developers on open-source projects. GitHub also serves as a social networking site where developers can openly network, collaborate, and pitch their work. GitHub allows software developers to create remote, publically available repositories on the cloud for free. A repository, or “repo” for short, is a coding project’s files and the revision history for each file. You can access Github at: <br></p>
+<p><a class="reference external" href="https://www.github.com">Github Link</a> <br></p>
+<p><img alt="Github Image" src="../../../_images/CESM2_github_main.png" />
+<em><p style="text-align: center;"> Figure: Top Level Github Header </p></em></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="step-2-the-earth-system-community-modeling-portal-escomp">
+<h1>Step 2. The Earth System Community Modeling Portal (ESCOMP)<a class="headerlink" href="#step-2-the-earth-system-community-modeling-portal-escomp" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://www.github.com/ESCOMP">Github Link</a> <br></p>
+<p><img alt="Github Image" src="../../../_images/CESM2_github_ESCOMP.png" />
+<em><p style="text-align: center;"> Figure: ESCOMP Github Header </p></em></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="step-3-the-cesm-project">
+<h1>Step 3. The CESM Project<a class="headerlink" href="#step-3-the-cesm-project" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="step-4-the-cesm2-1-1-tutorial-branch">
+<h1>Step 4. The CESM2.1.1 Tutorial Branch<a class="headerlink" href="#step-4-the-cesm2-1-1-tutorial-branch" title="Permalink to this headline">#</a></h1>
+</section>
 
     <script type="text/x-thebe-config">
     {
