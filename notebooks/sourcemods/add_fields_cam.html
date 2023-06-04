@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Exercise Overview" href="exercises_overview.html" />
-    <link rel="prev" title="Overview of SourceMods Modifications" href="overview.html" />
+    <link rel="prev" title="Overview" href="overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -454,7 +454,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="overview.html">
-   Overview of SourceMods Modifications
+   Overview
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -974,6 +974,11 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-variable-to-cam">
+   Adding a variable to CAM
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#addfld">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -1020,6 +1025,11 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-variable-to-cam">
+   Adding a variable to CAM
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#addfld">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -1058,14 +1068,18 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="adding-new-history-fields">
 <h1>Adding New History Fields<a class="headerlink" href="#adding-new-history-fields" title="Permalink to this headline">#</a></h1>
-<p>A common source code modification that you may want to do is to output a <strong>new variable</strong>.</p>
-<p>As an example, CAM has a history field that corresponds to the <strong>temperature at 500hPa</strong> and a number of other pressure levels, but not at 750hPa. Suppose you wanted to output the <strong>temperature at 750hPa</strong>. The following two
+<p>A common source code modification that you may want to do is to output a <strong>new variable</strong> that is not defined in CESM.</p>
+<p>As an example, we will add a new variable to CAM: the atmopsheric <strong>temperature at 750hPa</strong>.</p>
+<section id="adding-a-variable-to-cam">
+<h2>Adding a variable to CAM<a class="headerlink" href="#adding-a-variable-to-cam" title="Permalink to this headline">#</a></h2>
+<p>CAM has a history field that corresponds to the <strong>temperature at 500hPa</strong> and a number of other pressure levels, but not at <strong>750hPa</strong>. Suppose you wanted to output the <strong>temperature at 750hPa</strong>. The following two
 calls are required to add an output variable:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>call addfld(’T750’,...) (Add a field to the master field list)
 call outfld(’T750’,...) (Collect values for this field and write to history file)
 </pre></div>
 </div>
 <p>Each of these are now described in more detail:</p>
+</section>
 <section id="addfld">
 <h2><code class="docutils literal notranslate"><span class="pre">addfld</span></code><a class="headerlink" href="#addfld" title="Permalink to this headline">#</a></h2>
 <p>The sub-routine <code class="docutils literal notranslate"><span class="pre">addfld</span></code> adds a field to the master list with the following syntax:</p>
@@ -1074,12 +1088,12 @@ call outfld(’T750’,...) (Collect values for this field and write to history 
 </div>
 <p>where</p>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">fname</span></code></strong> =field name</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">type</span></code></strong> =the type of field. The entry for a single level field would be “horiz only” and the entry
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">fname</span></code></strong> = field name</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">type</span></code></strong> = the type of field. The entry for a single level field would be “horiz only” and the entry
 for a 3D field would be “(/ ’lev’ /)”.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">avgflag</span></code></strong> =Averaging flag, A = average, I=instantaneous</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">units</span></code></strong> =the units of the field</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">name</span></code></strong> =Field full name</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">avgflag</span></code></strong> = Averaging flag, A = average, I=instantaneous</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">units</span></code></strong> = the units of the field</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">name</span></code></strong> = Field full name</p></li>
 </ul>
 <p>Appropriate values of these parameters for the output of T750 are:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>call addfld(’T750’,horiz only, ’A’, ’K’, ’Temperature at 750hPa pressure
@@ -1162,7 +1176,7 @@ surface’)
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Overview of SourceMods Modifications</p>
+            <p class="prev-next-title">Overview</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="exercises_overview.html" title="next page">

@@ -454,7 +454,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../sourcemods/overview.html">
-   Overview of SourceMods Modifications
+   Overview
   </a>
  </li>
  <li class="toctree-l1">
@@ -951,12 +951,56 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Exercise 1.4 Explore CESM Code
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-locate-your-code-workspace-area">
+   Step 1. Locate Your Code Workspace Area
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-examine-the-cime-directory">
+   Step 2. Examine the CIME Directory
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-examine-the-cesm-components-area">
+   Step 3. Examine the CESM Components Area
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-look-at-the-community-atmosphere-model-cam-component-model">
+   Step 4. Look at the Community Atmosphere Model (CAM) Component Model
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -968,6 +1012,39 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Exercise 1.4 Explore CESM Code
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-locate-your-code-workspace-area">
+   Step 1. Locate Your Code Workspace Area
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-examine-the-cime-directory">
+   Step 2. Examine the CIME Directory
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-examine-the-cesm-components-area">
+   Step 3. Examine the CESM Components Area
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-look-at-the-community-atmosphere-model-cam-component-model">
+   Step 4. Look at the Community Atmosphere Model (CAM) Component Model
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -977,7 +1054,190 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="exercise-1-4-explore-cesm-code">
 <h1>Exercise 1.4 Explore CESM Code<a class="headerlink" href="#exercise-1-4-explore-cesm-code" title="Permalink to this headline">#</a></h1>
-<p>This is a placeholder for this lesson.</p>
+<p>Having downloaded the CESM Code component of your Workspace we are now going to briefly locate and explore the different code directories within it. From the previous exercise your terminal window should still be at the top level of the CESM Code area of your Workspace as shown in the figure below. To get some familiarity with this area we are going to use the terminal window to explore the directories below this top level location. Specifically in this exercise we will:</p>
+<ul class="simple">
+<li><p>Step 1. Locate your CESM Code area on the glade file system.</p></li>
+<li><p>Step 2. Examine the CIME Directory area.</p></li>
+<li><p>Step 3. Examine the Model Components area.</p></li>
+<li><p>Step 4. Look at the Community Atmosphere Model (CAM) Component Model.</p></li>
+</ul>
+<p><img alt="CESM directories" src="../../../_images/CESM2_Workspaces_Directories.png" />
+<em><p style="text-align: center;"> Figure: Directories of the CESM2 Workspace Paths </p></em></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="step-1-locate-your-code-workspace-area">
+<h1>Step 1. Locate Your Code Workspace Area<a class="headerlink" href="#step-1-locate-your-code-workspace-area" title="Permalink to this headline">#</a></h1>
+<p>Returning to your terminal window we will now locate your Code Workspace Location on the Cheyenne glade file system. If you have not done anything since the last exercise then you will already be in the /glade/work/$USER/code/cesm2.1.1 location.</p>
+<div class="alert alert-info">
+<strong>Exercise: Locate your current directory: </strong><br>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+</pre></div>
+</div>
+<br>
+<p><strong>Expected output:</strong><br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/glade/work/$USER/code/cesm2.1.1
+</pre></div>
+</div>
+<br>
+<p>Remember $USER is an environment variable of your username. You can use the environment variable or your username interchangeably.</p>
+<p><strong>Exercise: If your output doesn’t match then change the current directory to your Workspace Code directory: </strong><br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/work/$USER/code/cesm2.1.1
+</pre></div>
+</div>
+<br>
+<p><strong>Exercise: List the contents of the Workspace Code directory with the ls long option: </strong><br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<br>
+<p><strong>Expected output:</strong><br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="mi">2119</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">2116708</span> <span class="n">Jun</span>  <span class="mi">3</span> <span class="mi">15</span><span class="p">:</span><span class="mi">46</span> <span class="n">ChangeLog</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span>    <span class="mi">2433</span> <span class="n">Jun</span>  <span class="mi">3</span> <span class="mi">15</span><span class="p">:</span><span class="mi">46</span> <span class="n">ChangeLog_template</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">10</span> <span class="n">lawrence</span> <span class="n">ncar</span>    <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">cime</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">4</span> <span class="n">lawrence</span> <span class="n">ncar</span>    <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">3</span> <span class="mi">15</span><span class="p">:</span><span class="mi">46</span> <span class="n">cime_config</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">10</span> <span class="n">lawrence</span> <span class="n">ncar</span>    <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">components</span>
+<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span>    <span class="mi">2475</span> <span class="n">Jun</span>  <span class="mi">3</span> <span class="mi">15</span><span class="p">:</span><span class="mi">46</span> <span class="n">describe_version</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">3</span> <span class="n">lawrence</span> <span class="n">ncar</span>    <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">3</span> <span class="mi">15</span><span class="p">:</span><span class="mi">46</span> <span class="n">doc</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span>    <span class="mi">1409</span> <span class="n">Jun</span>  <span class="mi">3</span> <span class="mi">15</span><span class="p">:</span><span class="mi">46</span> <span class="n">Externals</span><span class="o">.</span><span class="n">cfg</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span>    <span class="mi">5498</span> <span class="n">Jun</span>  <span class="mi">3</span> <span class="mi">15</span><span class="p">:</span><span class="mi">46</span> <span class="n">LICENSE</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">5</span> <span class="n">lawrence</span> <span class="n">ncar</span>    <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">3</span> <span class="mi">15</span><span class="p">:</span><span class="mi">46</span> <span class="n">manage_externals</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span>    <span class="mi">8904</span> <span class="n">Jun</span>  <span class="mi">3</span> <span class="mi">15</span><span class="p">:</span><span class="mi">46</span> <span class="n">README</span><span class="o">.</span><span class="n">rst</span>
+</pre></div>
+</div>
+<br>
+</div>
+<p>If the output of these commands does not match for your CESM Workspace then you will need to ask for help in configuring them. This area will be used for the remainder of the Tutorial so it is important to get it right here.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="step-2-examine-the-cime-directory">
+<h1>Step 2. Examine the CIME Directory<a class="headerlink" href="#step-2-examine-the-cime-directory" title="Permalink to this headline">#</a></h1>
+<p>In your terminal window we will now move to the CIME directory and examine the contents. Remember that CIME is the Common Infrastructure for Modeling the Earth. It is a python-based framework that integrates the various components of the CESM into a single modeling framework. The CIME Scripts directory will be the location where you will start the Workflow of creating a new case through the rest of the Tutorial.</p>
+<div class="alert alert-info">
+<strong>Exercise: Change into the CIME Directory: </strong><br>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">cime</span>
+</pre></div>
+</div>
+<br>
+<p><strong>Exercise: List the contents of the CIME Directory: </strong><br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<br>
+<p><strong>Expected output:</strong><br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="mi">648</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">618865</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">ChangeLog</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span>    <span class="mi">421</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">ChangeLog_template</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span>   <span class="mi">4000</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">CMakeLists</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">5</span> <span class="n">lawrence</span> <span class="n">ncar</span>   <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">config</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span>   <span class="mi">4670</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">CONTRIBUTING</span><span class="o">.</span><span class="n">md</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">3</span> <span class="n">lawrence</span> <span class="n">ncar</span>   <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">doc</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span>    <span class="mi">444</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">index</span><span class="o">.</span><span class="n">html</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span>   <span class="mi">2461</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">LICENSE</span><span class="o">.</span><span class="n">TXT</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span>   <span class="mi">1747</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">7</span> <span class="n">lawrence</span> <span class="n">ncar</span>   <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">scripts</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">8</span> <span class="n">lawrence</span> <span class="n">ncar</span>   <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">src</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">7</span> <span class="n">lawrence</span> <span class="n">ncar</span>   <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">tools</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">3</span> <span class="n">lawrence</span> <span class="n">ncar</span>   <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">utils</span>
+</pre></div>
+</div>
+<br>
+<p><strong>Exercise: Change into the CIME Scripts directory: </strong><br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">scripts</span>
+</pre></div>
+</div>
+<br>
+<p><strong>Exercise: List the contents of the CIME Scripts directory: </strong><br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<br>
+<p><strong>Expected output:</strong><br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="mi">101</span>
+<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span>  <span class="mi">5128</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">create_clone</span>
+<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">11117</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">create_newcase</span>
+<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">29859</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">create_test</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">2</span> <span class="n">lawrence</span> <span class="n">ncar</span>  <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">data_assimilation</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">4</span> <span class="n">lawrence</span> <span class="n">ncar</span>  <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">fortran_unit_testing</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">3</span> <span class="n">lawrence</span> <span class="n">ncar</span>  <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">lib</span>
+<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">14663</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">query_config</span>
+<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span>  <span class="mi">9067</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">query_testlists</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">5</span> <span class="n">lawrence</span> <span class="n">ncar</span>  <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">tests</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">3</span> <span class="n">lawrence</span> <span class="n">ncar</span>  <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">Tools</span>
+</pre></div>
+</div>
+<br>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="step-3-examine-the-cesm-components-area">
+<h1>Step 3. Examine the CESM Components Area<a class="headerlink" href="#step-3-examine-the-cesm-components-area" title="Permalink to this headline">#</a></h1>
+<p>In your terminal window we will now move to the Components Directory and examine the contents of the individual sub models.</p>
+<p><img alt="CESM directories" src="../../../_images/CESM2_Code_Components_List.png" />
+<em><p style="text-align: center;"> Figure: CESM2 Code Components </p></em></p>
+<div class="alert alert-info">
+<strong>Exercise: Change back to the Code Workspace Location: </strong><br>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../..</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/work/$USER/code/cesm2.1.1
+</pre></div>
+</div>
+<br>
+<p><strong>Exercise: Change into the Components area of the Code Workspace: </strong><br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">components</span>
+</pre></div>
+</div>
+<br>
+<p><strong>Exercise: List the contents of the Components Directory: </strong><br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<br>
+<p><strong>Expected Output: </strong><br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="mi">8</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">12</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">34</span> <span class="n">cam</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">7</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">cice</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">14</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">cism</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">12</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">31</span> <span class="n">clm</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">6</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">31</span> <span class="n">mosart</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">15</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">pop</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">6</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">rtm</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">6</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">31</span> <span class="n">ww3</span>
+</pre></div>
+</div>
+</div></section>
+<section class="tex2jax_ignore mathjax_ignore" id="step-4-look-at-the-community-atmosphere-model-cam-component-model">
+<h1>Step 4. Look at the Community Atmosphere Model (CAM) Component Model<a class="headerlink" href="#step-4-look-at-the-community-atmosphere-model-cam-component-model" title="Permalink to this headline">#</a></h1>
+<p>As a final task in this exercise we are going to have a quick look at the Community Atmosphere Model (CAM) component model. At this point we are just exploring the Workspace.</p>
+<div class="alert alert-info">
+<strong>Exercise: Change into the CAM Directory of the Components area: </strong><br>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">cam</span>
+</pre></div>
+</div>
+<br>
+<p><strong>Exercise: List the contents of the CAM Directory: </strong><br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<br>
+<p><strong>Expected Output: </strong><br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="mi">26</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">6</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">bld</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">10</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">34</span> <span class="n">chem_proc</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">4</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">cime_config</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">7501</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">CODE_OF_CONDUCT</span><span class="o">.</span><span class="n">md</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">2</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">doc</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span>  <span class="mi">685</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">Externals_CAM</span><span class="o">.</span><span class="n">cfg</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">1155</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">Externals</span><span class="o">.</span><span class="n">cfg</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">5</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">manage_externals</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">1925</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">README_EXTERNALS</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">lawrence</span> <span class="n">ncar</span>  <span class="mi">282</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">11</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">src</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">4</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">test</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">11</span> <span class="n">lawrence</span> <span class="n">ncar</span> <span class="mi">4096</span> <span class="n">Jun</span>  <span class="mi">4</span> <span class="mi">09</span><span class="p">:</span><span class="mi">32</span> <span class="n">tools</span>
+</pre></div>
+</div>
+</div>
+<p>Congratulations you have now completed the CESM Code Exploration exercises!!</p>
 </section>
 
     <script type="text/x-thebe-config">

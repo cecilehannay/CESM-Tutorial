@@ -454,7 +454,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../overview.html">
-   Overview of SourceMods Modifications
+   Overview
   </a>
  </li>
  <li class="toctree-l1">
@@ -979,11 +979,11 @@ title="Print to PDF"
 <h1>Add output variable in CAM<a class="headerlink" href="#add-output-variable-in-cam" title="Permalink to this headline">#</a></h1>
 <div class="alert alert-info">
 <strong>Exercise: Add an additional output variable</strong><br><br>
-<p>Create a case called “b1850_T750” using the compset  B1850  at f19_g17 resolution.</p>
+<p>Create a case called <code class="docutils literal notranslate"><span class="pre">b1850_T750</span></code> using the compset <code class="docutils literal notranslate"><span class="pre">B1850</span></code> at <code class="docutils literal notranslate"><span class="pre">f19_g17</span></code> resolution.</p>
 <ul class="simple">
 <li><p>Add an output field for the temperature at 750 mbar.</p></li>
-<li><p>Output daily values of T750 and T500 in the “h1” history file.</p></li>
-<li><p>Set the namelist to output a single h1 for the run.</p></li>
+<li><p>Output daily values of <code class="docutils literal notranslate"><span class="pre">T750</span></code> and <code class="docutils literal notranslate"><span class="pre">T500</span></code> in the <code class="docutils literal notranslate"><span class="pre">h1</span></code> history file.</p></li>
+<li><p>Set the namelist to output a single <code class="docutils literal notranslate"><span class="pre">h1</span></code> for the run.</p></li>
 <li><p>Make a 1-month run.</p></li>
 </ul>
 </div>
@@ -992,20 +992,20 @@ title="Print to PDF"
    <summary>
       <font face="Times New Roman" color='blue'>Click here for hints</font>
     </summary>
-<p><strong>Tip to add <font face="Courier"><strong>T750</strong></font></strong>  <br></p>
+<p><strong>Tip to add <code class="docutils literal notranslate"><span class="pre">T750</span></code></strong>  <br></p>
 <ul class="simple">
-<li><p>Use <font face="Courier"><strong>T500</strong></font> as a template for your changes.</p></li>
-<li><p>Find the subroutine containing <font face="Courier"><strong>T750</strong></font>.
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">T500</span></code>as a template for your changes.</p></li>
+<li><p>Find the subroutine containing <code class="docutils literal notranslate"><span class="pre">T750</span></code>.
 For instance, in the CESMROOT, use the command:</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    grep –r T500 *    
 </pre></div>
 </div>
-<p><strong>Tip to check your solution <font face="Courier"><strong>T750</strong></font></strong> <br></p>
+<p><strong>Tip to check your solution <code class="docutils literal notranslate"><span class="pre">T750</span></code></strong> <br></p>
 <ul class="simple">
 <li><p>When the run is completed, go to your archive directory:</p></li>
-<li><p>check the fields <font face="Courier"><strong>T750</strong></font> and <font face="Courier"><strong>T500</strong></font> are in the file <font face="Courier"><strong>h1</strong></font></p></li>
-<li><p>create a file with the difference between <font face="Courier"><strong>T750-T500 </strong></font></p></li>
+<li><p>check the fields <code class="docutils literal notranslate"><span class="pre">T750</span></code> and <code class="docutils literal notranslate"><span class="pre">T500</span></code> are in the file <code class="docutils literal notranslate"><span class="pre">h1</span></code></p></li>
+<li><p>create a file with the difference between <code class="docutils literal notranslate"><span class="pre">T750-T500</span></code></p></li>
 <li><p>For instance, you can use <code class="docutils literal notranslate"><span class="pre">ncap2</span></code></p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    ncap2 -s ’T750_minus_T500=T750-T500&#39; b1850_T750.cam.h1.0001-01-01-00000.nc  T750-T500.nc

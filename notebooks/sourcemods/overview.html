@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Overview of SourceMods Modifications &#8212; CESM Tutorial</title>
+    <title>Overview &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -454,7 +454,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Overview of SourceMods Modifications
+   Overview
   </a>
  </li>
  <li class="toctree-l1">
@@ -963,7 +963,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Overview of SourceMods Modifications</h1>
+                <h1>Overview</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -975,14 +975,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="overview-of-sourcemods-modifications">
-<h1>Overview of SourceMods Modifications<a class="headerlink" href="#overview-of-sourcemods-modifications" title="Permalink to this headline">#</a></h1>
-<p>If you want to make modifications to the CESM code, the best practise is to copy the relevant sub-routine into the relevant sub-directory within the “SourceMods” directory in your case directory.</p>
-<p>For example, if you wanted to modify a CAM subroutine, in the case called case01, you would copy it to the following location</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
+<p>If you want to make modifications to the CESM code, the best practise is to copy the relevant sub-routine into the relevant sub-directory within the <code class="docutils literal notranslate"><span class="pre">SourceMods</span></code> directory in your case directory.</p>
+<p>For example, if you wanted to modify a CAM subroutine, in the case called case01, you would copy that subroutine to the following location</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">case01</span><span class="o">/</span><span class="n">SourceMods</span><span class="o">/</span><span class="n">src</span><span class="o">.</span><span class="n">cam</span>
 </pre></div>
 </div>
 <p>and modify it there.</p>
+<p><em>Figure 1</em> shows the location of the <code class="docutils literal notranslate"><span class="pre">SourceMods</span></code> directory and sub-directories.</p>
 <div class="alert alert-info" style="text-align: left;">
 <p>The <strong>steps</strong>  when making a <strong>source code modification</strong> are:</p>
 <ul class="simple">
