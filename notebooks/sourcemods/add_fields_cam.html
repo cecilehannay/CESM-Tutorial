@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Adding a variable to CAM &#8212; CESM Tutorial</title>
+    <title>Source Modification Example &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -459,7 +459,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Adding a variable to CAM
+   Source Modification Example
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -973,12 +973,12 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-variable-to-cam">
    Adding a variable to CAM
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#addfld">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -987,7 +987,7 @@ title="Print to PDF"
    </code>
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#outfld">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -996,7 +996,7 @@ title="Print to PDF"
    </code>
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#add-default">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -1014,7 +1014,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Adding a variable to CAM</h1>
+                <h1>Source Modification Example</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1024,12 +1024,12 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-variable-to-cam">
    Adding a variable to CAM
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#addfld">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -1038,7 +1038,7 @@ title="Print to PDF"
    </code>
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#outfld">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -1047,7 +1047,7 @@ title="Print to PDF"
    </code>
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#add-default">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -1066,11 +1066,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>Source Modification Example</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="source-modification-example">
+<h1>Source Modification Example<a class="headerlink" href="#source-modification-example" title="Permalink to this headline">#</a></h1>
 <p>A common source code modification that you may want to do is to output a <strong>new variable</strong> that is not defined in CESM.</p>
 <p>As an example, we will add a new variable to CAM: the atmopsheric <strong>temperature at 750hPa</strong>.</p>
 <section id="adding-a-variable-to-cam">
-<h1>Adding a variable to CAM<a class="headerlink" href="#adding-a-variable-to-cam" title="Permalink to this headline">#</a></h1>
+<h2>Adding a variable to CAM<a class="headerlink" href="#adding-a-variable-to-cam" title="Permalink to this headline">#</a></h2>
 <p>CAM has a history field that corresponds to the <strong>temperature at 500hPa</strong> and a number of other pressure levels, but not at <strong>750hPa</strong>. Suppose you wanted to output the <strong>temperature at 750hPa</strong>. The following two
 calls are required to add an output variable:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>call addfld(’T750’,...) (Add a field to the master field list)
@@ -1080,7 +1081,7 @@ call outfld(’T750’,...) (Collect values for this field and write to history 
 <p>Each of these are now described in more detail:</p>
 </section>
 <section id="addfld">
-<h1><code class="docutils literal notranslate"><span class="pre">addfld</span></code><a class="headerlink" href="#addfld" title="Permalink to this headline">#</a></h1>
+<h2><code class="docutils literal notranslate"><span class="pre">addfld</span></code><a class="headerlink" href="#addfld" title="Permalink to this headline">#</a></h2>
 <p>The sub-routine <code class="docutils literal notranslate"><span class="pre">addfld</span></code> adds a field to the master list with the following syntax:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">addfld</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span><span class="nb">type</span><span class="p">,</span><span class="n">avgflag</span><span class="p">,</span><span class="n">units</span><span class="p">,</span><span class="n">long</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
@@ -1108,7 +1109,7 @@ surface’)
 </ul>
 </section>
 <section id="outfld">
-<h1><code class="docutils literal notranslate"><span class="pre">outfld</span></code><a class="headerlink" href="#outfld" title="Permalink to this headline">#</a></h1>
+<h2><code class="docutils literal notranslate"><span class="pre">outfld</span></code><a class="headerlink" href="#outfld" title="Permalink to this headline">#</a></h2>
 <p>The subroutine <code class="docutils literal notranslate"><span class="pre">outfld</span></code> accumulates (or takes the minimum or, maximum of etc as appropriate) the field into the history buffer for the appropriate history tape with the following syntax</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">addfld</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span><span class="nb">type</span><span class="p">,</span><span class="n">avgflag</span><span class="p">,</span><span class="n">units</span><span class="p">,</span><span class="n">long</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
@@ -1126,7 +1127,7 @@ surface’)
 </div>
 </section>
 <section id="add-default">
-<h1><code class="docutils literal notranslate"><span class="pre">add_default</span></code><a class="headerlink" href="#add-default" title="Permalink to this headline">#</a></h1>
+<h2><code class="docutils literal notranslate"><span class="pre">add_default</span></code><a class="headerlink" href="#add-default" title="Permalink to this headline">#</a></h2>
 <p>Another useful subroutine is the subroutine <code class="docutils literal notranslate"><span class="pre">add_default</span></code>. The subroutine <code class="docutils literal notranslate"><span class="pre">add_default</span></code> Add a field to the list of default fields on history file with the following syntax</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">subroutine</span> <span class="n">add_default</span> <span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">tindex</span><span class="p">,</span> <span class="n">flag</span><span class="p">)</span>
 </pre></div>
@@ -1141,6 +1142,7 @@ surface’)
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">call</span> <span class="n">add_default</span> <span class="p">(</span><span class="s1">&#39;T500&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
