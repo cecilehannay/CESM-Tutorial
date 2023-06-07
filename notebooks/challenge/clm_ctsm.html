@@ -113,47 +113,15 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction
- </span>
-</p>
-<ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/intro.html">
    CESM tutorial introduction
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  The Basics of Running CESM
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../basics/overview.html">
-   Overview of CESM
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../basics/cesm_coupling.html">
-   CESM Shared Infrastructure
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../basics/cesm_quickstart.html">
-   CESM Quickstart Workflow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../basics/cesm_workspaces.html">
-   CESM Workspaces
-  </a>
- </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../basics/exercises1_overview.html">
-   Lab Exercise 1. Overview
+  <a class="reference internal" href="../basics.html">
+   The Basics of Running CESM
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -162,133 +130,216 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../basics/exercises1/cheyenne_login.html">
-     Exercise 1.1 Cheyenne Login
+    <a class="reference internal" href="../basics/overview.html">
+     Overview of CESM
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../basics/exercises1/github_explore.html">
-     Exercise 1.2 CESM Github Pages
+    <a class="reference internal" href="../basics/cesm_coupling.html">
+     CESM Shared Infrastructure
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../basics/exercises1/git_download_cesm.html">
-     Exercise 1.3 Download CESM with Git
+    <a class="reference internal" href="../basics/cesm_quickstart.html">
+     CESM Quickstart Workflow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../basics/exercises1/cesm_code_explore.html">
-     Exercise 1.4 Explore CESM Code
+    <a class="reference internal" href="../basics/cesm_workspaces.html">
+     CESM Workspaces
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../basics/exercises1_overview.html">
+     Lab Exercise 1. Overview
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/exercises1/cheyenne_login.html">
+       Exercise 1.1 Cheyenne Login
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/exercises1/github_explore.html">
+       Exercise 1.2 CESM Github Pages
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/exercises1/git_download_cesm.html">
+       Exercise 1.3 Download CESM with Git
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/exercises1/cesm_code_explore.html">
+       Exercise 1.4 Explore CESM Code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/exercises1/additional_exercises.html">
+       Exercise 1.5 Additional Exercises
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../basics/cesm_workflow.html">
+     CESM Workflow Detailed
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/cesm_workflow/create_newcase_command.html">
+       Create New Case: Command
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/cesm_workflow/create_newcase_casename.html">
+       Create New Case: Case Name
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/cesm_workflow/create_newcase_resolution.html">
+       Create New Case: Resolution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/cesm_workflow/create_newcase_compset.html">
+       Create New Case: Compset
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/cesm_workflow/create_newcase_output.html">
+       Create New Case: Output
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/cesm_workflow/case_root.html">
+       Case: CASEROOT and Directory
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/cesm_workflow/case_xml_files.html">
+       Case: env xml files
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/cesm_workflow/case_xml_change.html">
+       Case: xmlquery and xmlchange
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/cesm_workflow/case_setup.html">
+       Case: case.setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/cesm_workflow/case_setup_updated.html">
+       Case: case.setup updated files
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/cesm_workflow/case_build.html">
+       Case: case.build
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/cesm_workflow/case_submit.html">
+       Case: case.submit
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/cesm_workflow/checking_jobs_and_status.html">
+       Checking Jobs and Status
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/cesm_workflow/create_clone_command.html">
+       Create Clone: Command
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/postprocessing.html">
+     Postprocessing Model Output
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../basics/exercises1/additional_exercises.html">
-     Exercise 1.5 Additional Exercises
+    <a class="reference internal" href="../basics/porting.html">
+     Porting CESM
     </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/getting_help.html">
+     Getting Help
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../basics/exercises2_overview.html">
+     Lab Exercise 2. Overview
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/exercises2/create_setup_build_B1850.html">
+       Exercise 2.1 Create, Setup, Update, and Build a Case
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/exercises2/submit_monitor_B1850.html">
+       Exercise 2.2 Submit and Monitor Case
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/exercises2/examine_history_B1850.html">
+       Exercise 2.3 Examine History Files
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/exercises2/update_resubmit_B1850.html">
+       Exercise 2.4 Update and Resubmit Case
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/exercises2/reexamine_history_B1850.html">
+       Exercise 2.5 Re-examine History Files
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/exercises2/clone_examine_B1850.html">
+       Exercise 2.6 Clone Case and Examine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/exercises2/review_questions.html">
+       Exercise 2.7 Review Questions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/exercises2/additional_exercises.html">
+       Exercise 2.8 Additional Exercises
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../basics/the_cesm_code.html">
-   The CESM Code
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basics/the_cesm_code/cesm_components.html">
-     CESM Components
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basics/the_cesm_code/inputdata.html">
-     Input Data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../basics/running_cesm.html">
-   Running on ‘Cheyenne’ (Example!)
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basics/running_cesm/basic_workflow.html">
-     Basic Workflow
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basics/running_cesm/checking_queues_and_jobs.html">
-     Checking Queues and Jobs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basics/running_cesm/case_directory_and_documentation.html">
-     Case Directory and Documentation
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Simple XML Modifications
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../modifications/xml/overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modifications/xml/model_control_files.html">
-   How to Modify XML Files (*.xml)
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../modifications/xml/run_length.html">
-   Controlling Run Length
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../modifications/xml/run_length/starting_and_stopping.html">
-     Starting and Stopping
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../modifications/xml/run_length/restarting.html">
-     Restarting a Run
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../modifications/xml/run_length/changing_run_length.html">
-     Changing Run Length
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../modifications/xml/run_length/timing_files.html">
-     Using Timing Files
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../modifications/xml/modify_run_type.html">
-   Modifying the Type of Run
+  <a class="reference internal" href="../modifications/xml.html">
+   Simple XML Modifications
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -297,140 +348,111 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../modifications/xml/modify_run_type/hybrid_branch_restart.html">
-     Hybrid, Branch and Startup
+    <a class="reference internal" href="../modifications/xml/overview.html">
+     Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../modifications/xml/modify_run_type/run_variables.html">
-     Variables Related to Run Type
+    <a class="reference internal" href="../modifications/xml/model_control_files.html">
+     How to Modify XML Files (*.xml)
     </a>
    </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../modifications/xml/run_length.html">
+     Controlling Run Length
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../modifications/xml/run_length/starting_and_stopping.html">
+       Starting and Stopping
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../modifications/xml/run_length/restarting.html">
+       Restarting a Run
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../modifications/xml/run_length/changing_run_length.html">
+       Changing Run Length
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../modifications/xml/run_length/timing_files.html">
+       Using Timing Files
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../modifications/xml/modify_run_type.html">
+     Modifying the Type of Run
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../modifications/xml/modify_run_type/hybrid_branch_restart.html">
+       Hybrid, Branch and Startup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../modifications/xml/modify_run_type/run_variables.html">
+       Variables Related to Run Type
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modifications/xml/physics_timestep.html">
+     Physics Timestep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modifications/xml/other_xml_variables.html">
+     Other Useful XML Variables
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../modifications/xml/exercises.html">
+     Exercise Overview
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../modifications/xml/exercises/xml_length_exercise.html">
+       Exercise 1: Modify run length
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../modifications/xml/exercises/xml_runtype_exercise.html">
+       Exercise 2: Modify run type
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../modifications/xml/exercises/xml_timestep_exercise.html">
+       Exercise 3: Change physics timestep
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modifications/xml/physics_timestep.html">
-   Physics Timestep
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modifications/xml/other_xml_variables.html">
-   Other Useful XML Variables
-  </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../modifications/xml/exercises.html">
-   Exercise Overview
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../modifications/xml/exercises/xml_length_exercise.html">
-     Exercise 1: Modify run length
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../modifications/xml/exercises/xml_runtype_exercise.html">
-     Exercise 2: Modify run type
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../modifications/xml/exercises/xml_timestep_exercise.html">
-     Exercise 3: Change physics timestep
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Namelist Modifications
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
   <a class="reference internal" href="../namelist/overview.html">
    Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../namelist/documentation.html">
-   Namelist Variables Documentation
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../namelist/output.html">
-   Customizing Output
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../namelist/output/output_cam.html">
-     Customize CAM output
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../namelist/output/output_clm.html">
-     Customize CLM output
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../namelist/output/output_cice.html">
-     Customize CICE output
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../namelist/output/output_pop.html">
-     Customize POP output
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../namelist/exercises_overview.html">
-   Exercise Overview
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../namelist/exercises/exercise_cam_output.html">
-     Modify CAM output
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../namelist/exercises/exercise_tuning_parameter.html">
-     Change a tuning parameter in CAM
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Troubleshooting
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../troubleshooting/overview.html">
-   Troubleshooting runtime errors
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../troubleshooting/exercises_overview.html">
-   Exercise Overview
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -439,146 +461,69 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../troubleshooting/exercises/troubleshooting_cam.html">
-     Debugging CAM
+    <a class="reference internal" href="../namelist/documentation.html">
+     Namelist Variables Documentation
     </a>
    </li>
-  </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Source Modifications
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../sourcemods/overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../sourcemods/add_fields_cam.html">
-   Source Modification Example
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../sourcemods/exercises_overview.html">
-   Exercise Overview
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../sourcemods/exercises/exercise_add_field.html">
-     Add output variable in CAM
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../namelist/output.html">
+     Customizing Output
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../namelist/output/output_cam.html">
+       Customize CAM output
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../namelist/output/output_clm.html">
+       Customize CLM output
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../namelist/output/output_cice.html">
+       Customize CICE output
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../namelist/output/output_pop.html">
+       Customize POP output
+      </a>
+     </li>
+    </ul>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../sourcemods/exercises/exercise_rain_threshold.html">
-     Modify the
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       rain_threshold
-      </span>
-     </code>
-     in CLM
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../namelist/exercises_overview.html">
+     Exercise Overview
     </a>
-   </li>
-  </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Diagnostics
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../diagnostics/plotting_fields.html">
-   Plotting Fields
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../diagnostics/regridding.html">
-   Regridding
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../diagnostics/packages.html">
-   Diagnostic Packages
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../diagnostics/geocat.html">
-   GeoCAT
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../diagnostics/esds.html">
-   ESDS
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Challenge Exercises
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="cam.html">
-   Challenge Exercises for CAM
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cam/exercise_1.html">
-     1: Control case: F2000climo
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cam/exercise_2.html">
-     2: Historical compset: FHIST
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cam/exercise_3.html">
-     3: Starting FHIST from spunup state in 1850
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cam/exercise_4.html">
-     4: Increase orographic height over the western US
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cam/exercise_5.html">
-     5: Modify sea surface temperature in the tropics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cam/exercise_6.html">
-     6: Threshold for deep convection over land
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cam/exercise_7.html">
-     7: Add a (fake) physics parameterizatio
-    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../namelist/exercises/exercise_cam_output.html">
+       Modify CAM output
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../namelist/exercises/exercise_tuning_parameter.html">
+       Change a tuning parameter in CAM
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="cam-chem.html">
-   Challenge Exercises for CAM-chem
+  <a class="reference internal" href="../troubleshooting.html">
+   Troubleshooting
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -587,52 +532,32 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="cam-chem/exercise_1.html">
-     Exercise 1
+    <a class="reference internal" href="../troubleshooting/overview.html">
+     Troubleshooting runtime errors
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cam-chem/exercise_2.html">
-     Exercise 2
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../troubleshooting/exercises_overview.html">
+     Exercise Overview
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../troubleshooting/exercises/troubleshooting_cam.html">
+       Debugging CAM
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="cism.html">
-   Challenge Exercises for CISM
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cism/cism_exercise_1.html">
-     CISM Challenge Exercise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cism/cism_exercise_2.html">
-     Looking at the simulation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cism/cism_exercise_3.html">
-     Computing ice sheet related sea level change from a CISM simulation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Challenge Exercises for CLM/CTSM
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="cice.html">
-   Challenge Exercises for CICE
+  <a class="reference internal" href="../sourcemods.html">
+   Source Modifications
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
   <label for="toctree-checkbox-14">
@@ -641,57 +566,37 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="cice/cice_exercise_1.html">
-     CICE Challenge Exercise 1
+    <a class="reference internal" href="../sourcemods/overview.html">
+     Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="cice/cice_exercise_2.html">
-     CICE Challenge Exercise 2
+    <a class="reference internal" href="../sourcemods/add_fields_cam.html">
+     Source Modification Example
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cice/cice_exercise_3.html">
-     CICE Challenge Exercise 3
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../sourcemods/exercises_overview.html">
+     Exercise Overview
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sourcemods/exercises/exercise_add_field.html">
+       Add output variable in CAM
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="pop.html">
-   Challenge Exercises for POP
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pop/pop_exercise_1.html">
-     POP Challenge Exercise 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pop/pop_exercise_2.html">
-     POP Challenge Exercise 2
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pop/pop_exercise_3.html">
-     POP Challenge Exercise 3
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pop/pop_exercise_4.html">
-     POP Challenge Exercise 4
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="biogeochemistry.html">
-   Challenge Exercises for Biogeochemistry
+  <a class="reference internal" href="../diagnostics.html">
+   Diagnostics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
   <label for="toctree-checkbox-16">
@@ -700,87 +605,301 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="bgc/bgc_exercise_1.html">
-     BGC Challenge Exercise 1
+    <a class="reference internal" href="../diagnostics/plotting_fields.html">
+     Plotting Fields
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../diagnostics/regridding.html">
+     Regridding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../diagnostics/packages.html">
+     Diagnostic Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../diagnostics/geocat.html">
+     GeoCAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../diagnostics/esds.html">
+     ESDS
     </a>
    </li>
   </ul>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Useful Tools
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../tools/community_experiments.html">
-   CESM Community Experiments
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../challenge.html">
+   Challenge Exercises
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
   <label for="toctree-checkbox-17">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tools/cesm_expts/clim_data_gateway.html">
-     Climate Data Gateway
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="cam.html">
+     Challenge Exercises for CAM
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cam/exercise_1.html">
+       1: Control case: F2000climo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cam/exercise_2.html">
+       2: Historical compset: FHIST
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cam/exercise_3.html">
+       3: Starting FHIST from spunup state in 1850
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cam/exercise_4.html">
+       4: Increase orographic height over the western US
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cam/exercise_5.html">
+       5: Modify sea surface temperature in the tropics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cam/exercise_6.html">
+       6: Threshold for deep convection over land
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cam/exercise_7.html">
+       7: Add a (fake) physics parameterizatio
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="cam-chem.html">
+     Challenge Exercises for CAM-chem
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cam-chem/exercise_1.html">
+       Exercise 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cam-chem/exercise_2.html">
+       Exercise 2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="cism.html">
+     Challenge Exercises for CISM
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cism/cism_exercise_1.html">
+       CISM Challenge Exercise
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cism/cism_exercise_2.html">
+       Looking at the simulation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cism/cism_exercise_3.html">
+       Computing ice sheet related sea level change from a CISM simulation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Challenge Exercises for CLM/CTSM
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tools/cesm_expts/clim_data_guide.html">
-     Climate Data Guide
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="cice.html">
+     Challenge Exercises for CICE
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cice/cice_exercise_1.html">
+       CICE Challenge Exercise 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cice/cice_exercise_2.html">
+       CICE Challenge Exercise 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cice/cice_exercise_3.html">
+       CICE Challenge Exercise 3
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="pop.html">
+     Challenge Exercises for POP
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="pop/pop_exercise_1.html">
+       POP Challenge Exercise 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="pop/pop_exercise_2.html">
+       POP Challenge Exercise 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="pop/pop_exercise_3.html">
+       POP Challenge Exercise 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="pop/pop_exercise_4.html">
+       POP Challenge Exercise 4
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="biogeochemistry.html">
+     Challenge Exercises for Biogeochemistry
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="bgc/bgc_exercise_1.html">
+       BGC Challenge Exercise 1
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../tools/unix_basics.html">
-   UNIX Basics
+  <a class="reference internal" href="../tools.html">
+   Useful Tools
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-  <label for="toctree-checkbox-18">
+  <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+  <label for="toctree-checkbox-24">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../tools/community_experiments.html">
+     CESM Community Experiments
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tools/cesm_expts/clim_data_gateway.html">
+       Climate Data Gateway
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tools/cesm_expts/clim_data_guide.html">
+       Climate Data Guide
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../tools/unix_basics.html">
+     UNIX Basics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tools/unix/terminals.html">
+       Terminal Windows
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tools/unix/modules.html">
+       Loading Modules on NCAR HPC
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tools/unix/text_editors.html">
+       Text Editors
+      </a>
+     </li>
+    </ul>
+   </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tools/unix/terminals.html">
-     Terminal Windows
+    <a class="reference internal" href="../tools/fortran.html">
+     Fortran Resources
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tools/unix/modules.html">
-     Loading Modules on NCAR HPC
+    <a class="reference internal" href="../tools/github.html">
+     Github Resources
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tools/unix/text_editors.html">
-     Text Editors
+    <a class="reference internal" href="../tools/netcdf_tools.html">
+     NetCDF files and how to use them
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/analysis_tools.html">
+     CESM analysis tools
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tools/fortran.html">
-   Fortran Resources
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tools/github.html">
-   Github Resources
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tools/netcdf_tools.html">
-   NetCDF files and how to use them
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../tools/analysis_tools.html">
-   CESM analysis tools
-  </a>
  </li>
 </ul>
 
