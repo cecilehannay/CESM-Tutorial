@@ -1262,6 +1262,7 @@ For instance, to run in the queue <code class="docutils literal notranslate"><sp
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;nhtfrq(2) = -3&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
 <span class="n">echo</span> <span class="s2">&quot;mfilt(2) = 240&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
 <span class="n">echo</span> <span class="s2">&quot;fincl2 = &#39;TS:I&#39;,&#39;PS:I&#39;, &#39;U850:I&#39;,&#39;T850:I&#39;,&#39;PRECT:I&#39;,&#39;LHFLX:I&#39;,&#39;SHFLX:I&#39;,&#39;FLNT:I&#39;,&#39;FLNS:I&#39;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
+<span class="n">echo</span> <span class="s2">&quot;bnd_topo = &#39;$CASEDIR/fv_1.9x2.5_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819.orox50.nc&#39; &quot;</span> <span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
 <span class="n">echo</span> <span class="s2">&quot;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
 </pre></div>
 </div>
@@ -1271,12 +1272,6 @@ For instance, to run in the queue <code class="docutils literal notranslate"><sp
 </div>
 <p>This step is optional as the script <code class="docutils literal notranslate"><span class="pre">preview_namelists</span></code> is automatically called by <code class="docutils literal notranslate"><span class="pre">case.build</span></code> and <code class="docutils literal notranslate"><span class="pre">case.submit</span></code>. But it is nice to check that your changes made their way into:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$CASEDIR/CaseDocs/atm_in
-</pre></div>
-</div>
-<p><strong># change starting date and ref case</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">RUN_STARTDATE</span><span class="o">=</span><span class="mi">1850</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>  
-<span class="o">./</span><span class="n">xmlchange</span> <span class="n">RUN_REFCASE</span><span class="o">=</span><span class="n">b</span><span class="o">.</span><span class="n">e21</span><span class="o">.</span><span class="n">B1850</span><span class="o">.</span><span class="n">f19_g17</span><span class="o">.</span><span class="n">CMIP6</span><span class="o">-</span><span class="n">piControl</span><span class="o">-</span><span class="mi">2</span><span class="n">deg</span><span class="mf">.001</span>
-<span class="o">./</span><span class="n">xmlchange</span> <span class="n">RUN_REFDATE</span><span class="o">=</span><span class="mi">0321</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>
 </pre></div>
 </div>
 <p><strong># Set run length</strong></p>
