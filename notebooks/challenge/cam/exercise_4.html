@@ -1222,7 +1222,7 @@ Look at the namelist definition for the variable <code class="docutils literal n
 <span class="o">-</span><span class="n">s</span> <span class="s1">&#39;omask=(lat2d &gt;= 30. &amp;&amp; lat2d &lt;= 50.) &amp;&amp; (lon2d &gt;= 235. &amp;&amp; lon2d &lt;= 260.)&#39;</span> \
 <span class="o">-</span><span class="n">s</span> <span class="s1">&#39;PHIS=(PHIS*(1.+omask*0.5))&#39;</span> \
 <span class="n">fv_1</span><span class="mf">.9</span><span class="n">x2</span><span class="mf">.5</span><span class="n">_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819</span><span class="o">.</span><span class="n">nc</span>  \
-<span class="n">fv_1</span><span class="mf">.9</span><span class="n">x2</span><span class="mf">.5</span><span class="n">_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819</span><span class="o">.</span><span class="n">orox50</span><span class="o">.</span><span class="n">nc</span>
+<span class="n">fv_1</span><span class="mf">.9</span><span class="n">x2</span><span class="mf">.5</span><span class="n">_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819</span><span class="o">.</span><span class="n">topo50</span><span class="o">.</span><span class="n">nc</span>
 </pre></div>
 </div>
 <p><strong># Set environment variables</strong></p>
@@ -1265,7 +1265,7 @@ For instance, to run in the queue <code class="docutils literal notranslate"><sp
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;nhtfrq(2) = -3&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
 <span class="n">echo</span> <span class="s2">&quot;mfilt(2) = 240&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
 <span class="n">echo</span> <span class="s2">&quot;fincl2 = &#39;TS:I&#39;,&#39;PS:I&#39;, &#39;U850:I&#39;,&#39;T850:I&#39;,&#39;PRECT:I&#39;,&#39;LHFLX:I&#39;,&#39;SHFLX:I&#39;,&#39;FLNT:I&#39;,&#39;FLNS:I&#39;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
-<span class="n">echo</span> <span class="s2">&quot;bnd_topo = &#39;$CASEDIR/fv_1.9x2.5_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819.orox50.nc&#39; &quot;</span> <span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
+<span class="n">echo</span> <span class="s2">&quot;bnd_topo = &#39;$CASEDIR/fv_1.9x2.5_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819.topo50.nc&#39; &quot;</span> <span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
 <span class="n">echo</span> <span class="s2">&quot;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
 </pre></div>
 </div>
