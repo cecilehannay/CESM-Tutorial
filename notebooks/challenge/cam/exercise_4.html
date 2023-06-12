@@ -1115,41 +1115,12 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   4: Increase orographic height over the western US
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modify-orography">
-   Modify orography
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
@@ -1161,24 +1132,6 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   4: Increase orographic height over the western US
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modify-orography">
-   Modify orography
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -1212,9 +1165,8 @@ Look at the namelist definition for the variable <code class="docutils literal n
 <div class="alert alert-success">   
 <details>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="modify-orography">
-<h1>Modify orography<a class="headerlink" href="#modify-orography" title="Permalink to this headline">#</a></h1>
+<p><strong># Modify orography</strong></p>
+<p>Copy the topography file into your case directory and modify it over there. Here we use the nco operators but feel free to use any other tool.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> \
 <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesmdata</span><span class="o">/</span><span class="n">cseg</span><span class="o">/</span><span class="n">inputdata</span><span class="o">/</span><span class="n">atm</span><span class="o">/</span><span class="n">cam</span><span class="o">/</span><span class="n">topo</span><span class="o">/</span><span class="n">fv_1</span><span class="mf">.9</span><span class="n">x2</span><span class="mf">.5</span><span class="n">_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819</span><span class="o">.</span><span class="n">nc</span>   <span class="o">.</span>
 
