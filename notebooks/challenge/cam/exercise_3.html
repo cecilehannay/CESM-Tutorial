@@ -1158,10 +1158,15 @@ title="Print to PDF"
 <details>
 <summary> <font face="Times New Roman" color='blue'>Click here for hints</font> </summary>
 <br>
+<p><strong>How do I start my run using initialization datasets from a previous run?</strong></p>
+<ul class="simple">
+<li><p>Look at chapter <code class="docutils literal notranslate"><span class="pre">Modifify</span> <span class="pre">the</span> <span class="pre">run</span> <span class="pre">type</span></code>. In that chapter, you learned different ways to start up the model, and how to use initial conditions/restart files from a different case to start up a hybrid case. Use that method
+<a class="reference external" href="https://ncar.github.io/CESM-Tutorial/notebooks/challenge/cam/exercise_3.html">https://ncar.github.io/CESM-Tutorial/notebooks/challenge/cam/exercise_3.html</a></p></li>
+<li><p>Data from spun-up model runs can be found in inputdata (DIN_LOC_ROOT) .</p></li>
+</ul>
 <p><strong>How do I start my run in 1850?</strong></p>
 <ul class="simple">
-<li><p>On day 2, you learned different ways to start up the model, and how to use initial conditions/restart files from a different case to start up a hybrid case. Use that method</p></li>
-<li><p>Data from spun-up model runs can be found in inputdata (DIN_LOC_ROOT) . You’ll need to know what generation of the model you’re running</p></li>
+<li><p>Look at the description of the xml variable <code class="docutils literal notranslate"><span class="pre">RUN_STARTDATE</span></code></p></li>
 </ul>
 <p><strong>How do I output 3 hourly instantaneous variables?</strong></p>
 <ul class="simple">
@@ -1172,7 +1177,6 @@ title="Print to PDF"
 <p><strong>I am getting an error: <code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">compset</span> <span class="pre">and</span> <span class="pre">grid</span> <span class="pre">combination</span> <span class="pre">is</span> <span class="pre">untested</span> <span class="pre">in</span> <span class="pre">CESM</span></code></strong></p>
 <ul class="simple">
 <li><p>overide this error by adding <code class="docutils literal notranslate"><span class="pre">--run-unsupported</span></code> to the create_newcase command</p></li>
-<li></li>
 </ul>
 </details>
 </div>
