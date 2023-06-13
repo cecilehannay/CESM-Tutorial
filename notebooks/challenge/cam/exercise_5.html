@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>5: Modify sea surface temperature in the tropics &#8212; CESM Tutorial</title>
+    <title>4: Modify sea surface temperature in the tropics &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -707,7 +707,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       5: Modify sea surface temperature in the tropics
+       4: Modify sea surface temperature in the tropics
       </a>
      </li>
      <li class="toctree-l3">
@@ -1127,7 +1127,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>5: Modify sea surface temperature in the tropics</h1>
+                <h1>4: Modify sea surface temperature in the tropics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1140,23 +1140,15 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="modify-sea-surface-temperature-in-the-tropics">
-<h1>5: Modify sea surface temperature in the tropics<a class="headerlink" href="#modify-sea-surface-temperature-in-the-tropics" title="Permalink to this headline">#</a></h1>
-<p>CAM is capable of running over historical periods with time-varying sea surface temperatures (SSTs) as well as anthropogenic and natural forcings. This is called the AMIP protocol.</p>
-<p>More information about the AMIP protocol and HadSST data sets:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://climatedataguide.ucar.edu/climate-data/sst-data-hadisst-v11">https://climatedataguide.ucar.edu/climate-data/sst-data-hadisst-v11</a></p></li>
-<li><p><a class="reference external" href="https://pcmdi.llnl.gov/mips/amip/">https://pcmdi.llnl.gov/mips/amip/</a></p></li>
-</ul>
+<h1>4: Modify sea surface temperature in the tropics<a class="headerlink" href="#modify-sea-surface-temperature-in-the-tropics" title="Permalink to this headline">#</a></h1>
+<p>Change input boundary datasets (Sea Surface Temperature) by increasing its value by 2K in the tropical Central Pacific.</p>
 <div class="alert alert-info">
-<strong>Exercise: Customize your CAM history files</strong><br><br>
-<p>Create, configure, build and run a case called <code class="docutils literal notranslate"><span class="pre">fhist</span></code> with the compset <code class="docutils literal notranslate"><span class="pre">FHIST</span></code> at the resolution <code class="docutils literal notranslate"><span class="pre">f09_f09_mg17</span></code> using the same history file output as in the control.
-Run for 5 days.
-Create, configure, build and run a case called fhist with the compset FHIST at the resolution f09_f09_mg17 using the same history file output as in the control. Start model in 1850.</p>
-<ul class="simple">
-<li><p>How can you check that there is a difference between the set up of this and your control?</p></li>
-<li><p>How can you check that it is running the way you intended: using ssts &amp; ghg forcings from time-varying, historical files?</p></li>
-<li><p>What year is the model running?</p></li>
-</ul>
+<strong>Exercise: Modify sea surface temperature in the tropics</strong><br><br>
+<p>Create a case similar to control case but change input boundary datasets (Sea Surface Temperature) by increasing its value by 2K in the tropical Central Pacific.</p>
+<p><img alt="Increase orographic height over the western US" src="../../../_images/cam_topo_diff.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Increase orographic height over the western US. </p></em></p>
+<p>Create, configure, build and run a case called <code class="docutils literal notranslate"><span class="pre">f2000.sst</span></code> with the compset <code class="docutils literal notranslate"><span class="pre">F2000climo</span></code> at the resolution <code class="docutils literal notranslate"><span class="pre">f09_f09_mg17</span></code> using the same history file output as in the control.  Change the topography input datasets
+Run for 5 days.</p>
 </div>
 <div class="alert alert-warning">  
 <details>
@@ -1168,10 +1160,9 @@ Create, configure, build and run a case called fhist with the compset FHIST at t
 <li><p>For more information, look at the chapter: <br>
 <strong>NAMELIST MODIFICATIONS</strong> -&gt; <strong>Customize CAM output</strong></p></li>
 </ul>
-<p><strong>I am getting an error: <code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">compset</span> <span class="pre">and</span> <span class="pre">grid</span> <span class="pre">combination</span> <span class="pre">is</span> <span class="pre">untested</span> <span class="pre">in</span> <span class="pre">CESM</span></code></strong></p>
+<p><strong>Where do I change the topography dataset?</strong></p>
 <ul class="simple">
-<li><p>overide this error by adding <code class="docutils literal notranslate"><span class="pre">--run-unsupported</span></code> to the create_newcase command</p></li>
-<li></li>
+<li><p>Look at the namelist definition for the variable <code class="docutils literal notranslate"><span class="pre">bnd_topo</span></code></p></li>
 </ul>
 </details>
 </div>
@@ -1180,17 +1171,17 @@ Create, configure, build and run a case called fhist with the compset FHIST at t
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
 <p><strong># Set environment variables</strong></p>
 <p>Set environment variables with the commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set CASENAME = fhist
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set CASENAME = f2000.sst
 set CASEDIR = /glade/u/home/$USER/cases/$CASENAME
 set RUNDIR = /glade/scratch/$USER/$CASENAME/run
-set COMPSET = FHIST
+set COMPSET = F2000climo
 set RESOLUTION = f19_f19_mg17
 </pre></div>
 </div>
 <p><strong># Create a new case</strong></p>
 <p>Create a new case with the command <code class="docutils literal notranslate"><span class="pre">create_newcase</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/p/cesm/tutorial/cesm2.1_tutorial2022/cime/scripts/
-./create_newcase --case $CASEDIR --res $RESOLUTION --compset $COMPSET --run-unsupported
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/work/$USER/code/my_cesm_code/cime/scripts/
+./create_newcase --case $CASEDIR --res $RESOLUTION --compset $COMPSET 
 </pre></div>
 </div>
 <p><strong># Change the job queue and account number</strong></p>
@@ -1207,17 +1198,52 @@ For instance, to run in the queue <code class="docutils literal notranslate"><sp
 ./case.setup    
 </pre></div>
 </div>
+<p><strong># Modify orography</strong></p>
+<p>Copy the topography file into your case directory and modify it over there.</p>
+<p>Here we use the <code class="docutils literal notranslate"><span class="pre">nco</span></code> operators but feel free to use any other tool that you familiar with.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $CASEDIR
+cp \
+/glade/p/cesmdata/cseg/inputdata/atm/cam/topo/fv_1.9x2.5_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819.nc   .
+
+ncap2 -O -s &#39;lat2d[lat,lon]=lat ; lon2d[lat,lon]=lon&#39;  \
+-s &#39;omask=(lat2d &gt;= 30. &amp;&amp; lat2d &lt;= 50.) &amp;&amp; (lon2d &gt;= 235. &amp;&amp; lon2d &lt;= 260.)&#39; \
+-s &#39;PHIS=(PHIS*(1.+omask*0.5))&#39; \
+fv_1.9x2.5_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819.nc  \
+fv_1.9x2.5_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819.topo50.nc
+</pre></div>
+</div>
+<p><strong># Visualize your modification to orography</strong></p>
+<p>You could create a file <code class="docutils literal notranslate"><span class="pre">diff_topo.nc</span></code> with the differences of topography <code class="docutils literal notranslate"><span class="pre">ncdiff</span></code>and then visualize the that file with <code class="docutils literal notranslate"><span class="pre">ncview</span></code>.  You also welcome to use your own tools to visualize your mods to orography.</p>
+<ul class="simple">
+<li><p>Create a file <code class="docutils literal notranslate"><span class="pre">diff_topo.nc</span></code> with the differences in topographic:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncdiff</span> \
+<span class="n">fv_1</span><span class="mf">.9</span><span class="n">x2</span><span class="mf">.5</span><span class="n">_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819</span><span class="o">.</span><span class="n">nc</span> \
+<span class="n">fv_1</span><span class="mf">.9</span><span class="n">x2</span><span class="mf">.5</span><span class="n">_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819</span><span class="o">.</span><span class="n">topo50</span><span class="o">.</span><span class="n">nc</span> \
+<span class="n">diff_topo</span><span class="o">.</span><span class="n">nc</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Look at the <code class="docutils literal notranslate"><span class="pre">diff_topo.nc</span></code> with <code class="docutils literal notranslate"><span class="pre">ncview</span></code>:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncview</span> <span class="n">diff_topo</span><span class="o">.</span><span class="n">nc</span>
+</pre></div>
+</div>
+<p><img alt="Increase orographic height over the western US" src="../../../_images/cam_topo_diff.png" /></p>
+<p><em><p style="text-align: center;"> Figure: View the increase in orographic height over the western US with ncview. </p></em></p>
 <p><strong># Customize namelists</strong></p>
 <p>Edit the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code> and add the lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nhtfrq</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
 <span class="n">mfilt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">240</span>
 <span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;TS:I&#39;</span><span class="p">,</span><span class="s1">&#39;PS:I&#39;</span><span class="p">,</span> <span class="s1">&#39;U850:I&#39;</span><span class="p">,</span><span class="s1">&#39;T850:I&#39;</span><span class="p">,</span><span class="s1">&#39;PRECT:I&#39;</span><span class="p">,</span><span class="s1">&#39;LHFLX:I&#39;</span><span class="p">,</span><span class="s1">&#39;SHFLX:I&#39;</span><span class="p">,</span><span class="s1">&#39;FLNT:I&#39;</span><span class="p">,</span><span class="s1">&#39;FLNS:I&#39;</span>
+<span class="n">bnd_topo</span> <span class="o">=</span> <span class="s1">&#39;$CASEDIR/fv_1.9x2.5_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819.topo50.nc&#39;</span>
 </pre></div>
 </div>
 <p>You can do this with a text editor. Alternatively, you can use the echo command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;nhtfrq(2) = -3&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
 <span class="n">echo</span> <span class="s2">&quot;mfilt(2) = 240&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
 <span class="n">echo</span> <span class="s2">&quot;fincl2 = &#39;TS:I&#39;,&#39;PS:I&#39;, &#39;U850:I&#39;,&#39;T850:I&#39;,&#39;PRECT:I&#39;,&#39;LHFLX:I&#39;,&#39;SHFLX:I&#39;,&#39;FLNT:I&#39;,&#39;FLNS:I&#39;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
+<span class="n">echo</span> <span class="s2">&quot;bnd_topo = &#39;$CASEDIR/fv_1.9x2.5_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819.topo50.nc&#39; &quot;</span> <span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
 <span class="n">echo</span> <span class="s2">&quot;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
 </pre></div>
 </div>
@@ -1227,12 +1253,6 @@ For instance, to run in the queue <code class="docutils literal notranslate"><sp
 </div>
 <p>This step is optional as the script <code class="docutils literal notranslate"><span class="pre">preview_namelists</span></code> is automatically called by <code class="docutils literal notranslate"><span class="pre">case.build</span></code> and <code class="docutils literal notranslate"><span class="pre">case.submit</span></code>. But it is nice to check that your changes made their way into:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$CASEDIR/CaseDocs/atm_in
-</pre></div>
-</div>
-<p><strong># change starting date and ref case</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">RUN_STARTDATE</span><span class="o">=</span><span class="mi">1850</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>  
-<span class="o">./</span><span class="n">xmlchange</span> <span class="n">RUN_REFCASE</span><span class="o">=</span><span class="n">b</span><span class="o">.</span><span class="n">e21</span><span class="o">.</span><span class="n">B1850</span><span class="o">.</span><span class="n">f19_g17</span><span class="o">.</span><span class="n">CMIP6</span><span class="o">-</span><span class="n">piControl</span><span class="o">-</span><span class="mi">2</span><span class="n">deg</span><span class="mf">.001</span>
-<span class="o">./</span><span class="n">xmlchange</span> <span class="n">RUN_REFDATE</span><span class="o">=</span><span class="mi">0321</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>
 </pre></div>
 </div>
 <p><strong># Set run length</strong></p>
@@ -1291,8 +1311,7 @@ ls
 </div>
 <p>Note that these variables have no <code class="docutils literal notranslate"><span class="pre">cell_methods</span></code> attribute becasue the output is instantaneous.</p>
 </details>
-</div>
-</section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {
