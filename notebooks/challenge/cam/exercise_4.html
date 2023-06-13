@@ -1209,6 +1209,16 @@ fv_1.9x2.5_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819.nc  \
 fv_1.9x2.5_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819.topo50.nc
 </pre></div>
 </div>
+<p><strong># Visualize your modification to orography</strong></p>
+<p>You could create a file with the differences of topography <code class="docutils literal notranslate"><span class="pre">ncdiff</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncdiff</span> \
+<span class="n">fv_1</span><span class="mf">.9</span><span class="n">x2</span><span class="mf">.5</span><span class="n">_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819</span><span class="o">.</span><span class="n">nc</span> \ <span class="n">fv_1</span><span class="mf">.9</span><span class="n">x2</span><span class="mf">.5</span><span class="n">_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819</span><span class="o">.</span><span class="n">topo50</span><span class="o">.</span><span class="n">nc</span> \
+<span class="n">diff_topo</span><span class="o">.</span><span class="n">nc</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncview</span> <span class="n">diff_topo</span><span class="o">.</span><span class="n">nc</span>
+</pre></div>
+</div>
 <p><strong># Customize namelists</strong></p>
 <p>Edit the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code> and add the lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nhtfrq</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
