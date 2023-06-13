@@ -1199,51 +1199,48 @@ For instance, to run in the queue <code class="docutils literal notranslate"><sp
 </pre></div>
 </div>
 <p><strong># Modify orography</strong></p>
-<p>Copy the topography file into your case directory and modify it over there.</p>
+<p>Copy the SST file into your case directory and modify it over there.</p>
 <p>Here we use the <code class="docutils literal notranslate"><span class="pre">nco</span></code> operators but feel free to use any other tool that you familiar with.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $CASEDIR
-cp \
-/glade/p/cesmdata/cseg/inputdata/atm/cam/topo/fv_1.9x2.5_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819.nc   .
+cp /glade/p/cesmdata/cseg/inputdata/atm/cam/sst/sst_HadOIBl_bc_1.9x2.5_2000climo_c180511.nc .
 
-ncap2 -O -s &#39;lat2d[lat,lon]=lat ; lon2d[lat,lon]=lon&#39;  \
--s &#39;omask=(lat2d &gt;= 30. &amp;&amp; lat2d &lt;= 50.) &amp;&amp; (lon2d &gt;= 235. &amp;&amp; lon2d &lt;= 260.)&#39; \
--s &#39;PHIS=(PHIS*(1.+omask*0.5))&#39; \
-fv_1.9x2.5_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819.nc  \
-fv_1.9x2.5_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819.topo50.nc
+ncap2 -O -s &#39;lat2d[lat,lon]=lat ; lon2d[lat,lon]=lon&#39; \
+   -s &#39;omask=(lat2d &gt;= -10. &amp;&amp; lat2d &lt;= 10.) &amp;&amp; (lon2d &gt;= 180. &amp;&amp; lon2d &lt;= 240.)&#39;\
+   -s &#39;SST_cpl=(SST_cpl+omask*2.)&#39; \ 
+   sst_HadOIBl_bc_1.9x2.5_2000climo_c180511.nc \
+   sst_HadOIBl_bc_1.9x2.5_2000climo_c180511.nc.warmtcp.nc
 </pre></div>
 </div>
 <p><strong># Visualize your modification to orography</strong></p>
-<p>You could create a file <code class="docutils literal notranslate"><span class="pre">diff_topo.nc</span></code> with the differences of topography <code class="docutils literal notranslate"><span class="pre">ncdiff</span></code>and then visualize the that file with <code class="docutils literal notranslate"><span class="pre">ncview</span></code>.  You also welcome to use your own tools to visualize your mods to orography.</p>
+<p>You could create a file <code class="docutils literal notranslate"><span class="pre">diff_sst.nc</span></code> with the differences of SST <code class="docutils literal notranslate"><span class="pre">ncdiff</span></code>and then visualize the that file with <code class="docutils literal notranslate"><span class="pre">ncview</span></code>.  You also welcome to use your own tools to visualize your mods to orography.</p>
 <ul class="simple">
-<li><p>Create a file <code class="docutils literal notranslate"><span class="pre">diff_topo.nc</span></code> with the differences in topographic:</p></li>
+<li><p>Create a file <code class="docutils literal notranslate"><span class="pre">diff_sst.nc</span></code> with the differences in SSTs:</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncdiff</span> \
-<span class="n">fv_1</span><span class="mf">.9</span><span class="n">x2</span><span class="mf">.5</span><span class="n">_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819</span><span class="o">.</span><span class="n">nc</span> \
-<span class="n">fv_1</span><span class="mf">.9</span><span class="n">x2</span><span class="mf">.5</span><span class="n">_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819</span><span class="o">.</span><span class="n">topo50</span><span class="o">.</span><span class="n">nc</span> \
-<span class="n">diff_topo</span><span class="o">.</span><span class="n">nc</span>
+<span class="n">sst_HadOIBl_bc_1</span><span class="mf">.9</span><span class="n">x2</span><span class="mf">.5_2000</span><span class="n">climo_c180511</span><span class="o">.</span><span class="n">nc</span> \
+<span class="n">sst_HadOIBl_bc_1</span><span class="mf">.9</span><span class="n">x2</span><span class="mf">.5_2000</span><span class="n">climo_c180511</span><span class="o">.</span><span class="n">nc</span><span class="o">.</span><span class="n">warmtcp</span><span class="o">.</span><span class="n">nc</span> \
+<span class="n">diff_sst</span><span class="o">.</span><span class="n">nc</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Look at the <code class="docutils literal notranslate"><span class="pre">diff_topo.nc</span></code> with <code class="docutils literal notranslate"><span class="pre">ncview</span></code>:</p></li>
+<li><p>Look at the <code class="docutils literal notranslate"><span class="pre">diff_sst.nc</span></code> with <code class="docutils literal notranslate"><span class="pre">ncview</span></code>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncview</span> <span class="n">diff_topo</span><span class="o">.</span><span class="n">nc</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncview</span> <span class="n">diff_sst</span><span class="o">.</span><span class="n">nc</span>
 </pre></div>
 </div>
-<p><img alt="Increase orographic height over the western US" src="../../../_images/cam_topo_diff.png" /></p>
+<p><img alt="Increase orographic height over the western US" src="images/challenge/cam_sst_diff.png" /></p>
 <p><em><p style="text-align: center;"> Figure: View the increase in orographic height over the western US with ncview. </p></em></p>
 <p><strong># Customize namelists</strong></p>
 <p>Edit the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code> and add the lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nhtfrq</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
 <span class="n">mfilt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">240</span>
 <span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;TS:I&#39;</span><span class="p">,</span><span class="s1">&#39;PS:I&#39;</span><span class="p">,</span> <span class="s1">&#39;U850:I&#39;</span><span class="p">,</span><span class="s1">&#39;T850:I&#39;</span><span class="p">,</span><span class="s1">&#39;PRECT:I&#39;</span><span class="p">,</span><span class="s1">&#39;LHFLX:I&#39;</span><span class="p">,</span><span class="s1">&#39;SHFLX:I&#39;</span><span class="p">,</span><span class="s1">&#39;FLNT:I&#39;</span><span class="p">,</span><span class="s1">&#39;FLNS:I&#39;</span>
-<span class="n">bnd_topo</span> <span class="o">=</span> <span class="s1">&#39;$CASEDIR/fv_1.9x2.5_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819.topo50.nc&#39;</span>
 </pre></div>
 </div>
 <p>You can do this with a text editor. Alternatively, you can use the echo command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;nhtfrq(2) = -3&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
 <span class="n">echo</span> <span class="s2">&quot;mfilt(2) = 240&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
 <span class="n">echo</span> <span class="s2">&quot;fincl2 = &#39;TS:I&#39;,&#39;PS:I&#39;, &#39;U850:I&#39;,&#39;T850:I&#39;,&#39;PRECT:I&#39;,&#39;LHFLX:I&#39;,&#39;SHFLX:I&#39;,&#39;FLNT:I&#39;,&#39;FLNS:I&#39;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
-<span class="n">echo</span> <span class="s2">&quot;bnd_topo = &#39;$CASEDIR/fv_1.9x2.5_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819.topo50.nc&#39; &quot;</span> <span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
 <span class="n">echo</span> <span class="s2">&quot;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
 </pre></div>
 </div>
