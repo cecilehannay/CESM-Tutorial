@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercise 2 &#8212; CESM Tutorial</title>
+    <title>1: Control case: F2000climo &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Challenge Exercises for CISM" href="../cism.html" />
-    <link rel="prev" title="Exercise 1" href="exercise_1.html" />
+    <link rel="prev" title="1: Control case: F2000climo" href="exercise_1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -723,8 +723,8 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="../cam-chem.html">
-     Challenge Exercises for CAM-chem
+    <a class="reference internal" href="../cam-chem_waccm.html">
+     Challenge Exercises for CAM-chem and WACCM
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
     <label for="toctree-checkbox-21">
@@ -734,12 +734,12 @@ const thebe_selector_output = ".output, .cell_output"
     <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="exercise_1.html">
-       Exercise 1
+       1: Control case: F2000climo
       </a>
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Exercise 2
+       1: Control case: F2000climo
       </a>
      </li>
     </ul>
@@ -990,7 +990,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/challenge/cam-chem/exercise_2.ipynb"
+        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/challenge/cam-chem_waccm/exercise_2.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1050,7 +1050,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/challenge/cam-chem/exercise_2.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/challenge/cam-chem_waccm/exercise_2.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1078,7 +1078,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../_sources/notebooks/challenge/cam-chem/exercise_2.ipynb"
+        <a href="../../../_sources/notebooks/challenge/cam-chem_waccm/exercise_2.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1127,7 +1127,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Exercise 2</h1>
+                <h1>1: Control case: F2000climo</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1139,173 +1139,139 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-2">
-<h1>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="control-case-f2000climo">
+<h1>1: Control case: F2000climo<a class="headerlink" href="#control-case-f2000climo" title="Permalink to this headline">#</a></h1>
 <div class="alert alert-info">
 <strong>Exercise: Customize your CAM history files</strong><br><br>
-<p>Create a case called <strong>b1850_high_freq</strong> using the compset  <code class="docutils literal notranslate"><span class="pre">B1850</span></code>  at <code class="docutils literal notranslate"><span class="pre">f19_g17</span></code> resolution.</p>
-<p>Set the run length to <strong>1 month</strong>.</p>
-<p>In addition to the monthly history file <code class="docutils literal notranslate"><span class="pre">h0</span></code>, output:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">h1</span></code> file with <strong>instantaneous</strong> values of T, Q, U and V every <strong>24 hour</strong>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">h2</span></code> file with <strong>time-average</strong> values of T, Q, U and V every <strong>3 hour</strong>.</p></li>
-</ul>
-<p>Set your namelist so that you output:</p>
-<ul class="simple">
-<li><p>a <strong>single</strong> <code class="docutils literal notranslate"><span class="pre">h1</span></code> file with all the daily output for the month.</p></li>
-<li><p><strong>multiple</strong> <code class="docutils literal notranslate"><span class="pre">h2</span></code> files, one for every day of the month.</p></li>
-</ul>
-<p>Your goal is to produce:</p>
-<ul class="simple">
-<li><p>one <code class="docutils literal notranslate"><span class="pre">h1</span></code> file with 31 timesteps and</p></li>
-<li><p>thirty-one <code class="docutils literal notranslate"><span class="pre">h2</span></code> files with 8 timesteps each.</p></li>
-</ul>
-<p>Make a 1-month run.</p>
+<p>Create, configure, build and run a case called <code class="docutils literal notranslate"><span class="pre">f2000_control</span></code> with the <code class="docutils literal notranslate"><span class="pre">F2000climo</span></code> compset (data ocean and climatological forcings from around year 2000).</p>
+<p>Run for 5 days, with 3-hourly instantaneous output of the variables: TS, PS, Z500, U850, U200, T850, T500, T200, CLDLOW, PRECT, LHFLX, SHFLX, FLNT, FLNS.
+You are also welcome to output your own variables</p>
 </div>
 <div class="alert alert-warning">  
 <details>
 <summary> <font face="Times New Roman" color='blue'>Click here for hints</font> </summary>
-<p><strong>How do I compile?</strong></p>
-<p>You can compile with the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
-</pre></div>
-</div>
-<p><strong>How do I control the output?</strong></p>
-<p>Use namelist variables: <code class="docutils literal notranslate"><span class="pre">nhtfrq</span></code>, <code class="docutils literal notranslate"><span class="pre">mfilt</span></code>, <code class="docutils literal notranslate"><span class="pre">fincl</span></code>.</p>
-<p>Look at the online documentation for these variables.</p>
-<p><strong>How do I check my solution?</strong></p>
-<p>When your run is completed, go to the archive directory.</p>
-<p>(1) Check that your archive directory contains the files:</p>
+<br>
+<p><strong>How do I output 3 hourly instantaneous variables?</strong></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">h0</span></code> files</p></li>
+<li><p>Use namelist variables: <code class="docutils literal notranslate"><span class="pre">nhtfrq</span></code>, <code class="docutils literal notranslate"><span class="pre">mfilt</span></code>, <code class="docutils literal notranslate"><span class="pre">fincl</span></code>.</p></li>
+<li><p>For more information, look at the chapter: <br>
+<strong>NAMELIST MODIFICATIONS</strong> -&gt; <strong>Customize CAM output</strong></p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h0</span><span class="mf">.0001</span><span class="o">-</span><span class="mf">01.</span><span class="n">nc</span>
-</pre></div>
-</div>
+<p><strong>What is the resolution for F2000climo?</strong></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">h1</span></code> files</p></li>
+<li><p>Use resolution: f09_f09_mg17</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-<span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">h2</span></code> files</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>b1850_high_freq.cam.h2.0001-01-01-00000.nc
-…
-b1850_high_freq.cam.h2.0001-01-31-00000.nc
-b1850_high_freq.cam.h2.0001-02-01-00000.nc
-</pre></div>
-</div>
-<p>(2) Compare the contents of the <code class="docutils literal notranslate"><span class="pre">h1</span></code> and <code class="docutils literal notranslate"><span class="pre">h2</span></code> files using <code class="docutils literal notranslate"><span class="pre">ncdump</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncdump</span> <span class="o">-</span><span class="n">h</span> <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-<span class="n">ncdump</span> <span class="o">-</span><span class="n">h</span> <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-</pre></div>
-</div>
-<p>(3) Check the number of timesteps in the <code class="docutils literal notranslate"><span class="pre">h1</span></code> and the <code class="docutils literal notranslate"><span class="pre">h2</span></code> files.
-Look at the sizes of the files.</p>
 </details>
 </div>
 <div class="alert alert-success">   
 <details>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>Create a new case <font face="Courier" color='purple'><strong>b1850_high_freq </strong></font> with the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">cesm2</span><span class="mf">.1</span><span class="n">_tutorial2022</span><span class="o">/</span><span class="n">cime</span><span class="o">/</span><span class="n">scripts</span>
-<span class="o">./</span><span class="n">create_newcase</span> <span class="o">--</span><span class="n">case</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_high_freq</span>  <span class="o">--</span><span class="n">compset</span> <span class="n">B1850</span> <span class="o">--</span><span class="n">res</span> <span class="n">f19_g17</span> 
+<p><strong># Set environment variables</strong></p>
+<p>Set environment variables with the commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set CASENAME = f2000_control
+set CASEDIR = /glade/u/home/$USER/cases/$CASENAME
+set RUNDIR = /glade/scratch/$USER/$CASENAME/run
+set COMPSET = F2000climo
+set RESOLUTION = f19_f19_mg17
 </pre></div>
 </div>
-<p>Case <font face="Courier" color='purple'><strong>setup</strong></font>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_high_freq</span> 
-<span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>
+<p><strong># Create a new case</strong></p>
+<p>Create a new case with the command <code class="docutils literal notranslate"><span class="pre">create_newcase</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/work/$USER/code/my_cesm_code/cime/scripts/
+./create_newcase --case $CASEDIR --res $RESOLUTION --compset $COMPSET
 </pre></div>
 </div>
-<p>Edit the file <font face="Courier" color='purple'><strong>user_nl_cam</strong></font> and add the lines:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span>
- <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">8</span> 
- <span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;T:I&#39;</span><span class="p">,</span><span class="s1">&#39;Q:I&#39;</span><span class="p">,</span><span class="s1">&#39;U:I&#39;</span><span class="p">,</span><span class="s1">&#39;V:I&#39;</span>
- <span class="n">fincl3</span> <span class="o">=</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;Q&#39;</span><span class="p">,</span><span class="s1">&#39;U&#39;</span><span class="p">,</span><span class="s1">&#39;V&#39;</span>
+<p><strong># Change the job queue and account number</strong></p>
+<p>If needed, change <code class="docutils literal notranslate"><span class="pre">job</span> <span class="pre">queue</span></code> and <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">number</span></code>.<br>
+For instance, to run in the queue <code class="docutils literal notranslate"><span class="pre">regular</span></code> and the project number <code class="docutils literal notranslate"><span class="pre">P93300642</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $CASEDIR
+./xmlchange JOB_QUEUE=regular,PROJECT=P93300642
 </pre></div>
 </div>
-<p>Change the <font face="Courier" color='purple'><strong>run length</strong></font>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">nmonths</span>
+<p>This step can be redone at anytime in the process.</p>
+<p><strong># Setup</strong></p>
+<p>Invoke <code class="docutils literal notranslate"><span class="pre">case.setup</span></code> with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $CASEDIR
+./case.setup    
 </pre></div>
 </div>
-<p>If needed, change <font face="Courier" color='purple'><strong>job queue</strong></font>
-and <font face="Courier" color='purple'><strong>account number</strong></font>.
-For instance:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">regular</span><span class="p">,</span><span class="n">PROJECT</span><span class="o">=</span><span class="n">UESM0011</span>
+<p><strong># Customize namelists</strong></p>
+<p>Edit the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code> and add the lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nhtfrq</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
+<span class="n">mfilt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">240</span>
+<span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;TS:I&#39;</span><span class="p">,</span><span class="s1">&#39;PS:I&#39;</span><span class="p">,</span> <span class="s1">&#39;U850:I&#39;</span><span class="p">,</span><span class="s1">&#39;T850:I&#39;</span><span class="p">,</span><span class="s1">&#39;PRECT:I&#39;</span><span class="p">,</span><span class="s1">&#39;LHFLX:I&#39;</span><span class="p">,</span><span class="s1">&#39;SHFLX:I&#39;</span><span class="p">,</span><span class="s1">&#39;FLNT:I&#39;</span><span class="p">,</span><span class="s1">&#39;FLNS:I&#39;</span>
 </pre></div>
 </div>
-<p>Build and submit:</p>
+<p>You can do this with a text editor. Alternatively, you can use the echo command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;nhtfrq(2) = -3&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
+<span class="n">echo</span> <span class="s2">&quot;mfilt(2) = 240&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
+<span class="n">echo</span> <span class="s2">&quot;fincl2 = &#39;TS:I&#39;,&#39;PS:I&#39;, &#39;U850:I&#39;,&#39;T850:I&#39;,&#39;PRECT:I&#39;,&#39;LHFLX:I&#39;,&#39;SHFLX:I&#39;,&#39;FLNT:I&#39;,&#39;FLNS:I&#39;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>
+<span class="n">echo</span> <span class="s2">&quot;&quot;</span><span class="o">&gt;&gt;</span> <span class="n">user_nl_cam</span>    
+</pre></div>
+</div>
+<p>You build the namelists with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">preview_namelists</span>
+</pre></div>
+</div>
+<p>This step is optional as the script <code class="docutils literal notranslate"><span class="pre">preview_namelists</span></code> is automatically called by <code class="docutils literal notranslate"><span class="pre">case.build</span></code> and <code class="docutils literal notranslate"><span class="pre">case.submit</span></code>. But it is nice to check that your changes made their way into:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$CASEDIR/CaseDocs/atm_in
+</pre></div>
+</div>
+<p><strong># Set run length</strong></p>
+<p>If needed, change the <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">length</span></code>. If you want to run 5 days, you don’t have to do this, as 5 days is the default.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">ndays</span>
+</pre></div>
+</div>
+<p><strong># Build and submit</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
 </pre></div>
 </div>
-<p>When the run is completed, look into the archive directory for:
-<font face="Courier" color='purple'><strong>b1850_high_freq</strong></font>.</p>
-<p>(1) Check that your archive directory on cheyenne (The path will be different on otehr machines):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_high_freq/atm/hist
+<hr class="docutils" />
+<p><strong># Check your solution</strong></p>
+<p>When the run is completed, look at the history files into the archive directory.</p>
+<p>(1) Check that your archive directory on cheyenne (The path will be different on other machines):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/f2000_control/atm/hist
 ls 
 </pre></div>
 </div>
-<p>(2) Compare the contents of the <code class="docutils literal notranslate"><span class="pre">h1</span></code> and <code class="docutils literal notranslate"><span class="pre">h2</span></code> files using <code class="docutils literal notranslate"><span class="pre">ncdump</span></code>.
-Look at the variables attributes. What is the difference between the 2 files ?</p>
-<p>The file with the instantaneous output <code class="docutils literal notranslate"><span class="pre">h1</span></code> have no cell_methods attribute while the average output <code class="docutils literal notranslate"><span class="pre">h2</span></code> has a attribute:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span>
-</pre></div>
-</div>
-<p>For instance for the field Q.</p>
-<p>In the instantaneous file <code class="docutils literal notranslate"><span class="pre">b1850_high_freq.cam.h1.0001-01-01-00000.nc</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">Q</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lev</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">mdims</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;kg/kg&quot;</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">mixing_ratio</span> <span class="o">=</span> <span class="s2">&quot;wet&quot;</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Specific humidity&quot;</span> <span class="p">;</span>
-</pre></div>
-</div>
-<p>In the time-averaged file  <code class="docutils literal notranslate"><span class="pre">b1850_high_freq.cam.h2.0001-01-01-00000.nc</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">Q</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lev</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">mdims</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;kg/kg&quot;</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">mixing_ratio</span> <span class="o">=</span> <span class="s2">&quot;wet&quot;</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Specific humidity&quot;</span> <span class="p">;</span>
-                <span class="n">Q</span><span class="p">:</span><span class="n">cell_methods</span> <span class="o">=</span> <span class="s2">&quot;time: mean&quot;</span> <span class="p">;</span>
-</pre></div>
-</div>
-<p>(3) Check the number of timesteps in the h1 and the h2 files.</p>
+<p>As your run is only 5-day, there should be no monthly file (<code class="docutils literal notranslate"><span class="pre">h0</span></code>)</p>
+<p>(2) Look at the contents of the <code class="docutils literal notranslate"><span class="pre">h1</span></code> files using <code class="docutils literal notranslate"><span class="pre">ncdump</span></code>.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">h1</span></code> contains 31 time samples.<br />
-In the netcdf file,</p></li>
+<li><p>The file should contain the instantaneous output in the file <code class="docutils literal notranslate"><span class="pre">h1</span></code> for the variables:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">UNLIMITED</span> <span class="p">;</span> <span class="o">//</span> <span class="p">(</span><span class="mi">31</span> <span class="n">currently</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="nb">float</span> <span class="n">FLNS</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">FLNS</span><span class="p">:</span><span class="n">Sampling_Sequence</span> <span class="o">=</span> <span class="s2">&quot;rad_lwsw&quot;</span> <span class="p">;</span>
+                <span class="n">FLNS</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;W/m2&quot;</span> <span class="p">;</span>
+                <span class="n">FLNS</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Net longwave flux at surface&quot;</span> <span class="p">;</span>
+        <span class="nb">float</span> <span class="n">FLNT</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">FLNT</span><span class="p">:</span><span class="n">Sampling_Sequence</span> <span class="o">=</span> <span class="s2">&quot;rad_lwsw&quot;</span> <span class="p">;</span>
+                <span class="n">FLNT</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;W/m2&quot;</span> <span class="p">;</span>
+                <span class="n">FLNT</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Net longwave flux at top of model&quot;</span> <span class="p">;</span>
+        <span class="nb">float</span> <span class="n">LHFLX</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">LHFLX</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;W/m2&quot;</span> <span class="p">;</span>
+                <span class="n">LHFLX</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Surface latent heat flux&quot;</span> <span class="p">;</span>
+        <span class="nb">float</span> <span class="n">PRECT</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">PRECT</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;m/s&quot;</span> <span class="p">;</span>
+                <span class="n">PRECT</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Total (convective and large-scale) precipitation rate (liq + ice)&quot;</span> <span class="p">;</span>
+        <span class="nb">float</span> <span class="n">PS</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">PS</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;Pa&quot;</span> <span class="p">;</span>
+                <span class="n">PS</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Surface pressure&quot;</span> <span class="p">;</span>
+        <span class="nb">float</span> <span class="n">SHFLX</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">SHFLX</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;W/m2&quot;</span> <span class="p">;</span>
+                <span class="n">SHFLX</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Surface sensible heat flux&quot;</span> <span class="p">;</span>
+        <span class="nb">float</span> <span class="n">T850</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">T850</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;K&quot;</span> <span class="p">;</span>
+                <span class="n">T850</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Temperature at 850 mbar pressure surface&quot;</span> <span class="p">;</span>
+        <span class="nb">float</span> <span class="n">TS</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">TS</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;K&quot;</span> <span class="p">;</span>
+                <span class="n">TS</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Surface temperature (radiative)&quot;</span> <span class="p">;</span>
+        <span class="nb">float</span> <span class="n">U850</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">U850</span><span class="p">:</span><span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;m/s&quot;</span> <span class="p">;</span>
+                <span class="n">U850</span><span class="p">:</span><span class="n">long_name</span> <span class="o">=</span> <span class="s2">&quot;Zonal wind at 850 mbar pressure surface&quot;</span> <span class="p">;</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">h2</span></code> contains 8 time samples
-In the netcdf file,</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">UNLIMITED</span> <span class="p">;</span> <span class="o">//</span> <span class="p">(</span><span class="mi">8</span> <span class="n">currently</span><span class="p">)</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Check the size of the files</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>du –ks –h /glade/scratch/$user/archive/b1850_high_freq/atm/hist/*
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">234</span><span class="n">M</span>    <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h0</span><span class="mf">.0001</span><span class="o">-</span><span class="mf">01.</span><span class="n">nc</span>
-
-<span class="mi">210</span><span class="n">M</span>    <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-<span class="mf">7.0</span><span class="n">M</span>    <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h1</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-
-<span class="mi">55</span><span class="n">M</span>     <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-<span class="mi">55</span><span class="n">M</span>     <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-<span class="o">...</span>
-<span class="mi">55</span><span class="n">M</span>     <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-<span class="mf">7.0</span><span class="n">M</span>    <span class="n">b1850_high_freq</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h2</span><span class="mf">.0001</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mf">00000.</span><span class="n">nc</span>
-</pre></div>
-</div>
+<p>Note that these variables have no <code class="docutils literal notranslate"><span class="pre">cell_methods</span></code> attribute becasue the output is instantaneous.</p>
 </details>
 </div>
 </section>
@@ -1323,7 +1289,7 @@ In the netcdf file,</p></li>
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks/challenge/cam-chem"
+            path: "./notebooks/challenge/cam-chem_waccm"
         },
         predefinedOutput: true
     }
@@ -1341,7 +1307,7 @@ In the netcdf file,</p></li>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Exercise 1</p>
+            <p class="prev-next-title">1: Control case: F2000climo</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../cism.html" title="next page">
