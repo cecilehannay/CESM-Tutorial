@@ -1230,6 +1230,10 @@ ncap2 -O -s &#39;lat2d[lat,lon]=lat ; lon2d[lat,lon]=lon&#39; \
 </div>
 <p><img alt="Increase orographic height over the western US" src="images/challenge/cam_sst_diff.png" /></p>
 <p><em><p style="text-align: center;"> Figure: View the increase in orographic height over the western US with ncview. </p></em></p>
+<p><strong># Point to the new SST file</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">SSTICE_DATA_FILENAME</span><span class="o">=</span><span class="s2">&quot;$CASEDIR/sst_HadOIBl_bc_1.9x2.5_2000climo_c180511.nc.warmtcp.nc&quot;</span>
+</pre></div>
+</div>
 <p><strong># Customize namelists</strong></p>
 <p>Edit the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code> and add the lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nhtfrq</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
