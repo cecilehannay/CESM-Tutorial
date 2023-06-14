@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>7: Add a (fake) physics parameterizatio &#8212; CESM Tutorial</title>
+    <title>&lt;no title&gt; &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -113,7 +113,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../introduction/intro.html">
    CESM tutorial introduction
@@ -665,26 +665,26 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../challenge.html">
    Challenge Exercises
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
   <label for="toctree-checkbox-19">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active has-children">
+  <ul>
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../cam.html">
      CAM
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
     <label for="toctree-checkbox-20">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="exercise_1.html">
        1: Control case: F2000climo
@@ -713,11 +713,6 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toctree-l3">
       <a class="reference internal" href="exercise_6.html">
        6: Threshold for deep convection over land
-      </a>
-     </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       7: Add a (fake) physics parameterizatio
       </a>
      </li>
     </ul>
@@ -1137,23 +1132,50 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>7: Add a (fake) physics parameterizatio</h1>
+                <h1><no title></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -1161,24 +1183,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="add-a-fake-physics-parameterizatio">
-<h1>7: Add a (fake) physics parameterizatio<a class="headerlink" href="#add-a-fake-physics-parameterizatio" title="Permalink to this headline">#</a></h1>
-<p>CAM is capable of running over historical periods with time-varying sea surface temperatures (SSTs) as well as anthropogenic and natural forcings. This is called the AMIP protocol.</p>
-<p>More information about the AMIP protocol and HadSST data sets:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://climatedataguide.ucar.edu/climate-data/sst-data-hadisst-v11">https://climatedataguide.ucar.edu/climate-data/sst-data-hadisst-v11</a></p></li>
-<li><p><a class="reference external" href="https://pcmdi.llnl.gov/mips/amip/">https://pcmdi.llnl.gov/mips/amip/</a></p></li>
-</ul>
+  <p>7: Add a (fake) physics parameterization</p>
+<p>Change input boundary datasets (Sea Surface Temperature) by increasing its value by 2K in the tropical Central Pacific.</p>
 <div class="alert alert-info">
-<strong>Exercise: Customize your CAM history files</strong><br><br>
-<p>Create, configure, build and run a case called <code class="docutils literal notranslate"><span class="pre">fhist</span></code> with the compset <code class="docutils literal notranslate"><span class="pre">FHIST</span></code> at the resolution <code class="docutils literal notranslate"><span class="pre">f09_f09_mg17</span></code> using the same history file output as in the control.
-Run for 5 days.
-Create, configure, build and run a case called fhist with the compset FHIST at the resolution f09_f09_mg17 using the same history file output as in the control. Start model in 1850.</p>
-<ul class="simple">
-<li><p>How can you check that there is a difference between the set up of this and your control?</p></li>
-<li><p>How can you check that it is running the way you intended: using ssts &amp; ghg forcings from time-varying, historical files?</p></li>
-<li><p>What year is the model running?</p></li>
-</ul>
+<strong>Exercise: Modify sea surface temperature in the tropics</strong><br><br>
+<p>Create a case similar to control case but change input boundary datasets (Sea Surface Temperature) by increasing its value by 2K in the tropical Central Pacific.</p>
+<p><img alt="Increase orographic height over the western US" src="../../../_images/cam_SST_diff.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Increase orographic height over the western US. </p></em></p>
+<p>Create, configure, build and run a case called <code class="docutils literal notranslate"><span class="pre">f2000.sst</span></code> with the compset <code class="docutils literal notranslate"><span class="pre">F2000climo</span></code> at the resolution <code class="docutils literal notranslate"><span class="pre">f09_f09_mg17</span></code> using the same history file output as in the control.  Change the SST input datasets
+Run for 5 days.</p>
 </div>
 <div class="alert alert-warning">  
 <details>
@@ -1190,10 +1203,9 @@ Create, configure, build and run a case called fhist with the compset FHIST at t
 <li><p>For more information, look at the chapter: <br>
 <strong>NAMELIST MODIFICATIONS</strong> -&gt; <strong>Customize CAM output</strong></p></li>
 </ul>
-<p><strong>I am getting an error: <code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">compset</span> <span class="pre">and</span> <span class="pre">grid</span> <span class="pre">combination</span> <span class="pre">is</span> <span class="pre">untested</span> <span class="pre">in</span> <span class="pre">CESM</span></code></strong></p>
+<p><strong>Where do I change the SST dataset?</strong></p>
 <ul class="simple">
-<li><p>overide this error by adding <code class="docutils literal notranslate"><span class="pre">--run-unsupported</span></code> to the create_newcase command</p></li>
-<li></li>
+<li><p>Look at the xml variable <code class="docutils literal notranslate"><span class="pre">SSTICE_DATA_FILENAME</span></code></p></li>
 </ul>
 </details>
 </div>
@@ -1202,17 +1214,17 @@ Create, configure, build and run a case called fhist with the compset FHIST at t
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
 <p><strong># Set environment variables</strong></p>
 <p>Set environment variables with the commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set CASENAME = fhist
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set CASENAME = f2000.sst
 set CASEDIR = /glade/u/home/$USER/cases/$CASENAME
 set RUNDIR = /glade/scratch/$USER/$CASENAME/run
-set COMPSET = FHIST
+set COMPSET = F2000climo
 set RESOLUTION = f19_f19_mg17
 </pre></div>
 </div>
 <p><strong># Create a new case</strong></p>
 <p>Create a new case with the command <code class="docutils literal notranslate"><span class="pre">create_newcase</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/p/cesm/tutorial/cesm2.1_tutorial2022/cime/scripts/
-./create_newcase --case $CASEDIR --res $RESOLUTION --compset $COMPSET --run-unsupported
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/work/$USER/code/my_cesm_code/cime/scripts/
+./create_newcase --case $CASEDIR --res $RESOLUTION --compset $COMPSET 
 </pre></div>
 </div>
 <p><strong># Change the job queue and account number</strong></p>
@@ -1227,6 +1239,42 @@ For instance, to run in the queue <code class="docutils literal notranslate"><sp
 <p>Invoke <code class="docutils literal notranslate"><span class="pre">case.setup</span></code> with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $CASEDIR
 ./case.setup    
+</pre></div>
+</div>
+<p><strong># Modify orography</strong></p>
+<p>Copy the SST file into your case directory and modify it over there.</p>
+<p>Here we use the <code class="docutils literal notranslate"><span class="pre">nco</span></code> operators but feel free to use any other tool that you familiar with.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $CASEDIR
+cp /glade/p/cesmdata/cseg/inputdata/atm/cam/sst/sst_HadOIBl_bc_1.9x2.5_2000climo_c180511.nc .
+
+ncap2 -O -s &#39;lat2d[lat,lon]=lat ; lon2d[lat,lon]=lon&#39; \
+   -s &#39;omask=(lat2d &gt;= -10. &amp;&amp; lat2d &lt;= 10.) &amp;&amp; (lon2d &gt;= 180. &amp;&amp; lon2d &lt;= 240.)&#39;\
+   -s &#39;SST_cpl=(SST_cpl+omask*2.)&#39; \ 
+   sst_HadOIBl_bc_1.9x2.5_2000climo_c180511.nc \
+   sst_HadOIBl_bc_1.9x2.5_2000climo_c180511.nc.warmtcp.nc
+</pre></div>
+</div>
+<p><strong># Visualize your modification to orography</strong></p>
+<p>You could create a file <code class="docutils literal notranslate"><span class="pre">diff_sst.nc</span></code> with the differences of SST <code class="docutils literal notranslate"><span class="pre">ncdiff</span></code>and then visualize the that file with <code class="docutils literal notranslate"><span class="pre">ncview</span></code>.  You also welcome to use your own tools to visualize your mods to orography.</p>
+<ul class="simple">
+<li><p>Create a file <code class="docutils literal notranslate"><span class="pre">diff_sst.nc</span></code> with the differences in SSTs:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncdiff</span> \
+<span class="n">sst_HadOIBl_bc_1</span><span class="mf">.9</span><span class="n">x2</span><span class="mf">.5_2000</span><span class="n">climo_c180511</span><span class="o">.</span><span class="n">nc</span> \
+<span class="n">sst_HadOIBl_bc_1</span><span class="mf">.9</span><span class="n">x2</span><span class="mf">.5_2000</span><span class="n">climo_c180511</span><span class="o">.</span><span class="n">nc</span><span class="o">.</span><span class="n">warmtcp</span><span class="o">.</span><span class="n">nc</span> \
+<span class="n">diff_sst</span><span class="o">.</span><span class="n">nc</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Look at the <code class="docutils literal notranslate"><span class="pre">diff_sst.nc</span></code> with <code class="docutils literal notranslate"><span class="pre">ncview</span></code>:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncview</span> <span class="n">diff_sst</span><span class="o">.</span><span class="n">nc</span>
+</pre></div>
+</div>
+<p><img alt="Increase orographic height over the western US" src="../../../_images/cam_SST_diff.png" /></p>
+<p><em><p style="text-align: center;"> Figure: View the increase in orographic height over the western US with ncview. </p></em></p>
+<p><strong># Point to the new SST file</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">SSTICE_DATA_FILENAME</span><span class="o">=</span><span class="s2">&quot;$CASEDIR/sst_HadOIBl_bc_1.9x2.5_2000climo_c180511.nc.warmtcp.nc&quot;</span>
 </pre></div>
 </div>
 <p><strong># Customize namelists</strong></p>
@@ -1249,12 +1297,6 @@ For instance, to run in the queue <code class="docutils literal notranslate"><sp
 </div>
 <p>This step is optional as the script <code class="docutils literal notranslate"><span class="pre">preview_namelists</span></code> is automatically called by <code class="docutils literal notranslate"><span class="pre">case.build</span></code> and <code class="docutils literal notranslate"><span class="pre">case.submit</span></code>. But it is nice to check that your changes made their way into:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$CASEDIR/CaseDocs/atm_in
-</pre></div>
-</div>
-<p><strong># change starting date and ref case</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">RUN_STARTDATE</span><span class="o">=</span><span class="mi">1850</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>  
-<span class="o">./</span><span class="n">xmlchange</span> <span class="n">RUN_REFCASE</span><span class="o">=</span><span class="n">b</span><span class="o">.</span><span class="n">e21</span><span class="o">.</span><span class="n">B1850</span><span class="o">.</span><span class="n">f19_g17</span><span class="o">.</span><span class="n">CMIP6</span><span class="o">-</span><span class="n">piControl</span><span class="o">-</span><span class="mi">2</span><span class="n">deg</span><span class="mf">.001</span>
-<span class="o">./</span><span class="n">xmlchange</span> <span class="n">RUN_REFDATE</span><span class="o">=</span><span class="mi">0321</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>
 </pre></div>
 </div>
 <p><strong># Set run length</strong></p>
@@ -1314,8 +1356,6 @@ ls
 <p>Note that these variables have no <code class="docutils literal notranslate"><span class="pre">cell_methods</span></code> attribute becasue the output is instantaneous.</p>
 </details>
 </div>
-</section>
-
     <script type="text/x-thebe-config">
     {
         requestKernel: true,

@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="7: Add a (fake) physics parameterizatio" href="exercise_7.html" />
+    <link rel="next" title="&lt;no title&gt;" href="exercise_7.html" />
     <link rel="prev" title="4: Modify sea surface temperature in the tropics" href="exercise_5.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -715,11 +715,6 @@ const thebe_selector_output = ".output, .cell_output"
        6: Threshold for deep convection over land
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="exercise_7.html">
-       7: Add a (fake) physics parameterizatio
-      </a>
-     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -1163,22 +1158,14 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="threshold-for-deep-convection-over-land">
 <h1>6: Threshold for deep convection over land<a class="headerlink" href="#threshold-for-deep-convection-over-land" title="Permalink to this headline">#</a></h1>
-<p>CAM is capable of running over historical periods with time-varying sea surface temperatures (SSTs) as well as anthropogenic and natural forcings. This is called the AMIP protocol.</p>
-<p>More information about the AMIP protocol and HadSST data sets:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://climatedataguide.ucar.edu/climate-data/sst-data-hadisst-v11">https://climatedataguide.ucar.edu/climate-data/sst-data-hadisst-v11</a></p></li>
-<li><p><a class="reference external" href="https://pcmdi.llnl.gov/mips/amip/">https://pcmdi.llnl.gov/mips/amip/</a></p></li>
-</ul>
+<p>Add code change to examine the mean effects of delaying the initiation of convection by increasing the minimum required convective available potential energy (CAPE) to initiate convection over land.</p>
 <div class="alert alert-info">
-<strong>Exercise: Customize your CAM history files</strong><br><br>
-<p>Create, configure, build and run a case called <code class="docutils literal notranslate"><span class="pre">fhist</span></code> with the compset <code class="docutils literal notranslate"><span class="pre">FHIST</span></code> at the resolution <code class="docutils literal notranslate"><span class="pre">f09_f09_mg17</span></code> using the same history file output as in the control.
-Run for 5 days.
-Create, configure, build and run a case called fhist with the compset FHIST at the resolution f09_f09_mg17 using the same history file output as in the control. Start model in 1850.</p>
-<ul class="simple">
-<li><p>How can you check that there is a difference between the set up of this and your control?</p></li>
-<li><p>How can you check that it is running the way you intended: using ssts &amp; ghg forcings from time-varying, historical files?</p></li>
-<li><p>What year is the model running?</p></li>
-</ul>
+<strong>Exercise: Modify sea surface temperature in the tropics</strong><br><br>
+<p>Create a case similar to control case but add code to change the effects of delaying the initiation of convection by increasing the minimum required convective available potential energy (CAPE) to initiate convection over land.</p>
+<p><img alt="Increase orographic height over the western US" src="../../../_images/cam_SST_diff.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Increase orographic height over the western US. </p></em></p>
+<p>Create, configure, build and run a case called <code class="docutils literal notranslate"><span class="pre">f2000.cape</span></code> with the compset <code class="docutils literal notranslate"><span class="pre">F2000climo</span></code> at the resolution <code class="docutils literal notranslate"><span class="pre">f09_f09_mg17</span></code> using the same history file output as in the control.<br />
+Run for 5 days.</p>
 </div>
 <div class="alert alert-warning">  
 <details>
@@ -1190,10 +1177,9 @@ Create, configure, build and run a case called fhist with the compset FHIST at t
 <li><p>For more information, look at the chapter: <br>
 <strong>NAMELIST MODIFICATIONS</strong> -&gt; <strong>Customize CAM output</strong></p></li>
 </ul>
-<p><strong>I am getting an error: <code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">compset</span> <span class="pre">and</span> <span class="pre">grid</span> <span class="pre">combination</span> <span class="pre">is</span> <span class="pre">untested</span> <span class="pre">in</span> <span class="pre">CESM</span></code></strong></p>
+<p><strong>Where do I change the SST dataset?</strong></p>
 <ul class="simple">
-<li><p>overide this error by adding <code class="docutils literal notranslate"><span class="pre">--run-unsupported</span></code> to the create_newcase command</p></li>
-<li></li>
+<li><p>Look at the xml variable <code class="docutils literal notranslate"><span class="pre">SSTICE_DATA_FILENAME</span></code></p></li>
 </ul>
 </details>
 </div>
@@ -1202,17 +1188,17 @@ Create, configure, build and run a case called fhist with the compset FHIST at t
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
 <p><strong># Set environment variables</strong></p>
 <p>Set environment variables with the commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set CASENAME = fhist
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set CASENAME = f2000.cape
 set CASEDIR = /glade/u/home/$USER/cases/$CASENAME
 set RUNDIR = /glade/scratch/$USER/$CASENAME/run
-set COMPSET = FHIST
+set COMPSET = F2000climo
 set RESOLUTION = f19_f19_mg17
 </pre></div>
 </div>
 <p><strong># Create a new case</strong></p>
 <p>Create a new case with the command <code class="docutils literal notranslate"><span class="pre">create_newcase</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/p/cesm/tutorial/cesm2.1_tutorial2022/cime/scripts/
-./create_newcase --case $CASEDIR --res $RESOLUTION --compset $COMPSET --run-unsupported
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/work/$USER/code/my_cesm_code/cime/scripts/
+./create_newcase --case $CASEDIR --res $RESOLUTION --compset $COMPSET 
 </pre></div>
 </div>
 <p><strong># Change the job queue and account number</strong></p>
@@ -1227,6 +1213,47 @@ For instance, to run in the queue <code class="docutils literal notranslate"><sp
 <p>Invoke <code class="docutils literal notranslate"><span class="pre">case.setup</span></code> with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $CASEDIR
 ./case.setup    
+</pre></div>
+</div>
+<br>
+<p><strong># Modify code</strong></p>
+<ul class="simple">
+<li><p>copy  zm_conv.F90 into the SourceMods directory and modifyit</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cp /glade/work/$USER/code/my_cesm_code/components/cam/src/physics/cam/zm_conv.F90 \     
+SourceMods/src.cam
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Change the following section of code in sub-routine zm_convr</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">cape</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">capelmt</span><span class="p">)</span> <span class="n">then</span> 
+		<span class="n">lengath</span> <span class="o">=</span> <span class="n">lengath</span> <span class="o">+</span> <span class="mi">1</span> 
+		<span class="n">ideep</span><span class="p">(</span><span class="n">lengath</span><span class="p">)</span> <span class="o">=</span> <span class="n">i</span> 
+	<span class="n">end</span> <span class="k">if</span>
+</pre></div>
+</div>
+<p>To</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">landfrac</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="n">_r8</span><span class="p">)</span> <span class="n">then</span>
+		<span class="n">capelmt_mask</span> <span class="o">=</span> <span class="mf">10.</span><span class="n">_r8</span><span class="o">*</span><span class="n">capelmt</span>
+	<span class="k">else</span>
+		<span class="n">capelmt_mask</span> <span class="o">=</span> <span class="n">capelmt</span>
+	<span class="n">end</span> <span class="k">if</span>	
+	<span class="k">if</span> <span class="p">(</span><span class="n">cape</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">capelmt_mask</span><span class="p">)</span> <span class="n">then</span> 
+		<span class="n">lengath</span> <span class="o">=</span> <span class="n">lengath</span> <span class="o">+</span> <span class="mi">1</span> 
+		<span class="n">ideep</span><span class="p">(</span><span class="n">lengath</span><span class="p">)</span> <span class="o">=</span> <span class="n">i</span> 
+	<span class="n">end</span> <span class="k">if</span>
+	<span class="n">write</span><span class="p">(</span><span class="n">iulog</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;HELLO WORLD&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Near the top of subroutine zm_convr, right after:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">real</span><span class="p">(</span><span class="n">r8</span><span class="p">)</span> <span class="n">pblt</span><span class="p">(</span><span class="n">pcols</span><span class="p">)</span> 	
+</pre></div>
+</div>
+<p>Add</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">real</span><span class="p">(</span><span class="n">r8</span><span class="p">)</span> <span class="p">::</span> <span class="n">capelmt_mask</span>
 </pre></div>
 </div>
 <p><strong># Customize namelists</strong></p>
@@ -1249,12 +1276,6 @@ For instance, to run in the queue <code class="docutils literal notranslate"><sp
 </div>
 <p>This step is optional as the script <code class="docutils literal notranslate"><span class="pre">preview_namelists</span></code> is automatically called by <code class="docutils literal notranslate"><span class="pre">case.build</span></code> and <code class="docutils literal notranslate"><span class="pre">case.submit</span></code>. But it is nice to check that your changes made their way into:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$CASEDIR/CaseDocs/atm_in
-</pre></div>
-</div>
-<p><strong># change starting date and ref case</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">RUN_STARTDATE</span><span class="o">=</span><span class="mi">1850</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>  
-<span class="o">./</span><span class="n">xmlchange</span> <span class="n">RUN_REFCASE</span><span class="o">=</span><span class="n">b</span><span class="o">.</span><span class="n">e21</span><span class="o">.</span><span class="n">B1850</span><span class="o">.</span><span class="n">f19_g17</span><span class="o">.</span><span class="n">CMIP6</span><span class="o">-</span><span class="n">piControl</span><span class="o">-</span><span class="mi">2</span><span class="n">deg</span><span class="mf">.001</span>
-<span class="o">./</span><span class="n">xmlchange</span> <span class="n">RUN_REFDATE</span><span class="o">=</span><span class="mi">0321</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>
 </pre></div>
 </div>
 <p><strong># Set run length</strong></p>
@@ -1313,8 +1334,7 @@ ls
 </div>
 <p>Note that these variables have no <code class="docutils literal notranslate"><span class="pre">cell_methods</span></code> attribute becasue the output is instantaneous.</p>
 </details>
-</div>
-</section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -1353,7 +1373,7 @@ ls
     <a class='right-next' id="next-link" href="exercise_7.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">7: Add a (fake) physics parameterizatio</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
