@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6: Threshold for deep convection over land &#8212; CESM Tutorial</title>
+    <title>6: Adjust threshold for deep convection over land &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -712,7 +712,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       6: Threshold for deep convection over land
+       6: Adjust threshold for deep convection over land
       </a>
      </li>
     </ul>
@@ -1144,7 +1144,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>6: Threshold for deep convection over land</h1>
+                <h1>6: Adjust threshold for deep convection over land</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1156,12 +1156,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="threshold-for-deep-convection-over-land">
-<h1>6: Threshold for deep convection over land<a class="headerlink" href="#threshold-for-deep-convection-over-land" title="Permalink to this headline">#</a></h1>
-<p>Add code change to examine the mean effects of delaying the initiation of convection by increasing the minimum required convective available potential energy (CAPE) to initiate convection over land.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="adjust-threshold-for-deep-convection-over-land">
+<h1>6: Adjust threshold for deep convection over land<a class="headerlink" href="#adjust-threshold-for-deep-convection-over-land" title="Permalink to this headline">#</a></h1>
+<p>The purpose of this exercise is to add a code change to the deep convection to delay the initiation of convection. This is done by increasing the minimum required convective available potential energy (CAPE) to initiate convection over land.</p>
 <div class="alert alert-info">
 <strong>Exercise: Effects of delaying the initiation of convection</strong><br><br>
-<p>Create a case similar to control case but add code to change the effects of delaying the initiation of convection by increasing the minimum required convective available potential energy (CAPE) to initiate convection over land.</p>
+<p>Create a case similar to control case but add code to delay the initiation of convection over land by increasing the minimum required convective available potential energy (CAPE) to initiate convection.</p>
 <p><img alt="Increase orographic height over the western US" src="../../../_images/cape.png" /></p>
 <p><em><p style="text-align: center;"> Figure: CAPE. </p></em></p>
 <p>Create, configure, build and run a case called <code class="docutils literal notranslate"><span class="pre">f2000.cape</span></code> with the compset <code class="docutils literal notranslate"><span class="pre">F2000climo</span></code> at the resolution <code class="docutils literal notranslate"><span class="pre">f09_f09_mg17</span></code> using the same history file output as in the control.<br />
@@ -1177,7 +1177,7 @@ Run for 5 days.</p>
 <li><p>For more information, look at the chapter: <br>
 <strong>NAMELIST MODIFICATIONS</strong> -&gt; <strong>Customize CAM output</strong></p></li>
 </ul>
-<p><strong>Where do I change thershold for CAPE?</strong></p>
+<p><strong>Where do I change threshold for CAPE?</strong></p>
 <ul class="simple">
 <li><p>Look for the file <code class="docutils literal notranslate"><span class="pre">zm_conv.F90</span></code> into the cesm code</p></li>
 </ul>
