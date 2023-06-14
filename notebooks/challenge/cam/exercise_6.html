@@ -1218,22 +1218,23 @@ For instance, to run in the queue <code class="docutils literal notranslate"><sp
 <br>
 <p><strong># Modify code</strong></p>
 <ul class="simple">
-<li><p>copy  zm_conv.F90 into the SourceMods directory and modifyit</p></li>
+<li><p>copy  <code class="docutils literal notranslate"><span class="pre">zm_conv.F90</span></code> into the <code class="docutils literal notranslate"><span class="pre">SourceMods/src.cam</span></code> directory and modify it</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cp /glade/work/$USER/code/my_cesm_code/components/cam/src/physics/cam/zm_conv.F90 \     
 SourceMods/src.cam
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Change the following section of code in sub-routine zm_convr</p></li>
+<li><p>In the subroutine <code class="docutils literal notranslate"><span class="pre">zm_convr</span></code></p></li>
 </ul>
+<p>Replace the code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">cape</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">capelmt</span><span class="p">)</span> <span class="n">then</span> 
 		<span class="n">lengath</span> <span class="o">=</span> <span class="n">lengath</span> <span class="o">+</span> <span class="mi">1</span> 
 		<span class="n">ideep</span><span class="p">(</span><span class="n">lengath</span><span class="p">)</span> <span class="o">=</span> <span class="n">i</span> 
 	<span class="n">end</span> <span class="k">if</span>
 </pre></div>
 </div>
-<p>To</p>
+<p>by</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">landfrac</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="n">_r8</span><span class="p">)</span> <span class="n">then</span>
 		<span class="n">capelmt_mask</span> <span class="o">=</span> <span class="mf">10.</span><span class="n">_r8</span><span class="o">*</span><span class="n">capelmt</span>
 	<span class="k">else</span>
@@ -1247,13 +1248,14 @@ SourceMods/src.cam
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Near the top of subroutine zm_convr, right after:</p></li>
+<li><p>Near the top of subroutine <code class="docutils literal notranslate"><span class="pre">zm_convr</span></code>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">real</span><span class="p">(</span><span class="n">r8</span><span class="p">)</span> <span class="n">pblt</span><span class="p">(</span><span class="n">pcols</span><span class="p">)</span> 	
+<p>Add the line</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">real</span><span class="p">(</span><span class="n">r8</span><span class="p">)</span> <span class="p">::</span> <span class="n">capelmt_mask</span>
 </pre></div>
 </div>
-<p>Add</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">real</span><span class="p">(</span><span class="n">r8</span><span class="p">)</span> <span class="p">::</span> <span class="n">capelmt_mask</span>
+<p>right after:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">real</span><span class="p">(</span><span class="n">r8</span><span class="p">)</span> <span class="n">pblt</span><span class="p">(</span><span class="n">pcols</span><span class="p">)</span> 	
 </pre></div>
 </div>
 <p><strong># Customize namelists</strong></p>
