@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Troubleshooting runtime errors &#8212; CESM Tutorial</title>
+    <title>The log files &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Exercise Overview" href="exercises_overview.html" />
-    <link rel="prev" title="Troubleshooting" href="../troubleshooting.html" />
+    <link rel="prev" title="Troubleshooting runtime errors" href="../troubleshooting.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -520,7 +520,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../troubleshooting.html">
-   Troubleshooting
+   Troubleshooting runtime errors
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
   <label for="toctree-checkbox-13">
@@ -530,7 +530,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Troubleshooting runtime errors
+     The log files
     </a>
    </li>
    <li class="toctree-l2 has-children">
@@ -1125,8 +1125,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#looking-at-the-log-files">
-   Looking at the log files
+  <a class="reference internal nav-link" href="#what-to-do-when-a-run-fails">
+   What to do when a run fails?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1143,7 +1143,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Troubleshooting runtime errors</h1>
+                <h1>The log files</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1154,8 +1154,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#looking-at-the-log-files">
-   Looking at the log files
+  <a class="reference internal nav-link" href="#what-to-do-when-a-run-fails">
+   What to do when a run fails?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1173,11 +1173,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="troubleshooting-runtime-errors">
-<h1>Troubleshooting runtime errors<a class="headerlink" href="#troubleshooting-runtime-errors" title="Permalink to this headline">#</a></h1>
-<p>There are several places to look for information if a job fails. The logs files will probably give you a hint.</p>
-<section id="looking-at-the-log-files">
-<h2>Looking at the log files<a class="headerlink" href="#looking-at-the-log-files" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-log-files">
+<h1>The log files<a class="headerlink" href="#the-log-files" title="Permalink to this headline">#</a></h1>
 <p>The log files are files in the format <code class="docutils literal notranslate"><span class="pre">$model.log.*</span></code></p>
 <ul class="simple">
 <li><p>When the model is running, it produces the log files in the <strong>run directory</strong>: <code class="docutils literal notranslate"><span class="pre">RUNDIR</span></code>.</p></li>
@@ -1186,6 +1183,8 @@ title="Print to PDF"
 </ul>
 <p><img alt="CESM directories and namelists" src="../../_images/CESM_directories_and_log_files.png" /></p>
 <p><em><p style="text-align: center;"> Figure: Overview of the CESM directories and the log files. </p></em></p>
+<section id="what-to-do-when-a-run-fails">
+<h2>What to do when a run fails?<a class="headerlink" href="#what-to-do-when-a-run-fails" title="Permalink to this headline">#</a></h2>
 <p>First, check the latest <code class="docutils literal notranslate"><span class="pre">cpl.log.*</span></code>, which will often tell you when the model failed. If a run completed successfully, the last several lines of the <code class="docutils literal notranslate"><span class="pre">cpl.log.*</span></code> file will have a string like <code class="docutils literal notranslate"><span class="pre">SUCCESSFUL</span> <span class="pre">TERMINATION</span> <span class="pre">OF</span> <span class="pre">CESM</span></code>.
 If you don’t see this message, it means the run has failed.</p>
 <p>Check these things first when a job fails:</p>
@@ -1257,7 +1256,7 @@ Before running, you must rebuild run</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Troubleshooting</p>
+            <p class="prev-next-title">Troubleshooting runtime errors</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="exercises_overview.html" title="next page">
