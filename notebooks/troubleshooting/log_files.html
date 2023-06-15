@@ -1134,11 +1134,6 @@ title="Print to PDF"
    What to do when a run fails?
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-with-more-debugging-information">
-   Running with more debugging information
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -1161,11 +1156,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-to-do-when-a-run-fails">
    What to do when a run fails?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-with-more-debugging-information">
-   Running with more debugging information
   </a>
  </li>
 </ul>
@@ -1202,32 +1192,6 @@ If any of those things happened, take appropriate corrective action and resubmit
 </ul>
 <p>If it is not clear that any of the above caused a case to fail, check the rest of the component log files <code class="docutils literal notranslate"><span class="pre">$model.log.*</span></code> for error messages. It takes a bit of practice to interpret message errors. We will look at an example in this chapter exercices.</p>
 </section>
-<section id="running-with-more-debugging-information">
-<h2>Running with more debugging information<a class="headerlink" href="#running-with-more-debugging-information" title="Permalink to this headline">#</a></h2>
-<p>If you cannot find the reason of the crash in the <strong>log</strong> files, there are two ways to add more debugging information.</p>
-<ul class="simple">
-<li><p>Increase the value of the run-time xml variable <code class="docutils literal notranslate"><span class="pre">INFO_DBUG</span></code> (This <strong>does NOT require rebuilding</strong>):</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">INFO_DBUG</span><span class="o">=</span><span class="mf">2.</span> 
-</pre></div>
-</div>
-<p>This adds more information to the <code class="docutils literal notranslate"><span class="pre">cpl.log</span></code> file that can be useful if you can’t tell what component is aborting the run, or where bad coupling fields are originating.</p>
-<ul class="simple">
-<li><p>Try rebuilding and rerunning with the variable DEBUG set to TRUE (This ** requires rebuilding**):</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">DEBUG</span><span class="o">=</span><span class="n">TRUE</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>This adds various runtime checks that trap conditions such as out-of-bounds array indexing, divide by 0, and other floating point exceptions.
-Before running, you must rebuild run</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span> <span class="o">--</span><span class="n">clean</span><span class="o">-</span><span class="nb">all</span>
-<span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>Note that the model will run <strong>significantly slower</strong> in <code class="docutils literal notranslate"><span class="pre">DEBUG</span> <span class="pre">mode</span></code>, so this may not be feasible if the model has to run a long time before producing the error.</p>
-<div class="alert alert-info" style="text-align: center;">
-<p>More information about troubleshooting can be found in the <a class="reference external" href="https://esmci.github.io/cime/versions/master/html/users_guide/troubleshooting.html">CIME documentation</a>.</p>
-</div></section>
 </section>
 
     <script type="text/x-thebe-config">
