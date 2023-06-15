@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="CESM tutorial introduction" href="notebooks/introduction/intro.html" />
+    <link rel="next" title="Introduction" href="notebooks/intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,14 +113,9 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/introduction/intro.html">
-   CESM tutorial introduction
-  </a>
- </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="notebooks/basics.html">
-   The Basics of Running CESM
+  <a class="reference internal" href="notebooks/intro.html">
+   Introduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -129,15 +124,42 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/basics/overview.html">
-     Overview of CESM
+    <a class="reference internal" href="notebooks/intro/overview.html">
+     Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/basics/cesm_coupling.html">
+    <a class="reference internal" href="notebooks/intro/coupling.html">
      CESM Shared Infrastructure
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/intro/working_groups.html">
+     Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/intro/getting_help.html">
+     Getting Help
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/intro/prereqs.html">
+     CESM tutorial introduction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="notebooks/basics.html">
+   Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="notebooks/basics/cesm_quickstart.html">
      CESM Quickstart Workflow
@@ -152,8 +174,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="notebooks/basics/exercises1_overview.html">
      Lab Exercise 1. Overview
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -189,8 +211,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="notebooks/basics/cesm_workflow.html">
      CESM Workflow Detailed
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -267,27 +289,12 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
     </ul>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/basics/postprocessing.html">
-     Postprocessing Model Output
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/basics/porting.html">
-     Porting CESM
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/basics/getting_help.html">
-     Getting Help
-    </a>
-   </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="notebooks/basics/exercises2_overview.html">
      Lab Exercise 2. Overview
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label for="toctree-checkbox-4">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -325,8 +332,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="notebooks/modifications/xml.html">
    Simple XML Modifications
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -345,8 +352,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="notebooks/modifications/xml/run_length.html">
      Controlling Run Length
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -377,8 +384,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="notebooks/modifications/xml/modify_run_type.html">
      Modifying the Type of Run
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-    <label for="toctree-checkbox-7">
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -409,8 +416,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="notebooks/modifications/xml/exercises.html">
      Exercise Overview
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-    <label for="toctree-checkbox-8">
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -438,8 +445,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="notebooks/namelist.html">
    Namelist Modifications
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -458,8 +465,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="notebooks/namelist/output.html">
      Customizing Output
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-    <label for="toctree-checkbox-10">
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -490,8 +497,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="notebooks/namelist/exercises_overview.html">
      Exercise Overview
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-    <label for="toctree-checkbox-11">
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -514,8 +521,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="notebooks/troubleshooting.html">
    Troubleshooting
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -529,8 +536,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="notebooks/troubleshooting/exercises_overview.html">
      Exercise Overview
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-    <label for="toctree-checkbox-13">
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -548,8 +555,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="notebooks/sourcemods.html">
    Source Modifications
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -568,8 +575,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="notebooks/sourcemods/exercises_overview.html">
      Exercise Overview
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-    <label for="toctree-checkbox-15">
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -587,47 +594,20 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="notebooks/diagnostics.html">
    Diagnostics
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="notebooks/diagnostics/cam.html">
-     ESDS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/diagnostics/cam-chem.html">
-     ESDS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/diagnostics/cism.html">
-     ESDS
+     CAM
     </a>
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="notebooks/diagnostics/cice.html">
-     ESDS
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-    <label for="toctree-checkbox-17">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul class="simple">
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/diagnostics/clm_ctsm.html">
-     ESDS
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="notebooks/diagnostics/pop.html">
-     ESDS
+     CICE
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
     <label for="toctree-checkbox-18">
@@ -638,29 +618,41 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/diagnostics/plotting_fields.html">
-     Plotting Fields
+    <a class="reference internal" href="notebooks/diagnostics/clm_ctsm.html">
+     CLM/CTSM
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/diagnostics/regridding.html">
-     Regridding
+    <a class="reference internal" href="notebooks/diagnostics/pop.html">
+     POP
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/diagnostics/packages.html">
-     Diagnostic Packages
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="notebooks/diagnostics/advanced.html">
+     Advanced Topics
     </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/diagnostics/geocat.html">
-     GeoCAT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/diagnostics/esds.html">
-     ESDS
-    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebooks/diagnostics/advanced/analysis_tools.html">
+       CESM analysis tools
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebooks/diagnostics/advanced/regridding.html">
+       Regridding
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="notebooks/diagnostics/advanced/large_ensembles.html">
+       Large Ensembles
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -668,8 +660,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="notebooks/challenge.html">
    Challenge Exercises
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-  <label for="toctree-checkbox-19">
+  <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+  <label for="toctree-checkbox-20">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -678,8 +670,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="notebooks/challenge/cam.html">
      CAM
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
-    <label for="toctree-checkbox-20">
+    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -720,8 +712,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="notebooks/challenge/cam-chem_waccm.html">
      CAM-chem/WACCM
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
-    <label for="toctree-checkbox-21">
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -742,8 +734,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="notebooks/challenge/cice.html">
      CICE
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
-    <label for="toctree-checkbox-22">
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -769,8 +761,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="notebooks/challenge/cism.html">
      CISM
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
-    <label for="toctree-checkbox-23">
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -796,8 +788,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="notebooks/challenge/clm_ctsm.html">
      CLM/CTSM
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
-    <label for="toctree-checkbox-24">
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -823,8 +815,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="notebooks/challenge/pop.html">
      POP
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
-    <label for="toctree-checkbox-25">
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -855,8 +847,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="notebooks/challenge/bgc.html">
      BGC
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
-    <label for="toctree-checkbox-26">
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -871,40 +863,18 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="notebooks/tools.html">
-   Useful Tools
+  <a class="reference internal" href="notebooks/resources.html">
+   Resources
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
-  <label for="toctree-checkbox-27">
+  <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+  <label for="toctree-checkbox-28">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="notebooks/tools/community_experiments.html">
-     CESM Community Experiments
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
-    <label for="toctree-checkbox-28">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="notebooks/tools/cesm_expts/clim_data_gateway.html">
-       Climate Data Gateway
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="notebooks/tools/cesm_expts/clim_data_guide.html">
-       Climate Data Guide
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="notebooks/tools/unix_basics.html">
-     UNIX Basics
+    <a class="reference internal" href="notebooks/resources/community_experiments.html">
+     Community Experiments
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
     <label for="toctree-checkbox-29">
@@ -913,40 +883,40 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="notebooks/tools/unix/terminals.html">
-       Terminal Windows
+      <a class="reference internal" href="notebooks/resources/cesm_expts/clim_data_gateway.html">
+       Climate Data Gateway
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="notebooks/tools/unix/modules.html">
-       Loading Modules on NCAR HPC
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="notebooks/tools/unix/text_editors.html">
-       Text Editors
+      <a class="reference internal" href="notebooks/resources/cesm_expts/clim_data_guide.html">
+       Climate Data Guide
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/tools/fortran.html">
+    <a class="reference internal" href="notebooks/resources/fortran.html">
      Fortran Resources
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/tools/github.html">
+    <a class="reference internal" href="notebooks/resources/github.html">
      Github Resources
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/tools/netcdf_tools.html">
+    <a class="reference internal" href="notebooks/resources/netcdf_tools.html">
      NetCDF files and how to use them
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/tools/analysis_tools.html">
-     CESM analysis tools
+    <a class="reference internal" href="notebooks/resources/postprocessing.html">
+     Postprocessing Model Output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/resources/porting.html">
+     Porting CESM
     </a>
    </li>
   </ul>
@@ -1130,16 +1100,6 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cesm-technical-help">
-   CESM Technical Help
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cesm-community-involvement">
-   CESM Community Involvement
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cesm-project-funding">
    CESM Project Funding
   </a>
@@ -1171,16 +1131,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#goals-of-this-tutorial">
    Goals of This Tutorial
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cesm-technical-help">
-   CESM Technical Help
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cesm-community-involvement">
-   CESM Community Involvement
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1220,17 +1170,6 @@ title="Print to PDF"
 <li><p>Useful tools</p></li>
 </ul>
 </section>
-<section id="cesm-technical-help">
-<h2>CESM Technical Help<a class="headerlink" href="#cesm-technical-help" title="Permalink to this headline">#</a></h2>
-<p>As you gain experience using and running CESM, the <a class="reference external" href="https://bb.cgd.ucar.edu/cesm/">DiscussCESM Forums</a> are a place where the CESM Community can request assistance with science and runtime issues.</p>
-</section>
-<section id="cesm-community-involvement">
-<h2>CESM Community Involvement<a class="headerlink" href="#cesm-community-involvement" title="Permalink to this headline">#</a></h2>
-<p>NCAR created the Community Climate Model (CCM) in 1983 that included a global atmosphere. In 1994, NCAR scientists started to develop the Climate System Model (CSM) that included models of the atmosphere, land surface, ocean, and sea ice. In order to recognize the Community of users and sponsors, the CSM was renamed to the Community Climate System Model (CCSM). With addititons including an ice sheet and biogeochemical modeling, the model was renamed to the Community Earth System Model (CESM) in 2013.</p>
-<p>The CESM project has a strong commitment to Community involvment in governance and development of the CESM. We welcome and strongly encourage anyone interested to join the <a class="reference external" href="https://www.cesm.ucar.edu/working-groups">CESM working groups</a> to participate more fully in the CESM project and model development.</p>
-<p>There is also a long history of open, Community workshops. The first Community workshop was held in 1996 and continues annually today. We hope to see you at a future <a class="reference external" href="https://www.cesm.ucar.edu/events/workshops">CESM workshop</a>!</p>
-<p>The CESM tutorial has been offered regularly since 2010 and is typically offered annually during the summer. If you are interested in attending the tutorial and have not attended a tutorial before, please see the <a class="reference external" href="https://www.cesm.ucar.edu/events/tutorials">CESM webpage</a> for the most up to date information about when the tutorial will next be offered in Boulder, Colorado and the timeline for applying.</p>
-</section>
 <section id="cesm-project-funding">
 <h2>CESM Project Funding<a class="headerlink" href="#cesm-project-funding" title="Permalink to this headline">#</a></h2>
 <p>This material is based upon work supported by the National Center for Atmospheric Research (NCAR), which is a major facility sponsored by the National Science Foundation (NSF) under Cooperative Agreement No. 1852977. Staff time on this project was also supported by the Climate and Global Dynamics (CGD) laboratory.</p>
@@ -1239,9 +1178,8 @@ title="Print to PDF"
 <h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">#</a></h2>
 <p>A number of people have been critical to this effort, including:</p>
 <ul class="simple">
-<li><p>Alice DuVivier, Cecile Hannay, Peter Lawrence, and Hui Li, who serve on the CESM tutorial committee and put together the tutorial materials.</p></li>
-<li><p>Brian Dobbins, who led technical aspects of the tutorial materials.</p></li>
-<li><p>Gunter Leguy, Gustavo Marques, Jesse Nusbaumer, and Adam Phillips, who serve on the CESM tutorial committee and helped test materials.</p></li>
+<li><p>Alice DuVivier, Cecile Hannay, Peter Lawrence, Hui Li, Brian Dobbins, and Jesse Nusbaumer, who serve on the CESM tutorial committee and put together the tutorial materials.</p></li>
+<li><p>Gunter Leguy, Gustavo Marques, and Adam Phillips, who serve on the CESM tutorial committee and helped test materials.</p></li>
 <li><p>Elizabeth Faircloth, who supports the CESM program administratively and without whom everything would probably fall apart.</p></li>
 <li><p>Gokhan Danabasoglu, who supported this effort as CESM chief scientist.</p></li>
 <li><p>Testers</p></li>
@@ -1280,10 +1218,10 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="notebooks/introduction/intro.html" title="next page">
+    <a class='right-next' id="next-link" href="notebooks/intro.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">CESM tutorial introduction</p>
+        <p class="prev-next-title">Introduction</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
