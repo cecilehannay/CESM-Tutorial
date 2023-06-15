@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>The log files &#8212; CESM Tutorial</title>
+    <title>Running with more debugging information &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -530,7 +530,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     The log files
+     Running with more debugging information
     </a>
    </li>
    <li class="toctree-l2 has-children">
@@ -977,7 +977,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/troubleshooting/overview.ipynb"
+        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/troubleshooting/debugging_flag.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1037,7 +1037,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/troubleshooting/overview.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/troubleshooting/debugging_flag.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1065,7 +1065,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/notebooks/troubleshooting/overview.ipynb"
+        <a href="../../_sources/notebooks/troubleshooting/debugging_flag.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1102,70 +1102,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-to-do-when-a-run-fails">
-   What to do when a run fails?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-with-more-debugging-information">
-   Running with more debugging information
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>The log files</h1>
+                <h1>Running with more debugging information</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-to-do-when-a-run-fails">
-   What to do when a run fails?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-with-more-debugging-information">
-   Running with more debugging information
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -1173,32 +1126,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="the-log-files">
-<h1>The log files<a class="headerlink" href="#the-log-files" title="Permalink to this headline">#</a></h1>
-<p>The log files are files in the format <code class="docutils literal notranslate"><span class="pre">$model.log.*</span></code></p>
-<ul class="simple">
-<li><p>When the model is running, it produces the log files in the <strong>run directory</strong>: <code class="docutils literal notranslate"><span class="pre">RUNDIR</span></code>.</p></li>
-<li><p>When the run completes successfully, the model moves the log files into the <strong>archive</strong> directory: <code class="docutils literal notranslate"><span class="pre">DOUT_S_ROOT</span></code></p></li>
-<li><p>When the model fails, the log files remains in the run directory <code class="docutils literal notranslate"><span class="pre">RUNDIR</span></code></p></li>
-</ul>
-<p><img alt="CESM directories and namelists" src="../../_images/CESM_directories_and_log_files.png" /></p>
-<p><em><p style="text-align: center;"> Figure: Overview of the CESM directories and the log files. </p></em></p>
-<section id="what-to-do-when-a-run-fails">
-<h2>What to do when a run fails?<a class="headerlink" href="#what-to-do-when-a-run-fails" title="Permalink to this headline">#</a></h2>
-<p>First, check the latest <code class="docutils literal notranslate"><span class="pre">cpl.log.*</span></code>, which will often tell you when the model failed. If a run completed successfully, the last several lines of the <code class="docutils literal notranslate"><span class="pre">cpl.log.*</span></code> file will have a string like <code class="docutils literal notranslate"><span class="pre">SUCCESSFUL</span> <span class="pre">TERMINATION</span> <span class="pre">OF</span> <span class="pre">CESM</span></code>.
-If you don’t see this message, it means the run has failed.</p>
-<p>Check these things first when a job fails:</p>
-<ul class="simple">
-<li><p>Did the model time out?</p></li>
-<li><p>Was a disk quota limit hit?</p></li>
-<li><p>Did a machine go down?</p></li>
-<li><p>Did a file system become full?
-If any of those things happened, take appropriate corrective action and resubmit the job.</p></li>
-</ul>
-<p>If it is not clear that any of the above caused a case to fail, check the rest of the component log files <code class="docutils literal notranslate"><span class="pre">$model.log.*</span></code> for error messages. It takes a bit of practice to interpret message errors. We will look at an example in this chapter exercices.</p>
-</section>
-<section id="running-with-more-debugging-information">
-<h2>Running with more debugging information<a class="headerlink" href="#running-with-more-debugging-information" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="running-with-more-debugging-information">
+<h1>Running with more debugging information<a class="headerlink" href="#running-with-more-debugging-information" title="Permalink to this headline">#</a></h1>
 <p>If you cannot find the reason of the crash in the <strong>log</strong> files, there are two ways to add more debugging information.</p>
 <ul class="simple">
 <li><p>Increase the value of the run-time xml variable <code class="docutils literal notranslate"><span class="pre">INFO_DBUG</span></code> (This <strong>does NOT require rebuilding</strong>):</p></li>
@@ -1223,7 +1152,6 @@ Before running, you must rebuild run</p>
 <div class="alert alert-info" style="text-align: center;">
 <p>More information about troubleshooting can be found in the <a class="reference external" href="https://esmci.github.io/cime/versions/master/html/users_guide/troubleshooting.html">CIME documentation</a>.</p>
 </div></section>
-</section>
 
     <script type="text/x-thebe-config">
     {

@@ -6,54 +6,52 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Basics &#8212; CESM Tutorial</title>
+    <title>The log files &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="CESM Quickstart Workflow" href="basics/cesm_quickstart.html" />
-    <link rel="prev" title="CESM tutorial introduction" href="intro/prereqs.html" />
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -88,19 +86,19 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="../_static/ncar_logo.png" class="logo" alt="logo">
+      <img src="../../_static/ncar_logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">CESM Tutorial</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -108,14 +106,14 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../README.html">
+                <a class="reference internal" href="../../README.html">
                     Welcome to the CESM Tutorial
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="intro.html">
+  <a class="reference internal" href="../intro.html">
    Introduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -125,54 +123,54 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="intro/overview.html">
+    <a class="reference internal" href="../intro/overview.html">
      Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="intro/coupling.html">
+    <a class="reference internal" href="../intro/coupling.html">
      CESM Shared Infrastructure
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="intro/working_groups.html">
+    <a class="reference internal" href="../intro/working_groups.html">
      Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="intro/getting_help.html">
+    <a class="reference internal" href="../intro/getting_help.html">
      Getting Help
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="intro/prereqs.html">
+    <a class="reference internal" href="../intro/prereqs.html">
      CESM tutorial introduction
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../basics.html">
    Basics
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="basics/cesm_quickstart.html">
+    <a class="reference internal" href="../basics/cesm_quickstart.html">
      CESM Quickstart Workflow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="basics/cesm_workspaces.html">
+    <a class="reference internal" href="../basics/cesm_workspaces.html">
      CESM Workspaces
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="basics/exercises1_overview.html">
+    <a class="reference internal" href="../basics/exercises1_overview.html">
      Lab Exercise 1. Overview
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -182,34 +180,34 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/exercises1/cheyenne_login.html">
+      <a class="reference internal" href="../basics/exercises1/cheyenne_login.html">
        Exercise 1.1 Cheyenne Login
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/exercises1/github_explore.html">
+      <a class="reference internal" href="../basics/exercises1/github_explore.html">
        Exercise 1.2 CESM Github Pages
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/exercises1/git_download_cesm.html">
+      <a class="reference internal" href="../basics/exercises1/git_download_cesm.html">
        Exercise 1.3 Download CESM with Git
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/exercises1/cesm_code_explore.html">
+      <a class="reference internal" href="../basics/exercises1/cesm_code_explore.html">
        Exercise 1.4 Explore CESM Code
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/exercises1/additional_exercises.html">
+      <a class="reference internal" href="../basics/exercises1/additional_exercises.html">
        Exercise 1.5 Additional Exercises
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="basics/cesm_workflow.html">
+    <a class="reference internal" href="../basics/cesm_workflow.html">
      CESM Workflow Detailed
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -219,79 +217,79 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/cesm_workflow/create_newcase_command.html">
+      <a class="reference internal" href="../basics/cesm_workflow/create_newcase_command.html">
        Create New Case: Command
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/cesm_workflow/create_newcase_casename.html">
+      <a class="reference internal" href="../basics/cesm_workflow/create_newcase_casename.html">
        Create New Case: Case Name
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/cesm_workflow/create_newcase_resolution.html">
+      <a class="reference internal" href="../basics/cesm_workflow/create_newcase_resolution.html">
        Create New Case: Resolution
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/cesm_workflow/create_newcase_compset.html">
+      <a class="reference internal" href="../basics/cesm_workflow/create_newcase_compset.html">
        Create New Case: Compset
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/cesm_workflow/create_newcase_output.html">
+      <a class="reference internal" href="../basics/cesm_workflow/create_newcase_output.html">
        Create New Case: Output
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/cesm_workflow/case_root.html">
+      <a class="reference internal" href="../basics/cesm_workflow/case_root.html">
        Case: CASEROOT and Directory
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/cesm_workflow/case_xml_files.html">
+      <a class="reference internal" href="../basics/cesm_workflow/case_xml_files.html">
        Case: env xml files
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/cesm_workflow/case_xml_change.html">
+      <a class="reference internal" href="../basics/cesm_workflow/case_xml_change.html">
        Case: xmlquery and xmlchange
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/cesm_workflow/case_setup.html">
+      <a class="reference internal" href="../basics/cesm_workflow/case_setup.html">
        Case: case.setup
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/cesm_workflow/case_setup_updated.html">
+      <a class="reference internal" href="../basics/cesm_workflow/case_setup_updated.html">
        Case: case.setup updated files
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/cesm_workflow/case_build.html">
+      <a class="reference internal" href="../basics/cesm_workflow/case_build.html">
        Case: case.build
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/cesm_workflow/case_submit.html">
+      <a class="reference internal" href="../basics/cesm_workflow/case_submit.html">
        Case: case.submit
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/cesm_workflow/checking_jobs_and_status.html">
+      <a class="reference internal" href="../basics/cesm_workflow/checking_jobs_and_status.html">
        Checking Jobs and Status
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/cesm_workflow/create_clone_command.html">
+      <a class="reference internal" href="../basics/cesm_workflow/create_clone_command.html">
        Create Clone: Command
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="basics/exercises2_overview.html">
+    <a class="reference internal" href="../basics/exercises2_overview.html">
      Lab Exercise 2. Overview
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -301,27 +299,27 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/exercises2/create_setup_build_B1850.html">
+      <a class="reference internal" href="../basics/exercises2/create_setup_build_B1850.html">
        Exercise 2.1 Create, Setup, Update, and Build a Case
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/exercises2/submit_monitor_B1850.html">
+      <a class="reference internal" href="../basics/exercises2/submit_monitor_B1850.html">
        Exercise 2.2 Submit and Monitor Case
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/exercises2/examine_history_B1850.html">
+      <a class="reference internal" href="../basics/exercises2/examine_history_B1850.html">
        Exercise 2.3 Examine History Files
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/exercises2/review_questions.html">
+      <a class="reference internal" href="../basics/exercises2/review_questions.html">
        Exercise 2.4 Review Questions
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="basics/exercises2/additional_exercises.html">
+      <a class="reference internal" href="../basics/exercises2/additional_exercises.html">
        Exercise 2.5 Additional Exercises
       </a>
      </li>
@@ -330,7 +328,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="modifications/xml.html">
+  <a class="reference internal" href="../modifications/xml.html">
    Simple XML Modifications
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -340,17 +338,17 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="modifications/xml/overview.html">
+    <a class="reference internal" href="../modifications/xml/overview.html">
      Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="modifications/xml/model_control_files.html">
+    <a class="reference internal" href="../modifications/xml/model_control_files.html">
      How to Modify XML Files (*.xml)
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="modifications/xml/run_length.html">
+    <a class="reference internal" href="../modifications/xml/run_length.html">
      Controlling Run Length
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -360,29 +358,29 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="modifications/xml/run_length/starting_and_stopping.html">
+      <a class="reference internal" href="../modifications/xml/run_length/starting_and_stopping.html">
        Starting and Stopping
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="modifications/xml/run_length/restarting.html">
+      <a class="reference internal" href="../modifications/xml/run_length/restarting.html">
        Restarting a Run
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="modifications/xml/run_length/changing_run_length.html">
+      <a class="reference internal" href="../modifications/xml/run_length/changing_run_length.html">
        Changing Run Length
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="modifications/xml/run_length/timing_files.html">
+      <a class="reference internal" href="../modifications/xml/run_length/timing_files.html">
        Using Timing Files
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="modifications/xml/modify_run_type.html">
+    <a class="reference internal" href="../modifications/xml/modify_run_type.html">
      Modifying the Type of Run
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -392,29 +390,29 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="modifications/xml/modify_run_type/hybrid_branch_restart.html">
+      <a class="reference internal" href="../modifications/xml/modify_run_type/hybrid_branch_restart.html">
        Hybrid, Branch and Startup
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="modifications/xml/modify_run_type/run_variables.html">
+      <a class="reference internal" href="../modifications/xml/modify_run_type/run_variables.html">
        Variables Related to Run Type
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="modifications/xml/physics_timestep.html">
+    <a class="reference internal" href="../modifications/xml/physics_timestep.html">
      Physics Timestep
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="modifications/xml/other_xml_variables.html">
+    <a class="reference internal" href="../modifications/xml/other_xml_variables.html">
      Other Useful XML Variables
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="modifications/xml/exercises.html">
+    <a class="reference internal" href="../modifications/xml/exercises.html">
      Exercise Overview
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -424,17 +422,17 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="modifications/xml/exercises/xml_length_exercise.html">
+      <a class="reference internal" href="../modifications/xml/exercises/xml_length_exercise.html">
        Exercise 1: Modify run length
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="modifications/xml/exercises/xml_runtype_exercise.html">
+      <a class="reference internal" href="../modifications/xml/exercises/xml_runtype_exercise.html">
        Exercise 2: Modify run type
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="modifications/xml/exercises/xml_timestep_exercise.html">
+      <a class="reference internal" href="../modifications/xml/exercises/xml_timestep_exercise.html">
        Exercise 3: Change physics timestep
       </a>
      </li>
@@ -443,7 +441,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="namelist.html">
+  <a class="reference internal" href="../namelist.html">
    Namelist Modifications
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -453,17 +451,17 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="namelist/overview.html">
+    <a class="reference internal" href="../namelist/overview.html">
      Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="namelist/documentation.html">
+    <a class="reference internal" href="../namelist/documentation.html">
      Namelist Variables Documentation
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="namelist/output.html">
+    <a class="reference internal" href="../namelist/output.html">
      Customizing Output
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
@@ -473,29 +471,29 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="namelist/output/output_cam.html">
+      <a class="reference internal" href="../namelist/output/output_cam.html">
        Customize CAM output
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="namelist/output/output_clm.html">
+      <a class="reference internal" href="../namelist/output/output_clm.html">
        Customize CLM output
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="namelist/output/output_cice.html">
+      <a class="reference internal" href="../namelist/output/output_cice.html">
        Customize CICE output
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="namelist/output/output_pop.html">
+      <a class="reference internal" href="../namelist/output/output_pop.html">
        Customize POP output
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="namelist/exercises_overview.html">
+    <a class="reference internal" href="../namelist/exercises_overview.html">
      Exercise Overview
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
@@ -505,12 +503,12 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="namelist/exercises/exercise_cam_output.html">
+      <a class="reference internal" href="../namelist/exercises/exercise_cam_output.html">
        Modify CAM output
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="namelist/exercises/exercise_tuning_parameter.html">
+      <a class="reference internal" href="../namelist/exercises/exercise_tuning_parameter.html">
        Change a tuning parameter in CAM
       </a>
      </li>
@@ -519,7 +517,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="troubleshooting.html">
+  <a class="reference internal" href="../troubleshooting.html">
    Troubleshooting runtime errors
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
@@ -529,12 +527,12 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="troubleshooting/debugging_flag.html">
+    <a class="reference internal" href="debugging_flag.html">
      Running with more debugging information
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="troubleshooting/exercises_overview.html">
+    <a class="reference internal" href="exercises_overview.html">
      Exercise Overview
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
@@ -544,7 +542,7 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="troubleshooting/exercises/troubleshooting_cam.html">
+      <a class="reference internal" href="exercises/troubleshooting_cam.html">
        Debugging CAM
       </a>
      </li>
@@ -553,7 +551,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="sourcemods.html">
+  <a class="reference internal" href="../sourcemods.html">
    Source Modifications
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
@@ -563,17 +561,17 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="sourcemods/overview.html">
+    <a class="reference internal" href="../sourcemods/overview.html">
      Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="sourcemods/add_fields_cam.html">
+    <a class="reference internal" href="../sourcemods/add_fields_cam.html">
      Source Modification Example
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="sourcemods/exercises_overview.html">
+    <a class="reference internal" href="../sourcemods/exercises_overview.html">
      Exercise Overview
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
@@ -583,7 +581,7 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="sourcemods/exercises/exercise_add_field.html">
+      <a class="reference internal" href="../sourcemods/exercises/exercise_add_field.html">
        Add output variable in CAM
       </a>
      </li>
@@ -592,7 +590,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="diagnostics.html">
+  <a class="reference internal" href="../diagnostics.html">
    Diagnostics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
@@ -602,12 +600,12 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="diagnostics/cam.html">
+    <a class="reference internal" href="../diagnostics/cam.html">
      CAM
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="diagnostics/cice.html">
+    <a class="reference internal" href="../diagnostics/cice.html">
      CICE
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
@@ -619,17 +617,17 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="diagnostics/clm_ctsm.html">
+    <a class="reference internal" href="../diagnostics/clm_ctsm.html">
      CLM/CTSM
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="diagnostics/pop.html">
+    <a class="reference internal" href="../diagnostics/pop.html">
      POP
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="diagnostics/advanced.html">
+    <a class="reference internal" href="../diagnostics/advanced.html">
      Advanced Topics
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
@@ -639,17 +637,17 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="diagnostics/advanced/analysis_tools.html">
+      <a class="reference internal" href="../diagnostics/advanced/analysis_tools.html">
        CESM analysis tools
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="diagnostics/advanced/regridding.html">
+      <a class="reference internal" href="../diagnostics/advanced/regridding.html">
        Regridding
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="diagnostics/advanced/large_ensembles.html">
+      <a class="reference internal" href="../diagnostics/advanced/large_ensembles.html">
        Large Ensembles
       </a>
      </li>
@@ -658,7 +656,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="challenge.html">
+  <a class="reference internal" href="../challenge.html">
    Challenge Exercises
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
@@ -668,7 +666,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="challenge/cam.html">
+    <a class="reference internal" href="../challenge/cam.html">
      CAM
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
@@ -678,39 +676,39 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/cam/exercise_1.html">
+      <a class="reference internal" href="../challenge/cam/exercise_1.html">
        1: Control case: F2000climo
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/cam/exercise_2.html">
+      <a class="reference internal" href="../challenge/cam/exercise_2.html">
        2: Historical compset: FHIST
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/cam/exercise_3.html">
+      <a class="reference internal" href="../challenge/cam/exercise_3.html">
        3: Starting FHIST from spunup state in 1850
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/cam/exercise_4.html">
+      <a class="reference internal" href="../challenge/cam/exercise_4.html">
        4: Increase orographic height over the western US
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/cam/exercise_5.html">
+      <a class="reference internal" href="../challenge/cam/exercise_5.html">
        4: Modify sea surface temperature in the tropics
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/cam/exercise_6.html">
+      <a class="reference internal" href="../challenge/cam/exercise_6.html">
        6: Adjust threshold for deep convection over land
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="challenge/cam-chem_waccm.html">
+    <a class="reference internal" href="../challenge/cam-chem_waccm.html">
      CAM-chem/WACCM
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
@@ -720,19 +718,19 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/cam-chem_waccm/exercise_1.html">
+      <a class="reference internal" href="../challenge/cam-chem_waccm/exercise_1.html">
        1: Control case: F2000climo
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/cam-chem_waccm/exercise_2.html">
+      <a class="reference internal" href="../challenge/cam-chem_waccm/exercise_2.html">
        1: Control case: F2000climo
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="challenge/cice.html">
+    <a class="reference internal" href="../challenge/cice.html">
      CICE
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
@@ -742,24 +740,24 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/cice/cice_exercise_1.html">
+      <a class="reference internal" href="../challenge/cice/cice_exercise_1.html">
        1: Control case
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/cice/cice_exercise_2.html">
+      <a class="reference internal" href="../challenge/cice/cice_exercise_2.html">
        2: Tune the albedo
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/cice/cice_exercise_3.html">
+      <a class="reference internal" href="../challenge/cice/cice_exercise_3.html">
        3: Modify the snow conductivity
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="challenge/cism.html">
+    <a class="reference internal" href="../challenge/cism.html">
      CISM
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
@@ -769,24 +767,24 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/cism/cism_exercise_1.html">
+      <a class="reference internal" href="../challenge/cism/cism_exercise_1.html">
        CISM Challenge Exercise
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/cism/cism_exercise_2.html">
+      <a class="reference internal" href="../challenge/cism/cism_exercise_2.html">
        Looking at the simulation
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/cism/cism_exercise_3.html">
+      <a class="reference internal" href="../challenge/cism/cism_exercise_3.html">
        Computing ice sheet related sea level change from a CISM simulation
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="challenge/clm_ctsm.html">
+    <a class="reference internal" href="../challenge/clm_ctsm.html">
      CLM/CTSM
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
@@ -796,24 +794,24 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/clm_ctsm/clm_exercise_1.html">
+      <a class="reference internal" href="../challenge/clm_ctsm/clm_exercise_1.html">
        1: Control case
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/clm_ctsm/clm_exercise_2.html">
+      <a class="reference internal" href="../challenge/clm_ctsm/clm_exercise_2.html">
        2: Use the BGC model
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/clm_ctsm/clm_exercise_3.html">
+      <a class="reference internal" href="../challenge/clm_ctsm/clm_exercise_3.html">
        3: Modify input data
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="challenge/pop.html">
+    <a class="reference internal" href="../challenge/pop.html">
      POP
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
@@ -823,29 +821,29 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/pop/pop_exercise_1.html">
+      <a class="reference internal" href="../challenge/pop/pop_exercise_1.html">
        1: Control case
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/pop/pop_exercise_2.html">
+      <a class="reference internal" href="../challenge/pop/pop_exercise_2.html">
        2: Turn off parameterization
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/pop/pop_exercise_3.html">
+      <a class="reference internal" href="../challenge/pop/pop_exercise_3.html">
        3: Modify wind stress
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/pop/pop_exercise_4.html">
+      <a class="reference internal" href="../challenge/pop/pop_exercise_4.html">
        4: Turn on the ecosystem
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="challenge/bgc.html">
+    <a class="reference internal" href="../challenge/bgc.html">
      BGC
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
@@ -855,7 +853,7 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="challenge/bgc/bgc_exercise_1.html">
+      <a class="reference internal" href="../challenge/bgc/bgc_exercise_1.html">
        1: Set up a BGC case
       </a>
      </li>
@@ -864,7 +862,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="resources.html">
+  <a class="reference internal" href="../resources.html">
    Resources
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
@@ -874,7 +872,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="resources/community_experiments.html">
+    <a class="reference internal" href="../resources/community_experiments.html">
      Community Experiments
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
@@ -884,39 +882,39 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="resources/cesm_expts/clim_data_gateway.html">
+      <a class="reference internal" href="../resources/cesm_expts/clim_data_gateway.html">
        Climate Data Gateway
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="resources/cesm_expts/clim_data_guide.html">
+      <a class="reference internal" href="../resources/cesm_expts/clim_data_guide.html">
        Climate Data Guide
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="resources/fortran.html">
+    <a class="reference internal" href="../resources/fortran.html">
      Fortran Resources
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="resources/github.html">
+    <a class="reference internal" href="../resources/github.html">
      Github Resources
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="resources/netcdf_tools.html">
+    <a class="reference internal" href="../resources/netcdf_tools.html">
      NetCDF files and how to use them
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="resources/postprocessing.html">
+    <a class="reference internal" href="../resources/postprocessing.html">
      Postprocessing Model Output
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="resources/porting.html">
+    <a class="reference internal" href="../resources/porting.html">
      Porting CESM
     </a>
    </li>
@@ -977,7 +975,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/basics.ipynb"
+        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/troubleshooting/log_files.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -987,7 +985,7 @@ title="Launch on Binder"
 
 <span class="headerbtn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img src="../../_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
@@ -1037,7 +1035,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/basics.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/troubleshooting/log_files.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1065,7 +1063,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/notebooks/basics.ipynb"
+        <a href="../../_sources/notebooks/troubleshooting/log_files.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1102,23 +1100,70 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-to-do-when-a-run-fails">
+   What to do when a run fails?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-with-more-debugging-information">
+   Running with more debugging information
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Basics</h1>
+                <h1>The log files</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-to-do-when-a-run-fails">
+   What to do when a run fails?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-with-more-debugging-information">
+   Running with more debugging information
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -1126,10 +1171,56 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="basics">
-<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">#</a></h1>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="the-log-files">
+<h1>The log files<a class="headerlink" href="#the-log-files" title="Permalink to this headline">#</a></h1>
+<p>The log files are files in the format <code class="docutils literal notranslate"><span class="pre">$model.log.*</span></code></p>
+<ul class="simple">
+<li><p>When the model is running, it produces the log files in the <strong>run directory</strong>: <code class="docutils literal notranslate"><span class="pre">RUNDIR</span></code>.</p></li>
+<li><p>When the run completes successfully, the model moves the log files into the <strong>archive</strong> directory: <code class="docutils literal notranslate"><span class="pre">DOUT_S_ROOT</span></code></p></li>
+<li><p>When the model fails, the log files remains in the run directory <code class="docutils literal notranslate"><span class="pre">RUNDIR</span></code></p></li>
+</ul>
+<p><img alt="CESM directories and namelists" src="../../_images/CESM_directories_and_log_files.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Overview of the CESM directories and the log files. </p></em></p>
+<section id="what-to-do-when-a-run-fails">
+<h2>What to do when a run fails?<a class="headerlink" href="#what-to-do-when-a-run-fails" title="Permalink to this headline">#</a></h2>
+<p>First, check the latest <code class="docutils literal notranslate"><span class="pre">cpl.log.*</span></code>, which will often tell you when the model failed. If a run completed successfully, the last several lines of the <code class="docutils literal notranslate"><span class="pre">cpl.log.*</span></code> file will have a string like <code class="docutils literal notranslate"><span class="pre">SUCCESSFUL</span> <span class="pre">TERMINATION</span> <span class="pre">OF</span> <span class="pre">CESM</span></code>.
+If you don’t see this message, it means the run has failed.</p>
+<p>Check these things first when a job fails:</p>
+<ul class="simple">
+<li><p>Did the model time out?</p></li>
+<li><p>Was a disk quota limit hit?</p></li>
+<li><p>Did a machine go down?</p></li>
+<li><p>Did a file system become full?
+If any of those things happened, take appropriate corrective action and resubmit the job.</p></li>
+</ul>
+<p>If it is not clear that any of the above caused a case to fail, check the rest of the component log files <code class="docutils literal notranslate"><span class="pre">$model.log.*</span></code> for error messages. It takes a bit of practice to interpret message errors. We will look at an example in this chapter exercices.</p>
+</section>
+<section id="running-with-more-debugging-information">
+<h2>Running with more debugging information<a class="headerlink" href="#running-with-more-debugging-information" title="Permalink to this headline">#</a></h2>
+<p>If you cannot find the reason of the crash in the <strong>log</strong> files, there are two ways to add more debugging information.</p>
+<ul class="simple">
+<li><p>Increase the value of the run-time xml variable <code class="docutils literal notranslate"><span class="pre">INFO_DBUG</span></code> (This <strong>does NOT require rebuilding</strong>):</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">INFO_DBUG</span><span class="o">=</span><span class="mf">2.</span> 
+</pre></div>
 </div>
+<p>This adds more information to the <code class="docutils literal notranslate"><span class="pre">cpl.log</span></code> file that can be useful if you can’t tell what component is aborting the run, or where bad coupling fields are originating.</p>
+<ul class="simple">
+<li><p>Try rebuilding and rerunning with the variable DEBUG set to TRUE (This ** requires rebuilding**):</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">DEBUG</span><span class="o">=</span><span class="n">TRUE</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>This adds various runtime checks that trap conditions such as out-of-bounds array indexing, divide by 0, and other floating point exceptions.
+Before running, you must rebuild run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span> <span class="o">--</span><span class="n">clean</span><span class="o">-</span><span class="nb">all</span>
+<span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Note that the model will run <strong>significantly slower</strong> in <code class="docutils literal notranslate"><span class="pre">DEBUG</span> <span class="pre">mode</span></code>, so this may not be feasible if the model has to run a long time before producing the error.</p>
+<div class="alert alert-info" style="text-align: center;">
+<p>More information about troubleshooting can be found in the <a class="reference external" href="https://esmci.github.io/cime/versions/master/html/users_guide/troubleshooting.html">CIME documentation</a>.</p>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1145,7 +1236,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks"
+            path: "./notebooks/troubleshooting"
         },
         predefinedOutput: true
     }
@@ -1159,20 +1250,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="intro/prereqs.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">CESM tutorial introduction</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="basics/cesm_quickstart.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">CESM Quickstart Workflow</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
@@ -1193,7 +1270,7 @@ title="Print to PDF"
     </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
 
   </body>
