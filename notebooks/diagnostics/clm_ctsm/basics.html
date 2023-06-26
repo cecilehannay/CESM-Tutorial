@@ -1164,11 +1164,6 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#point-to-the-data">
      1.1 Point to the data
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#open-files-load-variables">
-     1.2 Open files &amp; load variables
-    </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#printing-information-about-the-dataset-is-helpful-for-understanding-your-data">
@@ -1177,17 +1172,12 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#combining-datasets">
-     1.3 Combining datasets
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-derived-variables-to-the-dataset">
-     1.4 Adding derived variables to the dataset
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-calculations">
+   1.2 Simple Calculations
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plotting">
@@ -1215,11 +1205,6 @@ title="Print to PDF"
       </a>
      </li>
     </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#most-of-the-differences-in-lai-seem-to-be-in-agricultural-regions">
-     Most of the differences in LAI seem to be in agricultural regions.
-    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#calculating-time-series">
@@ -1315,11 +1300,6 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#point-to-the-data">
      1.1 Point to the data
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#open-files-load-variables">
-     1.2 Open files &amp; load variables
-    </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#printing-information-about-the-dataset-is-helpful-for-understanding-your-data">
@@ -1328,17 +1308,12 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#combining-datasets">
-     1.3 Combining datasets
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-derived-variables-to-the-dataset">
-     1.4 Adding derived variables to the dataset
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-calculations">
+   1.2 Simple Calculations
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plotting">
@@ -1366,11 +1341,6 @@ title="Print to PDF"
       </a>
      </li>
     </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#most-of-the-differences-in-lai-seem-to-be-in-agricultural-regions">
-     Most of the differences in LAI seem to be in agricultural regions.
-    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#calculating-time-series">
@@ -1442,6 +1412,7 @@ title="Print to PDF"
 <h1>Basic Plotting<a class="headerlink" href="#basic-plotting" title="Permalink to this headline">#</a></h1>
 <section id="global-visualizations">
 <h2>Global Visualizations<a class="headerlink" href="#global-visualizations" title="Permalink to this headline">#</a></h2>
+<p>These are examples of typical variables and plots that we look at in our land model diagnostics package. You can see examples of output from the <a class="reference external" href="https://www2.cesm.ucar.edu/experiments/cesm2.0/land/diagnostics/clm_diag_PCKG.html">land model dagnostics package here</a>. The most current version of the land model diagnostics are in the CESM Postprocessing. More information here: <a class="reference external" href="https://github.com/NCAR/CESM_postprocessing">CESM Postprocessing</a>.</p>
 </section>
 <section id="in-this-tutorial">
 <h2>In this tutorial<a class="headerlink" href="#in-this-tutorial" title="Permalink to this headline">#</a></h2>
@@ -1449,44 +1420,21 @@ title="Print to PDF"
 <ol class="simple">
 <li><p>Become familiar with Jupyter Notebooks</p></li>
 <li><p>Begin getting acquainted with python packages and their utilities</p></li>
-<li><p>Compare results from two simulations, here CLM5.1-SP and CLM5.1_FATES-SP</p></li>
+<li><p>Plot a map and timeseries of global results</p></li>
 </ol>
 <hr class="docutils" />
-<div class="alert alert-block alert-info">
-<b>NOTE:</b> In this tutorial, you can directly execute the contents of code blocks by running individual cells in this Jupyter notebook, similar to the Day 0b <i>NEON_Simulation_Tutorial</i> tutorial.
-</div>
-<hr class="docutils" />
-<p>First we’ll have a look at the data,</p>
-<ul class="simple">
-<li><p>these were prestaged for your use in the tutorial, but should be idential to the FATESsp case you just ran</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>/scratch/data/day1/I2000_CTSM_FATESsp/lnd/hist/<span class="w"> </span><span class="p">|</span>head<span class="w"> </span>-20
-</pre></div>
-</div>
-</div>
-</div>
-<p>Each line of the list above includes the file path (<code class="docutils literal notranslate"><span class="pre">/scratch/data/day1/I2000_CTSM_FATESsp/lnd/hist/</span></code>) and file name.</p>
-<ul class="simple">
-<li><p>The simulation you ran is really from an I2000 case, which means it just cycles over datm data from 1991-2000 with constant land cover, CO2, etc.</p></li>
-</ul>
-<p>These simulations generate one types of files:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">*h0*</span></code>: Variables that are averaged monthly. One file is available for every month of the simulation.</p></li>
-</ul>
-<hr class="docutils" />
-<p>The files are saved in netcdf format (denoted with the <code class="docutils literal notranslate"><span class="pre">.nc</span></code> file extension), a file format commonly used for storing large, multi-dimensional scientific variables.
+<p>History files from CESM are saved in netcdf format (denoted with the <code class="docutils literal notranslate"><span class="pre">.nc</span></code> file extension), a file format commonly used for storing large, multi-dimensional scientific variables.
 Netcdf files are platform independent and self-describing; each file includes metadata that describes the data, including: <strong>variables</strong>, <strong>dimensions</strong>, and <strong>attributes</strong>.</p>
 <p>The figure below provides a generic example of the data structure in a netcdf file. The dataset illustrated has two variables (temperature and pressure) that have three dimensions. Coordinate data (e.g., latitude, longitude, time) that describe the data are also included.</p>
-<p><em>Note that while each file for FATES-SP simulations has multiple variables. Within each <code class="docutils literal notranslate"><span class="pre">h0</span></code> file, most of the variables have three dimensions (lat x lon x time), while a few soil variables (e.g., moisture, temperature) have 4 dimensions (lat x lon x time x depth).</em></p>
+<p><em>Note that while each file for simulations has multiple variables. Within each <code class="docutils literal notranslate"><span class="pre">h0</span></code> file, most of the variables have three dimensions (lat x lon x time), while a few soil variables (e.g., moisture, temperature) have 4 dimensions (lat x lon x time x depth).</em></p>
 <p><img alt="Netcdf" src="https://xarray.pydata.org/en/stable/_images/dataset-diagram.png" /></p>
 <hr class="docutils" />
-<p>To dig deeper we’ll use this notebook and some phthon packages to look at the data and make some simple plots</p>
 <p><em>We’ll start by loading some packages</em></p>
+<p>The first step is to import the libraries needed to plot the data. Here we will use <code class="docutils literal notranslate"><span class="pre">xarray</span></code> as a tool to read the netCDF file. We will use <code class="docutils literal notranslate"><span class="pre">numpy</span></code> for some basic math calculations. For plotting the data we will need <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">cartopy</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># python packages</span>
+<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1519,53 +1467,38 @@ resources to help get you started. Some of these are listed below.</p>
 <h2>1. Reading and formatting data<a class="headerlink" href="#reading-and-formatting-data" title="Permalink to this headline">#</a></h2>
 <section id="point-to-the-data">
 <h3>1.1 Point to the data<a class="headerlink" href="#point-to-the-data" title="Permalink to this headline">#</a></h3>
+<p>The next few steps read in land model data from one of the CESM2 large ensemble historical runs. Note this operation points to multiple files on the campaign file system, so we are using the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> function <code class="docutils literal notranslate"><span class="pre">open_mfdataset</span></code> for a multifile dataset. We will also print the dataset to get an idea of the metadata and dimensions. Note that we could use the 10 year simulation from the tutorial. However, 10 years is very short and is not a very interesting timeseries. Instead we can use one of the CESM2 Large Ensemble historical simulations. <a class="reference external" href="https://doi.org/10.5194/esd-12-1393-2021">Rodgers et al. 2021</a></p>
+<p>For this example we will use:</p>
+<ul class="simple">
+<li><p>reflected solar radiation (FSR),</p></li>
+<li><p>incident solar radiation (FSDS), and</p></li>
+<li><p>exposed leaf area index (ELAI)</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/scratch/data/day1/&#39;</span>                     <span class="c1"># path to archived simulations</span>
-<span class="n">cases</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;I2000_CTSM51_sp&#39;</span><span class="p">,</span><span class="s1">&#39;I2000_CTSM_FATESsp&#39;</span><span class="p">]</span> <span class="c1"># case names</span>
-<span class="n">years</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span><span class="mi">2020</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>                 <span class="c1"># look at the last 5 years of data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Here we point to the CESM2-LE datasets on campaign disk and </span>
+<span class="c1">### Look at results from a single ensemble member</span>
 
-<span class="c1"># create a list of the files we&#39;ll open</span>
-<span class="c1"># for now we&#39;ll create two different lists of files, one for each simulation that we&#39;ll compare </span>
-<span class="n">finCTSM</span>  <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="o">+</span><span class="n">cases</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;/lnd/hist/&#39;</span><span class="o">+</span><span class="n">cases</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;.clm2.h0.&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;*&#39;</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">]</span> 
-<span class="n">finFATES</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="o">+</span><span class="n">cases</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;/lnd/hist/&#39;</span><span class="o">+</span><span class="n">cases</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;.clm2.h0.&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;*&#39;</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">]</span> 
+<span class="n">monthly_output_path</span> <span class="o">=</span> <span class="s2">&quot;/glade/campaign/cgd/cesm/CESM2-LE/lnd/proc/tseries/month_1&quot;</span>
+<span class="n">run_name</span> <span class="o">=</span> <span class="s2">&quot;b.e21.BHISTcmip6.f09_g17.LE2-1001.001&quot;</span>
 
-<span class="c1"># print the last year of data loaded</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">finCTSM</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">finFATES</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="alert alert-block alert-info">
-<b>NOTE:</b> These are the raw history files that CTSM writes out.  
-By default, they include grid cell averaged monthly means for different state and flux variables.
-<br><br>
-Typically we post-process these data to generate single variable time series for an experiment. 
-This means that the full time series of model output for each variable, like rain, air temperature, or latent heat flux, are each in their own file.
-A post-processing tutorial will be available at a later date, but for now we'll just read in the monthly history files described above.
-</div></section>
-<section id="open-files-load-variables">
-<h3>1.2 Open files &amp; load variables<a class="headerlink" href="#open-files-load-variables" title="Permalink to this headline">#</a></h3>
-<p>This is done with the xarray function <code class="docutils literal notranslate"><span class="pre">open_mfdataset</span></code></p>
-<p>To make this go faster, we’re going to preprocess the data so we’re just reading the variables we want to look at.</p>
-<div class="alert alert-block alert-info">
-    <b>TIP:</b> If you want to look at other variables, the <b>fields</b> variable in the cell below is where you can modify what we're reading off of the CTSM and CTSM-FATES history files.
-</div>
-<p>Depending on what you’re looking at, these variables of interest may have different names in CTSM and CTSM-FATES simulations.  While this is confusing, FATES-specific variables all have a <em>FATES_</em> prefix. This reflects if the history variables are being calculated by FATES directly, or uses information from FATES, but ultimately calculated by the host land model (here CTSM).</p>
-<p>To begin with we’ll look at albedo that’s simulated by the two models.
-Albedo and can be calculated in several different ways, but the calculations use solar radiation terms that are handled within CTSM.
-Here we’ll look at ‘all sky albedo’, which is the ratio of reflected to incoming solar radiation (<strong>FSR/FSDS</strong>).
-Other intereresting variables might include latent heat flux or gross primary productivity.
-<strong>Note,</strong> we also include information about grid cell areas, as it’s helpful for calculating globally weighted results.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Notes in your code are helpful to understand what&#39;s going on</span>
+<span class="n">var_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FSR&#39;</span><span class="p">,</span><span class="s1">&#39;FSDS&#39;</span><span class="p">,</span><span class="s1">&#39;ELAI&#39;</span><span class="p">]</span>
 
-<span class="c1"># Define the variables to read in</span>
-<span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FSR&#39;</span><span class="p">,</span><span class="s1">&#39;FSDS&#39;</span><span class="p">,</span> <span class="s1">&#39;ELAI&#39;</span><span class="p">,</span><span class="s1">&#39;area&#39;</span><span class="p">,</span><span class="s1">&#39;landfrac&#39;</span><span class="p">]</span>
+<span class="c1">### This piece of code opens the files and combines them into a single xarray dataset</span>
 
-<span class="c1"># Create some functions that help read in the data</span>
+<span class="n">da_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">var_name</span> <span class="ow">in</span> <span class="n">var_names</span><span class="p">:</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">monthly_output_path</span><span class="p">,</span> <span class="n">var_name</span><span class="p">,</span>
+                         <span class="n">run_name</span> <span class="o">+</span> <span class="s2">&quot;.clm2.h0.&quot;</span> <span class="o">+</span> <span class="n">var_name</span> <span class="o">+</span> <span class="s2">&quot;.*&quot;</span><span class="p">)</span>
+    <span class="n">ds_in</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+    <span class="c1"># keep history file attributes:  This only needs to be done once</span>
+    <span class="k">if</span> <span class="n">var_name</span> <span class="o">==</span> <span class="s1">&#39;FSR&#39;</span><span class="p">:</span>
+        <span class="n">da_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds_in</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>            
+        <span class="n">da_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds_in</span><span class="p">[</span><span class="n">var_name</span><span class="p">])</span>
+    <span class="k">del</span> <span class="n">ds_in</span>
+
 <span class="sd">&#39;&#39;&#39; quick fix to adjust time vector for monthly data&#39;&#39;&#39;</span>
 <span class="k">def</span> <span class="nf">fix_time</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>  
     <span class="n">nmonths</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
@@ -1574,26 +1507,17 @@ Other intereresting variables might include latent heat flux or gross primary pr
 
     <span class="k">return</span> <span class="n">ds</span>
 
-<span class="sd">&#39;&#39;&#39;select the variables we want to read in&#39;&#39;&#39;</span>
-<span class="k">def</span> <span class="nf">preprocess</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">ds</span><span class="p">[</span><span class="n">fields</span><span class="p">]</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">fix_time</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">da_list</span><span class="p">))</span>
 
-<span class="c1"># Open the datasets. Here we&#39;ll just read in a single year of data</span>
-<span class="n">dsCTSM</span> <span class="o">=</span> <span class="n">fix_time</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">finCTSM</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">decode_times</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
-                                    <span class="n">preprocess</span><span class="o">=</span><span class="n">preprocess</span><span class="p">))</span>
-
-
-<span class="c1"># Define the variables to read in HINT, this may be useful for the extra cridit</span>
-<span class="c1"># fields = [&#39;FSR&#39;,&#39;FSDS&#39;, &#39;ELAI&#39;,&#39;area&#39;,&#39;landfrac&#39;]</span>
-<span class="c1"># def preprocess(ds, fields=fields):</span>
-<span class="c1">#    return ds[fields]</span>
-<span class="n">dsFATES</span> <span class="o">=</span> <span class="n">fix_time</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">finFATES</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">decode_times</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
-                                     <span class="n">preprocess</span><span class="o">=</span><span class="n">preprocess</span><span class="p">)</span> <span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-- your data have been read in --&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-- Your dataset is been opened --&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</div>
+<p><b>NOTE:</b> These are the raw history files that CTSM writes out.</p>
+<p>By default, they include grid cell averaged monthly means for different state and flux variables.</p>
+<div class="alert alert-block alert-info">
+    <b>TIP:</b> If you want to look at other variables, the <b>fields</b> variable in the cell below is where you can modify what we're reading off of the CLM history files.
 </div>
 <section id="printing-information-about-the-dataset-is-helpful-for-understanding-your-data">
 <h4>Printing information about the dataset is helpful for understanding your data.<a class="headerlink" href="#printing-information-about-the-dataset-is-helpful-for-understanding-your-data" title="Permalink to this headline">#</a></h4>
@@ -1603,11 +1527,10 @@ Other intereresting variables might include latent heat flux or gross primary pr
 <li><p><em>What variables are we looking at?</em></p></li>
 <li><p><em>Is there other helpful information, or are there attributes in the dataset we should be aware of?</em></p></li>
 </ul>
-<p>Keep in mind that we only read a single year of data, so the time dimension is in months.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print information about the dataset</span>
-<span class="n">dsFATES</span>
+<span class="n">ds</span>
 </pre></div>
 </div>
 </div>
@@ -1616,35 +1539,21 @@ Other intereresting variables might include latent heat flux or gross primary pr
 <p><em>What are the units, long name, and dimensions of your data?</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dsFATES</span><span class="o">.</span><span class="n">FSDS</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">FSDS</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="combining-datasets">
-<h3>1.3 Combining datasets<a class="headerlink" href="#combining-datasets" title="Permalink to this headline">#</a></h3>
-<p>Since our CTSM-FATESsp and CTSM5.1-SP <strong>have the same variables</strong>, we can:</p>
-<ol class="simple">
-<li><p>Combine them into a single dataset using the xarray function <code class="docutils literal notranslate"><span class="pre">concat</span></code></p></li>
-<li><p>Assign coordinates to the ‘sim’ dimension to allow sorting by simulation case</p></li>
-</ol>
-<p><em>Note that our new dataset is called</em> <code class="docutils literal notranslate"><span class="pre">ds</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">dsCTSM</span><span class="p">,</span><span class="n">dsFATES</span><span class="p">],</span> <span class="s1">&#39;sim&#39;</span><span class="p">,</span> <span class="n">data_vars</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">assign_coords</span><span class="p">(</span><span class="n">sim</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;sim&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;CTSM5.1-sp&#39;</span><span class="p">,</span><span class="s1">&#39;CTSM-FATESsp&#39;</span><span class="p">]))</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">FSDS</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
-<section id="adding-derived-variables-to-the-dataset">
-<h3>1.4 Adding derived variables to the dataset<a class="headerlink" href="#adding-derived-variables-to-the-dataset" title="Permalink to this headline">#</a></h3>
-<p>Next we can calculate the all sky albedo (ASA). Remember from above that this is the ratio of reflected to incoming solar radiation (<strong>FSR/FSDS</strong>).
-We will add this as a new variable in the dataset and add appropriate metadata.</p>
+<section id="simple-calculations">
+<h2>1.2 Simple Calculations<a class="headerlink" href="#simple-calculations" title="Permalink to this headline">#</a></h2>
+<p>To begin with we’ll look at albedo that’s simulated by the two models.</p>
+<p>Albedo and can be calculated in several different ways, but the calculations use solar radiation terms that are handled within CTSM.</p>
+<p>Here we’ll look at ‘all sky albedo’, which is the ratio of reflected to incoming solar radiation (<strong>FSR/FSDS</strong>).
+Other intereresting variables might include latent heat flux or gross primary productivity.</p>
+<p>We will add this as a new variable in the dataset and add appropriate metadata.</p>
 <p><em>When doing calculations, it is important to avoid dividing by zero. Use the <code class="docutils literal notranslate"><span class="pre">.where</span></code> function for this purpose</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1655,7 +1564,6 @@ We will add this as a new variable in the dataset and add appropriate metadata.<
 </div>
 </div>
 </div>
-</section>
 </section>
 <hr class="docutils" />
 <section id="plotting">
@@ -1668,21 +1576,13 @@ We will add this as a new variable in the dataset and add appropriate metadata.<
 </div>
 <ul class="simple">
 <li><p>We will plot all sky albedo (variable = <code class="docutils literal notranslate"><span class="pre">ASA</span></code>). Note that we select the variable by specifying our dataset, <code class="docutils literal notranslate"><span class="pre">ds</span></code>, and the variable.</p></li>
-<li><p>The plot is for the month of June (<code class="docutils literal notranslate"><span class="pre">time=6</span></code>)</p></li>
+<li><p>The plot is for the first year of data (<code class="docutils literal notranslate"><span class="pre">time=slice(0,12)</span></code>)</p></li>
 <li><p>This plotting function will plot <code class="docutils literal notranslate"><span class="pre">ASA</span></code> for each simulation in our dataset</p></li>
 </ul>
 <p><em>More plotting examples are on the <a class="reference external" href="https://docs.xarray.dev/en/latest/user-guide/plotting.html">xarray web site</a></em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">ASA</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;sim&quot;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can also plot every month from the year of data we read from the files. Here we do that for a single simulation, specified by <code class="docutils literal notranslate"><span class="pre">(sim=0)</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">ASA</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">sim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span> <span class="p">;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">ASA</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span> <span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -1692,43 +1592,35 @@ Why don’t you see the whole globe in some months?</p>
 </section>
 <section id="calculating-differences">
 <h3>2.2 Calculating differences<a class="headerlink" href="#calculating-differences" title="Permalink to this headline">#</a></h3>
-<p>In the previous section, it was difficult to see albedo differences between the simulations in side-by-side comparisons. We can calculate the differences between the simulations to more clearly see the differences and to understand how model structure, specifically the difference between CLM-FATESsp and CLM5.1sp, changes simulated albedo. The below code:</p>
+<p>We can calculate the differences between the beginning and end of the simulation to see the differences in albedo over the historical period. The below code:</p>
 <ul class="simple">
-<li><p>Subtracts CLM5.1sp from CLM-FATESsp</p></li>
+<li><p>Calculates a monthly climatology for the first 10 and last 10 years of the simulation</p></li>
 <li><p>Defines the difference as a new variable, <code class="docutils literal notranslate"><span class="pre">dsDiff</span></code></p></li>
 </ul>
 <p>We’ll first plot maps of the difference in all sky albedo for each month</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dsDiff</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">sim</span><span class="o">=</span><span class="s1">&#39;CTSM-FATESsp&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">sim</span><span class="o">=</span><span class="s1">&#39;CTSM5.1-sp&#39;</span><span class="p">)</span>
-<span class="n">dsDiff</span><span class="o">.</span><span class="n">ASA</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="p">;</span>
-<span class="n">ds</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dsIni</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">120</span><span class="p">))</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;time.month&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">dsFin</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">120</span><span class="p">,</span><span class="kc">None</span><span class="p">))</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;time.month&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">dsDiff</span> <span class="o">=</span> <span class="n">dsFin</span><span class="o">-</span><span class="n">dsIni</span>
+<span class="n">dsDiff</span><span class="o">.</span><span class="n">ASA</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="p">;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p><strong>Questions:</strong></p>
 <ul class="simple">
-<li><p>How is albedo different in CTSM-FATESsp and CTSM5.1-sp?</p></li>
+<li><p>How is albedo different in at the end of the simulation, relative to the begining of simulation?</p></li>
 <li><p>Where are the differences the largest?</p></li>
 <li><p>Are the differences consistent throughout the year?</p></li>
-<li><p>Since these simulations have the same climate and LAI, what’s driving the differences in albedo in different regions?</p></li>
+<li><p><strong>What’s causing these albedo changes</strong> in different regions?</p></li>
 </ul>
-<p><strong>What’s causing these differences in SP mode?</strong></p>
-<ul class="simple">
-<li><p>CTSM and FATES use different radiation schemes (2-stream vs. Norman, respectively).</p></li>
-<li><p>FATES doesn’t simulate canopy interception of snow, leading to differences in the northern hemisphere in the winter.</p></li>
-<li><p>These differences are being actively investigated, you can see the conversation on <a class="reference external" href="https://github.com/NGEET/fates/issues/837">this FATES issue</a>.</p></li>
-</ul>
-<div class="alert alert-block alert-info">
-<b>ISSUES:</b> CTSM and FATES model developers use GitHub issues to identify bugs, make model improvements, and track code developments.  You can watch these conversations, contribute to onging discussions, or create new issues when you find a problem with the model.
-</div>
 <section id="are-the-differences-coming-from-incoming-or-reflected-radiation">
 <h4>Are the differences coming from incoming or reflected radiation?<a class="headerlink" href="#are-the-differences-coming-from-incoming-or-reflected-radiation" title="Permalink to this headline">#</a></h4>
 <p>To find out, we can plot each variable. First we will plot incoming radiation (the denominator in all-sky albedo).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dsDiff</span><span class="o">.</span><span class="n">FSDS</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="n">vmin</span><span class="o">=-</span><span class="mf">0.1</span><span class="p">)</span> <span class="p">;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dsDiff</span><span class="o">.</span><span class="n">FSDS</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="n">vmin</span><span class="o">=-</span><span class="mf">0.1</span><span class="p">)</span> <span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -1745,7 +1637,7 @@ Why don’t you see the whole globe in some months?</p>
 <p>Plot the differences in ELAI below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dsDiff</span><span class="o">.</span><span class="n">ELAI</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="p">;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dsDiff</span><span class="o">.</span><span class="n">ELAI</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -1757,10 +1649,6 @@ Why don’t you see the whole globe in some months?</p>
 <li><p>Are the regions and times of largest differences the same as the differences in albedo?</p></li>
 </ul>
 </section>
-</section>
-<section id="most-of-the-differences-in-lai-seem-to-be-in-agricultural-regions">
-<h3>Most of the differences in LAI seem to be in agricultural regions.<a class="headerlink" href="#most-of-the-differences-in-lai-seem-to-be-in-agricultural-regions" title="Permalink to this headline">#</a></h3>
-<p>Presently, FATESsp doesn’t account for crop areas, which give it a lower LAI in places that have a large fraction of agricultural lands, especially during the growing season. This points to bigger challenges in how CTSM-FATES need to deal with crops, but it’s something the CTSM and FATES teams are working on.</p>
 </section>
 <section id="calculating-time-series">
 <h3>2.3 Calculating Time Series<a class="headerlink" href="#calculating-time-series" title="Permalink to this headline">#</a></h3>
@@ -1777,7 +1665,7 @@ Why don’t you see the whole globe in some months?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">point</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">lon</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">lat</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
-<span class="n">point</span><span class="o">.</span><span class="n">ASA</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;sim&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span> <span class="p">;</span>
+<span class="n">point</span><span class="o">.</span><span class="n">ASA</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span> <span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -1788,20 +1676,20 @@ Why don’t you see the whole globe in some months?</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="sd">&#39;&#39;&#39;this first plot is the same as the one above&#39;&#39;&#39;</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">)</span>
-<span class="n">point</span><span class="o">.</span><span class="n">ASA</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;sim&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">point</span><span class="o">.</span><span class="n">ASA</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="sd">&#39;&#39;&#39;now we&#39;ll look for potential sources of the difference&#39;&#39;&#39;</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">222</span><span class="p">)</span>
-<span class="n">point</span><span class="o">.</span><span class="n">ELAI</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;sim&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span> 
+<span class="n">point</span><span class="o">.</span><span class="n">ELAI</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">223</span><span class="p">)</span>
-<span class="n">point</span><span class="o">.</span><span class="n">FSDS</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;sim&#39;</span><span class="p">)</span> 
+<span class="n">point</span><span class="o">.</span><span class="n">FSDS</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">224</span><span class="p">)</span>
-<span class="n">point</span><span class="o">.</span><span class="n">FSR</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;sim&#39;</span><span class="p">)</span> 
+<span class="n">point</span><span class="o">.</span><span class="n">FSR</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span> <span class="p">;</span>
 </pre></div>
 </div>
@@ -1828,7 +1716,7 @@ This requires weighting the values from each grid cell by the total land area of
 <p>The land weights are shown in the plot below. Note that these are larger near the equator, and smaller at the poles and along the coastline</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">la</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">landfrac</span><span class="o">*</span><span class="n">ds</span><span class="o">.</span><span class="n">area</span><span class="p">)</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">sim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="s1">&#39;sim&#39;</span><span class="p">])</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">la</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">landfrac</span><span class="o">*</span><span class="n">ds</span><span class="o">.</span><span class="n">area</span><span class="p">)</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;time&#39;</span><span class="p">])</span> 
 <span class="n">la</span> <span class="o">=</span> <span class="n">la</span> <span class="o">*</span> <span class="mf">1e6</span>  <span class="c1">#converts from land area from km2 to m2 </span>
 <span class="n">la</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;m^2&#39;</span>
 <span class="n">lw</span> <span class="o">=</span> <span class="n">la</span><span class="o">/</span><span class="n">la</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -1856,7 +1744,7 @@ This requires weighting the values from each grid cell by the total land area of
 
     <span class="c1"># then make plots</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-    <span class="n">dsGlobalWgt</span><span class="p">[</span><span class="n">plotVars</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;sim&#39;</span><span class="p">)</span>
+    <span class="n">dsGlobalWgt</span><span class="p">[</span><span class="n">plotVars</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
     
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Weighted global sum&#39;</span><span class="p">,</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
@@ -1902,8 +1790,14 @@ This example creates python functions that allow you to easily calculate annual 
         <span class="n">dsAnn</span><span class="p">[</span><span class="n">plotVars</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">temp</span>
 
 <span class="c1"># Make a simple plot</span>
-<span class="n">dsAnn</span><span class="o">.</span><span class="n">ELAI</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s1">&#39;sim&#39;</span><span class="p">,</span>
-               <span class="n">col_wrap</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="p">;</span>
+<span class="n">dsAnn</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">ELAI</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span><span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dsAnn</span>
 </pre></div>
 </div>
 </div>
@@ -1969,16 +1863,16 @@ This example creates python functions that allow you to easily calculate annual 
                          <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Robinson</span><span class="p">()))</span>
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">ndenumerate</span><span class="p">(</span><span class="n">axes</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">plotData</span> <span class="o">=</span> <span class="n">dsAnn</span><span class="o">.</span><span class="n">ELAI</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">sim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;sim&#39;</span><span class="p">,</span><span class="s1">&#39;time&#39;</span><span class="p">])</span>
+        <span class="n">plotData</span> <span class="o">=</span> <span class="n">dsAnn</span><span class="o">.</span><span class="n">ELAI</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="kc">None</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
         <span class="n">map_function</span><span class="p">(</span><span class="n">plotData</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">cb</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
                      <span class="n">panel</span><span class="o">=</span><span class="s1">&#39;(a)&#39;</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
                      <span class="n">vmax</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-                     <span class="n">units</span><span class="o">=</span><span class="s1">&#39;FATESsp, Annual ELAI&#39;</span><span class="p">)</span>
+                     <span class="n">units</span><span class="o">=</span><span class="s1">&#39;Final Annual ELAI&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">plotData</span> <span class="o">=</span> <span class="p">(</span><span class="n">dsAnn</span><span class="o">.</span><span class="n">ELAI</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">sim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">-</span> \
-                    <span class="n">dsAnn</span><span class="o">.</span><span class="n">ELAI</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">sim</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+        <span class="n">plotData</span> <span class="o">=</span> <span class="p">(</span><span class="n">dsAnn</span><span class="o">.</span><span class="n">ELAI</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="kc">None</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">-</span> \
+                    <span class="n">dsAnn</span><span class="o">.</span><span class="n">ELAI</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">))</span>
         <span class="n">map_function</span><span class="p">(</span><span class="n">plotData</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">cb</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">panel</span><span class="o">=</span><span class="s1">&#39;(b)&#39;</span><span class="p">,</span>
-                     <span class="n">units</span><span class="o">=</span><span class="s1">&#39;Differences FATESsp-CTSM5.1&#39;</span><span class="p">,</span>
+                     <span class="n">units</span><span class="o">=</span><span class="s1">&#39;Annual ELAI Change, Final-Initial&#39;</span><span class="p">,</span>
                      <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bwr&#39;</span><span class="p">,</span><span class="n">nbins</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
                      <span class="n">vmax</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span><span class="n">vmin</span><span class="o">=-</span><span class="mf">0.75</span><span class="p">)</span>    
                      
@@ -1994,11 +1888,11 @@ This example creates python functions that allow you to easily calculate annual 
 <h2>Extra credit challenge<a class="headerlink" href="#extra-credit-challenge" title="Permalink to this headline">#</a></h2>
 <p>If you have extra time &amp; energy, try running through this notebook with other variables. Interesting options could include:</p>
 <ul class="simple">
-<li><p>Canopy evaporation (<code class="docutils literal notranslate"><span class="pre">FCEV</span></code>) or</p></li>
-<li><p>GPP (<code class="docutils literal notranslate"><span class="pre">FPSN</span></code> in CLM5.1-sp and <code class="docutils literal notranslate"><span class="pre">FATES_GPP</span></code> in FATES)</p></li>
+<li><p>Latent heat flux (the sum of <code class="docutils literal notranslate"><span class="pre">FCTR</span></code>+<code class="docutils literal notranslate"><span class="pre">FCEV</span></code>+<code class="docutils literal notranslate"><span class="pre">FGEV</span></code>) or</p></li>
+<li><p>Gross Primary Production (<code class="docutils literal notranslate"><span class="pre">GPP</span></code>)</p></li>
 </ul>
 <div class="alert alert-block alert-warning">
-<p><b>HINT:</b> pay attention to units for these challenges.  Variables may also need to be renamed and units modified to combine datasets (i.e., the GPP challenge is harder!).</p>
+<p><b>HINT:</b> pay attention to units for these challenges.</p>
 </div></section>
 </section>
 
@@ -2011,16 +1905,16 @@ This example creates python functions that allow you to easily calculate annual 
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "npl-2023a"
         },
         kernelOptions: {
-            name: "python3",
+            name: "npl-2023a",
             path: "./notebooks/diagnostics/clm_ctsm"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'npl-2023a'</script>
 
               </div>
               
