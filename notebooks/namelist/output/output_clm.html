@@ -1374,17 +1374,17 @@ This variable specifies is the maximum number of time samples written to a histo
 <code class="docutils literal notranslate"><span class="pre">hist_mfilt</span> <span class="pre">=</span> <span class="pre">1</span></code></p>
 <div class="alert alert-info">
 <strong>Evaluate your understanding</strong>
-<p>What is the setting to generate CLM daily data for a month-long simulation that will create a file every day?</p>
+<p>What is the setting to generate CLM 3-hourly data for a month-long simulation that will create a file every day?</p>
 </div>
 <div class="alert alert-success">  
 <details>  
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
 <p>Modify <font face="Courier"><strong>env_run.xml</strong></font> with the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="n">nmonths</span><span class="p">,</span> <span class="n">STOP_OPTION</span><span class="o">=</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="n">nmonths</span><span class="p">,</span> <span class="n">STOP_OPTION</span><span class="o">=</span><span class="mi">1</span>
 </pre></div>
 </div>
 <p>Add the following line to <font face="Courier"><strong>user_nl_cam</strong></font>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">hist_nhtfrq</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">hist_nhtfrq</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
     <span class="n">hist_mfilt</span> <span class="o">=</span> <span class="mi">8</span>
 </pre></div>
 </div>
