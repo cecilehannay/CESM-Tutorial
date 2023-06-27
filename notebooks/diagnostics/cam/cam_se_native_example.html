@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Debugging CAM &#8212; CESM Tutorial</title>
+    <title>CAM-SE output analysis &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Source Modifications" href="../../sourcemods.html" />
-    <link rel="prev" title="Exercise Overview" href="../exercises_overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../intro/intro_overview.html">
    Introduction
@@ -497,38 +495,38 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../troubleshooting.html">
    Troubleshooting runtime errors
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../log_files.html">
+    <a class="reference internal" href="../../troubleshooting/log_files.html">
      The log files
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../debugging_flag.html">
+    <a class="reference internal" href="../../troubleshooting/debugging_flag.html">
      Adding debugging info
     </a>
    </li>
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="../exercises_overview.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../troubleshooting/exercises_overview.html">
      Exercise Overview
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
     <label for="toctree-checkbox-16">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../troubleshooting/exercises/troubleshooting_cam.html">
        Debugging CAM
       </a>
      </li>
@@ -586,17 +584,17 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../diagnostics/timeseries.html">
+    <a class="reference internal" href="../timeseries.html">
      File formats
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../diagnostics/cam.html">
+    <a class="reference internal" href="../cam.html">
      CAM
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../diagnostics/cice.html">
+    <a class="reference internal" href="../cice.html">
      CICE
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
@@ -606,19 +604,19 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../diagnostics/cice/basics.html">
+      <a class="reference internal" href="../cice/basics.html">
        Basic Plotting
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../diagnostics/cice/advanced.html">
+      <a class="reference internal" href="../cice/advanced.html">
        Advanced Plotting
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../diagnostics/clm_ctsm.html">
+    <a class="reference internal" href="../clm_ctsm.html">
      CLM/CTSM
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
@@ -628,14 +626,14 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../diagnostics/clm_ctsm/basics.html">
+      <a class="reference internal" href="../clm_ctsm/basics.html">
        Basic Plotting
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../diagnostics/pop.html">
+    <a class="reference internal" href="../pop.html">
      POP
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
@@ -645,14 +643,14 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../diagnostics/pop/basics.html">
+      <a class="reference internal" href="../pop/basics.html">
        Basic Plotting
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../diagnostics/advanced.html">
+    <a class="reference internal" href="../advanced.html">
      Advanced Topics
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
@@ -662,27 +660,27 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../diagnostics/advanced/analysis_tools.html">
+      <a class="reference internal" href="../advanced/analysis_tools.html">
        CESM analysis tools
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../diagnostics/advanced/regridding.html">
+      <a class="reference internal" href="../advanced/regridding.html">
        Regridding
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../diagnostics/advanced/large_ensembles.html">
+      <a class="reference internal" href="../advanced/large_ensembles.html">
        Large Ensembles
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../diagnostics/advanced/cvdp.html">
+      <a class="reference internal" href="../advanced/cvdp.html">
        CVDP
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../diagnostics/advanced/postprocessing.html">
+      <a class="reference internal" href="../advanced/postprocessing.html">
        Postprocessing Model Output
       </a>
      </li>
@@ -998,7 +996,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/troubleshooting/exercises/troubleshooting_cam.ipynb"
+        <a href="https://mybinder.org/v2/gh/NCAR/CESM-Tutorial/main?urlpath=tree/docs/notebooks/diagnostics/cam/cam_se_native_example.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1058,7 +1056,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/troubleshooting/exercises/troubleshooting_cam.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/NCAR/CESM-Tutorial/issues/new?title=Issue%20on%20page%20%2Fnotebooks/diagnostics/cam/cam_se_native_example.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1086,7 +1084,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../_sources/notebooks/troubleshooting/exercises/troubleshooting_cam.ipynb"
+        <a href="../../../_sources/notebooks/diagnostics/cam/cam_se_native_example.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1123,23 +1121,70 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#input-data">
+   Input data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameters">
+   Parameters
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Debugging CAM</h1>
+                <h1>CAM-SE output analysis</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#input-data">
+   Input data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameters">
+   Parameters
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -1147,114 +1192,174 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="debugging-cam">
-<h1>Debugging CAM<a class="headerlink" href="#debugging-cam" title="Permalink to this headline">#</a></h1>
-<div class="alert alert-info">
-<strong>Exercise: Add an additional output variable</strong><br><br>
-<p>Create a case called <code class="docutils literal notranslate"><span class="pre">b1850_high_freq_bugfixing</span></code> using the compset  <code class="docutils literal notranslate"><span class="pre">B1850</span></code>  at <code class="docutils literal notranslate"><span class="pre">f19_g17</span></code> resolution.
-Set the run length to <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">month</span></code>.</p>
-<p>Now in addition to the default monthly output, add the following output:</p>
-<ul class="simple">
-<li><p>an <code class="docutils literal notranslate"><span class="pre">h1</span></code> file containing daily averages of <code class="docutils literal notranslate"><span class="pre">T2M</span></code> and set your namelist so that there is one file per day for this daily averaged output.</p></li>
-</ul>
-<p>Set up, build and submit your case.</p>
-<p>NB: Your goal is to make the model crashes. And then to troubleshoot why it crashed.</p>
-</div>
-<div class="alert alert-warning">  
-<details> 
-   <summary>
-      <font face="Times New Roman" color='blue'>Click here for hints</font>
-    </summary>
-<p><strong>Tip to add a <code class="docutils literal notranslate"><span class="pre">h1</span></code> file</strong></p>
-<p>For more information about how to add a <code class="docutils literal notranslate"><span class="pre">h1</span></code> file, check the section about namelist modifications.</p>
-<p>If you don’t have time to check the section immediately, the way to add an <code class="docutils literal notranslate"><span class="pre">h1</span></code> file with daily averages of <code class="docutils literal notranslate"><span class="pre">T2M</span></code> and create one file per day for this daily averaged output is:</p>
-<p>add the following lines in <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">nl</span> <span class="pre">cam</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> fincl2 = ’T2M:A’
- nhtfrq = 0,-24
- mfilt = 1,1
+  <section class="tex2jax_ignore mathjax_ignore" id="cam-se-output-analysis">
+<h1>CAM-SE output analysis<a class="headerlink" href="#cam-se-output-analysis" title="Permalink to this headline">#</a></h1>
+<p>Examples of simple analysis and plotting that can be done with CAM-SE output on the native cubed-sphere grid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
 </pre></div>
 </div>
-<p><strong>Tip to for troubleshooting</strong></p>
-<p>Check the cheyenne queue and wait until your run doesn’t show in the queue anymore.</p>
-<p>When your run is not in the queue anymore:</p>
-<ul class="simple">
-<li><p>Go to the <code class="docutils literal notranslate"><span class="pre">archive</span></code> directory: can you see the history files in the archive directory? The answer should be no. Why?</p></li>
-<li><p>Go to the <code class="docutils literal notranslate"><span class="pre">run</span></code> directory: Is there any evidence of history files or restart files being created by the run? The answer, again, should be no. This is because we have tricked you, with a bug.</p></li>
-</ul>
-<p>Look at the log files in the <code class="docutils literal notranslate"><span class="pre">RUNDIR</span></code> to try to understand why the run crashed.</p>
-</details>
 </div>
-<div class="alert alert-success">   
-<details>
-<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p><strong># Create a new case</strong></p>
-<p>Create a new case <code class="docutils literal notranslate"><span class="pre">b1850_high_freq_bugfixing</span></code> with the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> cd /glade/work/$USER/code/my_cesm_code/cime/scripts/
- ./create_newcase --case ~/cases/b1850_high_freq_bugfixing --compset B1850 --res f19_g17 
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_map</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function plots data on a Mollweide projection map. </span>
+<span class="sd">    </span>
+<span class="sd">    The data is transformed to the projection using Cartopy&#39;s `transform_points` method.</span>
+
+<span class="sd">    The plot is made by triangulation of the points, producing output very similar to `pcolormesh`,</span>
+<span class="sd">    but with triangles instead of rectangles used to make the image.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dataproj</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span> <span class="c1"># assumes data is lat/lon</span>
+    <span class="n">plotproj</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Mollweide</span><span class="p">()</span>   <span class="c1"># output projection </span>
+    <span class="c1"># set up figure / axes object, set to be global, add coastlines</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span><span class="n">plotproj</span><span class="p">})</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="c1"># this figures out the transformation between (lon,lat) and the specified projection</span>
+    <span class="n">tcoords</span> <span class="o">=</span> <span class="n">plotproj</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">dataproj</span><span class="p">,</span> <span class="n">lon</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">lat</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="c1"># working with the projection</span>
+    <span class="n">xi</span><span class="o">=</span><span class="n">tcoords</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>  <span class="c1"># there can be bad points set to infinity, but we&#39;ll ignore them</span>
+    <span class="c1"># print(f&quot;{xi.shape = } --- Number of False: {np.count_nonzero(~xi)}&quot;)</span>
+    <span class="k">assert</span> <span class="n">xi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">tcoords</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="sa">f</span><span class="s2">&quot;Something wrong with shapes should be the same: </span><span class="si">{</span><span class="n">xi</span><span class="o">.</span><span class="n">shape</span><span class="w"> </span><span class="si">= }</span><span class="s2">, </span><span class="si">{</span><span class="n">tcoords</span><span class="o">.</span><span class="n">shape</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span>
+    <span class="n">tc</span><span class="o">=</span><span class="n">tcoords</span><span class="p">[</span><span class="n">xi</span><span class="p">,:]</span>
+    <span class="n">datai</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">xi</span><span class="p">]</span>  <span class="c1"># convert to numpy array, then subset</span>
+    <span class="c1"># Use tripcolor --&gt; triangluates the data to make the plot</span>
+    <span class="c1"># rasterized=True reduces the file size (necessary for high-resolution for reasonable file size)</span>
+    <span class="c1"># keep output as &quot;img&quot; to make specifying colorbar easy</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">tripcolor</span><span class="p">(</span><span class="n">tc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">tc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">datai</span><span class="p">,</span> <span class="n">shading</span><span class="o">=</span><span class="s1">&#39;gouraud&#39;</span><span class="p">,</span> <span class="n">rasterized</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
 </pre></div>
 </div>
-<p><strong># Setup</strong></p>
-<p>Invoke case.setup with the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">cd</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_high_freq_bugfixing</span>
- <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>
+</div>
+</div>
+<section id="input-data">
+<h2>Input data<a class="headerlink" href="#input-data" title="Permalink to this headline">#</a></h2>
+<p>In the following cell, specify the data source.</p>
+<p><code class="docutils literal notranslate"><span class="pre">location_of_hfiles</span></code> is a path object that points to the directory where data files should be.
+<code class="docutils literal notranslate"><span class="pre">search_pattern</span></code> specifies what pattern to look for inside that directory.</p>
+<p><strong>SIMPLIFICATION</strong> If you want to just provide a path to a file, simply specify it by commenting (with <code class="docutils literal notranslate"><span class="pre">#</span></code>) the lines above “# WE need lat and lon”, and replace with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fils</span> <span class="o">=</span> <span class="s2">&quot;/path/to/your/data/file.nc&quot;</span>
 </pre></div>
 </div>
-<p><strong># Customize namelists</strong></p>
-<p>Add the daily output of <code class="docutils literal notranslate"><span class="pre">T2M</span></code> by editing the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code> and adding the lines:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;T2M:A&#39;</span>
- <span class="n">nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">24</span>
- <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h2>
+<p>Specify the name of the variable to be analyzed with <code class="docutils literal notranslate"><span class="pre">variable_name</span></code>.</p>
+<p>To change the units of the variable, specify <code class="docutils literal notranslate"><span class="pre">scale_factor</span></code> and provide the new units string as <code class="docutils literal notranslate"><span class="pre">units</span></code>. Otherwise, just set <code class="docutils literal notranslate"><span class="pre">scale_factor</span></code> and <code class="docutils literal notranslate"><span class="pre">units</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scale_factor</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">units</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;variable_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p><strong># Set run length</strong></p>
-<p>Set the <strong>run length</strong> to 1 month:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">nmonths</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">location_of_hfiles</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/Users/brianpm/Desktop&quot;</span><span class="p">)</span>
+<span class="n">search_pattern</span> <span class="o">=</span> <span class="s2">&quot;e2p3b09.F2000climo.ne30pg3.ctl002.cam.h2.0010-01-01-00000.nc&quot;</span>
+
+<span class="n">fils</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">location_of_hfiles</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">search_pattern</span><span class="p">))</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">fils</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">fils</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Just so you konw, there are </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">fils</span><span class="p">)</span><span class="si">}</span><span class="s2"> files about to be loaded.&quot;</span><span class="p">)</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">fils</span><span class="p">)</span>
+
+<span class="c1"># We need lat and lon:</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span>
+
+<span class="c1"># Choose what variable to plot:</span>
+<span class="n">variable_name</span> <span class="o">=</span> <span class="s2">&quot;PRECT&quot;</span>
+
+<span class="c1"># If needed, select scale factor and new units:</span>
+<span class="n">scale_factor</span> <span class="o">=</span> <span class="mf">86400.</span> <span class="o">*</span> <span class="mf">1000.</span> <span class="c1"># m/s -&gt; mm/day</span>
+<span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;mm/day&quot;</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">scale_factor</span> <span class="o">*</span> <span class="n">ds</span><span class="p">[</span><span class="n">variable_name</span><span class="p">]</span>
+<span class="n">data</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">units</span>
 </pre></div>
 </div>
-<p><strong># Change the job queue and account number</strong></p>
-<p>If needed, change <code class="docutils literal notranslate"><span class="pre">job</span> <span class="pre">queue</span></code> and <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">number</span></code>. <br>
-For instance, to run in the queue <code class="docutils literal notranslate"><span class="pre">regular</span></code> and the project number <code class="docutils literal notranslate"><span class="pre">P93300642</span></code>, use the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">regular</span><span class="p">,</span><span class="n">PROJECT</span><span class="o">=</span><span class="n">P93300642</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># temporal averaging</span>
+<span class="c1"># simplest case, just average over times:</span>
+<span class="n">data_avg</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong># Build and submit</strong></p>
-<p>Build the model and submit your job:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
-<span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># Global average</span>
+<span class="c1">#</span>
+<span class="n">data_global_average</span> <span class="o">=</span> <span class="n">data_avg</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The area-weighted average of the time-mean data is: </span><span class="si">{</span><span class="n">data_global_average</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<hr class="docutils" />
-<p><strong># Look at what happened</strong></p>
-<p><strong>Your run should crash !!!</strong>. This is normal. The goal of the exercise is to troubleshooting.</p>
-<p>What you should find in your run directory is three log files.</p>
-<ul class="simple">
-<li><p>One for the coupler <code class="docutils literal notranslate"><span class="pre">cpl.log.*</span></code>,</p></li>
-<li><p>one for CAM <code class="docutils literal notranslate"><span class="pre">atm.log.*</span></code></p></li>
-<li><p>and one for CESM <code class="docutils literal notranslate"><span class="pre">cesm.log.*</span></code>.</p></li>
-</ul>
-<p>Somewhere in these log files is information about what has gone wrong, but it is often not entirely
-straightforward to find.</p>
-<ul class="simple">
-<li><p>Often at the bottom of the log file, there are errors that are not relative to your problem because
-they are just demonstrating that individual processes are exiting.</p></li>
-<li><p>Often the relevant error lies above this and can sometimes be found by searching for the first occurrence of ERROR or ABORT or cesm.exe.</p></li>
-</ul>
-<p>In this case, searching for the first occurrence of ERROR in <code class="docutils literal notranslate"><span class="pre">cesm.log.*</span></code> gives us some relevant information. We find</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">:</span> <span class="n">FLDLST</span><span class="p">:</span> <span class="mi">1</span> <span class="n">errors</span> <span class="n">found</span><span class="p">,</span> <span class="n">see</span> <span class="n">log</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The area-weighted average of the time-mean data is: 3.1757345597199627
 </pre></div>
 </div>
-<p>This tells us is that something has gone wrong with the list of output variables that we have asked for.</p>
-<p>More information can then be found in the CAM log file <code class="docutils literal notranslate"><span class="pre">atm.log.*</span></code>.
-Look at the very end of that file and you should see</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FLDLST</span><span class="p">:</span> <span class="n">T2M</span> <span class="ow">in</span> <span class="n">fincl</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">not</span> <span class="n">found</span>
-<span class="n">ERROR</span><span class="p">:</span> <span class="n">FLDLST</span><span class="p">:</span> <span class="mi">1</span> <span class="n">errors</span> <span class="n">found</span><span class="p">,</span> <span class="n">see</span> <span class="n">log</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># Regional average using a (logical) rectangle</span>
+<span class="c1">#</span>
+<span class="n">west_lon</span> <span class="o">=</span> <span class="mf">110.0</span>
+<span class="n">east_lon</span> <span class="o">=</span> <span class="mf">200.0</span>
+<span class="n">south_lat</span> <span class="o">=</span> <span class="o">-</span><span class="mf">30.0</span>
+<span class="n">north_lat</span> <span class="o">=</span> <span class="mf">30.0</span>
+
+<span class="c1"># To reduce to the region, we need to know which indices of ncol dimension are inside the boundary</span>
+
+<span class="n">region_inds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(((</span><span class="n">lat</span> <span class="o">&gt;</span> <span class="n">south_lat</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">lat</span> <span class="o">&lt;</span> <span class="n">north_lat</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">lon</span><span class="o">&gt;</span><span class="n">west_lon</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">lon</span><span class="o">&lt;</span><span class="n">east_lon</span><span class="p">))</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The number of grid columns inside the specified region is </span><span class="si">{</span><span class="n">region_inds</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># get the area associated with each selected column. Note the region_inds array needs to be flattened to use in isel.</span>
+<span class="n">region_area</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">ncol</span><span class="o">=</span><span class="n">region_inds</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span> 
+<span class="c1"># get the data in the region:</span>
+<span class="n">region_data</span> <span class="o">=</span> <span class="n">data_avg</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">ncol</span><span class="o">=</span><span class="n">region_inds</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+
+<span class="n">data_region_average</span> <span class="o">=</span> <span class="n">region_data</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">region_area</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The area-weighted average in thee region [</span><span class="si">{</span><span class="n">west_lon</span><span class="si">}</span><span class="s2">E-</span><span class="si">{</span><span class="n">east_lon</span><span class="si">}</span><span class="s2">E, </span><span class="si">{</span><span class="n">south_lat</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">north_lat</span><span class="si">}</span><span class="s2">] is: </span><span class="si">{</span><span class="n">data_region_average</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This tells us that <code class="docutils literal notranslate"><span class="pre">T2M</span></code> is not a valid history variable for CAM. That’s because the correct variable
-for near surface temperature is <code class="docutils literal notranslate"><span class="pre">TREFHT</span></code>. <code class="docutils literal notranslate"><span class="pre">T2M</span></code> is not a CAM
-history field and this has caused CESM to crash</p>
-</details>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number of grid columns inside the specified region is 5912
+The area-weighted average in thee region [110.0E-200.0E, -30.0-30.0] is: 7.297384501060615
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the map of the time average </span>
+<span class="c1"># using the function defined above.</span>
+<span class="n">fig1</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">make_map</span><span class="p">(</span><span class="n">data_avg</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/brianpm/opt/miniconda3/envs/p11/lib/python3.11/site-packages/shapely/constructive.py:181: RuntimeWarning: invalid value encountered in buffer
+  return lib.buffer(
+</pre></div>
+</div>
+<img alt="../../../_images/cam_se_native_example_8_1.png" src="../../../_images/cam_se_native_example_8_1.png" />
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1270,7 +1375,7 @@ history field and this has caused CESM to crash</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks/troubleshooting/exercises"
+            path: "./notebooks/diagnostics/cam"
         },
         predefinedOutput: true
     }
@@ -1284,20 +1389,6 @@ history field and this has caused CESM to crash</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../exercises_overview.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Exercise Overview</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../../sourcemods.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Source Modifications</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
