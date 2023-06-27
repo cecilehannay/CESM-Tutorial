@@ -1229,14 +1229,16 @@ For instance, to run in the queue <code class="docutils literal notranslate"><sp
 <li><p>When the run is completed, compare this run to the first run:
 <code class="docutils literal notranslate"><span class="pre">b1850_high_freq</span></code>.</p></li>
 <li><p>Create a file with the difference in  <code class="docutils literal notranslate"><span class="pre">LWCF</span></code>  between <code class="docutils literal notranslate"><span class="pre">b1850_dcs</span></code> and <code class="docutils literal notranslate"><span class="pre">b1850_high_freq</span></code>.</p></li>
+<li><p>You can use <code class="docutils literal notranslate"><span class="pre">ncdiff</span></code> and <code class="docutils literal notranslate"><span class="pre">ncview</span></code> to look at the difference between the 2 runs.</p></li>
+<li><p>For instance, use <code class="docutils literal notranslate"><span class="pre">ncdiff</span></code> to create a file with the difference between the 2 runs:</p></li>
 </ul>
-<p>You can use <code class="docutils literal notranslate"><span class="pre">ncdiff</span></code> and <code class="docutils literal notranslate"><span class="pre">ncview</span></code> to look at the difference between the 2 runs.</p>
-<p>For instance, use <code class="docutils literal notranslate"><span class="pre">ncdiff</span></code> to create a file with the difference between the 2 runs:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs 
 ncdiff /glade/scratch/$user/archive/b1850_dcs/atm/hist/b1850_dcs.cam.h0.0001-01.nc /glade/scratch/$user/archive/b1850_high_freq/atm/hist/b1850_high_freq.cam.h0.0001-01.nc diff.nc
 </pre></div>
 </div>
-<p>Use <code class="docutils literal notranslate"><span class="pre">ncview</span></code> to look at the file you created.</p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">ncview</span></code> to look at the file you created.</p></li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncview</span> <span class="n">diff</span><span class="o">.</span><span class="n">nc</span>
 </pre></div>
 </div>
