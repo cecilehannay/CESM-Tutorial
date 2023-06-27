@@ -1146,19 +1146,53 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-goals">
-   Learning Goals
+  <a class="reference internal nav-link" href="#basic-plotting">
+   Basic Plotting
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-goals">
+     Learning Goals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1-making-polar-projection-plots-of-sea-ice-concentration">
+     Exercise 1: Making polar projection plots of sea ice concentration.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-compute-total-sea-ice-area-and-plot-versus-time">
+     Exercise 2: Compute total sea ice area and plot versus time.
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#subsection-1">
-   Subsection 1
+  <a class="reference internal nav-link" href="#advanced-plotting">
+   Advanced Plotting
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#subsection-2">
-   Subsection 2
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Learning Goals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1-plot-per-category-ice-area">
+     Exercise 1: Plot per-category ice area
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-plot-per-category-snow-thickness">
+     Exercise 2: Plot per-category snow thickness
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-plot-ice-area-related-tracer">
+     Exercise 3: Plot ice area related tracer
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1180,19 +1214,53 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-goals">
-   Learning Goals
+  <a class="reference internal nav-link" href="#basic-plotting">
+   Basic Plotting
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-goals">
+     Learning Goals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1-making-polar-projection-plots-of-sea-ice-concentration">
+     Exercise 1: Making polar projection plots of sea ice concentration.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-compute-total-sea-ice-area-and-plot-versus-time">
+     Exercise 2: Compute total sea ice area and plot versus time.
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#subsection-1">
-   Subsection 1
+  <a class="reference internal nav-link" href="#advanced-plotting">
+   Advanced Plotting
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#subsection-2">
-   Subsection 2
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Learning Goals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1-plot-per-category-ice-area">
+     Exercise 1: Plot per-category ice area
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-plot-per-category-snow-thickness">
+     Exercise 2: Plot per-category snow thickness
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-plot-ice-area-related-tracer">
+     Exercise 3: Plot ice area related tracer
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1206,21 +1274,61 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="cam">
 <h1>CAM<a class="headerlink" href="#cam" title="Permalink to this headline">#</a></h1>
+<section id="basic-plotting">
+<h2>Basic Plotting<a class="headerlink" href="#basic-plotting" title="Permalink to this headline">#</a></h2>
 <section id="learning-goals">
-<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">#</a></h2>
+<h3>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>Enter learning goals here.</p></li>
+<li><p>Making polar projection plots</p></li>
+<li><p>Understanding sea ice variables such as concentration and thickness</p></li>
+<li><p>Masking and area averaging</p></li>
+<li><p>Computing total sea ice area or volume</p></li>
 </ul>
 </section>
 <hr class="docutils" />
-<section id="subsection-1">
-<h2>Subsection 1<a class="headerlink" href="#subsection-1" title="Permalink to this headline">#</a></h2>
-<p>Info here</p>
+<section id="exercise-1-making-polar-projection-plots-of-sea-ice-concentration">
+<h3>Exercise 1: Making polar projection plots of sea ice concentration.<a class="headerlink" href="#exercise-1-making-polar-projection-plots-of-sea-ice-concentration" title="Permalink to this headline">#</a></h3>
+<p>Here we will use some custom python tools to produce a polar projection plot of sea ice concentration. Some things to try include changing the colormap, plotting sea ice thickness instead of concentration, changing hemispheres.</p>
 </section>
 <hr class="docutils" />
-<section id="subsection-2">
-<h2>Subsection 2<a class="headerlink" href="#subsection-2" title="Permalink to this headline">#</a></h2>
-<p>Info here</p>
+<section id="exercise-2-compute-total-sea-ice-area-and-plot-versus-time">
+<h3>Exercise 2: Compute total sea ice area and plot versus time.<a class="headerlink" href="#exercise-2-compute-total-sea-ice-area-and-plot-versus-time" title="Permalink to this headline">#</a></h3>
+<p>Here will we learn how to compute the total sea ice area for the northern hemisphere. Then plot this versus time. Some exercises will be plotting the monthly mean sea ice area, plotting just September or March mean sea ice area, computing sea ice volume and plotting that.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="advanced-plotting">
+<h2>Advanced Plotting<a class="headerlink" href="#advanced-plotting" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>Learning Goals<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Using sea ice thickness distribution (ITD) category information</p></li>
+<li><p>Using sea ice tracers</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="exercise-1-plot-per-category-ice-area">
+<h3>Exercise 1: Plot per-category ice area<a class="headerlink" href="#exercise-1-plot-per-category-ice-area" title="Permalink to this headline">#</a></h3>
+<p>Here you will plot a field that uses the subgridscale ice thickness distribution (ITD) categories.</p>
+</section>
+<hr class="docutils" />
+<section id="exercise-2-plot-per-category-snow-thickness">
+<h3>Exercise 2: Plot per-category snow thickness<a class="headerlink" href="#exercise-2-plot-per-category-snow-thickness" title="Permalink to this headline">#</a></h3>
+<p>Here is another example of an ITD related field, the snow thickness. Actual snow thickness is derived from the snow volume (per unit area).</p>
+</section>
+<hr class="docutils" />
+<section id="exercise-3-plot-ice-area-related-tracer">
+<h3>Exercise 3: Plot ice area related tracer<a class="headerlink" href="#exercise-3-plot-ice-area-related-tracer" title="Permalink to this headline">#</a></h3>
+<p>In this exercise you will learn about a variable related to the ice covered area of a grid cell instead of the grid cell mean.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">______________</span>
+<span class="c1">## Regridding</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
