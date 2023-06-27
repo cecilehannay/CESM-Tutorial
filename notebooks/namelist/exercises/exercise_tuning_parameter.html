@@ -1183,8 +1183,8 @@ ncview diff.nc
 <div class="alert alert-success">   
 <details>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p><strong># Create a new case</strong>
-Create a new case <code class="docutils literal notranslate"><span class="pre">b1850_dcs</span></code>with the command:</p>
+<p><strong># Create a new case</strong></p>
+<p>Create a new case <code class="docutils literal notranslate"><span class="pre">b1850_dcs</span></code>with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/work/$USER/code/my_cesm_code/cime/scripts/
 ./create_newcase --case ~/cases/b1850_dcs --compset B1850 --res f19_g17 
 </pre></div>
@@ -1197,7 +1197,7 @@ Create a new case <code class="docutils literal notranslate"><span class="pre">b
 </div>
 <p><strong># Customize namelists</strong></p>
 <p>Locate the variable to modify dcs. (Locating variables requires a learning curve. A good place to start is to look at the <code class="docutils literal notranslate"><span class="pre">Variable</span> <span class="pre">namelist</span> <span class="pre">documentation</span></code>.</p>
-<p>The variable is: <code class="docutils literal notranslate"><span class="pre">micro_mg_dcs</span></code>.
+<p>The variable is: <code class="docutils literal notranslate"><span class="pre">micro_mg_dcs</span></code>.<br>
 By default this variable is set to:
 <code class="docutils literal notranslate"><span class="pre">micro_mg_dcs</span> <span class="pre">=</span> <span class="pre">200</span> <span class="pre">microns</span></code>
 You want to set it to:
@@ -1225,22 +1225,22 @@ For instance, to run in the queue <code class="docutils literal notranslate"><sp
 </div>
 <hr class="docutils" />
 <p><strong># Look at your solution</strong></p>
-<p>When the run is completed, compare to the first run:
-<code class="docutils literal notranslate"><span class="pre">b1850_high_freq</span></code>.</p>
-<p>Create a file with the difference in
-<code class="docutils literal notranslate"><span class="pre">LWCF</span></code>
-between <code class="docutils literal notranslate"><span class="pre">b1850_dcs</span></code> and <code class="docutils literal notranslate"><span class="pre">b1850_high_freq</span></code>.</p>
-<p>You can use ncdiff and ncview to look at the difference between the 2 runs.</p>
-<p>For instance:</p>
+<ul class="simple">
+<li><p>When the run is completed, compare this run to the first run:
+<code class="docutils literal notranslate"><span class="pre">b1850_high_freq</span></code>.</p></li>
+<li><p>Create a file with the difference in  <code class="docutils literal notranslate"><span class="pre">LWCF</span></code>  between <code class="docutils literal notranslate"><span class="pre">b1850_dcs</span></code> and <code class="docutils literal notranslate"><span class="pre">b1850_high_freq</span></code>.</p></li>
+</ul>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">ncdiff</span></code> and <code class="docutils literal notranslate"><span class="pre">ncview</span></code> to look at the difference between the 2 runs.</p>
+<p>For instance, use <code class="docutils literal notranslate"><span class="pre">ncdiff</span></code> to create a file with the difference between the 2 runs:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_dcs 
 ncdiff /glade/scratch/$user/archive/b1850_dcs/atm/hist/b1850_dcs.cam.h0.0001-01.nc /glade/scratch/$user/archive/b1850_high_freq/atm/hist/b1850_high_freq.cam.h0.0001-01.nc diff.nc
 </pre></div>
 </div>
-<p>Use ncview to look at the file you created.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">ncview</span></code> to look at the file you created.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncview</span> <span class="n">diff</span><span class="o">.</span><span class="n">nc</span>
 </pre></div>
 </div>
-<p>How does this affect the LWCF ?</p>
+<p><strong>#How does this affect the LWCF ?</strong></p>
 <p>Dcs = Threshold diameter to convert cloud ice particles to snow</p>
 <p><em><p style="text-align: center;">
 <img alt="dcs representation" src="../../../_images/dcs.png" /><br />
