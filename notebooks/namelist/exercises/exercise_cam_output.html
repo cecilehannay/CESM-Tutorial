@@ -1236,16 +1236,16 @@ Look at the sizes of the files.</p>
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>
 </pre></div>
 </div>
-<p><strong># Customize namelists</strong>
-Edit the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code> and add the lines:</p>
+<p><strong># Customize namelists</strong></p>
+<p>Edit the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code> and add the lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span>
  <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">8</span> 
  <span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;T:I&#39;</span><span class="p">,</span><span class="s1">&#39;Q:I&#39;</span><span class="p">,</span><span class="s1">&#39;U:I&#39;</span><span class="p">,</span><span class="s1">&#39;V:I&#39;</span>
  <span class="n">fincl3</span> <span class="o">=</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;Q&#39;</span><span class="p">,</span><span class="s1">&#39;U&#39;</span><span class="p">,</span><span class="s1">&#39;V&#39;</span>
 </pre></div>
 </div>
-<p><strong># Set run length</strong>
-Change the <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">length</span></code>:</p>
+<p><strong># Set run length</strong></p>
+<p>Change the <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">length</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">nmonths</span>
 </pre></div>
 </div>
@@ -1256,8 +1256,8 @@ For instance:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">regular</span><span class="p">,</span><span class="n">PROJECT</span><span class="o">=</span><span class="n">UESM0011</span>
 </pre></div>
 </div>
-<p><strong># Build and submit</strong>
-Build the model and submit your job:</p>
+<p><strong># Build and submit</strong></p>
+<p>Build the model and submit your job:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
 </pre></div>
