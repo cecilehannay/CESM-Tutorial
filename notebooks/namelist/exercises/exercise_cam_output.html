@@ -1224,29 +1224,34 @@ Look at the sizes of the files.</p>
 <div class="alert alert-success">   
 <details>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>Create a new case <font face="Courier" color='purple'><strong>b1850_high_freq </strong></font> with the command:</p>
+<p><strong># Create a new case</strong></p>
+<p>Create a new case <code class="docutils literal notranslate"><span class="pre">b1850_high_freq</span></code> with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/work/$USER/code/my_cesm_code/cime/scripts/
 ./create_newcase --case ~/cases/b1850_high_freq  --compset B1850 --res f19_g17 
 </pre></div>
 </div>
-<p>Case <font face="Courier" color='purple'><strong>setup</strong></font>:</p>
+<p><strong># Setup</strong>
+Case <code class="docutils literal notranslate"><span class="pre">setup</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_high_freq</span> 
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>
 </pre></div>
 </div>
-<p>Edit the file <font face="Courier" color='purple'><strong>user_nl_cam</strong></font> and add the lines:</p>
+<p><strong># Customize namelists</strong>
+Edit the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code> and add the lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span>
  <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">8</span> 
  <span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;T:I&#39;</span><span class="p">,</span><span class="s1">&#39;Q:I&#39;</span><span class="p">,</span><span class="s1">&#39;U:I&#39;</span><span class="p">,</span><span class="s1">&#39;V:I&#39;</span>
  <span class="n">fincl3</span> <span class="o">=</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;Q&#39;</span><span class="p">,</span><span class="s1">&#39;U&#39;</span><span class="p">,</span><span class="s1">&#39;V&#39;</span>
 </pre></div>
 </div>
-<p>Change the <font face="Courier" color='purple'><strong>run length</strong></font>:</p>
+<p><strong># Set run length</strong>
+Change the <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">length</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">nmonths</span>
 </pre></div>
 </div>
-<p>If needed, change <font face="Courier" color='purple'><strong>job queue</strong></font>
-and <font face="Courier" color='purple'><strong>account number</strong></font>.
+<p><strong># Change the job queue and account number</strong>
+If needed, change <code class="docutils literal notranslate"><span class="pre">job</span> <span class="pre">queue</span></code>
+and <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">number</span></code>.
 For instance:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">regular</span><span class="p">,</span><span class="n">PROJECT</span><span class="o">=</span><span class="n">UESM0011</span>
 </pre></div>
@@ -1256,8 +1261,10 @@ For instance:</p>
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
 </pre></div>
 </div>
+<hr class="docutils" />
+<p><strong># Look at your solution</strong></p>
 <p>When the run is completed, look into the archive directory for:
-<font face="Courier" color='purple'><strong>b1850_high_freq</strong></font>.</p>
+<code class="docutils literal notranslate"><span class="pre">b1850_high_freq</span></code>.</p>
 <p>(1) Check that your archive directory on cheyenne (The path will be different on otehr machines):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_high_freq/atm/hist
 ls 
