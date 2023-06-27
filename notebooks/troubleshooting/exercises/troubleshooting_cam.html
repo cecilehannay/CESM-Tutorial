@@ -1187,36 +1187,44 @@ Set the run length to <code class="docutils literal notranslate"><span class="pr
 <div class="alert alert-success">   
 <details>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p><strong># Create a new case</strong></p>
 <p>Create a new case <code class="docutils literal notranslate"><span class="pre">b1850_high_freq_bugfixing</span></code> with the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">cd</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">cesm2</span><span class="mf">.1</span><span class="n">_tutorial2022</span><span class="o">/</span><span class="n">cime</span><span class="o">/</span><span class="n">scripts</span>
- <span class="o">./</span><span class="n">create_newcase</span> <span class="o">--</span><span class="n">case</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_high_freq_bugfixing</span> <span class="o">--</span><span class="n">compset</span> <span class="n">B1850</span> <span class="o">--</span><span class="n">res</span> <span class="n">f19_g17</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> cd /glade/work/$USER/code/my_cesm_code/cime/scripts/
+ ./create_newcase --case ~/cases/b1850_high_freq_bugfixing --compset B1850 --res f19_g17 
 </pre></div>
 </div>
-<p>Case <code class="docutils literal notranslate"><span class="pre">setup</span></code>:</p>
+<p><strong># Setup</strong></p>
+<p>Invoke case.setup with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">cd</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_high_freq_bugfixing</span>
  <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>
 </pre></div>
 </div>
+<p><strong># Customize namelists</strong></p>
 <p>Add the daily output of <code class="docutils literal notranslate"><span class="pre">T2M</span></code> by editing the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code> and adding the lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> fincl2 = ’T2M:A’
  nhtfrq = 0,-24
  mfilt = 1,1
 </pre></div>
 </div>
+<p><strong># Set run length</strong></p>
 <p>Set the <strong>run length</strong> to 1 month:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">nmonths</span>
 </pre></div>
 </div>
-<p>If needed, change the <code class="docutils literal notranslate"><span class="pre">job</span> <span class="pre">queue</span></code> and <code class="docutils literal notranslate"><span class="pre">and</span> <span class="pre">account</span> <span class="pre">number</span></code>
-For instance:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">regular</span><span class="p">,</span><span class="n">PROJECT</span><span class="o">=</span><span class="n">UESM0011</span>
+<p><strong># Change the job queue and account number</strong></p>
+<p>If needed, change <code class="docutils literal notranslate"><span class="pre">job</span> <span class="pre">queue</span></code> and <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">number</span></code>. <br>
+For instance, to run in the queue <code class="docutils literal notranslate"><span class="pre">regular</span></code> and the project number <code class="docutils literal notranslate"><span class="pre">P93300642</span></code>, use the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">regular</span><span class="p">,</span><span class="n">PROJECT</span><span class="o">=</span><span class="n">P93300642</span>
 </pre></div>
 </div>
-<p>Build and submit:</p>
+<p><strong># Build and submit</strong></p>
+<p>Build the model and submit your job:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
 </pre></div>
 </div>
+<hr class="docutils" />
+<p>*<em># Look at what happened</em></p>
 <p><strong>Your run should crash !!!</strong>. This is normal. The goal of the exercise is to troubleshooting.</p>
 <p>What you should find in your run directory is three log files.</p>
 <ul class="simple">
