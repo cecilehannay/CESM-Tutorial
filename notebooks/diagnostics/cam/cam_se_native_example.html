@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="CICE" href="../cice.html" />
-    <link rel="prev" title="Advanced Plotting" href="advanced.html" />
+    <link rel="prev" title="Advance Plotting" href="advanced.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -607,7 +607,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="advanced.html">
-       Advanced Plotting
+       Advance Plotting
       </a>
      </li>
      <li class="toctree-l3 current active">
@@ -1283,8 +1283,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">location_of_hfiles</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/glade/p/cesmdata/cseg/inputdata/cesm2_init/f.cam6_3_107.FLTHIST_v0a.ne30.clm5_1.001/1994-01-01/&quot;</span><span class="p">)</span>
-<span class="n">search_pattern</span> <span class="o">=</span> <span class="s2">&quot;f.cam6_3_107.FLTHIST_v0a.ne30.clm5_1.001.cam.h0.1993-12.nc&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">location_of_hfiles</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/glade/scratch/hannay/archive/f.cam6_3_112.FMTHIST_v0c.ne30.non-ogw-ubcT-effgw0.7_taubgnd2.5.001/atm/hist/&quot;</span><span class="p">)</span>
+<span class="n">search_pattern</span> <span class="o">=</span> <span class="s2">&quot;f.cam6_3_112.FMTHIST_v0c.ne30.non-ogw-ubcT-effgw0.7_taubgnd2.5.001.cam.h3.2003-01-01-00000.nc&quot;</span>
 
 <span class="n">fils</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">location_of_hfiles</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">search_pattern</span><span class="p">))</span>
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">fils</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -1298,7 +1298,7 @@ title="Print to PDF"
 <span class="n">lon</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span>
 
 <span class="c1"># Choose what variable to plot:</span>
-<span class="n">variable_name</span> <span class="o">=</span> <span class="s2">&quot;PRECT&quot;</span>
+<span class="n">variable_name</span> <span class="o">=</span> <span class="s2">&quot;PRECC&quot;</span>
 
 <span class="c1"># If needed, select scale factor and new units:</span>
 <span class="n">scale_factor</span> <span class="o">=</span> <span class="mf">86400.</span> <span class="o">*</span> <span class="mf">1000.</span> <span class="c1"># m/s -&gt; mm/day</span>
@@ -1330,47 +1330,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">File /glade/u/apps/opt/conda/envs/npl/lib/python3.8/site-packages/xarray/core/dataset.py:1317,</span> in <span class="ni">Dataset._construct_dataarray</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1316</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1317</span>     <span class="n">variable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_variables</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1318</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-
-<span class="ne">KeyError</span>: &#39;area&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># Global average</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">data_global_average</span> <span class="o">=</span> <span class="n">data_avg</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The area-weighted average of the time-mean data is: </span><span class="si">{</span><span class="n">data_global_average</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="nn">File /glade/u/apps/opt/conda/envs/npl/lib/python3.8/site-packages/xarray/core/dataset.py:1410,</span> in <span class="ni">Dataset.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1408</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="o">**</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1409</span> <span class="k">if</span> <span class="n">utils</span><span class="o">.</span><span class="n">hashable</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1410</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_construct_dataarray</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1411</span> <span class="k">if</span> <span class="n">utils</span><span class="o">.</span><span class="n">iterable_of_hashable</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1412</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_copy_listed</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-
-<span class="nn">File /glade/u/apps/opt/conda/envs/npl/lib/python3.8/site-packages/xarray/core/dataset.py:1319,</span> in <span class="ni">Dataset._construct_dataarray</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1317</span>     <span class="n">variable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_variables</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1318</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1319</span>     <span class="n">_</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">variable</span> <span class="o">=</span> <span class="n">_get_virtual_variable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_variables</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1321</span> <span class="n">needed_dims</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">variable</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1323</span> <span class="n">coords</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Variable</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="nn">File /glade/u/apps/opt/conda/envs/npl/lib/python3.8/site-packages/xarray/core/dataset.py:175,</span> in <span class="ni">_get_virtual_variable</span><span class="nt">(variables, key, dim_sizes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">173</span> <span class="n">split_key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">split_key</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">175</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="n">ref_name</span><span class="p">,</span> <span class="n">var_name</span> <span class="o">=</span> <span class="n">split_key</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span> <span class="n">ref_var</span> <span class="o">=</span> <span class="n">variables</span><span class="p">[</span><span class="n">ref_name</span><span class="p">]</span>
-
-<span class="ne">KeyError</span>: &#39;area&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The area-weighted average of the time-mean data is: 1.2843605375547367
 </pre></div>
 </div>
 </div>
@@ -1401,50 +1361,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number of grid columns inside the specified region is 4544
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">File /glade/u/apps/opt/conda/envs/npl/lib/python3.8/site-packages/xarray/core/dataset.py:1317,</span> in <span class="ni">Dataset._construct_dataarray</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1316</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1317</span>     <span class="n">variable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_variables</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1318</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-
-<span class="ne">KeyError</span>: &#39;area&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 15&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The number of grid columns inside the specified region is </span><span class="si">{</span><span class="n">region_inds</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># get the area associated with each selected column. Note the region_inds array needs to be flattened to use in isel.</span>
-<span class="ne">---&gt; </span><span class="mi">15</span> <span class="n">region_area</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">ncol</span><span class="o">=</span><span class="n">region_inds</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span> 
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1"># get the data in the region:</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">region_data</span> <span class="o">=</span> <span class="n">data_avg</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">ncol</span><span class="o">=</span><span class="n">region_inds</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
-
-<span class="nn">File /glade/u/apps/opt/conda/envs/npl/lib/python3.8/site-packages/xarray/core/dataset.py:1410,</span> in <span class="ni">Dataset.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1408</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="o">**</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1409</span> <span class="k">if</span> <span class="n">utils</span><span class="o">.</span><span class="n">hashable</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1410</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_construct_dataarray</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1411</span> <span class="k">if</span> <span class="n">utils</span><span class="o">.</span><span class="n">iterable_of_hashable</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1412</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_copy_listed</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-
-<span class="nn">File /glade/u/apps/opt/conda/envs/npl/lib/python3.8/site-packages/xarray/core/dataset.py:1319,</span> in <span class="ni">Dataset._construct_dataarray</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1317</span>     <span class="n">variable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_variables</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1318</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1319</span>     <span class="n">_</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">variable</span> <span class="o">=</span> <span class="n">_get_virtual_variable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_variables</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1321</span> <span class="n">needed_dims</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">variable</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1323</span> <span class="n">coords</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Variable</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="nn">File /glade/u/apps/opt/conda/envs/npl/lib/python3.8/site-packages/xarray/core/dataset.py:175,</span> in <span class="ni">_get_virtual_variable</span><span class="nt">(variables, key, dim_sizes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">173</span> <span class="n">split_key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">split_key</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">175</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="n">ref_name</span><span class="p">,</span> <span class="n">var_name</span> <span class="o">=</span> <span class="n">split_key</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span> <span class="n">ref_var</span> <span class="o">=</span> <span class="n">variables</span><span class="p">[</span><span class="n">ref_name</span><span class="p">]</span>
-
-<span class="ne">KeyError</span>: &#39;area&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number of grid columns inside the specified region is 5912
+The area-weighted average in thee region [110.0E-200.0E, -30.0-30.0] is: 3.0666411836502347
 </pre></div>
 </div>
 </div>
@@ -1458,31 +1376,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">Input In [14],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># plot the map of the time average </span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># using the function defined above.</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">fig1</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">make_map</span><span class="p">(</span><span class="n">data_avg</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,)</span>
-
-<span class="nn">Input In [3],</span> in <span class="ni">make_map</span><span class="nt">(data, lon, lat)</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># this figures out the transformation between (lon,lat) and the specified projection</span>
-<span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">tcoords</span> <span class="o">=</span> <span class="n">plotproj</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">dataproj</span><span class="p">,</span> <span class="n">lon</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">lat</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="c1"># working with the projection</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">xi</span><span class="o">=</span><span class="n">tcoords</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>  <span class="c1"># there can be bad points set to infinity, but we&#39;ll ignore them</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="c1"># print(f&quot;{xi.shape = } --- Number of False: {np.count_nonzero(~xi)}&quot;)</span>
-
-<span class="nn">File /glade/u/apps/opt/conda/envs/npl/lib/python3.8/site-packages/cartopy/crs.py:383,</span> in <span class="ni">CRS.transform_points</span><span class="nt">(self, src_crs, x, y, z, trap)</span>
-<span class="g g-Whitespace">    </span><span class="mi">380</span>         <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">382</span>     <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-<span class="ne">--&gt; </span><span class="mi">383</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;x and y arrays must have the same length&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">384</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">385</span>     <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">y</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">z</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
-
-<span class="ne">ValueError</span>: x and y arrays must have the same length
-</pre></div>
-</div>
-<img alt="../../../_images/cam_se_native_example_8_1.png" src="../../../_images/cam_se_native_example_8_1.png" />
+<img alt="../../../_images/cam_se_native_example_8_0.png" src="../../../_images/cam_se_native_example_8_0.png" />
 </div>
 </div>
 </section>
@@ -1497,16 +1391,16 @@ title="Print to PDF"
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "npl-conda"
+            mode: "npl-2023a"
         },
         kernelOptions: {
-            name: "npl-conda",
+            name: "npl-2023a",
             path: "./notebooks/diagnostics/cam"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'npl-conda'</script>
+    <script>kernelName = 'npl-2023a'</script>
 
               </div>
               
@@ -1519,7 +1413,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Advanced Plotting</p>
+            <p class="prev-next-title">Advance Plotting</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../cice.html" title="next page">
