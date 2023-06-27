@@ -1183,22 +1183,25 @@ ncview diff.nc
 <div class="alert alert-success">   
 <details>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>Create a new case <code class="docutils literal notranslate"><span class="pre">b1850_dcs</span></code>with the command:</p>
+<p><strong># Create a new case</strong>
+Create a new case <code class="docutils literal notranslate"><span class="pre">b1850_dcs</span></code>with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/work/$USER/code/my_cesm_code/cime/scripts/
 ./create_newcase --case ~/cases/b1850_dcs --compset B1850 --res f19_g17 
 </pre></div>
 </div>
-<p>Case <code class="docutils literal notranslate"><span class="pre">setup</span></code>:</p>
+<p><strong># Setup</strong>
+Case <code class="docutils literal notranslate"><span class="pre">setup</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">cases</span><span class="o">/</span><span class="n">b1850_dcs</span>
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>
 </pre></div>
 </div>
-<p>Locate the variable to modify dcs.
-The variable is: <font face="Courier" color='purple'><strong>micro_mg_dcs</strong></font>.
+<p><strong># Customize namelists</strong>
+Locate the variable to modify dcs. (Locating variables requires a learning curve. A good place to start is to look at the <code class="docutils literal notranslate"><span class="pre">Variable</span> <span class="pre">namelist</span> <span class="pre">documentation</span></code>.</p>
+<p>The variable is: <code class="docutils literal notranslate"><span class="pre">micro_mg_dcs</span></code>.
 By default this variable is set to:
-micro_mg_dcs = 200 microns
+<code class="docutils literal notranslate"><span class="pre">micro_mg_dcs</span> <span class="pre">=</span> <span class="pre">200</span> <span class="pre">microns</span></code>
 You want to set it to:
-micro_mg_dcs = 500 microns</p>
+<code class="docutils literal notranslate"><span class="pre">micro_mg_dcs</span> <span class="pre">=</span> <span class="pre">500</span> <span class="pre">microns</span></code></p>
 <p>Edit the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code> and add the lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micro_mg_dcs</span> <span class="o">=</span> <span class="mf">500.</span><span class="n">D</span><span class="o">-</span><span class="mi">6</span> 
 </pre></div>
