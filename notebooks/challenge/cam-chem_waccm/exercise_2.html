@@ -607,12 +607,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../diagnostics/cam/advanced.html">
-       Advance Plotting
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../diagnostics/cam/cam_se_native_example.html">
-       CAM-SE output analysis
+       Exercise 1: CAM-SE output analysis
       </a>
      </li>
     </ul>
@@ -1203,6 +1198,16 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#change-the-chemistry">
+   Change the chemistry
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#re-build-the-model">
+   Re-build the model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#set-run-length">
    Set run length
   </a>
@@ -1272,6 +1277,16 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#change-the-chemistry">
+   Change the chemistry
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#re-build-the-model">
+   Re-build the model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#set-run-length">
    Set run length
   </a>
@@ -1311,11 +1326,13 @@ title="Print to PDF"
 <h2>Extra information:<a class="headerlink" href="#extra-information" title="Permalink to this headline">#</a></h2>
 <p>The chemistry preprocessor generates CAM Fortran source code to solve chemistry. The input is an ASCII file listing chemical reactions and rates. The chemistry preprocessor input file used in your previous run is in your
 <code class="docutils literal notranslate"><span class="pre">$CASEROOT/CaseDocs/chem_mech.in</span></code></p>
-<p>An example of a simple chemcitry mechanism file content can be seen below:
+<p>An example of a simple chemistry mechanism file content can be seen below:
 <img alt="chemistry mechanism example" src="../../../_images/chemistry-mechanism-example.png" /></p>
 <p>Additional input files for default chemical mechanisms are in each source code subdirectory for mechanisms under:
 <code class="docutils literal notranslate"><span class="pre">$SRCROOT/components/cam/src/chemistry/pp_*</span></code>
 (i.e. <code class="docutils literal notranslate"><span class="pre">pp_waccm_tsmlt_mam4</span></code>). You do not need to change these additional files for this exercise.</p>
+<p>Below is an overview of the different types of reactions and rates that can be defined in the mechanism file.
+<img alt="chemistry preprocessor options example" src="../../../_images/chemistry-preprocessor-info.png" /></p>
 </div>
 <div class="alert alert-warning">  
 <details>
@@ -1350,7 +1367,7 @@ title="Print to PDF"
 <h2>Set environment variables<a class="headerlink" href="#set-environment-variables" title="Permalink to this headline">#</a></h2>
 <p>Use the commands:</p>
 <p><strong>CAM-chem</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set CASENAME = f.e21.FC.f09_f09_mg17.tutorial.test1
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set CASENAME = f.e21.FC.f09_f09_mg17.tutorial.test2
 set CASEDIR = /glade/u/home/$USER/cases/$CASENAME
 set RUNDIR = /glade/scratch/$USER/$CASENAME/run
 set COMPSET = FCnudged
@@ -1358,7 +1375,7 @@ set RESOLUTION = f19_f19_mg17
 </pre></div>
 </div>
 <p>or for <strong>WACCM</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set CASENAME = f.e21.FW.f09_f09_mg17.tutorial.test1
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set CASENAME = f.e21.FW.f09_f09_mg17.tutorial.test2
 set CASEDIR = /glade/u/home/$USER/cases/$CASENAME
 set RUNDIR = /glade/scratch/$USER/$CASENAME/run
 set COMPSET = FWhist
@@ -1403,7 +1420,7 @@ subdirectory, as well as in your $rundir</p>
 </section>
 <section id="customize-namelists">
 <h2>Customize namelists<a class="headerlink" href="#customize-namelists" title="Permalink to this headline">#</a></h2>
-<p>Edit the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code> and copy and paste the lines avgflag_pertap, mfilt, nhtfrq from CaseDocs/atm_in</p>
+<p>As before, edit the file <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code> and copy and paste the lines avgflag_pertap, mfilt, nhtfrq from CaseDocs/atm_in</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">avgflag_pertape</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;I’</span>
 <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="mi">365</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">30</span>
 <span class="n">nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span><span class="p">,</span><span class="o">-</span><span class="mi">120</span><span class="p">,</span><span class="o">-</span><span class="mi">240</span>
@@ -1423,6 +1440,30 @@ fincl2 = &#39;PS&#39;,&#39;Z3&#39;,&#39;T&#39;,&#39;U&#39;,&#39;V&#39;,&#39;O3&#
 </div>
 <p>This step is optional as the script <code class="docutils literal notranslate"><span class="pre">preview_namelists</span></code> is automatically called by <code class="docutils literal notranslate"><span class="pre">case.build</span></code> and <code class="docutils literal notranslate"><span class="pre">case.submit</span></code>. But it is nice to check that your changes made their way into:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$CASEDIR/CaseDocs/atm_in
+</pre></div>
+</div>
+</section>
+<section id="change-the-chemistry">
+<h2>Change the chemistry<a class="headerlink" href="#change-the-chemistry" title="Permalink to this headline">#</a></h2>
+<p>Copy the default mechanism to your own user defined file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">CaseDocs</span><span class="o">/</span><span class="n">chem_mech</span><span class="o">.</span><span class="ow">in</span> <span class="n">my_chem_mech</span><span class="o">.</span><span class="ow">in</span>
+</pre></div>
+</div>
+<p>Open your mechanism file with a text editor (e.g. nedit) and change the reaction rate for O1D with O2</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nedit</span> <span class="n">my_chem_mech</span><span class="o">.</span><span class="ow">in</span> <span class="o">&amp;</span>
+</pre></div>
+</div>
+<p><img alt="chemistry ozone reaction" src="../../../_images/chemistry-ozone-reaction.png" /></p>
+<p>Append a pointer in the to the user mechanism:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xmlchange</span> <span class="o">--</span><span class="n">append</span> <span class="n">CAM_CONFIG_OPTS</span><span class="o">=</span><span class="s2">&quot;--usr_mech_infile `pwd`/my_chem_mech.in&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="re-build-the-model">
+<h2>Re-build the model<a class="headerlink" href="#re-build-the-model" title="Permalink to this headline">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span> <span class="o">--</span><span class="n">reset</span>
+<span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span> <span class="o">--</span><span class="n">clean</span>
+<span class="o">./</span><span class="n">case</span><span class="o">.</span> <span class="n">build</span> 
 </pre></div>
 </div>
 </section>
@@ -1447,7 +1488,6 @@ fincl2 = &#39;PS&#39;,&#39;Z3&#39;,&#39;T&#39;,&#39;U&#39;,&#39;V&#39;,&#39;O3&#
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ls /glade/scratch/$USER/$CASENAME/run
 </pre></div>
 </div>
-<p><img alt="rundir example" src="../../../_images/chemistry-rundir-example.png" /></p>
 <p>(2) Check that your archive directory on cheyenne (the path will be different on other machines):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$USER/archive/$CASENAME/atm/hist
 ls 
@@ -1455,7 +1495,7 @@ ls
 </div>
 <p>As your run is only 5-day, there should be no monthly file (<code class="docutils literal notranslate"><span class="pre">h0</span></code>)</p>
 <p>(3) Look at the contents of the <code class="docutils literal notranslate"><span class="pre">h1</span></code> files using <code class="docutils literal notranslate"><span class="pre">ncdump</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ncdump –h f.e21.FCnudged.f09_f09_mg17.tutorial.test1.cam.h1.2010-01-01-00000.nc
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ncdump –h f.e21.FCnudged.f09_f09_mg17.tutorial.test2.cam.h1.2010-01-01-00000.nc
 </pre></div>
 </div>
 </details>

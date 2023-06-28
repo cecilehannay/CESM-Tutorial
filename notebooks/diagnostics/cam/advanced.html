@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Advance Plotting &#8212; CESM Tutorial</title>
+    <title>Exercise 1: CAM-SE output analysis &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="CAM-SE output analysis" href="cam_se_native_example.html" />
+    <link rel="next" title="CICE" href="../cice.html" />
     <link rel="prev" title="Basic Plotting" href="basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -607,12 +607,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Advance Plotting
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="cam_se_native_example.html">
-       CAM-SE output analysis
+       Exercise 1: CAM-SE output analysis
       </a>
      </li>
     </ul>
@@ -1167,9 +1162,19 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-1-tbd">
-   Exercise 1: TBD
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Exercise 1: CAM-SE output analysis
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#input-data">
+   Input data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameters">
+   Parameters
   </a>
  </li>
 </ul>
@@ -1181,7 +1186,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Advance Plotting</h1>
+                <h1>Exercise 1: CAM-SE output analysis</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1191,9 +1196,19 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-1-tbd">
-   Exercise 1: TBD
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Exercise 1: CAM-SE output analysis
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#input-data">
+   Input data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameters">
+   Parameters
   </a>
  </li>
 </ul>
@@ -1206,12 +1221,177 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="advance-plotting">
-<h1>Advance Plotting<a class="headerlink" href="#advance-plotting" title="Permalink to this headline">#</a></h1>
-<p>Use the file: /glade/scratch/hannay/archive/b1850_high_freq/atm/hist/b1850_high_freq.cam.h0.0001-01.nc</p>
-<section id="exercise-1-tbd">
-<h2>Exercise 1: TBD<a class="headerlink" href="#exercise-1-tbd" title="Permalink to this headline">#</a></h2>
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Advanced Plotting</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercise-1-cam-se-output-analysis">
+<h1>Exercise 1: CAM-SE output analysis<a class="headerlink" href="#exercise-1-cam-se-output-analysis" title="Permalink to this headline">#</a></h1>
+<p>Examples of simple analysis and plotting that can be done with CAM-SE output on the native cubed-sphere grid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_map</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function plots data on a Mollweide projection map. </span>
+<span class="sd">    </span>
+<span class="sd">    The data is transformed to the projection using Cartopy&#39;s `transform_points` method.</span>
+
+<span class="sd">    The plot is made by triangulation of the points, producing output very similar to `pcolormesh`,</span>
+<span class="sd">    but with triangles instead of rectangles used to make the image.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dataproj</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span> <span class="c1"># assumes data is lat/lon</span>
+    <span class="n">plotproj</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Mollweide</span><span class="p">()</span>   <span class="c1"># output projection </span>
+    <span class="c1"># set up figure / axes object, set to be global, add coastlines</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span><span class="n">plotproj</span><span class="p">})</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="c1"># this figures out the transformation between (lon,lat) and the specified projection</span>
+    <span class="n">tcoords</span> <span class="o">=</span> <span class="n">plotproj</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">dataproj</span><span class="p">,</span> <span class="n">lon</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">lat</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="c1"># working with the projection</span>
+    <span class="n">xi</span><span class="o">=</span><span class="n">tcoords</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>  <span class="c1"># there can be bad points set to infinity, but we&#39;ll ignore them</span>
+    <span class="c1"># print(f&quot;{xi.shape = } --- Number of False: {np.count_nonzero(~xi)}&quot;)</span>
+    <span class="k">assert</span> <span class="n">xi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">tcoords</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="sa">f</span><span class="s2">&quot;Something wrong with shapes should be the same: </span><span class="si">{</span><span class="n">xi</span><span class="o">.</span><span class="n">shape</span><span class="w"> </span><span class="si">= }</span><span class="s2">, </span><span class="si">{</span><span class="n">tcoords</span><span class="o">.</span><span class="n">shape</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span>
+    <span class="n">tc</span><span class="o">=</span><span class="n">tcoords</span><span class="p">[</span><span class="n">xi</span><span class="p">,:]</span>
+    <span class="n">datai</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">xi</span><span class="p">]</span>  <span class="c1"># convert to numpy array, then subset</span>
+    <span class="c1"># Use tripcolor --&gt; triangluates the data to make the plot</span>
+    <span class="c1"># rasterized=True reduces the file size (necessary for high-resolution for reasonable file size)</span>
+    <span class="c1"># keep output as &quot;img&quot; to make specifying colorbar easy</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">tripcolor</span><span class="p">(</span><span class="n">tc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">tc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">datai</span><span class="p">,</span> <span class="n">shading</span><span class="o">=</span><span class="s1">&#39;gouraud&#39;</span><span class="p">,</span> <span class="n">rasterized</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
+<section id="input-data">
+<h1>Input data<a class="headerlink" href="#input-data" title="Permalink to this headline">#</a></h1>
+<p>In the following cell, specify the data source.</p>
+<p><code class="docutils literal notranslate"><span class="pre">location_of_hfiles</span></code> is a path object that points to the directory where data files should be.
+<code class="docutils literal notranslate"><span class="pre">search_pattern</span></code> specifies what pattern to look for inside that directory.</p>
+<p><strong>SIMPLIFICATION</strong> If you want to just provide a path to a file, simply specify it by commenting (with <code class="docutils literal notranslate"><span class="pre">#</span></code>) the lines above “# WE need lat and lon”, and replace with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fils</span> <span class="o">=</span> <span class="s2">&quot;/path/to/your/data/file.nc&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="parameters">
+<h1>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h1>
+<p>Specify the name of the variable to be analyzed with <code class="docutils literal notranslate"><span class="pre">variable_name</span></code>.</p>
+<p>To change the units of the variable, specify <code class="docutils literal notranslate"><span class="pre">scale_factor</span></code> and provide the new units string as <code class="docutils literal notranslate"><span class="pre">units</span></code>. Otherwise, just set <code class="docutils literal notranslate"><span class="pre">scale_factor</span></code> and <code class="docutils literal notranslate"><span class="pre">units</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scale_factor</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">units</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;variable_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">location_of_hfiles</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/glade/scratch/hannay/archive/f.cam6_3_112.FMTHIST_v0c.ne30.non-ogw-ubcT-effgw0.7_taubgnd2.5.001/atm/hist/&quot;</span><span class="p">)</span>
+<span class="n">search_pattern</span> <span class="o">=</span> <span class="s2">&quot;f.cam6_3_112.FMTHIST_v0c.ne30.non-ogw-ubcT-effgw0.7_taubgnd2.5.001.cam.h3.2003-01-01-00000.nc&quot;</span>
+
+<span class="n">fils</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">location_of_hfiles</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">search_pattern</span><span class="p">))</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">fils</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">fils</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Just so you konw, there are </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">fils</span><span class="p">)</span><span class="si">}</span><span class="s2"> files about to be loaded.&quot;</span><span class="p">)</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">fils</span><span class="p">)</span>
+
+<span class="c1"># We need lat and lon:</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span>
+
+<span class="c1"># Choose what variable to plot:</span>
+<span class="n">variable_name</span> <span class="o">=</span> <span class="s2">&quot;PRECC&quot;</span>
+
+<span class="c1"># If needed, select scale factor and new units:</span>
+<span class="n">scale_factor</span> <span class="o">=</span> <span class="mf">86400.</span> <span class="o">*</span> <span class="mf">1000.</span> <span class="c1"># m/s -&gt; mm/day</span>
+<span class="n">units</span> <span class="o">=</span> <span class="s2">&quot;mm/day&quot;</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">scale_factor</span> <span class="o">*</span> <span class="n">ds</span><span class="p">[</span><span class="n">variable_name</span><span class="p">]</span>
+<span class="n">data</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">units</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># temporal averaging</span>
+<span class="c1"># simplest case, just average over times:</span>
+<span class="n">data_avg</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># Global average</span>
+<span class="c1">#</span>
+<span class="n">data_global_average</span> <span class="o">=</span> <span class="n">data_avg</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The area-weighted average of the time-mean data is: </span><span class="si">{</span><span class="n">data_global_average</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The area-weighted average of the time-mean data is: 1.2843605375547367
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># Regional average using a (logical) rectangle</span>
+<span class="c1">#</span>
+<span class="n">west_lon</span> <span class="o">=</span> <span class="mf">110.0</span>
+<span class="n">east_lon</span> <span class="o">=</span> <span class="mf">200.0</span>
+<span class="n">south_lat</span> <span class="o">=</span> <span class="o">-</span><span class="mf">30.0</span>
+<span class="n">north_lat</span> <span class="o">=</span> <span class="mf">30.0</span>
+
+<span class="c1"># To reduce to the region, we need to know which indices of ncol dimension are inside the boundary</span>
+
+<span class="n">region_inds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(((</span><span class="n">lat</span> <span class="o">&gt;</span> <span class="n">south_lat</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">lat</span> <span class="o">&lt;</span> <span class="n">north_lat</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">lon</span><span class="o">&gt;</span><span class="n">west_lon</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">lon</span><span class="o">&lt;</span><span class="n">east_lon</span><span class="p">))</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The number of grid columns inside the specified region is </span><span class="si">{</span><span class="n">region_inds</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># get the area associated with each selected column. Note the region_inds array needs to be flattened to use in isel.</span>
+<span class="n">region_area</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">ncol</span><span class="o">=</span><span class="n">region_inds</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span> 
+<span class="c1"># get the data in the region:</span>
+<span class="n">region_data</span> <span class="o">=</span> <span class="n">data_avg</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">ncol</span><span class="o">=</span><span class="n">region_inds</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+
+<span class="n">data_region_average</span> <span class="o">=</span> <span class="n">region_data</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">region_area</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The area-weighted average in thee region [</span><span class="si">{</span><span class="n">west_lon</span><span class="si">}</span><span class="s2">E-</span><span class="si">{</span><span class="n">east_lon</span><span class="si">}</span><span class="s2">E, </span><span class="si">{</span><span class="n">south_lat</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">north_lat</span><span class="si">}</span><span class="s2">] is: </span><span class="si">{</span><span class="n">data_region_average</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number of grid columns inside the specified region is 5912
+The area-weighted average in thee region [110.0E-200.0E, -30.0-30.0] is: 3.0666411836502347
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the map of the time average </span>
+<span class="c1"># using the function defined above.</span>
+<span class="n">fig1</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">make_map</span><span class="p">(</span><span class="n">data_avg</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/advanced_9_0.png" src="../../../_images/advanced_9_0.png" />
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1248,10 +1428,10 @@ title="Print to PDF"
             <p class="prev-next-title">Basic Plotting</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="cam_se_native_example.html" title="next page">
+    <a class='right-next' id="next-link" href="../cice.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">CAM-SE output analysis</p>
+        <p class="prev-next-title">CICE</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
