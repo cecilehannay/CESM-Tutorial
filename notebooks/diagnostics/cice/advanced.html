@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="CLM/CTSM" href="../clm_ctsm.html" />
+    <link rel="next" title="CLM/CTSM" href="../clm_ctsm/clm_ctsm.html" />
     <link rel="prev" title="Basic Plotting" href="basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -259,7 +259,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../basics/cesm_workflow/checking_jobs_and_status.html">
-       Checking Jobs
+       Checking You Run
       </a>
      </li>
      <li class="toctree-l3">
@@ -576,7 +576,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../../diagnostics.html">
+  <a class="reference internal" href="../diagnostics.html">
    Diagnostics
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
@@ -585,11 +585,6 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../timeseries.html">
-     File formats
-    </a>
-   </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../cam.html">
      CAM
@@ -613,7 +608,7 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="../cice.html">
+    <a class="reference internal" href="cice.html">
      CICE
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
@@ -635,7 +630,7 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../clm_ctsm.html">
+    <a class="reference internal" href="../clm_ctsm/clm_ctsm.html">
      CLM/CTSM
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
@@ -652,7 +647,7 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../pop.html">
+    <a class="reference internal" href="../pop/pop.html">
      POP
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
@@ -669,8 +664,8 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../advanced.html">
-     Advanced Topics
+    <a class="reference internal" href="../additional/additional.html">
+     Additional Topics
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
     <label for="toctree-checkbox-24">
@@ -679,28 +674,23 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../advanced/analysis_tools.html">
-       CESM analysis tools
+      <a class="reference internal" href="../additional/postprocessing.html">
+       Postprocessing data
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../advanced/regridding.html">
-       Regridding
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../advanced/large_ensembles.html">
-       Large Ensembles
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../advanced/cvdp.html">
+      <a class="reference internal" href="../additional/cvdp.html">
        CVDP
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../advanced/postprocessing.html">
-       Postprocessing Model Output
+      <a class="reference internal" href="../additional/large_ensembles.html">
+       Large Ensembles
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../additional/analysis_tools.html">
+       CESM analysis tools
       </a>
      </li>
     </ul>
@@ -708,7 +698,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../challenge.html">
+  <a class="reference internal" href="../../challenge/challenge.html">
    Challenge Exercises
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
@@ -782,38 +772,11 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../challenge/cice.html">
-     CICE
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
-    <label for="toctree-checkbox-28">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../challenge/cice/cice_exercise_1.html">
-       1: Control case
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../challenge/cice/cice_exercise_2.html">
-       2: Tune the albedo
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../challenge/cice/cice_exercise_3.html">
-       3: Modify the snow conductivity
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../challenge/cism.html">
      CISM
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
-    <label for="toctree-checkbox-29">
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -836,70 +799,11 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../challenge/clm_ctsm.html">
-     CLM/CTSM
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
-    <label for="toctree-checkbox-30">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../challenge/clm_ctsm/clm_exercise_1.html">
-       1: Control case
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../challenge/clm_ctsm/clm_exercise_2.html">
-       2: Use the BGC model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../challenge/clm_ctsm/clm_exercise_3.html">
-       3: Modify input data
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../challenge/pop.html">
-     POP
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../challenge/pop/pop_exercise_1.html">
-       1: Control case
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../challenge/pop/pop_exercise_2.html">
-       2: Turn off parameterization
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../challenge/pop/pop_exercise_3.html">
-       3: Modify wind stress
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../challenge/pop/pop_exercise_4.html">
-       4: Turn on the ecosystem
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../challenge/bgc.html">
      BGC
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-    <label for="toctree-checkbox-32">
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -917,8 +821,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../resources/resources_overview.html">
    Resources
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
-  <label for="toctree-checkbox-33">
+  <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+  <label for="toctree-checkbox-30">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1177,6 +1081,11 @@ title="Print to PDF"
    Example 3: Ice area related tracer
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-4-remapping-a-sea-ice-gridded-field">
+   Example 4: Remapping a sea ice gridded field
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -1209,6 +1118,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-3-ice-area-related-tracer">
    Example 3: Ice area related tracer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-4-remapping-a-sea-ice-gridded-field">
+   Example 4: Remapping a sea ice gridded field
   </a>
  </li>
 </ul>
@@ -1465,6 +1379,103 @@ title="Print to PDF"
 </div>
 <p>Where are the differences most pronounced and why?</p>
 </section>
+<section id="example-4-remapping-a-sea-ice-gridded-field">
+<h2>Example 4: Remapping a sea ice gridded field<a class="headerlink" href="#example-4-remapping-a-sea-ice-gridded-field" title="Permalink to this headline">#</a></h2>
+<p>The sea ice and ocean grids usually have a transformation where the grid North Pole is moved into land to avoid instability problems with converging meridians <a class="reference external" href="https://doi.org/10.1006/jcph.1996.0136">Orthogonal Grids - Murray 1996</a>. In the CESM we use the POP dipole and tripole grids and will soon be using the MOM6 tripole grids. While matplotlib can actually use the 2D latitude and longitude fields to make plots, it is sometimes necessary to remap or regrid the data onto a standard latitude-longitude grid. This can be using using the ESMF remapping tools <a class="reference external" href="https://xesmf.readthedocs.io/en/latest/">xESMF</a> for python.</p>
+<p>Let’s first plot the raw field so the dipole grid can be visualized.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aice</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;aice&#39;</span><span class="p">]</span>
+
+<span class="n">aice</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">&#39;0.5&#39;</span><span class="p">)</span> <span class="c1"># Fill in model land by making the axis background whatever color you want</span>
+<span class="n">im1</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;ni&#39;</span><span class="p">],</span><span class="n">ds</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;nj&#39;</span><span class="p">],</span><span class="n">aice</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues_r&#39;</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im1</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;Sea Ice Concentration&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([]);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>See how the Northern Hemisphere looks weird? Greenland is stretched completely across the top edge of the plot. Next we will import the <code class="docutils literal notranslate"><span class="pre">xesmf</span></code> library and create a “destination” grid. This is just a simple one-degree by one-degree latitude longitude grid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xesmf</span> <span class="k">as</span> <span class="nn">xe</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setting up a target grid to only regrid the sea ice data</span>
+<span class="n">lat</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span> 
+<span class="n">lon</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">361</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="c1">#create a meshgrid (2D fields of lats and lons)</span>
+<span class="n">lon2d</span><span class="p">,</span><span class="n">lat2d</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span><span class="n">lat</span><span class="p">)</span> 
+<span class="c1">#set up the target grid as an xarray Dataset</span>
+<span class="n">target_grid</span><span class="o">=</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">({</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="p">([</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">lat2d</span><span class="p">),</span><span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="p">([</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">lon2d</span><span class="p">)})</span>
+
+<span class="n">target_grid</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we need to create a Dataset. For some reason the regridder does not accept a DataArray.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the dataset and a variable `aice` with dimensions time, nj, and ni. Also, fill the</span>
+<span class="c1"># lat and lon arrays from the POPgrid dataset.</span>
+
+<span class="n">ds_siconc_ocean</span>               <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+<span class="n">ds_siconc_ocean</span><span class="p">[</span><span class="s1">&#39;aice&#39;</span><span class="p">]</span>     <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="s1">&#39;nj&#39;</span><span class="p">,</span><span class="s1">&#39;ni&#39;</span><span class="p">),</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;aice&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">ds_siconc_ocean</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;nj&#39;</span><span class="p">,</span><span class="s1">&#39;ni&#39;</span><span class="p">),</span><span class="n">grid</span><span class="p">[</span><span class="s1">&#39;TLAT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">ds_siconc_ocean</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;nj&#39;</span><span class="p">,</span><span class="s1">&#39;ni&#39;</span><span class="p">),</span><span class="n">grid</span><span class="p">[</span><span class="s1">&#39;TLONG&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">sic_ocean</span>                     <span class="o">=</span> <span class="n">ds_siconc_ocean</span><span class="p">[</span><span class="s1">&#39;aice&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we will use xesmf to regrid from the POP gx1v7 grid to the one degree by one degree grid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#input grid, output grid, method, keyword arguments</span>
+<span class="n">regridder</span><span class="o">=</span><span class="n">xe</span><span class="o">.</span><span class="n">Regridder</span><span class="p">(</span><span class="n">sic_ocean</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:],</span> <span class="n">target_grid</span><span class="p">,</span> <span class="s1">&#39;nearest_s2d&#39;</span><span class="p">,</span><span class="n">periodic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">reuse_weights</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have the mapping or regridder. We can translate the Xarray Dataset from gx1v7 to one-degree.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sic_rg</span> <span class="o">=</span> <span class="n">regridder</span><span class="p">(</span><span class="n">sic_ocean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the first slice of the new dataset.</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">&#39;0.5&#39;</span><span class="p">)</span> <span class="c1"># Fill in model land by making the axis background whatever color you want</span>
+<span class="n">im4</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span><span class="n">lat</span><span class="p">,</span><span class="n">sic_rg</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:],</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues_r&#39;</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im4</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;Sea Ice Concentration [%]&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([]);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What do you notice about the top of the domain in the plot? Now this could be differenced against an observational dataset on a one-degree grid.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1501,7 +1512,7 @@ title="Print to PDF"
             <p class="prev-next-title">Basic Plotting</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../clm_ctsm.html" title="next page">
+    <a class='right-next' id="next-link" href="../clm_ctsm/clm_ctsm.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">CLM/CTSM</p>
