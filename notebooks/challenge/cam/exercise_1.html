@@ -1160,13 +1160,13 @@ For instance, to run in the queue <code class="docutils literal notranslate"><sp
 <p><strong># Check your solution</strong></p>
 <p>When the run is completed, look at the history files into the archive directory.</p>
 <p>(1) Check that your archive directory on cheyenne (The path will be different on other machines):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/f2000_control/atm/hist
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/$CASENAME/atm/hist
 ls 
 </pre></div>
 </div>
 <p>As your run is only 5-day, there should be no monthly file (<code class="docutils literal notranslate"><span class="pre">h0</span></code>)</p>
 <p>(2) Look at the contents of the <code class="docutils literal notranslate"><span class="pre">h1</span></code> files using <code class="docutils literal notranslate"><span class="pre">ncdump</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/f2000_control/atm/hist
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/$CASENAME/atm/hist
 ncdump -h f2000_control.cam.h1.0001-01-01-00000.nc
 </pre></div>
 </div>
