@@ -1283,7 +1283,7 @@ In these plots, you can adjust the range of the colorbars by adjusting the “vm
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labelsize</span><span class="o">=</span><span class="mi">15</span>
 
-<span class="n">my_cmap</span> <span class="o">=</span> <span class="n">mcm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Spectral&#39;</span><span class="p">)</span>
+<span class="n">my_cmap</span> <span class="o">=</span> <span class="n">mcm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Spectral_r&#39;</span><span class="p">)</span>
 
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
@@ -1291,8 +1291,8 @@ In these plots, you can adjust the range of the colorbars by adjusting the “vm
 
 <span class="c1"># Plotting air temperature for year1</span>
 
-<span class="n">vmin</span> <span class="o">=</span> <span class="o">-</span><span class="mi">25</span>
-<span class="n">vmax</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">vmin</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span>
+<span class="n">vmax</span> <span class="o">=</span> <span class="mi">20</span>
 
 <span class="n">last_panel0</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">artm1</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span>
                        <span class="n">cmap</span><span class="o">=</span><span class="n">my_cmap</span><span class="p">)</span>
@@ -1366,7 +1366,7 @@ In these plots, you can adjust the range of the colorbars by adjusting the “vm
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labelsize</span><span class="o">=</span><span class="mi">15</span>
 
-<span class="n">my_cmap</span> <span class="o">=</span> <span class="n">mcm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Spectral&#39;</span><span class="p">)</span>
+<span class="n">my_cmap</span> <span class="o">=</span> <span class="n">mcm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Spectral_r&#39;</span><span class="p">)</span>
 
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
@@ -1454,7 +1454,7 @@ In these plots, you can adjust the range of the colorbars by adjusting the “vm
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labelsize</span><span class="o">=</span><span class="mi">15</span>
-<span class="n">my_cmap</span> <span class="o">=</span> <span class="n">mcm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Spectral&#39;</span><span class="p">)</span>
+<span class="n">my_cmap</span> <span class="o">=</span> <span class="n">mcm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Spectral_r&#39;</span><span class="p">)</span>
 
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
@@ -1573,20 +1573,6 @@ To do this we will use the command “ncrcat”</p>
 <span class="n">area</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;iareag&quot;</span><span class="p">][:]</span>
 <span class="n">time_area</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">][:]</span>
 <span class="n">ncfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">katec</span><span class="o">/</span><span class="n">ipykernel_222707</span><span class="o">/</span><span class="mf">3535718280.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Loading the variables</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">file_mass</span> <span class="o">=</span> <span class="n">path_to_file</span> <span class="o">+</span> <span class="s2">&quot;mass.nc&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">file_areag</span> <span class="o">=</span> <span class="n">path_to_file</span> <span class="o">+</span> <span class="s2">&quot;area_ground.nc&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ncfile</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">file_mass</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;path_to_file&#39; is not defined
 </pre></div>
 </div>
 </div>
