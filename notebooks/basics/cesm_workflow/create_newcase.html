@@ -201,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../one_time_overview.html">
+    <a class="reference internal" href="../code_overview.html">
      CESM code
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -211,12 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../one_time/git_download_cesm.html">
-       Download CESM
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../one_time/cesm_code_explore.html">
+      <a class="reference internal" href="../code/cesm_code_explore.html">
        Explore CESM Code
       </a>
      </li>
@@ -1239,7 +1234,7 @@ job is case.st_archive USER_REQUESTED_WALLTIME None USER_REQUESTED_QUEUE None WA
 <p><img alt="Create New Case Command Image" src="../../../_images/CESM2_Create_Newcase_Command.png" /></p>
 <section id="casename">
 <h2>1. Casename<a class="headerlink" href="#casename" title="Permalink to this headline">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">--case</span></code> is the argument that specifies the <strong>name</strong> and <strong>location</strong> of the case being created. In the example above, the casename is <code class="docutils literal notranslate"><span class="pre">CASE</span></code> and the location of the case is <code class="docutils literal notranslate"><span class="pre">/glade/work/$USER/cases/</span></code>. Note that if a path proceedng the casename is not specified, then the case is created as a subdirectory of the <code class="docutils literal notranslate"><span class="pre">$CIMEROOT/scripts</span></code> directory.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--case</span></code> is the argument that specifies the <strong>name</strong> and <strong>location</strong> of the case being created. In the example above, the casename is <code class="docutils literal notranslate"><span class="pre">CASE</span></code> and the location of the case is <code class="docutils literal notranslate"><span class="pre">/glade/work/$USER/cases/</span></code>. Note that if a path preceding the casename is not specified, then the case is created as a subdirectory of the <code class="docutils literal notranslate"><span class="pre">$CIMEROOT/scripts</span></code> directory.</p>
 <ul class="simple">
 <li><p>The path <code class="docutils literal notranslate"><span class="pre">/glade/work/$USER/cases/CASE</span></code> is your workspace <code class="docutils literal notranslate"><span class="pre">CASEROOT</span></code>, as described in the <a class="reference external" href="https://ncar.github.io/CESM-Tutorial/notebooks/basics/cesm_workspaces.html#workspace-overview">workspaces section</a>.</p></li>
 </ul>

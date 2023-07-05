@@ -201,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../one_time_overview.html">
+    <a class="reference internal" href="../code_overview.html">
      CESM code
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -211,12 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../one_time/git_download_cesm.html">
-       Download CESM
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../one_time/cesm_code_explore.html">
+      <a class="reference internal" href="../code/cesm_code_explore.html">
        Explore CESM Code
       </a>
      </li>
@@ -1109,7 +1104,7 @@ title="Print to PDF"
 <h1>Extending your run<a class="headerlink" href="#extending-your-run" title="Permalink to this headline">#</a></h1>
 <div class="alert alert-info">
 <strong>Exercise: Run the same case, but for longer</strong><br><br>
-<p>The default values for a new case run length is 5 days. The run length are set by the XML variables STOP_OPTION and STOP_N. As the 5 days is too short to produce a monthly history file we will change these to run for a single month. In the next section you will learn more about <code class="docutils literal notranslate"><span class="pre">xml</span></code> files, but for now we will just provide the commands.</p>
+<p>The default value for a new case run length is 5 days. The run length is set by the XML variables STOP_OPTION and STOP_N. As the 5 days is too short to produce a monthly history file we will change these to run for a single month. In the next section you will learn more about <code class="docutils literal notranslate"><span class="pre">xml</span></code> files, but for now we will just provide the commands.</p>
 <p>From your <code class="docutils literal notranslate"><span class="pre">CASE</span></code> directory, extend the run <font face="Courier" color='purple'><strong>b.day1.0 </strong></font> with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">nmonths</span>
 <span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">1</span>

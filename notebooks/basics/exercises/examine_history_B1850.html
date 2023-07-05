@@ -201,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../one_time_overview.html">
+    <a class="reference internal" href="../code_overview.html">
      CESM code
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -211,12 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../one_time/git_download_cesm.html">
-       Download CESM
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../one_time/cesm_code_explore.html">
+      <a class="reference internal" href="../code/cesm_code_explore.html">
        Explore CESM Code
       </a>
      </li>
@@ -1168,7 +1163,7 @@ title="Print to PDF"
 </div></section>
 <section id="step-2-open-the-cam-h0-monthly-history-file">
 <h2>Step 2. Open the CAM h0 monthly history file<a class="headerlink" href="#step-2-open-the-cam-h0-monthly-history-file" title="Permalink to this headline">#</a></h2>
-<p>You will now use <code class="docutils literal notranslate"><span class="pre">ncview</span></code> to look at the b.day1.0 case CAM monthly average values for the single month your ran.</p>
+<p>You will now use <code class="docutils literal notranslate"><span class="pre">ncview</span></code> to look at the b.day1.0 case CAM monthly average values for the single month you ran.</p>
 <p>If you are unfamiliar with <code class="docutils literal notranslate"><span class="pre">ncview</span></code> you can learn more at <a class="reference external" href="https://ncar.github.io/CESM-Tutorial/notebooks/resources/netcdf.html#ncview">this link</a>.</p>
 <p><strong>Note: you must load the <code class="docutils literal notranslate"><span class="pre">ncview</span></code> module to your environment. See <a class="reference external" href="https://ncar.github.io/CESM-Tutorial/notebooks/resources/modules.html#modules-on-ncar-hpc">here</a> for more details on how to load the <code class="docutils literal notranslate"><span class="pre">ncview</span></code> module.</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">ncview</span>
@@ -1185,19 +1180,19 @@ title="Print to PDF"
 </pre></div>
 </div>
 <br>
-<p>There should be a single file <a class="reference external" href="http://b.day1.0.cam.h0.0001-01.nc">b.day1.0.cam.h0.0001-01.nc</a>.<br></p>
+<p>There should be a single file, <a class="reference external" href="http://b.day1.0.cam.h0.0001-01.nc">b.day1.0.cam.h0.0001-01.nc</a>.<br></p>
 <p><strong>Open the file using <code class="docutils literal notranslate"><span class="pre">ncview</span></code>: </strong><br></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncview</span> <span class="n">b</span><span class="o">.</span><span class="n">day1</span><span class="mf">.0</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">h0</span><span class="mf">.0001</span><span class="o">-</span><span class="mf">01.</span><span class="n">nc</span> <span class="o">&amp;</span>
 </pre></div>
 </div>
-<br><p>If your X11 environment is correctly set up then the ncview tool should appear as shown below on the left. Note the ‘ &amp;’ at the end of the command. This puts the command into the background allowing other tasks to be run from the Cheyenne terminal window. The view on the right shows the ncview application once the Surface Temperature variable has been selected.</p>
+<br><p>If your X11 environment is correctly set up then the ncview tool should appear as shown below on the left. Note the <code class="docutils literal notranslate"> <span class="pre">&amp;</span></code> at the end of the command. This puts the command into the background allowing other tasks to be run from the Cheyenne terminal window. The view on the right shows the ncview application once the Surface Temperature variable has been selected.</p>
 </div>
 <p><img alt="NCView App Window" src="../../../_images/NCVIEW_App_Window.png" />
 <em><p style="text-align: center;"> Figure: NCView App Window </p></em></p>
 </section>
 <section id="step-3-examine-average-monthly-surface-temperature">
 <h2>Step 3. Examine Average Monthly Surface Temperature<a class="headerlink" href="#step-3-examine-average-monthly-surface-temperature" title="Permalink to this headline">#</a></h2>
-<p>Using ncview with the b.day1.0 January 0001 CAM monthly average values file loaded examine the Surface Temperature variable. Update the color palette used to plot values and change the size of the plot.</p>
+<p>Using ncview with the b.day1.0 January 0001 CAM monthly average values file loaded, examine the Surface Temperature variable. Update the color palette used to plot values and change the size of the plot.</p>
 <div class="alert alert-info">
 <strong>Select the Surface Temperature Variable: </strong><br><br>
 <p>Click on the “(244) 2d vars” button shown above. This will pull up a list of all 2d vars on the b.day1.0 January 0001 CAM history file. This is a long list but it is in alphabetical order. You are looking for the TS variable.<br />
@@ -1210,11 +1205,11 @@ title="Print to PDF"
 </div>
 <p><img alt="NCView TS" src="../../../_images/NCVIEW_Jan0001_TS.png" />
 <em><p style="text-align: center;"> Figure: NCView b.day1.0 TS Jan 0001 </p></em></p>
-<p>The Surface Temperature variable is in Kelvin. A value of 273.15K represents 0C and 32F. There are many options to better view and explore data with ncview. Some of these will come up over the next few days of the tutorial.</p>
+<p>The Surface Temperature variable is in Kelvin. A value of 273.15K represents 0°C and 32°F. There are many options to better view and explore data with ncview. Some of these will come up over the next few days of the tutorial.</p>
 </section>
 <section id="step-4-examine-average-monthly-precipitation">
 <h2>Step 4. Examine Average Monthly Precipitation<a class="headerlink" href="#step-4-examine-average-monthly-precipitation" title="Permalink to this headline">#</a></h2>
-<p>Using ncview with the b.day1.0 January 0001 CAM monthly average values file loaded examine the the two variables representing Convective Precipitation and Large Scale Precipitation.</p>
+<p>Using ncview with the b.day1.0 January 0001 CAM monthly average values file loaded, examine the the two variables representing Convective Precipitation and Large Scale Precipitation.</p>
 <div class="alert alert-info">
 <strong>Exercise: Select the Convective Precipitation Variable: </strong><br><br>
 <p>Click on the “(244) 2d vars” button shown above. Find and select the PRECC variable.<br />
@@ -1229,7 +1224,7 @@ title="Print to PDF"
 </div>
 <p><img alt="NCView PRECL" src="../../../_images/NCVIEW_Jan0001_PRECL.png" />
 <em><p style="text-align: center;"> Figure: NCView b.day1.0 PRECL Jan 0001 </p></em></p>
-<p>Precipitation in the model is recorded in m/s. To convert to mm/day we can multiply the values by a 1000 mm in a meter and 86,400 seconds in a day. Can you see the differences in Convective and Large Scale Precipitation?</p>
+<p>Precipitation in the model is recorded in m/s. To convert to mm/day we can multiply the values by 1000 mm in a meter and 86,400 seconds in a day. Can you see the differences in Convective and Large Scale Precipitation?</p>
 </section>
 </section>
 
