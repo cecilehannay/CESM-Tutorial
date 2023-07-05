@@ -1072,9 +1072,21 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question">
-     Question:
+    <a class="reference internal nav-link" href="#grab-data-from-first-time-stamp">
+     Grab data from first time stamp
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#question">
+       Question:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Question:
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -1082,6 +1094,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#exercise-2-zonal-plot-of-swcf">
    Exercise 2: Zonal plot of SWCF
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Question
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-3-plot-of-zonal-t">
@@ -1104,7 +1123,7 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+    <a class="reference internal nav-link" href="#id3">
      Same as above, but:
     </a>
    </li>
@@ -1135,9 +1154,21 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question">
-     Question:
+    <a class="reference internal nav-link" href="#grab-data-from-first-time-stamp">
+     Grab data from first time stamp
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#question">
+       Question:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Question:
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -1145,6 +1176,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#exercise-2-zonal-plot-of-swcf">
    Exercise 2: Zonal plot of SWCF
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Question
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-3-plot-of-zonal-t">
@@ -1167,7 +1205,7 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+    <a class="reference internal nav-link" href="#id3">
      Same as above, but:
     </a>
    </li>
@@ -1185,6 +1223,12 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="basic-plotting">
 <h1>Basic Plotting<a class="headerlink" href="#basic-plotting" title="Permalink to this headline">#</a></h1>
+<p>For the atmospheric data, we will look at common variables in the atmospheric diagnostics. Some of the plotting in these examples are based on the <a href="https://github.com/NCAR/ADF">AMWG diagnostic framework (ADF)</a> and some are natively from the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> functionality.</p>
+<p>let’s go over 3 basic plotting examples:</p>
+<p>Exercise 1: Global lat/lon of surface temperature</p>
+<p>Exercise 2: Zonal mean of short wave cloud forcing</p>
+<p>Exercise 3: Temperature zonal mean with vertical levels</p>
+<p><code class="docutils literal notranslate"><span class="pre">xarray</span></code> will be used for the data I/O, analysis, and some plotting, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> will aid in plotting, and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> for calculations</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
@@ -1203,11 +1247,11 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Use the file: /glade/scratch/hannay/archive/b1850_high_freq/atm/hist/b1850_high_freq.cam.h0.0001-01.nc</p>
+<p>The first steps are to grab an atmosphere history file</p>
+<p>Note: Use the file <code class="docutils literal notranslate"><span class="pre">b1850_high_freq.cam.h0.0001-01.nc</span></code> located at <code class="docutils literal notranslate"><span class="pre">/glade/scratch/hannay/archive/b1850_high_freq/atm/hist/</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Here we point to the CESM2-LE datasets on campaign disk</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here we point to the dataset</span>
 <span class="n">monthly_output_path</span> <span class="o">=</span> <span class="s2">&quot;/glade/scratch/hannay/archive/b1850_high_freq/atm/hist&quot;</span>
 <span class="n">run_name</span> <span class="o">=</span> <span class="s2">&quot;b1850_high_freq.cam.h0.0001-01.nc&quot;</span>
 
@@ -1226,7 +1270,6 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
-<span class="n">ds</span>
 </pre></div>
 </div>
 </div>
@@ -1731,10 +1774,14 @@ Attributes:
 </div>
 <section id="exercise-1-make-a-lat-lon-plot-of-ts">
 <h2>Exercise 1: Make a lat-lon plot of TS<a class="headerlink" href="#exercise-1-make-a-lat-lon-plot-of-ts" title="Permalink to this headline">#</a></h2>
+<p>To highlight plotting the variables from the CESM atmosphere file, the fisrt example will plot a simple global lat/lon plot of surface temperature <code class="docutils literal notranslate"><span class="pre">TS</span></code></p>
+<section id="grab-data-from-first-time-stamp">
+<h3>Grab data from first time stamp<a class="headerlink" href="#grab-data-from-first-time-stamp" title="Permalink to this headline">#</a></h3>
+<p>NOTE: This dataset has <em>only</em> one time</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grab data from first (and only in this case) time stamp</span>
-<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;TS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">({</span><span class="s1">&#39;time&#39;</span><span class="p">:</span><span class="n">ds</span><span class="o">.</span><span class="n">TS</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]})</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts_0</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">TS</span><span class="o">.</span><span class="n">sel</span><span class="p">({</span><span class="s1">&#39;time&#39;</span><span class="p">:</span><span class="n">ds</span><span class="o">.</span><span class="n">TS</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]})</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<span class="n">ts_0</span>
 </pre></div>
 </div>
 </div>
@@ -2180,483 +2227,7 @@ Attributes:
               357.5],
              dtype=&#x27;float64&#x27;, name=&#x27;lon&#x27;, length=144))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a6cc2972-3437-4a52-b45e-29a488681939' class='xr-section-summary-in' type='checkbox'  checked><label for='section-a6cc2972-3437-4a52-b45e-29a488681939' class='xr-section-summary' >Attributes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>K</dd><dt><span>long_name :</span></dt><dd>Surface temperature (radiative)</dd><dt><span>cell_methods :</span></dt><dd>time: mean</dd></dl></div></li></ul></div></div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grab a subset of the data for only TS (surface temperatures)</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">TS</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
-<defs>
-<symbol id="icon-database" viewBox="0 0 32 32">
-<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
-<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
-<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
-</symbol>
-<symbol id="icon-file-text2" viewBox="0 0 32 32">
-<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
-<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
-<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
-<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
-</symbol>
-</defs>
-</svg>
-<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
- *
- */
-
-:root {
-  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
-  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
-  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
-  --xr-border-color: var(--jp-border-color2, #e0e0e0);
-  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
-  --xr-background-color: var(--jp-layout-color0, white);
-  --xr-background-color-row-even: var(--jp-layout-color1, white);
-  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
-}
-
-html[theme=dark],
-body[data-theme=dark],
-body.vscode-dark {
-  --xr-font-color0: rgba(255, 255, 255, 1);
-  --xr-font-color2: rgba(255, 255, 255, 0.54);
-  --xr-font-color3: rgba(255, 255, 255, 0.38);
-  --xr-border-color: #1F1F1F;
-  --xr-disabled-color: #515151;
-  --xr-background-color: #111111;
-  --xr-background-color-row-even: #111111;
-  --xr-background-color-row-odd: #313131;
-}
-
-.xr-wrap {
-  display: block !important;
-  min-width: 300px;
-  max-width: 700px;
-}
-
-.xr-text-repr-fallback {
-  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
-  display: none;
-}
-
-.xr-header {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  margin-bottom: 4px;
-  border-bottom: solid 1px var(--xr-border-color);
-}
-
-.xr-header > div,
-.xr-header > ul {
-  display: inline;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.xr-obj-type,
-.xr-array-name {
-  margin-left: 2px;
-  margin-right: 10px;
-}
-
-.xr-obj-type {
-  color: var(--xr-font-color2);
-}
-
-.xr-sections {
-  padding-left: 0 !important;
-  display: grid;
-  grid-template-columns: 150px auto auto 1fr 20px 20px;
-}
-
-.xr-section-item {
-  display: contents;
-}
-
-.xr-section-item input {
-  display: none;
-}
-
-.xr-section-item input + label {
-  color: var(--xr-disabled-color);
-}
-
-.xr-section-item input:enabled + label {
-  cursor: pointer;
-  color: var(--xr-font-color2);
-}
-
-.xr-section-item input:enabled + label:hover {
-  color: var(--xr-font-color0);
-}
-
-.xr-section-summary {
-  grid-column: 1;
-  color: var(--xr-font-color2);
-  font-weight: 500;
-}
-
-.xr-section-summary > span {
-  display: inline-block;
-  padding-left: 0.5em;
-}
-
-.xr-section-summary-in:disabled + label {
-  color: var(--xr-font-color2);
-}
-
-.xr-section-summary-in + label:before {
-  display: inline-block;
-  content: '►';
-  font-size: 11px;
-  width: 15px;
-  text-align: center;
-}
-
-.xr-section-summary-in:disabled + label:before {
-  color: var(--xr-disabled-color);
-}
-
-.xr-section-summary-in:checked + label:before {
-  content: '▼';
-}
-
-.xr-section-summary-in:checked + label > span {
-  display: none;
-}
-
-.xr-section-summary,
-.xr-section-inline-details {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.xr-section-inline-details {
-  grid-column: 2 / -1;
-}
-
-.xr-section-details {
-  display: none;
-  grid-column: 1 / -1;
-  margin-bottom: 5px;
-}
-
-.xr-section-summary-in:checked ~ .xr-section-details {
-  display: contents;
-}
-
-.xr-array-wrap {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 20px auto;
-}
-
-.xr-array-wrap > label {
-  grid-column: 1;
-  vertical-align: top;
-}
-
-.xr-preview {
-  color: var(--xr-font-color3);
-}
-
-.xr-array-preview,
-.xr-array-data {
-  padding: 0 5px !important;
-  grid-column: 2;
-}
-
-.xr-array-data,
-.xr-array-in:checked ~ .xr-array-preview {
-  display: none;
-}
-
-.xr-array-in:checked ~ .xr-array-data,
-.xr-array-preview {
-  display: inline-block;
-}
-
-.xr-dim-list {
-  display: inline-block !important;
-  list-style: none;
-  padding: 0 !important;
-  margin: 0;
-}
-
-.xr-dim-list li {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-}
-
-.xr-dim-list:before {
-  content: '(';
-}
-
-.xr-dim-list:after {
-  content: ')';
-}
-
-.xr-dim-list li:not(:last-child):after {
-  content: ',';
-  padding-right: 5px;
-}
-
-.xr-has-index {
-  font-weight: bold;
-}
-
-.xr-var-list,
-.xr-var-item {
-  display: contents;
-}
-
-.xr-var-item > div,
-.xr-var-item label,
-.xr-var-item > .xr-var-name span {
-  background-color: var(--xr-background-color-row-even);
-  margin-bottom: 0;
-}
-
-.xr-var-item > .xr-var-name:hover span {
-  padding-right: 5px;
-}
-
-.xr-var-list > li:nth-child(odd) > div,
-.xr-var-list > li:nth-child(odd) > label,
-.xr-var-list > li:nth-child(odd) > .xr-var-name span {
-  background-color: var(--xr-background-color-row-odd);
-}
-
-.xr-var-name {
-  grid-column: 1;
-}
-
-.xr-var-dims {
-  grid-column: 2;
-}
-
-.xr-var-dtype {
-  grid-column: 3;
-  text-align: right;
-  color: var(--xr-font-color2);
-}
-
-.xr-var-preview {
-  grid-column: 4;
-}
-
-.xr-index-preview {
-  grid-column: 2 / 5;
-  color: var(--xr-font-color2);
-}
-
-.xr-var-name,
-.xr-var-dims,
-.xr-var-dtype,
-.xr-preview,
-.xr-attrs dt {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding-right: 10px;
-}
-
-.xr-var-name:hover,
-.xr-var-dims:hover,
-.xr-var-dtype:hover,
-.xr-attrs dt:hover {
-  overflow: visible;
-  width: auto;
-  z-index: 1;
-}
-
-.xr-var-attrs,
-.xr-var-data,
-.xr-index-data {
-  display: none;
-  background-color: var(--xr-background-color) !important;
-  padding-bottom: 5px !important;
-}
-
-.xr-var-attrs-in:checked ~ .xr-var-attrs,
-.xr-var-data-in:checked ~ .xr-var-data,
-.xr-index-data-in:checked ~ .xr-index-data {
-  display: block;
-}
-
-.xr-var-data > table {
-  float: right;
-}
-
-.xr-var-name span,
-.xr-var-data,
-.xr-index-name div,
-.xr-index-data,
-.xr-attrs {
-  padding-left: 25px !important;
-}
-
-.xr-attrs,
-.xr-var-attrs,
-.xr-var-data,
-.xr-index-data {
-  grid-column: 1 / -1;
-}
-
-dl.xr-attrs {
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 125px auto;
-}
-
-.xr-attrs dt,
-.xr-attrs dd {
-  padding: 0;
-  margin: 0;
-  float: left;
-  padding-right: 10px;
-  width: auto;
-}
-
-.xr-attrs dt {
-  font-weight: normal;
-  grid-column: 1;
-}
-
-.xr-attrs dt:hover span {
-  display: inline-block;
-  background: var(--xr-background-color);
-  padding-right: 10px;
-}
-
-.xr-attrs dd {
-  grid-column: 2;
-  white-space: pre-wrap;
-  word-break: break-all;
-}
-
-.xr-icon-database,
-.xr-icon-file-text2,
-.xr-no-icon {
-  display: inline-block;
-  vertical-align: middle;
-  width: 1em;
-  height: 1.5em !important;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-}
-</style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;TS&#x27; (time: 1, lat: 96, lon: 144)&gt;
-[13824 values with dtype=float32]
-Coordinates:
-  * lat      (lat) float64 -90.0 -88.11 -86.21 -84.32 ... 84.32 86.21 88.11 90.0
-  * lon      (lon) float64 0.0 2.5 5.0 7.5 10.0 ... 350.0 352.5 355.0 357.5
-  * time     (time) object 0001-02-01 00:00:00
-Attributes:
-    units:         K
-    long_name:     Surface temperature (radiative)
-    cell_methods:  time: mean</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'TS'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 1</li><li><span class='xr-has-index'>lat</span>: 96</li><li><span class='xr-has-index'>lon</span>: 144</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-926dab45-0a3d-4b88-8bac-51f0cb977196' class='xr-array-in' type='checkbox' checked><label for='section-926dab45-0a3d-4b88-8bac-51f0cb977196' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>...</span></div><div class='xr-array-data'><pre>[13824 values with dtype=float32]</pre></div></div></li><li class='xr-section-item'><input id='section-c87ae1d9-f884-416a-bfa7-d6dcc5e48df7' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c87ae1d9-f884-416a-bfa7-d6dcc5e48df7' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-90.0 -88.11 -86.21 ... 88.11 90.0</div><input id='attrs-0abf280f-bd50-42f6-a572-53b4e72a9d43' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0abf280f-bd50-42f6-a572-53b4e72a9d43' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e30c98e3-2e52-4a73-85ba-77c852e63e83' class='xr-var-data-in' type='checkbox'><label for='data-e30c98e3-2e52-4a73-85ba-77c852e63e83' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><pre>array([-90.      , -88.105263, -86.210526, -84.315789, -82.421053, -80.526316,
-       -78.631579, -76.736842, -74.842105, -72.947368, -71.052632, -69.157895,
-       -67.263158, -65.368421, -63.473684, -61.578947, -59.684211, -57.789474,
-       -55.894737, -54.      , -52.105263, -50.210526, -48.315789, -46.421053,
-       -44.526316, -42.631579, -40.736842, -38.842105, -36.947368, -35.052632,
-       -33.157895, -31.263158, -29.368421, -27.473684, -25.578947, -23.684211,
-       -21.789474, -19.894737, -18.      , -16.105263, -14.210526, -12.315789,
-       -10.421053,  -8.526316,  -6.631579,  -4.736842,  -2.842105,  -0.947368,
-         0.947368,   2.842105,   4.736842,   6.631579,   8.526316,  10.421053,
-        12.315789,  14.210526,  16.105263,  18.      ,  19.894737,  21.789474,
-        23.684211,  25.578947,  27.473684,  29.368421,  31.263158,  33.157895,
-        35.052632,  36.947368,  38.842105,  40.736842,  42.631579,  44.526316,
-        46.421053,  48.315789,  50.210526,  52.105263,  54.      ,  55.894737,
-        57.789474,  59.684211,  61.578947,  63.473684,  65.368421,  67.263158,
-        69.157895,  71.052632,  72.947368,  74.842105,  76.736842,  78.631579,
-        80.526316,  82.421053,  84.315789,  86.210526,  88.105263,  90.      ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 2.5 5.0 ... 352.5 355.0 357.5</div><input id='attrs-c6475ab6-34c5-4c37-b315-d8aee2918c18' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c6475ab6-34c5-4c37-b315-d8aee2918c18' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6fbb7829-2faa-47ab-81aa-5ad4de5dcbb8' class='xr-var-data-in' type='checkbox'><label for='data-6fbb7829-2faa-47ab-81aa-5ad4de5dcbb8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><pre>array([  0. ,   2.5,   5. ,   7.5,  10. ,  12.5,  15. ,  17.5,  20. ,  22.5,
-        25. ,  27.5,  30. ,  32.5,  35. ,  37.5,  40. ,  42.5,  45. ,  47.5,
-        50. ,  52.5,  55. ,  57.5,  60. ,  62.5,  65. ,  67.5,  70. ,  72.5,
-        75. ,  77.5,  80. ,  82.5,  85. ,  87.5,  90. ,  92.5,  95. ,  97.5,
-       100. , 102.5, 105. , 107.5, 110. , 112.5, 115. , 117.5, 120. , 122.5,
-       125. , 127.5, 130. , 132.5, 135. , 137.5, 140. , 142.5, 145. , 147.5,
-       150. , 152.5, 155. , 157.5, 160. , 162.5, 165. , 167.5, 170. , 172.5,
-       175. , 177.5, 180. , 182.5, 185. , 187.5, 190. , 192.5, 195. , 197.5,
-       200. , 202.5, 205. , 207.5, 210. , 212.5, 215. , 217.5, 220. , 222.5,
-       225. , 227.5, 230. , 232.5, 235. , 237.5, 240. , 242.5, 245. , 247.5,
-       250. , 252.5, 255. , 257.5, 260. , 262.5, 265. , 267.5, 270. , 272.5,
-       275. , 277.5, 280. , 282.5, 285. , 287.5, 290. , 292.5, 295. , 297.5,
-       300. , 302.5, 305. , 307.5, 310. , 312.5, 315. , 317.5, 320. , 322.5,
-       325. , 327.5, 330. , 332.5, 335. , 337.5, 340. , 342.5, 345. , 347.5,
-       350. , 352.5, 355. , 357.5])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>0001-02-01 00:00:00</div><input id='attrs-15d22a3d-12d0-469b-8761-090553405163' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-15d22a3d-12d0-469b-8761-090553405163' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-921d07be-a061-4585-840c-426c17b755a9' class='xr-var-data-in' type='checkbox'><label for='data-921d07be-a061-4585-840c-426c17b755a9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>time</dd><dt><span>bounds :</span></dt><dd>time_bnds</dd></dl></div><div class='xr-var-data'><pre>array([cftime.DatetimeNoLeap(1, 2, 1, 0, 0, 0, 0, has_year_zero=True)],
-      dtype=object)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-81940a9d-ab38-4160-bd6d-825475f350ae' class='xr-section-summary-in' type='checkbox'  ><label for='section-81940a9d-ab38-4160-bd6d-825475f350ae' class='xr-section-summary' >Indexes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>lat</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-21c8bb53-2c45-4546-b951-0e950bb59375' class='xr-index-data-in' type='checkbox'/><label for='index-21c8bb53-2c45-4546-b951-0e950bb59375' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Float64Index([              -90.0,  -88.10526315789474,  -86.21052631578948,
-                -84.3157894736842,  -82.42105263157895,  -80.52631578947368,
-               -78.63157894736842,  -76.73684210526316,  -74.84210526315789,
-               -72.94736842105263,  -71.05263157894737,  -69.15789473684211,
-               -67.26315789473685,  -65.36842105263158, -63.473684210526315,
-              -61.578947368421055, -59.684210526315795,  -57.78947368421053,
-               -55.89473684210527,               -54.0,  -52.10526315789474,
-               -50.21052631578947,  -48.31578947368421,  -46.42105263157895,
-              -44.526315789473685, -42.631578947368425,  -40.73684210526316,
-                -38.8421052631579,  -36.94736842105264,  -35.05263157894737,
-               -33.15789473684211, -31.263157894736842, -29.368421052631582,
-              -27.473684210526322, -25.578947368421055, -23.684210526315795,
-              -21.789473684210535,  -19.89473684210526,               -18.0,
-               -16.10526315789474,  -14.21052631578948,  -12.31578947368422,
-              -10.421052631578945,  -8.526315789473685,  -6.631578947368425,
-               -4.736842105263165, -2.8421052631579045, -0.9473684210526301,
-               0.9473684210526301,  2.8421052631578902,    4.73684210526315,
-                6.631578947368411,   8.526315789473685,  10.421052631578945,
-               12.315789473684205,  14.210526315789465,  16.105263157894726,
-                             18.0,   19.89473684210526,   21.78947368421052,
-                23.68421052631578,   25.57894736842104,  27.473684210526315,
-               29.368421052631575,  31.263157894736835,  33.157894736842096,
-               35.052631578947356,   36.94736842105263,   38.84210526315789,
-                40.73684210526315,   42.63157894736841,   44.52631578947367,
-                46.42105263157893,   48.31578947368419,   50.21052631578948,
-                52.10526315789474,                54.0,   55.89473684210526,
-                57.78947368421052,   59.68421052631578,   61.57894736842104,
-                 63.4736842105263,   65.36842105263156,   67.26315789473682,
-                69.15789473684211,   71.05263157894737,   72.94736842105263,
-                74.84210526315789,   76.73684210526315,   78.63157894736841,
-                80.52631578947367,   82.42105263157893,   84.31578947368419,
-                86.21052631578945,   88.10526315789474,                90.0],
-             dtype=&#x27;float64&#x27;, name=&#x27;lat&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>lon</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-05577498-1c46-4578-8f6a-96b333bb9ec2' class='xr-index-data-in' type='checkbox'/><label for='index-05577498-1c46-4578-8f6a-96b333bb9ec2' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Float64Index([  0.0,   2.5,   5.0,   7.5,  10.0,  12.5,  15.0,  17.5,  20.0,
-               22.5,
-              ...
-              335.0, 337.5, 340.0, 342.5, 345.0, 347.5, 350.0, 352.5, 355.0,
-              357.5],
-             dtype=&#x27;float64&#x27;, name=&#x27;lon&#x27;, length=144))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-f7fed3af-35df-4a55-ae78-2d3f3eb5380b' class='xr-index-data-in' type='checkbox'/><label for='index-f7fed3af-35df-4a55-ae78-2d3f3eb5380b' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(CFTimeIndex([0001-02-01 00:00:00],
-            dtype=&#x27;object&#x27;, length=1, calendar=&#x27;noleap&#x27;, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-92d27d97-977d-4880-9ee3-7b4919e9695d' class='xr-section-summary-in' type='checkbox'  checked><label for='section-92d27d97-977d-4880-9ee3-7b4919e9695d' class='xr-section-summary' >Attributes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>K</dd><dt><span>long_name :</span></dt><dd>Surface temperature (radiative)</dd><dt><span>cell_methods :</span></dt><dd>time: mean</dd></dl></div></li></ul></div></div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How you can grab the variable long name for plot title</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">TS</span><span class="o">.</span><span class="n">long_name</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Surface temperature (radiative)&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How you can grab the times in the dataset</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">TS</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([cftime.DatetimeNoLeap(1, 2, 1, 0, 0, 0, 0, has_year_zero=True)],
-      dtype=object)
-</pre></div>
-</div>
-</div>
-</div>
+<p>Next is to set up the map. Since we are plotting a global lat/lon, we will use the Plate Carree projection.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the colormap</span>
@@ -2667,14 +2238,11 @@ Attributes:
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 
-<span class="c1"># sets the latitude / longitude boundaries of the plot</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="mf">0.005</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">],</span> <span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
-
-<span class="c1">#Plot the first timeslice of aice</span>
-<span class="n">img</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">],</span>
-                   <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span>
-                   <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;TS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">({</span><span class="s1">&#39;time&#39;</span><span class="p">:</span><span class="n">ds</span><span class="o">.</span><span class="n">TS</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]})</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span>
-                   <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span><span class="c1">#vmax=1,vmin=0,</span>
+<span class="c1">#Plot the first timeslice of TS</span>
+<span class="n">img</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">lon</span><span class="p">,</span>
+                   <span class="n">ds</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span>
+                   <span class="n">ds</span><span class="o">.</span><span class="n">TS</span><span class="o">.</span><span class="n">sel</span><span class="p">({</span><span class="s1">&#39;time&#39;</span><span class="p">:</span><span class="n">ts_0</span><span class="p">})</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span>
+                   <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
                    <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Surface Temperature&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
@@ -2686,64 +2254,78 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/basics_10_0.png" src="../../../_images/basics_10_0.png" />
+<img alt="../../../_images/basics_9_0.png" src="../../../_images/basics_9_0.png" />
 </div>
 </div>
+<section id="question">
+<h4>Question:<a class="headerlink" href="#question" title="Permalink to this headline">#</a></h4>
+<p>What code would you use in the <code class="docutils literal notranslate"><span class="pre">pcolormesh</span></code> function to set the plotting limits?</p>
+</section>
+<section id="id1">
+<h4>Question:<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<p>How could we change the central longitude?</p>
+<p>#DROPDOWN ?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>A second quick example is for <code class="docutils literal notranslate"><span class="pre">xarray</span></code>’s built-in plotting which uses the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> in the background. <code class="docutils literal notranslate"><span class="pre">xarray</span></code> makes a basic plot fairly simple.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Xarray native plotting</span>
 
-<span class="n">ts</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;TS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">({</span><span class="s1">&#39;time&#39;</span><span class="p">:</span><span class="n">ds</span><span class="o">.</span><span class="n">TS</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]})</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<span class="c1"># Grab the first time stamp</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">TS</span><span class="o">.</span><span class="n">sel</span><span class="p">({</span><span class="s1">&#39;time&#39;</span><span class="p">:</span><span class="n">ts_0</span><span class="p">})</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
 
+<span class="c1"># Set up figure and axis</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 
+<span class="c1"># Plot the data straight from the xarray dataset</span>
 <span class="n">ts</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">,</span><span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span><span class="mi">321</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/basics_11_0.png" src="../../../_images/basics_11_0.png" />
+<img alt="../../../_images/basics_13_0.png" src="../../../_images/basics_13_0.png" />
 </div>
 </div>
-<section id="question">
-<h3>Question:<a class="headerlink" href="#question" title="Permalink to this headline">#</a></h3>
-<p>How is this map oriented? Are there features that stand out? How could we change the central longitude?</p>
+</section>
 </section>
 </section>
 <hr class="docutils" />
 <section id="exercise-2-zonal-plot-of-swcf">
 <h2>Exercise 2: Zonal plot of SWCF<a class="headerlink" href="#exercise-2-zonal-plot-of-swcf" title="Permalink to this headline">#</a></h2>
+<p>The second example will plot the short wave cloud forcing <code class="docutils literal notranslate"><span class="pre">SWCF</span></code> zonally.</p>
+<p>Grab the variable data and mean over the the lon value</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_swcf</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">SWCF</span>
 
+<span class="c1"># Get all the dataset dimensions</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">ds_swcf</span><span class="o">.</span><span class="n">dims</span>
+
+<span class="c1"># Grab all dimensions to mean the lon values from</span>
 <span class="n">davgovr</span> <span class="o">=</span> <span class="p">[</span><span class="n">dim</span> <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="n">d</span> <span class="k">if</span> <span class="n">dim</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;lev&#39;</span><span class="p">,</span><span class="s1">&#39;lat&#39;</span><span class="p">)]</span>
 
-<span class="n">DS</span> <span class="o">=</span> <span class="n">ds_swcf</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">davgovr</span><span class="p">)</span>
+<span class="c1"># Make new dataset of zonal mean valaues</span>
+<span class="n">ds_swcf_zonal</span> <span class="o">=</span> <span class="n">ds_swcf</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">davgovr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create figure and axis</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
 
 <span class="c1"># Set Main title for subplots:</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Short Wave Cloud Forcing&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-<span class="c1"># Set legend for plot line</span>
-<span class="c1">#TODO: what should go for the line legend, if anything? Maybe time?</span>
-<span class="n">line</span> <span class="o">=</span> <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">run_name</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">],</span>
-                        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1f77b4&quot;</span><span class="p">)</span>
+<span class="c1"># Plot value on y-axis and latitude on the x-axis</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_swcf_zonal</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span> <span class="n">ds_swcf_zonal</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;#1f77b4&quot;</span><span class="p">)</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="p">[</span><span class="n">line</span><span class="p">],</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">,</span> <span class="mf">.102</span><span class="p">),</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
-                   <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">DS</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span> <span class="n">DS</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;#1f77b4&quot;</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="nb">max</span><span class="p">([</span><span class="n">DS</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="o">-</span><span class="mf">90.</span><span class="p">]),</span> <span class="nb">min</span><span class="p">([</span><span class="n">DS</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mf">90.</span><span class="p">])])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="nb">max</span><span class="p">([</span><span class="n">ds_swcf_zonal</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="o">-</span><span class="mf">90.</span><span class="p">]),</span> <span class="nb">min</span><span class="p">([</span><span class="n">ds_swcf_zonal</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mf">90.</span><span class="p">])])</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Latitude&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -2751,13 +2333,36 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/basics_16_0.png" src="../../../_images/basics_16_0.png" />
+<img alt="../../../_images/basics_18_0.png" src="../../../_images/basics_18_0.png" />
 </div>
 </div>
+<section id="id2">
+<h3>Question<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>What code could you add to set legend for plot line?</p>
+<p>#DROPDOWN ?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="o">=</span> <span class="n">ds_swcf</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strftime</span><span class="p">()</span> <span class="c1"># -&gt; &#39;0001-02-01 00:00:00&#39;</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span>
+                        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1f77b4&quot;</span><span class="p">)</span>
+                        
+<span class="n">fig</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="p">[</span><span class="n">line</span><span class="p">],</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">,</span> <span class="mf">.102</span><span class="p">),</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+                   <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What else could go for the line legend, if anything?
+#DROPDOWN ?
+-&gt; suimulation run name, season, etc.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="exercise-3-plot-of-zonal-t">
 <h2>Exercise 3: Plot of zonal T<a class="headerlink" href="#exercise-3-plot-of-zonal-t" title="Permalink to this headline">#</a></h2>
+<p>This example will plot the 3D zonal mean of temperature <code class="docutils literal notranslate"><span class="pre">T</span></code> with the pressure as the y-variable and latitude as the x-variable</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>QUESTION FOR REVIEWERS: Here are four examples of how to plot the data. I think each is valuable for plotting pressure on the y-axis and changing the y-tick scale (ie log) to get more information out of the data.</p>
+<p>I’ve added two different ways of plotting: native xarray and what the ADF uses.</p>
+<p>Let me know about any feedback on these, I’m sure these could be turned into exercises?</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_t</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
@@ -2786,7 +2391,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/basics_21_0.png" src="../../../_images/basics_21_0.png" />
+<img alt="../../../_images/basics_24_0.png" src="../../../_images/basics_24_0.png" />
 </div>
 </div>
 </section>
@@ -2817,13 +2422,11 @@ Attributes:
 <span class="c1"># Format axis and ticks</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Latitude&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;zonal_vert_T_ADF.png&quot;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/basics_23_0.png" src="../../../_images/basics_23_0.png" />
+<img alt="../../../_images/basics_26_0.png" src="../../../_images/basics_26_0.png" />
 </div>
 </div>
 </section>
@@ -2871,12 +2474,12 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/basics_25_0.png" src="../../../_images/basics_25_0.png" />
+<img alt="../../../_images/basics_28_0.png" src="../../../_images/basics_28_0.png" />
 </div>
 </div>
 </section>
-<section id="id1">
-<h3>Same as above, but:<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<section id="id3">
+<h3>Same as above, but:<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>y-axis is <strong>decreasing</strong> with height</p></li>
 <li><p>y-axis <strong>is</strong> in log pressure</p></li>
@@ -2920,7 +2523,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/basics_27_0.png" src="../../../_images/basics_27_0.png" />
+<img alt="../../../_images/basics_30_0.png" src="../../../_images/basics_30_0.png" />
 </div>
 </div>
 </section>
