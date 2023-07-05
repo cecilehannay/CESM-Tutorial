@@ -1156,10 +1156,19 @@ title="Print to PDF"
 </ul>
 <p><img alt="CESM directories and namelists" src="../../../_images/CESM2_Workspaces_Detail.png" />
 <em><p style="text-align: center;"> Figure: Detailed view of the CESM2 Workspace Paths </p></em></p>
+<p>There are 5 main directories (see figure, above) you will need to navigate:</p>
+<ol class="simple">
+<li><p>CESM Code (<code class="docutils literal notranslate"><span class="pre">$CESMCODE</span></code> or <code class="docutils literal notranslate"><span class="pre">$SRCROOT</span></code>)</p></li>
+<li><p>INPUTDATA Directory (<code class="docutils literal notranslate"><span class="pre">$CESMDATA</span></code>)</p></li>
+<li><p>CASE Directory (<code class="docutils literal notranslate"><span class="pre">~/cases/$case</span></code> or <code class="docutils literal notranslate"><span class="pre">$CASEROOT</span></code>)</p></li>
+<li><p>Build/Run Directory (<code class="docutils literal notranslate"><span class="pre">/glade/scratch/$USER/$case</span></code>)</p></li>
+<li><p>Archive Directory (<code class="docutils literal notranslate"><span class="pre">/glade/scratch/$USER/archive/$case</span></code> or <code class="docutils literal notranslate"><span class="pre">$DOUT_S_ROOT</span></code>)</p></li>
+</ol>
+<p>Each of these directories contains sub-directories. You will need to learn to navigate between these directories</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="step-1-locate-your-code-workspace-area">
 <h1>Step 1. Locate Your Code Workspace Area<a class="headerlink" href="#step-1-locate-your-code-workspace-area" title="Permalink to this headline">#</a></h1>
-<p>Returning to your terminal window we will now locate your <code class="docutils literal notranslate"><span class="pre">$CESMCODE</span></code> (on diagram above) location on the NCAR HPC file system.</p>
+<p>Returning to your terminal window we will now locate your <code class="docutils literal notranslate"><span class="pre">$CESMCODE</span></code> (on diagram, above) location on the NCAR HPC file system.</p>
 <div class="alert alert-info">
 <strong>Locate your current directory: </strong><br>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>

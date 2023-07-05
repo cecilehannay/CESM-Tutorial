@@ -1119,39 +1119,62 @@ title="Print to PDF"
 <p>The following sections will go into more detail about these 4 commands and also provide information about how to check your job status or create a clone of a previous case.</p>
 <section id="before-you-start">
 <h2>Before you start<a class="headerlink" href="#before-you-start" title="Permalink to this headline">#</a></h2>
-<p>Everytime you log onto the NCAR HPC you want to ensure you have the correct modules loaded. When you login, check your detault login environment settings.</p>
-<p>NOTE: All new tutorial logins default to bash.</p>
+<p>Every time you log onto the NCAR HPC you want to ensure you have the correct modules loaded. The steps below only need to be done once for this tutorial, but you may need to make changes before you run CESM on NCAR HPC after the tutorial.</p>
 <div class="alert alert-info">
-<strong>Exercise for tcsh users: You should have a .tcshrc file already present in your home directory. If you do not, please copy over the following
-file:</strong><br><br>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">tcshrc</span> <span class="o">~/.</span><span class="n">tcshrc</span>
+<strong>Exercise for bash users:</strong> 
+<p><strong>NOTE:</strong> All new NCAR HPC accounts default to bash.</p>
+<br>
+You may have a .profile file already present in your home directory. To set up your environment for the tutorial, follow the following three steps:<br>
+<ol class="simple">
+<li><p>Move to your home directory:<br></p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span><span class="p">;</span> 
 </pre></div>
 </div>
 <br>
-<strong> Then, change to your home directory and source the file: </strong><br><br>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span><span class="p">;</span> <span class="n">source</span> <span class="o">.</span><span class="n">tcshrc</span>
-</pre></div>
-</div>
-<br>
-<strong> If you have an existing .tcshrc file and do not wish to overwrite it, please copy the contents of the /glade/p/cesm/tutorial/tcshrc file
-to your .tcshrc file. </strong>
-</div>
-<div class="alert alert-info">
-<strong>Exercise for bash users: You may have a .profile file already present in your home directory. If you do not, please copy over the following
-file</strong><br><br>
+<ol class="simple">
+<li><p>Copy over the following file:<br></p></li>
+</ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">profile</span> <span class="o">~/.</span><span class="n">profile</span>
 </pre></div>
 </div>
 <br>
-<strong> Then, change to your home directory and source the file: </strong><br><br>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span><span class="p">;</span> <span class="n">source</span> <span class="o">.</span><span class="n">profile</span>
+<strong> NOTE:</strong> If you have an existing .profile file and do not wish to overwrite it, please copy the contents of the /glade/p/cesm/tutorial/profile file to your .profile file using a text editor.
+<ol class="simple">
+<li><p>Source the file:<br></p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">.</span><span class="n">profile</span>
+</pre></div>
+</div>
+</div>
+<div class="alert alert-info">
+<strong>Exercise for tcsh users:</strong> 
+<br>
+You should have a .tcshrc file already present in your home directory. To set up your environment for the tutorial, follow the following three steps:<br>
+<ol class="simple">
+<li><p>Move to your home directory:<br></p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span><span class="p">;</span> 
 </pre></div>
 </div>
 <br>
-<strong> If you have an existing .profile file and do not wish to overwrite it, please copy the contents of the /glade/p/cesm/tutorial/profile file
-to your .profile file. </strong>
+<ol class="simple">
+<li><p>Copy over the following file:<br></p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">tcshrc</span> <span class="o">~/.</span><span class="n">tcshrc</span>
+</pre></div>
 </div>
-<p>Again if you are having trouble with this step please ask for help.</p>
+<br>
+<strong> NOTE:</strong> If you have an existing .tcshrc file and do not wish to overwrite it, please copy the contents of the /glade/p/cesm/tutorial/tcshrc file to your .tcshrc file using a text editor. 
+<ol class="simple">
+<li><p>Source the file:<br></p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">.</span><span class="n">tcshrc</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Please ask for help if you are having trouble with this step!</strong></p>
+<p>Once you perform this set up at the start of the tutorial you should not have to do it again for the remainder of the tutorial. Everytime you login to NCAR HPC these files will automatically be sourced. However, if you intend to use NCAR HPC after the tutorial note that you. may need to change your <code class="docutils literal notranslate"><span class="pre">.profile</span></code> or <code class="docutils literal notranslate"><span class="pre">.tcshrc</span></code> file to load the correct modules, project numbers, or queues.</p>
 </section>
 <div class="toctree-wrapper compound">
 </div>

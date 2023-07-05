@@ -1081,6 +1081,11 @@ title="Print to PDF"
    Create Cases Workspace Location
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-run-and-archive-workspaces">
+   Build, Run, and Archive Workspaces
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -1115,6 +1120,11 @@ title="Print to PDF"
    Create Cases Workspace Location
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-run-and-archive-workspaces">
+   Build, Run, and Archive Workspaces
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -1138,7 +1148,7 @@ title="Print to PDF"
 </section>
 <section id="create-code-workspace-location">
 <h2>Create Code Workspace Location<a class="headerlink" href="#create-code-workspace-location" title="Permalink to this headline">#</a></h2>
-<p>We will now set up your <code class="docutils literal notranslate"><span class="pre">Code</span></code> Workspace Location on the Cheyenne glade file system. In all exercises in this tutorial <code class="docutils literal notranslate"><span class="pre">$USER</span></code> is a placeholder and you should use your NCAR HPC login name when completing the exercise.</p>
+<p>We will now set up your <code class="docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code> Workspace Location (#1 on the figure, above) on the Cheyenne glade file system. In all exercises in this tutorial <code class="docutils literal notranslate"><span class="pre">$USER</span></code> is a placeholder and you should use your NCAR HPC login name when completing the exercise.</p>
 <div class="alert alert-info">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/work/$USER
 mkdir code
@@ -1147,13 +1157,17 @@ mkdir code
 </div></section>
 <section id="create-cases-workspace-location">
 <h2>Create Cases Workspace Location<a class="headerlink" href="#create-cases-workspace-location" title="Permalink to this headline">#</a></h2>
-<p>We will now set up your <code class="docutils literal notranslate"><span class="pre">Cases</span></code> Workspace Location on the Cheyenne glade file system. Before you can start working with CESM and completing runs, make a directory where all the cases from this tutorial will be located.</p>
+<p>We will now set up your <code class="docutils literal notranslate"><span class="pre">Case</span></code> Workspace Location (#2 on the figure, above) on the Cheyenne glade file system. Before you can start working with CESM and completing runs, make a directory where all the cases from this tutorial will be located.</p>
 <div class="alert alert-info">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/work/$USER
 mkdir cases
 </pre></div>
 </div>
 </div>
+</section>
+<section id="build-run-and-archive-workspaces">
+<h2>Build, Run, and Archive Workspaces<a class="headerlink" href="#build-run-and-archive-workspaces" title="Permalink to this headline">#</a></h2>
+<p>We will not directly set up your <code class="docutils literal notranslate"><span class="pre">Build/Run</span></code> Workspace Location (#3 on the figure, above) or the <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Archive</span></code> Workspace Location (#4 on the figure, above). These directories will be automatically created when you create a CESM case.</p>
 </section>
 </section>
 
