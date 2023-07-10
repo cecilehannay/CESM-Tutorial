@@ -1171,11 +1171,35 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#bash-users">
      Bash users
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#one-time-setup">
+       One-time setup
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#before-each-practical">
+       Before each practical
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tcsh-users">
      Tcsh users
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       One-time setup
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Before each practical
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#special-instructions-if-you-already-had-an-account-on-cheyenne">
@@ -1190,6 +1214,11 @@ title="Print to PDF"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#c-shell">
        C-shell:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#schedule-for-special-queues">
+       Schedule for special queues:
       </a>
      </li>
     </ul>
@@ -1229,11 +1258,35 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#bash-users">
      Bash users
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#one-time-setup">
+       One-time setup
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#before-each-practical">
+       Before each practical
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tcsh-users">
      Tcsh users
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       One-time setup
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Before each practical
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#special-instructions-if-you-already-had-an-account-on-cheyenne">
@@ -1248,6 +1301,11 @@ title="Print to PDF"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#c-shell">
        C-shell:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#schedule-for-special-queues">
+       Schedule for special queues:
       </a>
      </li>
     </ul>
@@ -1281,7 +1339,13 @@ title="Print to PDF"
 <hr class="docutils" />
 <section id="bash-users">
 <h3>Bash users<a class="headerlink" href="#bash-users" title="Permalink to this headline">#</a></h3>
-<p><strong>NOTE:</strong> You may already have a .profile file in your home directory. If you have an existing .profile file and do not wish to overwrite its contents, please save your original .profile file to a new filename before copying the tutorial .profile file into your home directory.  Alternatively, you could copy the contents of the tutorial profile file into your existing .profile file using a text editor.</p>
+<p><strong>NOTE:</strong> You may already have a <code class="docutils literal notranslate"><span class="pre">.profile</span></code> file in your home directory.</p>
+<ul class="simple">
+<li><p>If you have an existing <code class="docutils literal notranslate"><span class="pre">.profile</span></code> file and do not wish to overwrite its contents, please save your original <code class="docutils literal notranslate"><span class="pre">.profile</span></code> file to a new filename before copying the tutorial .profile file into your home directory.</p></li>
+<li><p>Alternatively, you could copy the contents of the tutorial profile file into your existing <code class="docutils literal notranslate"><span class="pre">.profile</span></code> file using a text editor. (see special instructions below)</p></li>
+</ul>
+<section id="one-time-setup">
+<h4>One-time setup<a class="headerlink" href="#one-time-setup" title="Permalink to this headline">#</a></h4>
 <p>To set up your environment for the tutorial, follow the following three steps:</p>
 <div class="alert alert-info">
 <ol class="simple">
@@ -1305,19 +1369,23 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+</section>
+<section id="before-each-practical">
+<h4>Before each practical<a class="headerlink" href="#before-each-practical" title="Permalink to this headline">#</a></h4>
 <p>Do the following step before <strong>every practical</strong>. This is because we are getting a different special queue every day.</p>
 <div class="alert alert-info">
-<ol class="simple">
-<li><p>Source the file:<br></p></li>
-</ol>
+<p>Source the file:<br></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/.</span><span class="n">profile</span>
 </pre></div>
 </div>
 </div></section>
+</section>
 <hr class="docutils" />
 <section id="tcsh-users">
 <h3>Tcsh users<a class="headerlink" href="#tcsh-users" title="Permalink to this headline">#</a></h3>
-<p><strong>NOTE:</strong> You should already have a .tcshrc file in your home directory. If you do not wish to overwrite the existing .tcshrc file, please save this file to a new name OR copy the contents of the /glade/p/cesm/tutorial/tcshrc file to your .tcshrc file using a text editor.</p>
+<p><strong>NOTE:</strong> You should already have a <code class="docutils literal notranslate"><span class="pre">.tcshrc</span></code> file in your home directory. If you do not wish to overwrite the existing <code class="docutils literal notranslate"><span class="pre">.tcshrc</span></code> file, please save this file to a new name OR copy the contents of the <code class="docutils literal notranslate"><span class="pre">/glade/p/cesm/tutorial/tcshrc</span></code> file to your <code class="docutils literal notranslate"><span class="pre">.tcshrc</span></code> file using a text editor.</p>
+<section id="id1">
+<h4>One-time setup<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
 <p>To set up your environment for the tutorial, follow the following three steps:</p>
 <div class="alert alert-info">
 <ol class="simple">
@@ -1341,6 +1409,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+</section>
+<section id="id2">
+<h4>Before each practical<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <p>Do the following step before <strong>every practical</strong>. This is because we are getting a different special queue every day. <div class="alert alert-info"></p>
 <p>Source the file:<br></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/.</span><span class="n">tcshrc</span>
@@ -1359,6 +1430,7 @@ title="Print to PDF"
 <li><p>netcdf</p></li>
 </ul>
 </section>
+</section>
 <hr class="docutils" />
 <section id="special-instructions-if-you-already-had-an-account-on-cheyenne">
 <h3>Special instructions (if you already had an account on cheyenne)<a class="headerlink" href="#special-instructions-if-you-already-had-an-account-on-cheyenne" title="Permalink to this headline">#</a></h3>
@@ -1366,14 +1438,26 @@ title="Print to PDF"
 <section id="bash">
 <h4>Bash:<a class="headerlink" href="#bash" title="Permalink to this headline">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PROJECT</span><span class="o">=</span><span class="n">UESM0012</span>         <span class="c1">#&lt;- This should never change over the course of the tutorial</span>
-<span class="n">export</span> <span class="n">TUTORIAL_QUEUE</span><span class="o">=</span><span class="n">R1787445</span>  <span class="c1">#&lt;- This will possibly be different for every practical</span>
+<span class="n">export</span> <span class="n">TUTORIAL_QUEUE</span><span class="o">=</span><span class="n">R1787445</span>  <span class="c1">#&lt;- This will be different for every practical. Look at the schedule below:</span>
 </pre></div>
 </div>
 </section>
 <section id="c-shell">
 <h4>C-shell:<a class="headerlink" href="#c-shell" title="Permalink to this headline">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setenv</span> <span class="n">PROJECT</span> <span class="n">UESM0012</span>         <span class="c1">#&lt;-This should never change over the course of the tutorial</span>
-<span class="n">setenv</span> <span class="n">TUTORIAL_QUEUE</span> <span class="n">R1787445</span>  <span class="c1">#&lt;-This will possibly be different for every practical</span>
+<span class="n">setenv</span> <span class="n">TUTORIAL_QUEUE</span> <span class="n">R1787445</span>  <span class="c1">#&lt;-This will be different for every practical</span>
+</pre></div>
+</div>
+</section>
+<section id="schedule-for-special-queues">
+<h4>Schedule for special queues:<a class="headerlink" href="#schedule-for-special-queues" title="Permalink to this headline">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Mon</span>      <span class="mi">14</span><span class="p">:</span><span class="mi">00</span> <span class="o">-</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787445</span>
+<span class="n">Tue</span>      <span class="mi">10</span><span class="p">:</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787503</span>
+         <span class="mi">14</span><span class="p">:</span><span class="mi">00</span> <span class="o">-</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787518</span>
+<span class="n">Wed</span>      <span class="mi">10</span><span class="p">:</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787531</span>
+         <span class="mi">14</span><span class="p">:</span><span class="mi">00</span> <span class="o">-</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787589</span>
+<span class="n">Thu</span>      <span class="mi">13</span><span class="p">:</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span>    <span class="n">casper</span>     <span class="n">R7873845</span>
+<span class="n">Fri</span>      <span class="mi">13</span><span class="p">:</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787669</span> 
 </pre></div>
 </div>
 </section>
