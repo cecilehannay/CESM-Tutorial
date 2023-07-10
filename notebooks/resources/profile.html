@@ -1202,6 +1202,11 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#if-you-have-trouble">
+     If you have trouble
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#special-instructions-if-you-already-had-an-account-on-cheyenne">
      Special instructions (if you already had an account on cheyenne)
     </a>
@@ -1289,6 +1294,11 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#if-you-have-trouble">
+     If you have trouble
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#special-instructions-if-you-already-had-an-account-on-cheyenne">
      Special instructions (if you already had an account on cheyenne)
     </a>
@@ -1334,7 +1344,11 @@ title="Print to PDF"
 <section id="shell-environment">
 <h3>SHELL environment<a class="headerlink" href="#shell-environment" title="Permalink to this headline">#</a></h3>
 <p>To determind what shell environment you are using on the NCAR HPC, type the following command:</p>
-<p><strong>NOTE:</strong> All new NCAR HPC accounts default to bash.</p>
+<div class="alert alert-info">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo $SHELL
+</pre></div>
+</div>
+</div><p><strong>NOTE:</strong> All new NCAR HPC accounts default to bash.</p>
 </section>
 <hr class="docutils" />
 <section id="bash-users">
@@ -1348,7 +1362,8 @@ title="Print to PDF"
 <h4>One-time setup<a class="headerlink" href="#one-time-setup" title="Permalink to this headline">#</a></h4>
 <p>To set up your environment for the tutorial, follow the following three steps:</p>
 <div class="alert alert-info">
-<p><strong>#Copy over the <code class="docutils literal notranslate"><span class="pre">.profile</span></code> file.</strong> [Optional: copy existing <code class="docutils literal notranslate"><span class="pre">.profile</span></code> file to a new filename before copying the tutorial <code class="docutils literal notranslate"><span class="pre">.profile</span></code> file to your home directory]:<br></p>
+<p><strong>#Copy over the <code class="docutils literal notranslate"><span class="pre">.profile</span></code> file.</strong></p>
+<p>Optional: copy existing <code class="docutils literal notranslate"><span class="pre">.profile</span></code> file to a new filename before copying the tutorial <code class="docutils literal notranslate"><span class="pre">.profile</span></code> file to your home directory<br></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">profile</span> <span class="o">~/.</span><span class="n">profile</span>
 </pre></div>
 </div>
@@ -1377,18 +1392,15 @@ title="Print to PDF"
 <h4>One-time setup<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
 <p>To set up your environment for the tutorial, follow the following three steps:</p>
 <div class="alert alert-info">
-<p>#Navigate to your home directory:<br></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> 
-</pre></div>
-</div>
 <br>
-<p>#Copy over the <code class="docutils literal notranslate"><span class="pre">.tcshrc</span></code> file. [Optional: copy existing <code class="docutils literal notranslate"><span class="pre">.tcshrc</span></code> file to a new filename before copying the tutorial <code class="docutils literal notranslate"><span class="pre">.tcshrc</span></code> file to your home directory]:<br></p>
+<p><strong>#Copy over the <code class="docutils literal notranslate"><span class="pre">.tcshrc</span></code> file to your home directory.</strong></p>
+<p>Optional: copy existing <code class="docutils literal notranslate"><span class="pre">.tcshrc</span></code> file to a new filename before copying the tutorial <code class="docutils literal notranslate"><span class="pre">.tcshrc</span></code> file to your home directory<br></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">tcshrc</span> <span class="o">~/.</span><span class="n">tcshrc</span>
 </pre></div>
 </div>
 <br>
-<p>#Source the file:<br></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">.</span><span class="n">tcshrc</span>
+<p><strong>#Source the file:</strong><br></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/.</span><span class="n">tcshrc</span>
 </pre></div>
 </div>
 </div>
@@ -1397,12 +1409,16 @@ title="Print to PDF"
 <h4>Before each practical<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <p>Do the following step before <strong>every practical</strong>. This is because we are getting a different special queue every day. <div class="alert alert-info"></p>
 <div class="alert alert-info">
-<p>Source the file:<br></p>
+<p><strong>#Source the file:</strong><br></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/.</span><span class="n">tcshrc</span>
 </pre></div>
 </div>
 </div>
+</section>
+</section>
 <hr class="docutils" />
+<section id="if-you-have-trouble">
+<h3>If you have trouble<a class="headerlink" href="#if-you-have-trouble" title="Permalink to this headline">#</a></h3>
 <p><strong>Please ask for help if you are having trouble with this step!</strong></p>
 <p>The modules necessary for this tutorial and loaded through these files are:</p>
 <ul class="simple">
@@ -1413,7 +1429,6 @@ title="Print to PDF"
 <li><p>ncview</p></li>
 <li><p>netcdf</p></li>
 </ul>
-</section>
 </section>
 <hr class="docutils" />
 <section id="special-instructions-if-you-already-had-an-account-on-cheyenne">
