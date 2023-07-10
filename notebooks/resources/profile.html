@@ -1177,6 +1177,23 @@ title="Print to PDF"
      Tcsh users
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#special-instructions-if-you-already-had-an-account-on-cheyenne">
+     Special instructions (if you already had an account on cheyenne)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bash">
+       Bash:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#c-shell">
+       C-shell:
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1217,6 +1234,23 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#tcsh-users">
      Tcsh users
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#special-instructions-if-you-already-had-an-account-on-cheyenne">
+     Special instructions (if you already had an account on cheyenne)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bash">
+       Bash:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#c-shell">
+       C-shell:
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -1313,6 +1347,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<hr class="docutils" />
 <p><strong>Please ask for help if you are having trouble with this step!</strong></p>
 <p>The modules necessary for this tutorial and loaded through these files are:</p>
 <ul class="simple">
@@ -1323,6 +1358,25 @@ title="Print to PDF"
 <li><p>ncview</p></li>
 <li><p>netcdf</p></li>
 </ul>
+</section>
+<hr class="docutils" />
+<section id="special-instructions-if-you-already-had-an-account-on-cheyenne">
+<h3>Special instructions (if you already had an account on cheyenne)<a class="headerlink" href="#special-instructions-if-you-already-had-an-account-on-cheyenne" title="Permalink to this headline">#</a></h3>
+<p>If you already have a <code class="docutils literal notranslate"><span class="pre">.profile</span></code> or <code class="docutils literal notranslate"><span class="pre">.tcsh</span></code> and you do not wish to overwrite its contents, you need to add the following into your existing <code class="docutils literal notranslate"><span class="pre">.profile</span></code> or <code class="docutils literal notranslate"><span class="pre">.tcsh</span></code> using a text editor.</p>
+<section id="bash">
+<h4>Bash:<a class="headerlink" href="#bash" title="Permalink to this headline">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PROJECT</span><span class="o">=</span><span class="n">UESM0012</span>         <span class="c1">#&lt;- This should never change over the course of the tutorial</span>
+<span class="n">export</span> <span class="n">TUTORIAL_QUEUE</span><span class="o">=</span><span class="n">R1787445</span>  <span class="c1">#&lt;- This will possibly be different for every practical</span>
+</pre></div>
+</div>
+</section>
+<section id="c-shell">
+<h4>C-shell:<a class="headerlink" href="#c-shell" title="Permalink to this headline">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setenv</span> <span class="n">PROJECT</span> <span class="n">UESM0012</span>         <span class="c1">#&lt;-This should never change over the course of the tutorial</span>
+<span class="n">setenv</span> <span class="n">TUTORIAL_QUEUE</span> <span class="n">R1787445</span>  <span class="c1">#&lt;-This will possibly be different for every practical</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 </section>
