@@ -663,7 +663,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../diagnostics/pop/advanced_pop.html">
-       Advance Plotting
+       Advanced Plotting
       </a>
      </li>
     </ul>
@@ -767,6 +767,16 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toctree-l3">
       <a class="reference internal" href="../cam-chem_waccm/exercise_2.html">
        2: Test case: changing the chemistry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../cam-chem_waccm/exercise_3.html">
+       3: Test case: changing the emissions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../cam-chem_waccm/visualization.html">
+       4: Visualization option with GEOV
       </a>
      </li>
     </ul>
@@ -915,7 +925,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../resources/profile.html">
-     Environment on cheyenne
+     NCAR HPC Environment
     </a>
    </li>
    <li class="toctree-l2">
@@ -1249,7 +1259,7 @@ The <code class="docutils literal notranslate"><span class="pre">F</span></code>
 <li><p><code class="docutils literal notranslate"><span class="pre">F2010climo</span></code> uses climatological forcings from around year 2010</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FHIST</span></code> use time varying forcing</p></li>
 </ul>
-<p><img alt="B compsets versus F compsets" src="notebooks/images/challenge/Fcompset.png" /></p>
+<p><img alt="B compsets versus F compsets" src="../../../_images/Fcompset.png" /></p>
 <p><em><p style="text-align: center;"> Figure: Differences between a F and a B compset. </p></em></p>
 </section>
 <section id="overview-of-cam-challenge-exercises">
@@ -1297,8 +1307,16 @@ Compare your test exercise(s) to your control</p></li>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">query_config</span> <span class="o">--</span><span class="n">components</span>
 </pre></div>
 </div>
-<p>More explanation (and some more options) can be found in the docs<a class="reference external" href="https://www.cesm.ucar.edu/models/cesm2/config/compsets.html">https://www.cesm.ucar.edu/models/cesm2/config/compsets.html</a>
-<a class="reference external" href="https://ncar.github.io/CAM/doc/build/html/users_guide/atmospheric-configurations.html">https://ncar.github.io/CAM/doc/build/html/users_guide/atmospheric-configurations.html</a></p>
+<p>More explanation about <code class="docutils literal notranslate"><span class="pre">compsets</span></code> can be found in the docs?|:
+<a class="reference external" href="https://www.cesm.ucar.edu/models/cesm2/config/compsets.html">https://www.cesm.ucar.edu/models/cesm2/config/compsets.html</a></p>
+<p>There are a number of atmospheric models which can run within CESM. While CAM is the basic atmospheric model within CESM, there are several models with significant extensions to CAM which may also be run within CESM. The available atmospheric models in CESM2 are:</p>
+<ul class="simple">
+<li><p>CAM: Community Atmosphere Model</p></li>
+<li><p>CAM-chem: Community Atmosphere Model with Chemistry</p></li>
+<li><p>WACCM: Whole Atmosphere Community Climate Model</p></li>
+<li><p>WACCM-X: Whole Atmosphere Community Climate Model with thermosphere and ionosphere extension</p></li>
+</ul>
+<p><a class="reference external" href="https://ncar.github.io/CAM/doc/build/html/users_guide/atmospheric-configurations.html">https://ncar.github.io/CAM/doc/build/html/users_guide/atmospheric-configurations.html</a></p>
 </section>
 </section>
 <div class="toctree-wrapper compound">

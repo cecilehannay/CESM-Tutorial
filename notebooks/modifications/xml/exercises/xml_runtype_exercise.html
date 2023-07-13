@@ -663,7 +663,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../diagnostics/pop/advanced_pop.html">
-       Advance Plotting
+       Advanced Plotting
       </a>
      </li>
     </ul>
@@ -767,6 +767,16 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toctree-l3">
       <a class="reference internal" href="../../../challenge/cam-chem_waccm/exercise_2.html">
        2: Test case: changing the chemistry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../challenge/cam-chem_waccm/exercise_3.html">
+       3: Test case: changing the emissions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../challenge/cam-chem_waccm/visualization.html">
+       4: Visualization option with GEOV
       </a>
      </li>
     </ul>
@@ -915,7 +925,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../resources/profile.html">
-     Environment on cheyenne
+     NCAR HPC Environment
     </a>
    </li>
    <li class="toctree-l2">
@@ -1164,7 +1174,7 @@ title="Print to PDF"
 <div class="alert alert-info">
 <p><strong>Exercise: Modify the <code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code> file </strong><br><br></p>
 <p>Branch from the end of Exercise 1 Part I to create a new case named “b.day2.2”.<br />
-Double the ocean coupling frequency (<code class="docutils literal notranslate"><span class="pre">OCN_NCPL</span></code>). Run for 1 month, then restart for 1 month.</p>
+Double the ocean coupling frequency (<code class="docutils literal notranslate"><span class="pre">OCN_NCPL</span></code>). Include an initial file as output data. Run for 1 month, then restart for 1 month.</p>
 </div><div class="alert alert-warning">
 <details>   
    <summary>
@@ -1176,6 +1186,7 @@ Double the ocean coupling frequency (<code class="docutils literal notranslate">
 <li><p>Ocean coupling frequency needs to be changed in <code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code>, controlled by the variable <code class="docutils literal notranslate"><span class="pre">OCN_NCPL</span></code>. What is the default value of <code class="docutils literal notranslate"><span class="pre">OCN_NCPL</span></code>? Use <code class="docutils literal notranslate"><span class="pre">xmlquery</span></code> to find out! You may also take a look at the variable description in <code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code> to learn more about the variable.</p></li>
 <li><p>Make sure to update the walltime to match the run length.</p></li>
 <li><p>Don’t forget to put restart files into the run directory <code class="docutils literal notranslate"><span class="pre">$RUNDIR</span></code>.</p></li>
+<li><p>To include an initial file as output, we will need to modify the variable <code class="docutils literal notranslate"><span class="pre">inithist</span></code> in the atmospehre namelist <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code>. We will learn more about this in the next chapter namelist modification.</p></li>
 </ol>
 </details>
 </div><div class="alert alert-success">
@@ -1215,6 +1226,16 @@ Double the ocean coupling frequency (<code class="docutils literal notranslate">
 </pre></div>
 </div>
 <br>
+6. To include an initial file at the end of the run, add the following lines to file `user_nl_cam`:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">inithist</span><span class="o">=</span><span class="s1">&#39;ENDOFRUN&#39;</span>
+</pre></div>
+</div>
+<br>
+7. Run ./preview_namelists:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">preview_namelists</span>
+</pre></div>
+</div>
+<br>    
 6. Carry on to build and submit the run:
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span> <span class="p">(</span><span class="n">qcmd</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">on</span> <span class="n">Cheyenne</span> <span class="n">only</span><span class="p">)</span>
       <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>

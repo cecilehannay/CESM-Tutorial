@@ -663,7 +663,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../pop/advanced_pop.html">
-       Advance Plotting
+       Advanced Plotting
       </a>
      </li>
     </ul>
@@ -767,6 +767,16 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toctree-l3">
       <a class="reference internal" href="../../challenge/cam-chem_waccm/exercise_2.html">
        2: Test case: changing the chemistry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../challenge/cam-chem_waccm/exercise_3.html">
+       3: Test case: changing the emissions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../challenge/cam-chem_waccm/visualization.html">
+       4: Visualization option with GEOV
       </a>
      </li>
     </ul>
@@ -915,7 +925,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../resources/profile.html">
-     Environment on cheyenne
+     NCAR HPC Environment
     </a>
    </li>
    <li class="toctree-l2">
@@ -1218,6 +1228,10 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="advanced-plotting">
 <h1>Advanced Plotting<a class="headerlink" href="#advanced-plotting" title="Permalink to this headline">#</a></h1>
+<p><strong>BEFORE BEGINNING THIS EXERCISE</strong> -  Check that your kernel (upper right corner, above) is <code class="docutils literal notranslate"><span class="pre">NPL</span> <span class="pre">2023b</span></code>. This should be the default kernel, but if it is not, click on that button and select <code class="docutils literal notranslate"><span class="pre">NPL</span> <span class="pre">2023b</span></code>.</p>
+<hr class="docutils" />
+<p>This activity was developed primarily by Cecile Hannay and Jesse Nusbaumer.</p>
+<hr class="docutils" />
 <section id="exercise-1-cam-se-output-analysis">
 <h2>Exercise 1: CAM-SE output analysis<a class="headerlink" href="#exercise-1-cam-se-output-analysis" title="Permalink to this headline">#</a></h2>
 <p>Examples of simple analysis and plotting that can be done with CAM-SE output on the native cubed-sphere grid.</p>
@@ -1286,7 +1300,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">location_of_hfiles</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/glade/scratch/hannay/archive/f.cam6_3_112.FMTHIST_v0c.ne30.non-ogw-ubcT-effgw0.7_taubgnd2.5.001/atm/hist/&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">location_of_hfiles</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/glade/p/cesm/tutorial/tutorial_2023_archive/cam-se/&quot;</span><span class="p">)</span>
 <span class="n">search_pattern</span> <span class="o">=</span> <span class="s2">&quot;f.cam6_3_112.FMTHIST_v0c.ne30.non-ogw-ubcT-effgw0.7_taubgnd2.5.001.cam.h3.2003-01-01-00000.nc&quot;</span>
 
 <span class="n">fils</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">location_of_hfiles</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">search_pattern</span><span class="p">))</span>
@@ -1379,7 +1393,13 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/advanced_plot_1.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">

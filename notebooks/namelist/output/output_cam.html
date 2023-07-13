@@ -663,7 +663,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../diagnostics/pop/advanced_pop.html">
-       Advance Plotting
+       Advanced Plotting
       </a>
      </li>
     </ul>
@@ -767,6 +767,16 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toctree-l3">
       <a class="reference internal" href="../../challenge/cam-chem_waccm/exercise_2.html">
        2: Test case: changing the chemistry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../challenge/cam-chem_waccm/exercise_3.html">
+       3: Test case: changing the emissions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../challenge/cam-chem_waccm/visualization.html">
+       4: Visualization option with GEOV
       </a>
      </li>
     </ul>
@@ -915,7 +925,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../resources/profile.html">
-     Environment on cheyenne
+     NCAR HPC Environment
     </a>
    </li>
    <li class="toctree-l2">
@@ -1386,7 +1396,7 @@ This variable specifies is the maximum number of time samples written to a histo
 <strong>Evaluate your understanding</strong>
 <p>What is the namelist setting to add:</p>
 <ul class="simple">
-<li><p>a monthly history <code class="docutils literal notranslate"><span class="pre">h1</span></code> with the variables U, V, T</p></li>
+<li><p>a hourly history <code class="docutils literal notranslate"><span class="pre">h1</span></code> with the variables U, V, T</p></li>
 <li><p>and a daily history <code class="docutils literal notranslate"><span class="pre">h2</span></code> with the variable PRECT</p></li>
 <li><p>and output 10 time samples in <code class="docutils literal notranslate"><span class="pre">h1</span></code> and <code class="docutils literal notranslate"><span class="pre">h2</span></code> ?</p></li>
 </ul>
@@ -1394,12 +1404,8 @@ This variable specifies is the maximum number of time samples written to a histo
 <div class="alert alert-success">  
 <details>  
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p>Modify <code class="docutils literal notranslate"><span class="pre">env_run.xml</span></code> with the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="n">nmonths</span><span class="p">,</span> <span class="n">STOP_OPTION</span><span class="o">=</span><span class="mi">1</span>
-</pre></div>
-</div>
 <p>Add the following lines to <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">nhtfrq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span> 
     <span class="n">mfilt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span> 
     <span class="n">fincl2</span> <span class="o">=</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span> 
     <span class="n">fincl3</span> <span class="o">=</span> <span class="s1">&#39;PRECT&#39;</span>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Advance Plotting &#8212; CESM Tutorial</title>
+    <title>Advanced Plotting &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -665,7 +665,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Advance Plotting
+       Advanced Plotting
       </a>
      </li>
     </ul>
@@ -769,6 +769,16 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toctree-l3">
       <a class="reference internal" href="../../challenge/cam-chem_waccm/exercise_2.html">
        2: Test case: changing the chemistry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../challenge/cam-chem_waccm/exercise_3.html">
+       3: Test case: changing the emissions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../challenge/cam-chem_waccm/visualization.html">
+       4: Visualization option with GEOV
       </a>
      </li>
     </ul>
@@ -917,7 +927,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../resources/profile.html">
-     Environment on cheyenne
+     NCAR HPC Environment
     </a>
    </li>
    <li class="toctree-l2">
@@ -1169,17 +1179,17 @@ title="Print to PDF"
      Get the data
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5">
-     Exercise 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6">
-     Exercise 6
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1">
+   Exercise 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2">
+   Exercise 2
+  </a>
  </li>
 </ul>
 
@@ -1190,7 +1200,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Advance Plotting</h1>
+                <h1>Advanced Plotting</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1210,17 +1220,17 @@ title="Print to PDF"
      Get the data
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5">
-     Exercise 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6">
-     Exercise 6
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1">
+   Exercise 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2">
+   Exercise 2
+  </a>
  </li>
 </ul>
 
@@ -1232,14 +1242,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="advance-plotting">
-<h1>Advance Plotting<a class="headerlink" href="#advance-plotting" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="advanced-plotting">
+<h1>Advanced Plotting<a class="headerlink" href="#advanced-plotting" title="Permalink to this headline">#</a></h1>
+<p><strong>BEFORE BEGINNING THIS EXERCISE</strong> -  Check that your kernel (upper right corner, above) is <code class="docutils literal notranslate"><span class="pre">NPL</span> <span class="pre">2023b</span></code>. This should be the default kernel, but if it is not, click on that button and select <code class="docutils literal notranslate"><span class="pre">NPL</span> <span class="pre">2023b</span></code>.</p>
+<hr class="docutils" />
+<p>This activity was developed primarily by Mauricio Rocha and Gustavo Marques.</p>
+<hr class="docutils" />
 <section id="setting-up-the-notebook">
 <h2>Setting up the notebook<a class="headerlink" href="#setting-up-the-notebook" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Here we load modules needed for our analysis</p></li>
-<li><p>Use the kernel NPL 2023b, it can be found in the drop down menu on the upper right</p></li>
-</ul>
+<p>Here we load modules needed for our analysis</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># loading modules</span>
@@ -1256,6 +1267,7 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
 <span class="kn">import</span> <span class="nn">pop_tools</span>
+<span class="kn">import</span> <span class="nn">glob</span>
 </pre></div>
 </div>
 </div>
@@ -1264,15 +1276,30 @@ title="Print to PDF"
 <h3>Get the data<a class="headerlink" href="#get-the-data" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/glade/scratch/gmarques/archive/gpop.e23.GJRA.TL319/ocn/hist/gpop.e23.GJRA.TL319.pop.h.0*.nc&#39;</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">compat</span><span class="o">=</span><span class="s1">&#39;override&#39;</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="s1">&#39;minimal&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set your username here:</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s2">&quot;PUT_USER_NAME_HERE&quot;</span>
+<span class="n">casename</span> <span class="o">=</span> <span class="s1">&#39;b.day2.1&#39;</span>
+
+<span class="c1"># Here we point to the archive directory from your b.day2.1 simulation</span>
+<span class="n">pth</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/glade/scratch/</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">/archive/&#39; + casename + &#39;/ocn/hist/&quot;</span>
+
+<span class="c1"># If you were unable to successfully run the b.day2.1 simulation, then feel free to use</span>
+<span class="c1"># this provided simulation data instead:</span>
+<span class="c1">#pth = &#39;/glade/p/cesm/tutorial/tutorial_2023_archive/&#39; + casename + &#39;/ocn/hist/&#39;</span>
+
+<span class="c1"># Print path to screen</span>
+<span class="n">pth</span>
+<span class="n">flist</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">pth</span> <span class="o">+</span> <span class="n">casename</span> <span class="o">+</span> <span class="s1">&#39;.pop.h.00??-??.nc&#39;</span><span class="p">)</span>  
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">flist</span><span class="p">,</span> <span class="n">compat</span><span class="o">=</span><span class="s1">&#39;override&#39;</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="s1">&#39;minimal&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
+</section>
+<hr class="docutils" />
+<section id="exercise-1">
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h2>
 <p>Maximum mixed-layer depth for the winter months in the northern hemisphere (January, February, and March) and in the southern hemisphere (July, August, and September)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1311,22 +1338,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13347788552784873
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the index of this latitude</span>
 <span class="n">idx</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">JAS</span><span class="p">[</span><span class="s1">&#39;TLAT&#39;</span><span class="p">][</span><span class="s1">&#39;TLAT&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">eq</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[187]
 </pre></div>
 </div>
 </div>
@@ -1349,7 +1366,7 @@ title="Print to PDF"
 <span class="n">orig_map</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;turbo&#39;</span><span class="p">)</span>
 <span class="n">scale_color</span><span class="o">=</span><span class="n">orig_map</span><span class="o">.</span><span class="n">reversed</span><span class="p">()</span>
 <span class="n">cf</span><span class="o">=</span><span class="p">(</span><span class="n">winter</span><span class="o">*</span><span class="mf">0.01</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="c1"># Multiply by 0.01 to transform centimeters to meters</span>
-                              <span class="n">vmax</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                              <span class="n">vmax</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
                               <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
                               <span class="n">x</span><span class="o">=</span><span class="s1">&#39;TLONG&#39;</span><span class="p">,</span>
                               <span class="n">y</span><span class="o">=</span><span class="s1">&#39;TLAT&#39;</span><span class="p">,</span>
@@ -1360,8 +1377,9 @@ title="Print to PDF"
 <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cartopy</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">LAND</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                   <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;XMXL [m]&#39;</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;XMXL [m]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Maximum Mixed-Layer Depth for the Winter&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="c1">#plt.savefig(&#39;advanced_plot_1.png&#39;, bbox_inches=&#39;tight&#39;)# uncomment this to save your figure</span>
 </pre></div>
 </div>
 </div>
@@ -1369,12 +1387,13 @@ title="Print to PDF"
 <div class="alert alert-success">   
 <details>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p><img alt="plot example" src="../../../_images/advanced_plot_1.png" /></p>
+<p><img alt="plot example" src="../../../_images/advanced_plot_12.png" /></p>
 <p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
 </details>
 </div></section>
-<section id="exercise-6">
-<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">#</a></h3>
+<hr class="docutils" />
+<section id="exercise-2">
+<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h2>
 <p>Calculate the heat storage (HS) per area from the temperature tendency for the upper 2000m.
 Equation: $<span class="math notranslate nohighlight">\(\rm{HF = \uprho_\uptheta~C_p~\int_{z_2}^{z_1}\uptheta_{(z)}'~dz},\)</span>$
 where:</p>
@@ -1403,8 +1422,8 @@ where:</p>
 <span class="n">scale_color</span><span class="o">=</span><span class="n">orig_map</span><span class="o">.</span><span class="n">reversed</span><span class="p">()</span>
 <span class="n">cf</span><span class="o">=</span><span class="n">ds_HS</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
                               <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
-                              <span class="n">vmin</span><span class="o">=-</span><span class="mi">20</span><span class="p">,</span>
-                              <span class="n">vmax</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+                              <span class="n">vmin</span><span class="o">=-</span><span class="mi">50</span><span class="p">,</span>
+                              <span class="n">vmax</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
                               <span class="n">x</span><span class="o">=</span><span class="s1">&#39;TLONG&#39;</span><span class="p">,</span>
                               <span class="n">y</span><span class="o">=</span><span class="s1">&#39;TLAT&#39;</span><span class="p">,</span>
                               <span class="n">cmap</span><span class="o">=</span><span class="n">scale_color</span><span class="p">,</span>
@@ -1415,7 +1434,8 @@ where:</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                   <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
 <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;HS [W m$^{-2}$]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Heat Storage per Area for the Upper 2000 m&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Heat Storage per area for the upper 2000 m&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="c1">#plt.savefig(&#39;advanced_plot_2.png&#39;, bbox_inches=&#39;tight&#39;)# uncomment this to save your figure</span>
 </pre></div>
 </div>
 </div>
@@ -1423,11 +1443,10 @@ where:</p>
 <div class="alert alert-success">   
 <details>
 <summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
-<p><img alt="plot example" src="../../../_images/advanced_plot_2.png" /></p>
+<p><img alt="plot example" src="../../../_images/advanced_plot_21.png" /></p>
 <p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
 </details>
 </div></section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">

@@ -663,7 +663,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="pop/advanced_pop.html">
-       Advance Plotting
+       Advanced Plotting
       </a>
      </li>
     </ul>
@@ -767,6 +767,16 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toctree-l3">
       <a class="reference internal" href="../challenge/cam-chem_waccm/exercise_2.html">
        2: Test case: changing the chemistry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../challenge/cam-chem_waccm/exercise_3.html">
+       3: Test case: changing the emissions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../challenge/cam-chem_waccm/visualization.html">
+       4: Visualization option with GEOV
       </a>
      </li>
     </ul>
@@ -915,7 +925,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../resources/profile.html">
-     Environment on cheyenne
+     NCAR HPC Environment
     </a>
    </li>
    <li class="toctree-l2">
@@ -1172,6 +1182,16 @@ title="Print to PDF"
    Step 3. Open a Diagnostics Notebook
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-check-your-notebook-kernel">
+   Step 4. Check Your Notebook Kernel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-run-jupyter-notebook-cells">
+   Step 5. Run Jupyter Notebook Cells
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -1206,6 +1226,16 @@ title="Print to PDF"
    Step 3. Open a Diagnostics Notebook
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-check-your-notebook-kernel">
+   Step 4. Check Your Notebook Kernel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-run-jupyter-notebook-cells">
+   Step 5. Run Jupyter Notebook Cells
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -1218,6 +1248,9 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="diagnostics">
 <h1>Diagnostics<a class="headerlink" href="#diagnostics" title="Permalink to this headline">#</a></h1>
+<hr class="docutils" />
+<p>These activities have been tested and updated by Jesse Nusbaumer and Alice DuVivier</p>
+<hr class="docutils" />
 <p>Once the CESM model has been run and the output data has been transfered to the short term archive Directory the real job of understanding how the simulation ran and what it means from a scientific perspective begins. By this point you have run a number of simulations and have looked at model output using <code class="docutils literal notranslate"><span class="pre">ncview</span></code>. There is no supported CESM diagnostics package that is used by all CESM model components.</p>
 <p>In this section you will practice plotting output from the individual model components that may be useful to you to better understand your model output. We use Jupyter Notebooks for this exercise, though many <a class="reference external" href="https://ncar.github.io/CESM-Tutorial/notebooks/diagnostics/additional/analysis_tools.html">CESM analysis tools</a> are available.</p>
 <p>To start running the Jupyter Notebooks provided for this tutorial, follow the steps below.</p>
@@ -1259,7 +1292,7 @@ title="Print to PDF"
 <h2>Step 3. Open a Diagnostics Notebook<a class="headerlink" href="#step-3-open-a-diagnostics-notebook" title="Permalink to this headline">#</a></h2>
 <p>When your JupyterHub session opens you should be in your home directory on the NCAR HPC. In Step 1 you cloned the “CESM-Tutorial” repository, which has the notebooks you will run in this activity.</p>
 <p><img alt="JupyterHub Main Page" src="../../_images/Diagnostics_7.png" /></p>
-<p>To get to the Diagnostics notebooks, double click the following set of folders:</p>
+<p>To get to the Diagnostics notebooks, double click the following sequence of folders:</p>
 <ol class="simple">
 <li><p>CESM-Tutorial</p></li>
 <li><p>notebooks</p></li>
@@ -1267,10 +1300,16 @@ title="Print to PDF"
 <li><p>Click on the folder for the model component that you are interested in running (e.g. cam)</p></li>
 <li><p>Click on the <code class="docutils literal notranslate"><span class="pre">basics.ipynb</span></code> notebook (see arrow on left, below)</p></li>
 </ol>
-<p><img alt="JupyterHub Open Notebook" src="../../_images/Diagnostics_8.png" /></p>
 <p>The final path in your browser url line for the following example should be:
 <code class="docutils literal notranslate"><span class="pre">$USER/CESM-Tutorial/notebooks/diagnostics/cam/basics.ipynb</span></code></p>
-<p>Once you have the <code class="docutils literal notranslate"><span class="pre">basics.ipynb</span></code> notebook open, check that your kernel (see arrow in upper right corner, above) is <code class="docutils literal notranslate"><span class="pre">NPL</span> <span class="pre">2023b</span></code>. This should be the default kernel, but if it is not, click on that button and select <code class="docutils literal notranslate"><span class="pre">NPL</span> <span class="pre">2023b</span></code>. You should use this kernel for any diagnostics you do during the tutorial as it is a default environment available on NCAR HPC and the notebooks here have been tested so that they work with that analysis environment.</p>
+<p><img alt="JupyterHub Open Notebook" src="../../_images/Diagnostics_8.png" /></p>
+</section>
+<section id="step-4-check-your-notebook-kernel">
+<h2>Step 4. Check Your Notebook Kernel<a class="headerlink" href="#step-4-check-your-notebook-kernel" title="Permalink to this headline">#</a></h2>
+<p>Check your kernel (see arrow in upper right corner, above). It should be either <code class="docutils literal notranslate"><span class="pre">NPL</span> <span class="pre">2023a</span></code> or <code class="docutils literal notranslate"><span class="pre">NPL</span> <span class="pre">2023b</span></code>. You should use the specified kernel for any diagnostics you do during the tutorial as it is a default environment available on NCAR HPC and the notebooks here have been tested so that they work with that particular kernel for the analysis environment. We have set the default kernels and specifiy what they should be in each component notebook. However, if you need to change it click on the kernel button and select the correct kernel.</p>
+</section>
+<section id="step-5-run-jupyter-notebook-cells">
+<h2>Step 5. Run Jupyter Notebook Cells<a class="headerlink" href="#step-5-run-jupyter-notebook-cells" title="Permalink to this headline">#</a></h2>
 <p>To run a Jupyter cell</p>
 <ul>
 <li><p>Type your command into the cell</p></li>

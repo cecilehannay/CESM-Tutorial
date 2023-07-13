@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Environment on cheyenne &#8212; CESM Tutorial</title>
+    <title>NCAR HPC Environment &#8212; CESM Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -663,7 +663,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../diagnostics/pop/advanced_pop.html">
-       Advance Plotting
+       Advanced Plotting
       </a>
      </li>
     </ul>
@@ -767,6 +767,16 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toctree-l3">
       <a class="reference internal" href="../challenge/cam-chem_waccm/exercise_2.html">
        2: Test case: changing the chemistry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../challenge/cam-chem_waccm/exercise_3.html">
+       3: Test case: changing the emissions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../challenge/cam-chem_waccm/visualization.html">
+       4: Visualization option with GEOV
       </a>
      </li>
     </ul>
@@ -915,7 +925,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Environment on cheyenne
+     NCAR HPC Environment
     </a>
    </li>
    <li class="toctree-l2">
@@ -1158,8 +1168,30 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-up-your-environment">
-   Setting up your environment
+  <a class="reference internal nav-link" href="#cesm-in-person-tutorial-specific-instructions">
+   2023 CESM in person tutorial specific instructions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tutorial-project-account">
+     Tutorial Project Account
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#special-queues">
+     Special Queues
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-these-tutorial-specific-codes">
+     Using these tutorial-specific codes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-your-ncar-hpc-environment">
+   Setting up your NCAR HPC environment
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1219,11 +1251,6 @@ title="Print to PDF"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#c-shell">
        C-shell:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#schedule-for-tutorial-queue">
-       Schedule for TUTORIAL_QUEUE:
       </a>
      </li>
     </ul>
@@ -1239,7 +1266,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Environment on cheyenne</h1>
+                <h1>NCAR HPC Environment</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1250,8 +1277,30 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-up-your-environment">
-   Setting up your environment
+  <a class="reference internal nav-link" href="#cesm-in-person-tutorial-specific-instructions">
+   2023 CESM in person tutorial specific instructions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tutorial-project-account">
+     Tutorial Project Account
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#special-queues">
+     Special Queues
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-these-tutorial-specific-codes">
+     Using these tutorial-specific codes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-your-ncar-hpc-environment">
+   Setting up your NCAR HPC environment
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1311,11 +1360,6 @@ title="Print to PDF"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#c-shell">
        C-shell:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#schedule-for-tutorial-queue">
-       Schedule for TUTORIAL_QUEUE:
       </a>
      </li>
     </ul>
@@ -1332,11 +1376,62 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="environment-on-cheyenne">
-<h1>Environment on cheyenne<a class="headerlink" href="#environment-on-cheyenne" title="Permalink to this headline">#</a></h1>
-<p>Every day we have a special queue.</p>
-<section id="setting-up-your-environment">
-<h2>Setting up your environment<a class="headerlink" href="#setting-up-your-environment" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="ncar-hpc-environment">
+<h1>NCAR HPC Environment<a class="headerlink" href="#ncar-hpc-environment" title="Permalink to this headline">#</a></h1>
+<section id="cesm-in-person-tutorial-specific-instructions">
+<h2>2023 CESM in person tutorial specific instructions<a class="headerlink" href="#cesm-in-person-tutorial-specific-instructions" title="Permalink to this headline">#</a></h2>
+<section id="tutorial-project-account">
+<h3>Tutorial Project Account<a class="headerlink" href="#tutorial-project-account" title="Permalink to this headline">#</a></h3>
+<div class="alert alert-warning">
+You should have access to project account <strong>UESM0012</strong> and use this for your simulations.
+</div>
+</section>
+<section id="special-queues">
+<h3>Special Queues<a class="headerlink" href="#special-queues" title="Permalink to this headline">#</a></h3>
+<div class="alert alert-warning">
+We have a special queue every day for running to ensure you get through the Cheyenne queues quickly and get your jobs run. These are only active for portions of each day during our lab sessions and change for each session. So you should be sure you are using the correct reservation queue. 
+<p><strong>Schedule for Tutorial Reservation Queues</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Mon</span>      <span class="mi">14</span><span class="p">:</span><span class="mi">00</span> <span class="o">-</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787445</span>
+<span class="n">Tue</span>      <span class="mi">10</span><span class="p">:</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787503</span>
+         <span class="mi">14</span><span class="p">:</span><span class="mi">00</span> <span class="o">-</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787518</span>
+<span class="n">Wed</span>      <span class="mi">10</span><span class="p">:</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787531</span>
+         <span class="mi">14</span><span class="p">:</span><span class="mi">00</span> <span class="o">-</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787589</span>
+<span class="n">Thu</span>      <span class="mi">13</span><span class="p">:</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span>    <span class="n">casper</span>     <span class="n">R7873845</span>
+<span class="n">Fri</span>      <span class="mi">13</span><span class="p">:</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787669</span> 
+</pre></div>
+</div>
+</div></section>
+<section id="using-these-tutorial-specific-codes">
+<h3>Using these tutorial-specific codes<a class="headerlink" href="#using-these-tutorial-specific-codes" title="Permalink to this headline">#</a></h3>
+<p>In theory, you <em>should</em> be able to automatically use this account and the reservation queues if you correctly set up your NCAR HPC environment using your <code class="docutils literal notranslate"><span class="pre">.profile</span></code> or <code class="docutils literal notranslate"><span class="pre">.tcshrc</span></code> files, as described below. If you need to change the values for a run, you can change the account and reservation queue in your case directory using the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="o">--</span><span class="n">force</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">R1787445</span>
+<span class="o">./</span><span class="n">xmlchange</span> <span class="n">PROJECT</span><span class="o">=</span><span class="n">UESM0012</span>
+</pre></div>
+</div>
+<p>For instance, on Wednesday</p>
+<ul class="simple">
+<li><p>If (Wed 10:30 - 12:00) then</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">R1787531</span> <span class="o">--</span><span class="n">force</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>If (Wed 14:00 - 17:00) then</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">R1787589</span> <span class="o">--</span><span class="n">force</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>If (Wed at another time) then</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">JOB_QUEUE</span><span class="o">=</span><span class="n">regular</span>
+</pre></div>
+</div>
+<p>If you do use these commands, make sure for the <code class="docutils literal notranslate"><span class="pre">JOB_QUEUE</span></code> you are using the <strong>correct</strong> reservation code for the relevant day <em>and</em> time of that lab session. You should not have to set the <code class="docutils literal notranslate"><span class="pre">PROJECT</span></code> more than once during the tutorial if your profile is set up, as described below, but we include it for your reference in case you are having trouble.</p>
+</section>
+</section>
+<section id="setting-up-your-ncar-hpc-environment">
+<h2>Setting up your NCAR HPC environment<a class="headerlink" href="#setting-up-your-ncar-hpc-environment" title="Permalink to this headline">#</a></h2>
 <p>Every time you log onto the NCAR HPC you want to ensure you have the correct modules loaded.</p>
 <div class="alert alert-warning">
 <strong>NOTE: The next section describes how to use a file that loads the modules necessary for those attending the in-person tutorial. Once you set up your environment you should not have to do it again for the remainder of the tutorial. Every time you login to NCAR HPC these files will automatically be sourced. However, if you intend to use NCAR HPC after the tutorial you may need to modify your `.profile` or `.tcshrc` file to load the correct modules, project numbers, or queues. </strong>
@@ -1366,12 +1461,12 @@ title="Print to PDF"
 <h4>One-time setup<a class="headerlink" href="#one-time-setup" title="Permalink to this headline">#</a></h4>
 <p>To set up your environment for the tutorial, follow the following three steps:</p>
 <div class="alert alert-info">
-<p>Copy over the <code class="docutils literal notranslate"><span class="pre">.profile</span></code> file [Optional: copy existing <code class="docutils literal notranslate"><span class="pre">.profile</span></code> file to a new filename before copying the tutorial <code class="docutils literal notranslate"><span class="pre">.profile</span></code> file to your home directory]<br></p>
+<p>Copy over the <code class="docutils literal notranslate"><span class="pre">.profile</span></code> file into your home directory:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">profile</span> <span class="o">~/.</span><span class="n">profile</span>
 </pre></div>
 </div>
 <br>
-<p>Source the file:<br></p>
+<p>Source the file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/.</span><span class="n">profile</span>
 </pre></div>
 </div>
@@ -1396,12 +1491,12 @@ title="Print to PDF"
 <p>To set up your environment for the tutorial, follow the following three steps:</p>
 <div class="alert alert-info">
 <br>
-<p>Copy over the <code class="docutils literal notranslate"><span class="pre">.tcshrc</span></code> file to your home directory. [Optional: copy existing <code class="docutils literal notranslate"><span class="pre">.tcshrc</span></code> file to a new filename before copying the tutorial <code class="docutils literal notranslate"><span class="pre">.tcshrc</span></code> file to your home directory]<br></p>
+<p>Copy over the <code class="docutils literal notranslate"><span class="pre">.tcshrc</span></code> file to your home directory:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">tcshrc</span> <span class="o">~/.</span><span class="n">tcshrc</span>
 </pre></div>
 </div>
 <br>
-<p>Source the file:<br></p>
+<p>Source the file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/.</span><span class="n">tcshrc</span>
 </pre></div>
 </div>
@@ -1462,20 +1557,6 @@ title="Print to PDF"
 </div>
 <p>Source the file:<br></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">~/.</span><span class="n">tcshrc</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="schedule-for-tutorial-queue">
-<h4>Schedule for TUTORIAL_QUEUE:<a class="headerlink" href="#schedule-for-tutorial-queue" title="Permalink to this headline">#</a></h4>
-<div class="alert alert-info">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Mon</span>      <span class="mi">14</span><span class="p">:</span><span class="mi">00</span> <span class="o">-</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787445</span>
-<span class="n">Tue</span>      <span class="mi">10</span><span class="p">:</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787503</span>
-         <span class="mi">14</span><span class="p">:</span><span class="mi">00</span> <span class="o">-</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787518</span>
-<span class="n">Wed</span>      <span class="mi">10</span><span class="p">:</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787531</span>
-         <span class="mi">14</span><span class="p">:</span><span class="mi">00</span> <span class="o">-</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787589</span>
-<span class="n">Thu</span>      <span class="mi">13</span><span class="p">:</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span>    <span class="n">casper</span>     <span class="n">R7873845</span>
-<span class="n">Fri</span>      <span class="mi">13</span><span class="p">:</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span>    <span class="n">cheyenne</span>   <span class="n">R1787669</span> 
 </pre></div>
 </div>
 </div></section>

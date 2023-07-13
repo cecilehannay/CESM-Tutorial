@@ -663,7 +663,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../pop/advanced_pop.html">
-       Advance Plotting
+       Advanced Plotting
       </a>
      </li>
     </ul>
@@ -767,6 +767,16 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toctree-l3">
       <a class="reference internal" href="../../challenge/cam-chem_waccm/exercise_2.html">
        2: Test case: changing the chemistry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../challenge/cam-chem_waccm/exercise_3.html">
+       3: Test case: changing the emissions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../challenge/cam-chem_waccm/visualization.html">
+       4: Visualization option with GEOV
       </a>
      </li>
     </ul>
@@ -915,7 +925,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../resources/profile.html">
-     Environment on cheyenne
+     NCAR HPC Environment
     </a>
    </li>
    <li class="toctree-l2">
@@ -1163,8 +1173,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#in-this-tutorial">
-   In this tutorial
+  <a class="reference internal nav-link" href="#notebook-objectives">
+   Notebook Objectives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1299,8 +1309,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#in-this-tutorial">
-   In this tutorial
+  <a class="reference internal nav-link" href="#notebook-objectives">
+   Notebook Objectives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1422,13 +1432,16 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="basic-plotting">
 <h1>Basic Plotting<a class="headerlink" href="#basic-plotting" title="Permalink to this headline">#</a></h1>
+<p><strong>BEFORE BEGINNING THIS EXERCISE</strong> -  Check that your kernel (upper right corner, above) is <code class="docutils literal notranslate"><span class="pre">NPL</span> <span class="pre">2023a</span></code>. This should be the default kernel, but if it is not, click on that button and select <code class="docutils literal notranslate"><span class="pre">NPL</span> <span class="pre">2023a</span></code>.</p>
+<hr class="docutils" />
+<p>This activity was developed primarily by Will Wieder and Peter Lawrence.</p>
+<hr class="docutils" />
 <section id="global-visualizations">
 <h2>Global Visualizations<a class="headerlink" href="#global-visualizations" title="Permalink to this headline">#</a></h2>
 <p>These are examples of typical variables and plots that we look at in our land model diagnostics package. You can see examples of output from the <a class="reference external" href="https://www2.cesm.ucar.edu/experiments/cesm2.0/land/diagnostics/clm_diag_PCKG.html">land model dagnostics package here</a>. The most current version of the land model diagnostics are in the CESM Postprocessing. More information here: <a class="reference external" href="https://github.com/NCAR/CESM_postprocessing">CESM Postprocessing</a>.</p>
 </section>
-<section id="in-this-tutorial">
-<h2>In this tutorial<a class="headerlink" href="#in-this-tutorial" title="Permalink to this headline">#</a></h2>
-<p>The tutorial has several objectives:</p>
+<section id="notebook-objectives">
+<h2>Notebook Objectives<a class="headerlink" href="#notebook-objectives" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>Become familiar with Jupyter Notebooks</p></li>
 <li><p>Begin getting acquainted with python packages and their utilities</p></li>
@@ -1477,6 +1490,7 @@ resources to help get you started. Some of these are listed below.</p>
 <hr class="docutils" />
 <section id="reading-and-formatting-data">
 <h2>1. Reading and formatting data<a class="headerlink" href="#reading-and-formatting-data" title="Permalink to this headline">#</a></h2>
+<p><strong>Note</strong>: the drop-down solutions, below, assume you used b.day2.1 output for plotting for this section</p>
 <section id="point-to-the-data">
 <h3>1.1 Point to the data<a class="headerlink" href="#point-to-the-data" title="Permalink to this headline">#</a></h3>
 <p>The first step is to grab land (CTSM) history files from your CESM model run</p>
@@ -1485,19 +1499,6 @@ resources to help get you started. Some of these are listed below.</p>
 <li><p>reflected solar radiation (FSR),</p></li>
 <li><p>incident solar radiation (FSDS), and</p></li>
 <li><p>exposed leaf area index (ELAI)</p></li>
-</ul>
-<p><b>NOTE:</b> These are the raw history files that CTSM writes out.</p>
-<p>By default, they include grid cell averaged monthly means for different state and flux variables.</p>
-<div class="alert alert-block alert-info">
-    <b>TIP:</b> If you want to look at other variables, the <b>fields</b> variable in the cell below is where you can modify what we're reading off of the CLM history files.
-</div>
-<section id="printing-information-about-the-dataset-is-helpful-for-understanding-your-data">
-<h4>Printing information about the dataset is helpful for understanding your data.<a class="headerlink" href="#printing-information-about-the-dataset-is-helpful-for-understanding-your-data" title="Permalink to this headline">#</a></h4>
-<ul class="simple">
-<li><p><em>What dimensions do your data have?</em></p></li>
-<li><p><em>What are the coordinate variables?</em></p></li>
-<li><p><em>What variables are we looking at?</em></p></li>
-<li><p><em>Is there other helpful information, or are there attributes in the dataset we should be aware of?</em></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1523,6 +1524,19 @@ resources to help get you started. Some of these are listed below.</p>
 </div>
 </div>
 </div>
+<p><b>NOTE:</b> These are the raw history files that CTSM writes out.</p>
+<p>By default, they include grid cell averaged monthly means for different state and flux variables.</p>
+<div class="alert alert-block alert-info">
+    <b>TIP:</b> If you want to look at other variables, the <b>fields</b> variable in the cell below is where you can modify what we're reading off of the CLM history files.
+</div>
+<section id="printing-information-about-the-dataset-is-helpful-for-understanding-your-data">
+<h4>Printing information about the dataset is helpful for understanding your data.<a class="headerlink" href="#printing-information-about-the-dataset-is-helpful-for-understanding-your-data" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p><em>What dimensions do your data have?</em></p></li>
+<li><p><em>What are the coordinate variables?</em></p></li>
+<li><p><em>What variables are we looking at?</em></p></li>
+<li><p><em>Is there other helpful information, or are there attributes in the dataset we should be aware of?</em></p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print information about the dataset</span>
@@ -1584,8 +1598,14 @@ Other intereresting variables might include latent heat flux or gross primary pr
 </div>
 </div>
 </div>
-<p><strong>Question:</strong>
-Why don’t you see the whole globe in some months?</p>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_12.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div><p><strong>Question:</strong></p>
+<p>Why don’t you see the whole globe in some months?</p>
 </section>
 <section id="calculating-differences">
 <h3>2.2 Calculating differences<a class="headerlink" href="#calculating-differences" title="Permalink to this headline">#</a></h3>
@@ -1605,7 +1625,13 @@ Why don’t you see the whole globe in some months?</p>
 </div>
 </div>
 </div>
-<p><strong>Questions:</strong></p>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_22.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div><p><strong>Questions:</strong></p>
 <ul class="simple">
 <li><p>How is albedo different in at the end of the simulation, relative to the begining of simulation?</p></li>
 <li><p>Where are the differences the largest?</p></li>
@@ -1622,7 +1648,13 @@ Why don’t you see the whole globe in some months?</p>
 </div>
 </div>
 </div>
-<p><strong>Questions:</strong></p>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_32.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div><p><strong>Questions:</strong></p>
 <ul class="simple">
 <li><p>Do you see any dfferences?</p></li>
 <li><p>Try plotting reflected radiation (the numerator, FSR). What differences do you see?</p></li>
@@ -1639,7 +1671,13 @@ Why don’t you see the whole globe in some months?</p>
 </div>
 </div>
 </div>
-<p><strong>Questions:</strong></p>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_42.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div><p><strong>Questions:</strong></p>
 <ul class="simple">
 <li><p>What regions are LAI differences the greatest?</p></li>
 <li><p>What times of year is this true?</p></li>
@@ -1649,6 +1687,7 @@ Why don’t you see the whole globe in some months?</p>
 </section>
 <section id="calculating-time-series">
 <h3>2.3 Calculating Time Series<a class="headerlink" href="#calculating-time-series" title="Permalink to this headline">#</a></h3>
+<p><strong>Note</strong>: the drop-down solutions, below, assume you used CESM2 Large Ensemble output for plotting for this section</p>
 <p>As above, the plotting function we use here requires data to be 1D or 2D. Therefore, to plot a time series we either need to select a single point or average over an area.</p>
 <section id="time-series-at-a-single-point">
 <h4>2.3.1 Time series at a single point<a class="headerlink" href="#time-series-at-a-single-point" title="Permalink to this headline">#</a></h4>
@@ -1731,7 +1770,13 @@ Why don’t you see the whole globe in some months?</p>
 </div>
 </div>
 </div>
-<p>Similar to the maps above, there are variations in albedo in the simulation at this location. Let’s add other variables to explore why we see differences at this location.</p>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_51.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div><p>Similar to the maps above, there are variations in albedo in the simulation at this location. Let’s add other variables to explore why we see differences at this location.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -1756,7 +1801,13 @@ Why don’t you see the whole globe in some months?</p>
 </div>
 </div>
 </div>
-<p><strong>Questions:</strong></p>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_61.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div><p><strong>Questions:</strong></p>
 <ul class="simple">
 <li><p>What variables show differences?</p></li>
 <li><p>What variables are similar?</p></li>
@@ -1786,7 +1837,13 @@ This requires weighting the values from each grid cell by the total land area of
 </div>
 </div>
 </div>
-</section>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_71.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div></section>
 <section id="next-calculate-and-plot-a-global-weighted-sum">
 <h4>Next, calculate and plot a global weighted sum<a class="headerlink" href="#next-calculate-and-plot-a-global-weighted-sum" title="Permalink to this headline">#</a></h4>
 <div class="alert alert-block alert-info">
@@ -1816,7 +1873,13 @@ This requires weighting the values from each grid cell by the total land area of
 </div>
 </div>
 </div>
-</section>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_81.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div></section>
 </section>
 <hr class="docutils" />
 <section id="calculate-an-annual-weighted-mean-and-create-customized-plots">
@@ -1856,7 +1919,13 @@ This example creates python functions that allow you to easily calculate annual 
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_9.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dsAnn</span>
 </pre></div>
@@ -1942,7 +2011,13 @@ This example creates python functions that allow you to easily calculate annual 
 </div>
 </div>
 </div>
-</section>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_10.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div></section>
 </section>
 </section>
 <section id="extra-credit-challenge">

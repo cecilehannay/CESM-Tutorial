@@ -663,7 +663,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../diagnostics/pop/advanced_pop.html">
-       Advance Plotting
+       Advanced Plotting
       </a>
      </li>
     </ul>
@@ -767,6 +767,16 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toctree-l3">
       <a class="reference internal" href="../../challenge/cam-chem_waccm/exercise_2.html">
        2: Test case: changing the chemistry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../challenge/cam-chem_waccm/exercise_3.html">
+       3: Test case: changing the emissions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../challenge/cam-chem_waccm/visualization.html">
+       4: Visualization option with GEOV
       </a>
      </li>
     </ul>
@@ -915,7 +925,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../resources/profile.html">
-     Environment on cheyenne
+     NCAR HPC Environment
     </a>
    </li>
    <li class="toctree-l2">
@@ -1219,16 +1229,35 @@ For instance, in the CESMROOT, use the command:</p></li>
 </pre></div>
 </div>
 <p><strong># Make Source Modifications</strong><br />
-Locate the file where <code class="docutils literal notranslate"><span class="pre">T500</span></code> is computed and copy it into
+Use <code class="docutils literal notranslate"><span class="pre">T500</span></code> as a template for your changes. For that purpose, locate the file where <code class="docutils literal notranslate"><span class="pre">T500</span></code> is computed and copy it into
 <code class="docutils literal notranslate"><span class="pre">SourceMods/src.atm</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">glade</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">cesm</span><span class="o">/</span><span class="n">tutorial</span><span class="o">/</span><span class="n">cesm2</span><span class="mf">.1</span><span class="n">_tutorial2022</span><span class="o">/</span><span class="n">components</span><span class="o">/</span><span class="n">cam</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">physics</span><span class="o">/</span><span class="n">cam</span><span class="o">/</span><span class="n">cam_diagnostics</span><span class="o">.</span><span class="n">F90</span> <span class="n">SourceMods</span><span class="o">/</span><span class="n">src</span><span class="o">.</span><span class="n">cam</span>
 </pre></div>
 </div>
-<p>Edit the file <code class="docutils literal notranslate"><span class="pre">SourceMods/src.cam/cam_diagnostics.F90</span></code> and add the lines:</p>
+<p>Now, let’s use <code class="docutils literal notranslate"><span class="pre">T500</span></code> as a template for your changes and add the relevant lines for <code class="docutils literal notranslate"><span class="pre">T750</span></code>: edit the file <code class="docutils literal notranslate"><span class="pre">SourceMods/src.cam/cam_diagnostics.F90</span></code> to add the following.</p>
+<p><strong>First change</strong></p>
+<p>Under the lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!++ add a variable for T500 
+call addfld (&#39;T500&#39;, horiz_only,  &#39;A&#39;, &#39;K&#39;,&#39;Temperature at 500 mbar pressure surface&#39;) 
+</pre></div>
+</div>
+<p>add the lines:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!++ add a variable for T750 
 call addfld (&#39;T750&#39;, horiz_only,  &#39;A&#39;, &#39;K&#39;,&#39;Temperature at 750 mbar pressure surface&#39;)  
-
-!++ add a variable for T750 
+</pre></div>
+</div>
+<p><strong>Second change</strong>
+Under the lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!++ add a variable for T500 
+if (hist_fld_active(&#39;T500&#39;)) then 
+    call vertinterp(ncol, pcols, pver, state%pmid, 50000._r8, state%t, p_surf, &amp; 
+         extrapolate=&#39;T&#39;, ps=state%ps, phis=state%phis)
+    call outfld(&#39;T500    &#39;, p_surf, pcols, lchnk )
+end if
+</pre></div>
+</div>
+<p>add the lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!++ add a variable for T750 
 if (hist_fld_active(&#39;T750&#39;)) then 
     call vertinterp(ncol, pcols, pver, state%pmid, 75000._r8, state%t, p_surf, &amp; 
          extrapolate=&#39;T&#39;, ps=state%ps, phis=state%phis)
@@ -1281,7 +1310,7 @@ ncdump -h b1850_T750.cam.h1.0001-01-01-00000.nc
 <p>If you don’t see these variables, check you correctly set the <code class="docutils literal notranslate"><span class="pre">user_nl_cam</span></code>.</p>
 <p>Create a file with the difference between <code class="docutils literal notranslate"><span class="pre">T750-T500</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /glade/scratch/$user/archive/b1850_T750/atm/hist/ 
-ncap2 -s ‘T750_minus_T500=T750-T500&#39; b1850_T750.cam.h1.0001-01-01-00000.nc  T750-T500.nc 
+ncap2 -s &#39;T750_minus_T500=T750-T500&#39; b1850_T750.cam.h1.0001-01-01-00000.nc  T750-T500.nc 
 </pre></div>
 </div>
 <p>Look at the difference between <code class="docutils literal notranslate"><span class="pre">T750-T500</span></code> with <code class="docutils literal notranslate"><span class="pre">ncview</span></code>:</p>

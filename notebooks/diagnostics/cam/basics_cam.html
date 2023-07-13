@@ -663,7 +663,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../pop/advanced_pop.html">
-       Advance Plotting
+       Advanced Plotting
       </a>
      </li>
     </ul>
@@ -767,6 +767,16 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toctree-l3">
       <a class="reference internal" href="../../challenge/cam-chem_waccm/exercise_2.html">
        2: Test case: changing the chemistry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../challenge/cam-chem_waccm/exercise_3.html">
+       3: Test case: changing the emissions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../challenge/cam-chem_waccm/visualization.html">
+       4: Visualization option with GEOV
       </a>
      </li>
     </ul>
@@ -915,7 +925,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../resources/profile.html">
-     Environment on cheyenne
+     NCAR HPC Environment
     </a>
    </li>
    <li class="toctree-l2">
@@ -1166,18 +1176,6 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#grab-data-from-first-time-stamp">
      Grab data from first time stamp
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#question">
-       Question:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       Question:
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
@@ -1185,13 +1183,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#exercise-2-zonal-plot-of-swcf">
    Exercise 2: Zonal plot of SWCF
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Question
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-3-plot-of-zonal-t">
@@ -1199,23 +1190,23 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#natively-via-xarray">
-     Natively via xarray
+    <a class="reference internal nav-link" href="#plot-1-natively-via-xarray">
+     Plot 1: Natively via xarray
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adf-style-quick-plot">
-     ADF style quick plot
+    <a class="reference internal nav-link" href="#plot-2-quick-adf-style">
+     Plot 2: Quick ADF style
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#same-as-above-but">
-     Same as above, but:
+    <a class="reference internal nav-link" href="#plot-3-adf-style-with-reversed-y-axis">
+     Plot 3: ADF style with reversed y-axis
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Same as above, but:
+    <a class="reference internal nav-link" href="#plot-4-complex-adf-style">
+     Plot 4: Complex ADF style
     </a>
    </li>
   </ul>
@@ -1248,18 +1239,6 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#grab-data-from-first-time-stamp">
      Grab data from first time stamp
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#question">
-       Question:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       Question:
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
@@ -1267,13 +1246,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#exercise-2-zonal-plot-of-swcf">
    Exercise 2: Zonal plot of SWCF
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Question
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-3-plot-of-zonal-t">
@@ -1281,23 +1253,23 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#natively-via-xarray">
-     Natively via xarray
+    <a class="reference internal nav-link" href="#plot-1-natively-via-xarray">
+     Plot 1: Natively via xarray
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adf-style-quick-plot">
-     ADF style quick plot
+    <a class="reference internal nav-link" href="#plot-2-quick-adf-style">
+     Plot 2: Quick ADF style
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#same-as-above-but">
-     Same as above, but:
+    <a class="reference internal nav-link" href="#plot-3-adf-style-with-reversed-y-axis">
+     Plot 3: ADF style with reversed y-axis
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Same as above, but:
+    <a class="reference internal nav-link" href="#plot-4-complex-adf-style">
+     Plot 4: Complex ADF style
     </a>
    </li>
   </ul>
@@ -1314,12 +1286,15 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="basic-plotting">
 <h1>Basic Plotting<a class="headerlink" href="#basic-plotting" title="Permalink to this headline">#</a></h1>
-<p>For the atmospheric data, we will look at common variables in the atmospheric diagnostics. Some of the plotting in these examples are based on the <a href="https://github.com/NCAR/ADF">AMWG diagnostic framework (ADF)</a> and some are natively from the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> functionality.</p>
-<p>let’s go over 3 basic plotting examples:</p>
+<p><strong>BEFORE BEGINNING THIS EXERCISE</strong> -  Check that your kernel (upper right corner, above) is <code class="docutils literal notranslate"><span class="pre">NPL</span> <span class="pre">2023b</span></code>. This should be the default kernel, but if it is not, click on that button and select <code class="docutils literal notranslate"><span class="pre">NPL</span> <span class="pre">2023b</span></code>.</p>
+<hr class="docutils" />
+<p>This activity was developed primarily by Cecile Hannay and Jesse Nusbaumer.</p>
+<hr class="docutils" />
+<p>For the atmospheric data, we will look at common variables in the atmospheric diagnostics. This notebook covers 3 basic plotting examples:</p>
 <p>Exercise 1: Global lat/lon of surface temperature</p>
 <p>Exercise 2: Zonal mean of short wave cloud forcing</p>
 <p>Exercise 3: Temperature zonal mean with vertical levels</p>
-<p><code class="docutils literal notranslate"><span class="pre">xarray</span></code> will be used for the data I/O, analysis, and some plotting, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> will aid in plotting, and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> for calculations</p>
+<p>Some of the plotting in these examples are based on the <a href="https://github.com/NCAR/ADF">AMWG diagnostic framework (ADF)</a> and some are natively from the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> functionality. <code class="docutils literal notranslate"><span class="pre">xarray</span></code> will be used for the data I/O, analysis, and some plotting, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> will aid in plotting, and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> for calculations</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -1369,6 +1344,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<hr class="docutils" />
 <section id="exercise-1-make-a-lat-lon-plot-of-ts">
 <h2>Exercise 1: Make a lat-lon plot of TS<a class="headerlink" href="#exercise-1-make-a-lat-lon-plot-of-ts" title="Permalink to this headline">#</a></h2>
 <p>To highlight plotting the variables from the CESM atmosphere (CAM) file, the first example will plot a simple global lat/lon plot of surface temperature <code class="docutils literal notranslate"><span class="pre">TS</span></code></p>
@@ -1407,16 +1383,34 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<section id="question">
-<h4>Question:<a class="headerlink" href="#question" title="Permalink to this headline">#</a></h4>
-<p>What code would you use in the <code class="docutils literal notranslate"><span class="pre">pcolormesh</span></code> function to set the plotting limits?</p>
-</section>
-<section id="id1">
-<h4>Question:<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
-<p>How could we change the central longitude?</p>
-<p>#DROPDOWN ?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_1.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div><p><strong>Question:</strong></p>
+<p>The colorbar limits are set automatically by <code class="docutils literal notranslate"><span class="pre">pcolormesh</span></code>. How could you change the arguments for the <code class="docutils literal notranslate"><span class="pre">pcolormesh</span></code> function to set the plotting limits?</p>
+<div class="alert alert-warning">  
+<details>
+<summary> <font face="Times New Roman" color='blue'>Click here for hints</font> </summary>
+<p>Choose a maximum temperature of 300K and minimum temperature of 225K.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">lon</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span> <span class="n">ts_0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">225</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+
 </pre></div>
+</div>
+</details>
+</div>
+<p><strong>Question:</strong></p>
+<p>How could we change the central longitude?</p>
+<div class="alert alert-warning">  
+<details>
+<summary> <font face="Times New Roman" color='blue'>Click here for hints</font> </summary>
+The default central longitude is 0. Try setting it to 180. Then try other values from 0-360.
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mi">180</span><span class="p">))</span>
+</pre></div>
+</div>
+</details>
 </div>
 <p>A second quick example is for <code class="docutils literal notranslate"><span class="pre">xarray</span></code>’s built-in plotting which uses the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> in the background. <code class="docutils literal notranslate"><span class="pre">xarray</span></code> makes a basic plot fairly simple.</p>
 <div class="cell docutils container">
@@ -1434,8 +1428,13 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-</section>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_2.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div></section>
 </section>
 <hr class="docutils" />
 <section id="exercise-2-zonal-plot-of-swcf">
@@ -1470,45 +1469,68 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Short Wave Cloud Forcing&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
 <span class="c1"># Plot value on y-axis and latitude on the x-axis</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_swcf_zonal</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span> <span class="n">ds_swcf_zonal</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;#1f77b4&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_swcf_zonal</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span> <span class="n">ds_swcf_zonal</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;goldenrod&quot;</span><span class="p">)</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span>
     <span class="p">[</span><span class="nb">max</span><span class="p">([</span><span class="n">ds_swcf_zonal</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="o">-</span><span class="mf">90.0</span><span class="p">]),</span> <span class="nb">min</span><span class="p">([</span><span class="n">ds_swcf_zonal</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mf">90.0</span><span class="p">])]</span>
 <span class="p">)</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Latitude&quot;</span><span class="p">)</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="id2">
-<h3>Question<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<p>What code could you add to set legend for plot line?</p>
-<p>#DROPDOWN ?</p>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for the solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_3.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div><p><strong>Question</strong></p>
+<p>What code could you add to set a legend for plot line?</p>
+<div class="alert alert-warning">  
+<details>
+<summary> <font face="Times New Roman" color='blue'>Click here for hints</font> </summary>
+<p>enter the following lines after the <code class="docutils literal notranslate"><span class="pre">ax.set_xlabel</span></code> command and before the <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> command.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="o">=</span> <span class="n">ds_swcf</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strftime</span><span class="p">()</span> <span class="c1"># -&gt; &#39;0001-02-01 00:00:00&#39;</span>
 <span class="n">line</span> <span class="o">=</span> <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span>
-                        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1f77b4&quot;</span><span class="p">)</span>
+                        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
                         
 <span class="n">fig</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="p">[</span><span class="n">line</span><span class="p">],</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">,</span> <span class="mf">.102</span><span class="p">),</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
                    <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>What else could go for the line legend, if anything?
-#DROPDOWN ?
--&gt; suimulation run name, season, etc.</p>
-</section>
-</section>
+</details>
+</div><p><strong>Question</strong></p>
+<p>What else could you label the line legend, if anything?</p>
+<div class="alert alert-warning">  
+<details>
+<summary> <font face="Times New Roman" color='blue'>Click here for hints</font> </summary>
+<p>Try setting the label value to something else like your simulation run name, the season or month, etc.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Season &#39;</span>
+</pre></div>
+</div>
+</details>
+</div><p><strong>Question</strong></p>
+<p>How can you change the color on the plot and the legend?</p>
+<div class="alert alert-warning">  
+<details>
+<summary> <font face="Times New Roman" color='blue'>Click here for hints</font> </summary>
+<p>To change colors, try a different named color (e.g. “red” or “goldenrod”). You should make sure both the plot and the legend match or your plot won’t make sense.</p>
+</details>
+</div><div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for a solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_4.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div></section>
 <hr class="docutils" />
 <section id="exercise-3-plot-of-zonal-t">
 <h2>Exercise 3: Plot of zonal T<a class="headerlink" href="#exercise-3-plot-of-zonal-t" title="Permalink to this headline">#</a></h2>
-<p>This example will plot the 3D zonal mean of temperature <code class="docutils literal notranslate"><span class="pre">T</span></code> with the pressure as the y-variable and latitude as the x-variable</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>QUESTION FOR REVIEWERS: Here are four examples of how to plot the data. I think each is valuable for plotting pressure on the y-axis and changing the y-tick scale (ie log) to get more information out of the data.</p>
-<p>I’ve added two different ways of plotting: native xarray and what the ADF uses.</p>
-<p>Let me know about any feedback on these, I’m sure these could be turned into exercises?</p>
-</div>
+<p>This example will plot the 3D zonal mean of temperature <code class="docutils literal notranslate"><span class="pre">T</span></code> with the pressure as the y-variable and latitude as the x-variable. We are showing you four different ways to make the same plot since each is valuable for plots with pressure on the y-axis and how to format those to get more information from the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove all dimensions of length one</span>
@@ -1518,8 +1540,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<section id="natively-via-xarray">
-<h3>Natively via xarray<a class="headerlink" href="#natively-via-xarray" title="Permalink to this headline">#</a></h3>
+<section id="plot-1-natively-via-xarray">
+<h3>Plot 1: Natively via xarray<a class="headerlink" href="#plot-1-natively-via-xarray" title="Permalink to this headline">#</a></h3>
+<p>This plot uses the xarray native grids for the plot</p>
 <ul class="simple">
 <li><p>y-axis is <strong>increasing</strong> with height</p></li>
 <li><p>y-axis is <strong>not</strong> in log pressure</p></li>
@@ -1539,9 +1562,16 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="adf-style-quick-plot">
-<h3>ADF style quick plot<a class="headerlink" href="#adf-style-quick-plot" title="Permalink to this headline">#</a></h3>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for a solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_5.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div></section>
+<section id="plot-2-quick-adf-style">
+<h3>Plot 2: Quick ADF style<a class="headerlink" href="#plot-2-quick-adf-style" title="Permalink to this headline">#</a></h3>
+<p>This plot uses the quick style of the AMWG Diagnostic Framework (ADF) packages.</p>
 <ul class="simple">
 <li><p>y-axis is <strong>increasing</strong> with height</p></li>
 <li><p>y-axis is <strong>not</strong> in log pressure</p></li>
@@ -1571,9 +1601,26 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="same-as-above-but">
-<h3>Same as above, but:<a class="headerlink" href="#same-as-above-but" title="Permalink to this headline">#</a></h3>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for a solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_6.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div><p><strong>Questions</strong></p>
+<ul class="simple">
+<li><p>What differences do you see between the ADF quick plot and the xarray native plot?</p></li>
+<li><p>Why might you want to use one or the other?</p></li>
+<li><p>Where, vertically, do high pressures occur and what does this mean for where the ground would be located on this plot?</p></li>
+</ul>
+<div class="alert alert-warning">  
+<details>
+<summary> <font face="Times New Roman" color='blue'>Click here for hints</font> </summary>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">aice</span></code> is actually ice fraction. To convert it to concentration you would need to multipy it by 100. In the rest of these notebooks we use the ice fraction fairly interchangeably with ice concentration. But if you are plotting these you should check your range and see if the maximum value is 1 or 100 because that’s important for setting colorbar limits.</p>
+</details>
+</div></section>
+<section id="plot-3-adf-style-with-reversed-y-axis">
+<h3>Plot 3: ADF style with reversed y-axis<a class="headerlink" href="#plot-3-adf-style-with-reversed-y-axis" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>y-axis is <strong>decreasing</strong> with height</p></li>
 <li><p>y-axis is <strong>not</strong> in log pressure</p></li>
@@ -1615,9 +1662,33 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="id3">
-<h3>Same as above, but:<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for a solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_7.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div><p><strong>Question:</strong></p>
+<ul class="simple">
+<li><p>What differences do you see on the y-axis between the result from Plot 2 and Plot 3?</p></li>
+</ul>
+<div class="alert alert-warning">  
+<details>
+<summary> <font face="Times New Roman" color='blue'>Click here for hints</font> </summary>
+<p>The plots are mirror images of each other because the y-axis has been flipped. Plot 2 has the highest pressures at the top of the y-axis while Plot 3 has the highest pressures at the bottom of the y-axis.</p>
+</details>
+</div><p><strong>Question:</strong></p>
+<ul class="simple">
+<li><p>Where, vertically, do high pressures occur and what does this mean for where the ground would be located on these two figures ?</p></li>
+</ul>
+<div class="alert alert-warning">  
+<details>
+<summary> <font face="Times New Roman" color='blue'>Click here for hints</font> </summary>
+<p>The highest pressures in the atmosphere occur at the ground where the most atmospheric mass is pressing downward. This means that Plot 2 is oriented so the location where the ground is is the top of the plot, or up. In Plot 3 the orientation is so that the ground would be at the bottom of the plot, or down. Thus Plot 3 is often more intuitive to read because it’s oriented with the way we perceive the atmosphere.</p>
+</details>
+</div></section>
+<section id="plot-4-complex-adf-style">
+<h3>Plot 4: Complex ADF style<a class="headerlink" href="#plot-4-complex-adf-style" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>y-axis is <strong>decreasing</strong> with height</p></li>
 <li><p>y-axis <strong>is</strong> in log pressure</p></li>
@@ -1660,7 +1731,31 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
+<div class="alert alert-success">   
+<details>
+<summary><font face="Times New Roman" color='blue'>Click here for a solution</font></summary><br>
+<p><img alt="plot example" src="../../../_images/basics_plot_8.png" /></p>
+<p><em><p style="text-align: center;"> Figure: Plotting solution. </p></em></p>
+</details>
+</div><p><strong>Question:</strong></p>
+<ul class="simple">
+<li><p>What differences do you see on the y-axis between the result from Plot 3 and Plot 4?</p></li>
+</ul>
+<div class="alert alert-warning">  
+<details>
+<summary> <font face="Times New Roman" color='blue'>Click here for hints</font> </summary>
+<p>The plots both have the y-axis oriented so that the highest pressures, or ground, is at the bottom of the plot. But the scale of the y-axis has changed so that in Plot 3 it is logarithmic.</p>
+</details>
+</div><p><strong>Question:</strong></p>
+<ul class="simple">
+<li><p>What does that mean in terms of which part of the atmosphere are emphasized?</p></li>
+</ul>
+<div class="alert alert-warning">  
+<details>
+<summary> <font face="Times New Roman" color='blue'>Click here for hints</font> </summary>
+<p>With the logarithmic y-axis more of the upper atmosphere is shown on the figure. If you wanted to emphasize the boundary layer you might want to change the limits of the figure.</p>
+</details>
+</div></section>
 </section>
 </section>
 

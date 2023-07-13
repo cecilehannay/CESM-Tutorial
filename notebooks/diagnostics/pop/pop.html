@@ -663,7 +663,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="advanced_pop.html">
-       Advance Plotting
+       Advanced Plotting
       </a>
      </li>
     </ul>
@@ -767,6 +767,16 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toctree-l3">
       <a class="reference internal" href="../../challenge/cam-chem_waccm/exercise_2.html">
        2: Test case: changing the chemistry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../challenge/cam-chem_waccm/exercise_3.html">
+       3: Test case: changing the emissions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../challenge/cam-chem_waccm/visualization.html">
+       4: Visualization option with GEOV
       </a>
      </li>
     </ul>
@@ -915,7 +925,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../resources/profile.html">
-     Environment on cheyenne
+     NCAR HPC Environment
     </a>
    </li>
    <li class="toctree-l2">
@@ -1158,8 +1168,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ocean-model-diagnostics">
-   Ocean Model Diagnostics
+  <a class="reference internal nav-link" href="#basic-plotting">
+   Basic Plotting
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1187,14 +1197,21 @@ title="Print to PDF"
      Exercise 4: Making a profile
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advanced-plotting">
+   Advanced Plotting
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5-plot-winter-time-maximum-mixed-layer-depth">
-     Exercise 5: Plot winter time maximum mixed-layer depth
+    <a class="reference internal nav-link" href="#exercise-1-plot-winter-time-maximum-mixed-layer-depth">
+     Exercise 1: Plot winter time maximum mixed-layer depth
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6-compute-and-plot-ocean-heat-storage-per-area-for-the-upper-2000m">
-     Exercise 6: Compute and plot ocean heat storage per area for the upper 2000m
+    <a class="reference internal nav-link" href="#exercise-2-compute-and-plot-ocean-heat-storage-per-area-for-the-upper-2000m">
+     Exercise 2: Compute and plot ocean heat storage per area for the upper 2000m
     </a>
    </li>
   </ul>
@@ -1219,8 +1236,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ocean-model-diagnostics">
-   Ocean Model Diagnostics
+  <a class="reference internal nav-link" href="#basic-plotting">
+   Basic Plotting
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1248,14 +1265,21 @@ title="Print to PDF"
      Exercise 4: Making a profile
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advanced-plotting">
+   Advanced Plotting
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5-plot-winter-time-maximum-mixed-layer-depth">
-     Exercise 5: Plot winter time maximum mixed-layer depth
+    <a class="reference internal nav-link" href="#exercise-1-plot-winter-time-maximum-mixed-layer-depth">
+     Exercise 1: Plot winter time maximum mixed-layer depth
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6-compute-and-plot-ocean-heat-storage-per-area-for-the-upper-2000m">
-     Exercise 6: Compute and plot ocean heat storage per area for the upper 2000m
+    <a class="reference internal nav-link" href="#exercise-2-compute-and-plot-ocean-heat-storage-per-area-for-the-upper-2000m">
+     Exercise 2: Compute and plot ocean heat storage per area for the upper 2000m
     </a>
    </li>
   </ul>
@@ -1272,13 +1296,13 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="pop">
 <h1>POP<a class="headerlink" href="#pop" title="Permalink to this headline">#</a></h1>
-<section id="ocean-model-diagnostics">
-<h2>Ocean Model Diagnostics<a class="headerlink" href="#ocean-model-diagnostics" title="Permalink to this headline">#</a></h2>
+<section id="basic-plotting">
+<h2>Basic Plotting<a class="headerlink" href="#basic-plotting" title="Permalink to this headline">#</a></h2>
 <section id="learning-goals">
 <h3>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>How to load and plot POP ocean model output</p></li>
-<li><p>How to deal iwth the curvilinear grid</p></li>
+<li><p>How to deal with the curvilinear grid</p></li>
 <li><p>How to select a point for making profiles</p></li>
 <li><p>How to define useful functions</p></li>
 </ul>
@@ -1303,14 +1327,17 @@ title="Print to PDF"
 <h3>Exercise 4: Making a profile<a class="headerlink" href="#exercise-4-making-a-profile" title="Permalink to this headline">#</a></h3>
 <p>Here we learn how to plot a temperature profile at a single point on the ocean grid.</p>
 </section>
+</section>
+<section id="advanced-plotting">
+<h2>Advanced Plotting<a class="headerlink" href="#advanced-plotting" title="Permalink to this headline">#</a></h2>
 <hr class="docutils" />
-<section id="exercise-5-plot-winter-time-maximum-mixed-layer-depth">
-<h3>Exercise 5: Plot winter time maximum mixed-layer depth<a class="headerlink" href="#exercise-5-plot-winter-time-maximum-mixed-layer-depth" title="Permalink to this headline">#</a></h3>
+<section id="exercise-1-plot-winter-time-maximum-mixed-layer-depth">
+<h3>Exercise 1: Plot winter time maximum mixed-layer depth<a class="headerlink" href="#exercise-1-plot-winter-time-maximum-mixed-layer-depth" title="Permalink to this headline">#</a></h3>
 <p>Here we learn how to select winter months and plot the maximum mixed-layer depth for both hemispheres on a single map.</p>
 </section>
 <hr class="docutils" />
-<section id="exercise-6-compute-and-plot-ocean-heat-storage-per-area-for-the-upper-2000m">
-<h3>Exercise 6: Compute and plot ocean heat storage per area for the upper 2000m<a class="headerlink" href="#exercise-6-compute-and-plot-ocean-heat-storage-per-area-for-the-upper-2000m" title="Permalink to this headline">#</a></h3>
+<section id="exercise-2-compute-and-plot-ocean-heat-storage-per-area-for-the-upper-2000m">
+<h3>Exercise 2: Compute and plot ocean heat storage per area for the upper 2000m<a class="headerlink" href="#exercise-2-compute-and-plot-ocean-heat-storage-per-area-for-the-upper-2000m" title="Permalink to this headline">#</a></h3>
 <p>Here we learn how to calculate the heat storage per area from the temperature trend and plot the results on a global map.</p>
 </section>
 </section>
